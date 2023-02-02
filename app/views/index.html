@@ -9,127 +9,47 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-xl">
+    <h1 class="govuk-heading-l">
       {{ serviceName }} prototypes
     </h1>
 
-    {% from "govuk/components/accordion/macro.njk" import govukAccordion %}
-      {{ govukAccordion({
-        id: "accordion-with-summary-sections",
-        items: [
+    <h2 class="govuk-heading-m">Start pages</h2>
+
+
+    {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+      {{ govukSummaryList({
+        card: {
+          title: {
+            text: "Start page for new VSiP public service"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Go to prototype"              }
+            ]
+          }
+        },
+        rows: [
           {
-            heading: {
-              text: "Start page designs"
+            key: {
+              text: "Date"
             },
-            summary: {
-              text: "TBC"
-            },
-            content: {
-              html:
-              '<ul class="govuk-list">
-                <li>
-                  <a class="govuk-link" href="/start/start.html">Start page</a>
-                </li>
-              </ul>'
+            value: {
+              html: "2 February 2023"
             }
           },
           {
-            heading: {
-              text: "Visitor authentication journey designs"
+            key: {
+              text: "Lead"
             },
-            summary: {
-              text: "TBC"
-            },
-            content: {
-              html:
-              '<ul class="govuk-list">
-                  <li>
-                    <a class="govuk-link" href="#">Creating an agile working environment</a>
-                  </li>
-                  <li>
-                    <a class="govuk-link" href="#">Agile tools and techniques</a>
-                  </li>
-                  <li>
-                    <a class="govuk-link" href="#">Set up a team wall</a>
-                  </li>
-                  <li>
-                    <a class="govuk-link" href="#">Writing user stories</a>
-                  </li>
-                  <li>
-                    <a class="govuk-link" href="#">Planning in agile</a>
-                  </li>
-                  <li>
-                    <a class="govuk-link" href="#">Deciding on priorities</a>
-                  </li>
-                  <li>
-                    <a class="govuk-link" href="#">Developing a roadmap</a>
-                  </li>
-              </ul>'
-            }
-          },
-          {
-            heading: {
-              text: "Visitor log-in journey designs"
-            },
-            summary: {
-              text: "TBC"
-            },
-            content: {
-              html:
-              '<ul class="govuk-list">
-                  <li>
-                    <a class="govuk-link" href="#">Governance principles for agile service delivery</a>
-                  </li>
-                  <li>
-                    <a class="govuk-link" href="#">Measuring and reporting progress</a>
-                  </li>
-                  <li>
-                    <a class="govuk-link" href="#">Spend controls: check if you need approval to spend money on a service</a>
-                  </li>
-                  <li>
-                    <a class="govuk-link" href="#">Spend controls: apply for approval to spend money on a service</a>
-                  </li>
-                  <li>
-                    <a class="govuk-link" href="#">Spend controls: the new pipeline process</a>
-                  </li>
-                  <li>
-                    <a class="govuk-link" href="#">Working across organisational boundaries</a>
-                  </li>
-              </ul>'
-            }
-          },
-          {
-            heading: {
-              text: "Visitor registration journey designs"
-            },
-            summary: {
-              text: "TBC"
-            },
-            content: {
-              html:
-              '<ul class="govuk-list">
-                  <li>
-                    <a class="govuk-link" href="#">How the discovery phase works</a>
-                  </li>
-                  <li>
-                    <a class="govuk-link" href="#">How the alpha phase works</a>
-                  </li>
-                  <li>
-                    <a class="govuk-link" href="#">How the beta phase works</a>
-                  </li>
-                  <li>
-                    <a class="govuk-link" href="#">How the live phase works</a>
-                  </li>
-                  <li>
-                    <a class="govuk-link" href="#">Retiring your service</a>
-                  </li>
-              </ul>'
+            value: {
+              html: "Simon Nebesnuick"
             }
           }
         ]
-      }) 
-    }}
-  </div>
-</div>
+      }) }}
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
 {% endblock %}
