@@ -13,8 +13,10 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       {{ serviceName }} prototypes
     </h1>
 
-    <h2 class="govuk-heading-m">Start pages</h2>
+    <p class="govuk-body">govuk-body</p>
 
+
+    <h2 class="govuk-heading-m">Start pages</h2>
 
     {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
       {{ govukSummaryList({
@@ -46,10 +48,58 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
             value: {
               html: "Simon Nebesnuick"
             }
+          },
+          {
+            key: {
+              text: "Description"
+            },
+            value: {
+              html: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+            }
+          }
+        ]
+      }) }}
+      {{ govukSummaryList({
+        card: {
+          title: {
+            text: "University of Bristol"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Delete choice",
+                visuallyHiddenText: "of University of Bristol"
+              },
+              {
+                href: "#",
+                text: "Withdraw",
+                visuallyHiddenText: "from University of Bristol"
+              }
+            ]
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Course"
+            },
+            value: {
+              html: "English (Q3X1)<br>PGCE with QTS full time"
+            }
+          },
+          {
+            key: {
+              text: "Location"
+            },
+            value: {
+              html: "School name<br>Road, City, SW2 1AA"
+            }
           }
         ]
       }) }}
 
-      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+  </div>
+</div>
 
 {% endblock %}
