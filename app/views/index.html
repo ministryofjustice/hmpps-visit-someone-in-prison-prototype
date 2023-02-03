@@ -9,30 +9,41 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-l">
-      {{ serviceName }} prototypes
+    <h1 class="govuk-heading-xl">
+      Prototypes
     </h1>
 
-    <p class="govuk-body">govuk-body</p>
+    <p class="govuk-body">These prototypes have been created to test ideas for the new Visit someone in prison (VSiP) service. If you have any questions or comments, please contact the team via <a href="mailto:prisonvisitsbooking@digital.justice.gov.uk" class="govuk-link">prisonvisitsbooking@digital.justice.gov.uk</a></p>
 
-
-    <h2 class="govuk-heading-m">Start pages</h2>
+    <h2 class="govuk-heading-l">Start pages</h2>
 
     {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
       {{ govukSummaryList({
         card: {
           title: {
-            text: "Start page for new VSiP public service"
+            text: "Phased introduction of public service"
           },
           actions: {
             items: [
               {
+                href: "/SP01/",
+                text: "Go to prototype"              
+              },
+              {
                 href: "#",
-                text: "Go to prototype"              }
+                text: "Designs"              }
             ]
           }
         },
         rows: [
+          {
+            key: {
+              text: "Reference"
+            },
+            value: {
+              html: "SP01"
+            }
+          },
           {
             key: {
               text: "Date"
@@ -51,10 +62,10 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
           },
           {
             key: {
-              text: "Description"
+              text: "Problem being addressed"
             },
             value: {
-              html: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+              html: "We need to separate visitors using the GOV.UK start page based on the establishment they are visiting. Not all establishments will use VSiP initially, so we need to push some visitors towards the Prisons Visits Booking (PVB) service if the establishment uses that service, or towards contacting the prison directly if they do not."
             }
           }
         ]
@@ -62,19 +73,17 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
       {{ govukSummaryList({
         card: {
           title: {
-            text: "University of Bristol"
+            text: "XXXX - description"
           },
           actions: {
             items: [
               {
                 href: "#",
-                text: "Delete choice",
-                visuallyHiddenText: "of University of Bristol"
+                text: "Go to prototype"
               },
               {
                 href: "#",
-                text: "Withdraw",
-                visuallyHiddenText: "from University of Bristol"
+                text: "Designs"
               }
             ]
           }
@@ -82,22 +91,100 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
         rows: [
           {
             key: {
-              text: "Course"
+              text: "Reference"
             },
             value: {
-              html: "English (Q3X1)<br>PGCE with QTS full time"
+              html: "XX"
             }
           },
           {
             key: {
-              text: "Location"
+              text: "Date"
             },
             value: {
-              html: "School name<br>Road, City, SW2 1AA"
+              html: "XX"
+            }
+          },
+          {
+            key: {
+              text: "Lead"
+            },
+            value: {
+              html: "XX"
+            }
+          },
+          {
+            key: {
+              text: "Problem being addressed"
+            },
+            value: {
+              html: "TBC"
             }
           }
         ]
       }) }}
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <h2 class="govuk-heading-l">Heading</h2>
+
+      {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+      {{ govukSummaryList({
+        card: {
+          title: {
+            text: "XXXX - description"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Go to prototype"
+              },
+              {
+                href: "#",
+                text: "Designs"
+              }
+            ]
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Reference"
+            },
+            value: {
+              html: "XX"
+            }
+          },
+          {
+            key: {
+              text: "Date"
+            },
+            value: {
+              html: "XX"
+            }
+          },
+          {
+            key: {
+              text: "Lead"
+            },
+            value: {
+              html: "XX"
+            }
+          },
+          {
+            key: {
+              text: "Problem being addressed"
+            },
+            value: {
+              html: "TBC"
+            }
+          }
+        ]
+      }) }}
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
 
   </div>
 </div>

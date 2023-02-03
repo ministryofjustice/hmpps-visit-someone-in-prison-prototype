@@ -1,0 +1,51 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+      {{ govukRadios({
+        name: "where-do-you-live",
+        fieldset: {
+          legend: {
+            text: "Which prison are you visiting?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "norwich",
+            text: "Norwich"
+          },
+          {
+            value: "preston",
+            text: "Preston"
+          },
+          {
+            value: "bure",
+            text: "Bure"
+          }
+        ]
+      }) }}
+
+      <form class="form" action="/url/of/next/page" method="post">
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
