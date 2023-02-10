@@ -5,7 +5,9 @@
     "start": "govuk-prototype-kit start"
   },
   "dependencies": {
-    "govuk-frontend": "^4.5.0",
+
+    "@govuk-prototype-kit/step-by-step": "^2.1.0",
+    "govuk-frontend": "^4.4.1",
     "govuk-prototype-kit": "^13.2.4"
   }
 }

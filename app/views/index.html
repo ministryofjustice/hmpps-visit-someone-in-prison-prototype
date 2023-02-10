@@ -9,13 +9,183 @@ Home – {{serviceName}} – GOV.UK Prototype Kit
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {% include "govuk-prototype-kit/includes/homepage-top.njk" %}
-
     <h1 class="govuk-heading-xl">
-      {{ serviceName }}
+      Prototypes
     </h1>
 
-    {% include "govuk-prototype-kit/includes/homepage-bottom.njk" %}
+    <p class="govuk-body">These prototypes have been created to test ideas for the new Visit someone in prison (VSiP) service. If you have any questions or comments, please contact the team via <a href="mailto:prisonvisitsbooking@digital.justice.gov.uk" class="govuk-link">prisonvisitsbooking@digital.justice.gov.uk</a></p>
+
+    <h2 class="govuk-heading-l">Start pages</h2>
+
+    {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+      {{ govukSummaryList({
+        card: {
+          title: {
+            text: "Phased introduction of public service"
+          },
+          actions: {
+            items: [
+              {
+                href: "/SP01/",
+                text: "Go to prototype"              
+              },
+              {
+                href: "#",
+                text: "Design history"              }
+            ]
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Reference"
+            },
+            value: {
+              html: "SP01"
+            }
+          },
+          {
+            key: {
+              text: "Last updated"
+            },
+            value: {
+              html: "2 February 2023"
+            }
+          },
+          {
+            key: {
+              text: "Lead"
+            },
+            value: {
+              html: "Simon Nebesnuick"
+            }
+          },
+          {
+            key: {
+              text: "Problem being addressed"
+            },
+            value: {
+              html: "Not all establishments will use VSiP initially, so we need to update the VSiP start page on GOV.UK so that it serves both VSiP and Prison Visit Bookings (PVB) serviced establishments."
+            }
+          }
+        ]
+      }) }}
+      {{ govukSummaryList({
+        card: {
+          title: {
+            text: "XXXX - description"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Go to prototype"
+              },
+              {
+                href: "#",
+                text: "Design history"
+              }
+            ]
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Reference"
+            },
+            value: {
+              html: "XX"
+            }
+          },
+          {
+            key: {
+              text: "Date"
+            },
+            value: {
+              html: "XX"
+            }
+          },
+          {
+            key: {
+              text: "Lead"
+            },
+            value: {
+              html: "XX"
+            }
+          },
+          {
+            key: {
+              text: "Problem being addressed"
+            },
+            value: {
+              html: "TBC"
+            }
+          }
+        ]
+      }) }}
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+      <h2 class="govuk-heading-l">Heading</h2>
+
+      {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+      {{ govukSummaryList({
+        card: {
+          title: {
+            text: "XXXX - description"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Go to prototype"
+              },
+              {
+                href: "#",
+                text: "Design history"
+              }
+            ]
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Reference"
+            },
+            value: {
+              html: "XX"
+            }
+          },
+          {
+            key: {
+              text: "Date"
+            },
+            value: {
+              html: "XX"
+            }
+          },
+          {
+            key: {
+              text: "Lead"
+            },
+            value: {
+              html: "XX"
+            }
+          },
+          {
+            key: {
+              text: "Problem being addressed"
+            },
+            value: {
+              html: "TBC"
+            }
+          }
+        ]
+      }) }}
+
+      <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+
+
   </div>
 </div>
 
