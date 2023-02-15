@@ -1,0 +1,51 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Book a Prison Visit
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      
+      <h1 class="govuk-heading-xl">
+        Visit someone in prison
+      </h1>
+
+      <p>Use this service to:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>book a face to face visit with a prisoner</li>
+        <li>update your contact details</li>
+      </ul>
+
+      <p>Booking takes about 5 minutes.</p>
+
+      <a href="signin" role="button" draggable="false" class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8"  data-module="govuk-button">
+        Start
+        <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19" viewBox="0 0 33 40" role="presentation" focusable="false">
+          <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z"></path>
+        </svg>
+      </a>
+
+      <h2 class="govuk-heading-m">Before you start</h2>
+      <p>To use this service, you need to:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>have a visitor account or to <a href="#">create a visitor account</a></li>
+        <li>be on the prisoner's visitor list</li>
+        <li>not be banned from visiting the prisoner</li>
+      </ul>
+
+      <p>The online service is also available in <a href="#">Welsh (Cymraeg)</a>.</p>
+
+      <p>On the day of the visit, you will need to show your ID. This must match the details provided when booking a visit. <a href="#">View acceptable forms of ID</a></p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="#">Contact the prison directly</a></li>
+        <li>Contact the <a href="#">Prisoners' Families Helpline</a> on 0808 808 2003</li>
+      </ul>
+    </div>
+
+  </div>
+{% endblock %}

@@ -1,0 +1,147 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Add visitors
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Add visitors</h1>
+
+      <p>You can add up to 3 adults and 3 children (under 18) to your visit.</p>
+
+      <form class="form" action="addvisitors3" method="post">
+
+        {{ govukInput({
+          label: {
+            text: "First name",
+            classes: "govuk-label--s"
+          },
+          id: "event-name",
+          name: "event-name",
+          value: "Sarah"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Last name",
+            classes: "govuk-label--s"
+          },
+          id: "event-name",
+          name: "event-name",
+          value: "Bloggs"
+        }) }}
+
+        {{ govukDateInput({
+  id: "passport-issued",
+  namePrefix: "passport-issued",
+  fieldset: {
+    legend: {
+      text: "Date of birth",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  hint: {
+    text: "For example, 31 3 1980"
+  },
+  items: [
+    {
+      classes: "govuk-input--width-2",
+      name: "day",
+      value: "2"
+    },
+    {
+      classes: "govuk-input--width-2",
+      name: "month",
+      value: "2"
+    },
+    {
+      classes: "govuk-input--width-4",
+      name: "year",
+      value: "1985"
+    }
+  ]
+}) }}
+
+        {{ govukInput({
+          label: {
+            text: "Post code",
+            classes: "govuk-label--s"
+          },
+          classes: "govuk-input--width-10",
+          id: "event-name",
+          name: "event-name",
+          value: "N5 1FG"
+        }) }}
+{{ govukButton({
+  text: "Remove",
+  classes: "govuk-button--secondary"
+}) }}
+
+        {{ govukInput({
+          label: {
+            text: "First name",
+            classes: "govuk-label--s"
+          },
+          id: "event-name",
+          name: "event-name"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Last name",
+            classes: "govuk-label--s"
+          },
+          id: "event-name",
+          name: "event-name"
+        }) }}
+
+        {{ govukDateInput({
+  id: "passport-issued",
+  namePrefix: "passport-issued",
+  fieldset: {
+    legend: {
+      text: "Date of birth",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  hint: {
+    text: "For example, 31 3 1980"
+  }
+}) }}
+
+        {{ govukInput({
+          label: {
+            text: "Post code",
+            classes: "govuk-label--s"
+          },
+          classes: "govuk-input--width-10",
+          id: "event-name",
+          name: "event-name"
+        }) }}
+
+        <div class="moj-button-action">
+          {{ govukButton({
+            text: 'Add another person',
+            classes: 'govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4'
+          }) }}
+        </div>
+    
+        <div class="moj-button-action">
+          {{ govukButton({
+            text: 'Continue',
+            href: "adjustments"
+          }) }}
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

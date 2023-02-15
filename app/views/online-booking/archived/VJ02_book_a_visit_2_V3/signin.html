@@ -1,0 +1,54 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Do you already have a visitor account?
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Do you already have a visitor account?</h1>
+
+      <div id="sign-in-hint" class="govuk-hint">
+        You must have an account to book a prison visit.<br/>
+        <br/>To create a visitor account, you will need to:<br/>
+        <ul>
+          <li>be on the prisoner’s visitor list</li>
+          <li>have an approved ID that matches your details</li>
+          <li>know the prisoner’s details, including their prisoner number</li>
+      </ul>
+      </div>
+
+      <form class="form" action="prisonerdetails1" method="post">
+
+        {{ govukRadios({
+          idPrefix: "where-do-you-live",
+          name: "where-do-you-live",
+          
+          items: [
+            {
+              value: "yes",
+              text: "Yes, continue to sign in"
+            },
+            {
+              value: "no",
+              text: "No, continue to create a visitor account"
+            }
+            
+          ]
+        }) }}
+       
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

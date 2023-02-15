@@ -1,0 +1,164 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Add visitors
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Add visitors</h1>
+
+      <p>You can add up to 3 adults and 3 children (under 18) to yodur visit.</p>
+
+      <form class="form" action="adjustments" method="post">
+
+        {{ govukInput({
+          label: {
+            text: "First name",
+            classes: "govuk-label--s"
+          },
+          id: "visitor1FirstName",
+          name: "visitor1FirstName",
+          value: data['visitor1FirstName']
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Last name",
+            classes: "govuk-label--s"
+          },
+          id: "visitor1LastName",
+          name: "visitor1LastName",
+          value: data['visitor1LastName']
+        }) }}
+
+        {{ govukDateInput({
+          id: "visitor1DOB",
+          namePrefix: "visitor1DOB",
+          fieldset: {
+            legend: {
+              text: "Date of birth",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: "For example, 31 3 1980"
+          },
+          items: [
+            {
+              classes: "govuk-input--width-2",
+              name: "day",
+              value: data['visitor1DOB-day']
+            },
+            {
+              classes: "govuk-input--width-2",
+              name: "month",
+              value: data['visitor1DOB-month']
+            },
+            {
+              classes: "govuk-input--width-4",
+              name: "year",
+              value: data['visitor1DOB-year']
+            }
+          ]
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Post code",
+            classes: "govuk-label--s"
+          },
+          classes: "govuk-input--width-10",
+          id: "visitor1PostCode",
+          name: "visitor1PostCode",
+          value: data['visitor1PostCode']
+        }) }}
+{{ govukButton({
+  text: "Remove",
+  classes: "govuk-button--secondary"
+}) }}
+
+        {{ govukInput({
+          label: {
+            text: "First name",
+            classes: "govuk-label--s"
+          },
+          id: "visitor2FirstName",
+          name: "visitor2FirstName",
+          value: data['visitor2FirstName']
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Last name",
+            classes: "govuk-label--s"
+          },
+          id: "visitor2LastName",
+          name: "visitor2LastName",
+          value: data['visitor2LastName']
+        }) }}
+
+        {{ govukDateInput({
+          id: "visitor2DOB",
+          namePrefix: "visitor2DOB",
+          fieldset: {
+            legend: {
+              text: "Date of birth",
+              isPageHeading: false,
+              classes: "govuk-fieldset__legend--s"
+            }
+          },
+          hint: {
+            text: "For example, 31 3 1980"
+          },
+          items: [
+            {
+              classes: "govuk-input--width-2",
+              name: "day",
+              value: data['visitor2DOB-day']
+            },
+            {
+              classes: "govuk-input--width-2",
+              name: "month",
+              value: data['visitor2DOB-month']
+            },
+            {
+              classes: "govuk-input--width-4",
+              name: "year",
+              value: data['visitor2DOB-year']
+            }
+          ]
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Post code",
+            classes: "govuk-label--s"
+          },
+          classes: "govuk-input--width-10",
+          id: "visitor2PostCode",
+          name: "visitor2PostCode",
+          value: data['visitor2PostCode']
+        }) }}
+
+        <div class="moj-button-action">
+          {{ govukButton({
+            text: 'Add another person',
+            classes: 'govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4'
+          }) }}
+        </div>
+    
+        <div class="moj-button-action">
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+        </div>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,91 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  When do you want to visit?
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+        <h1 class="govuk-heading-xl">When do you want to visit?</h1>
+        <p><strong>Visiting:</strong> Joe Bloggs(Belmarsh prison)</p>
+      <ol class="govuk-list govuk-list--bullet">
+        <li>Choose a date (available dates are in <strong>bold</strong>)</li>
+        <li>Choose a time</li>
+      </ol>
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+        <div class="bapv-month-nav govuk-body">
+            <div>&lt;</div>
+            <div>May</div>
+            <div>&gt;</div>
+        </div>
+        <table class="bapv-table">
+            <thead>
+                <tr>
+                    <th>Sun</th>
+                    <th>Mon</th>
+                    <th>Tue</th>
+                    <th>Wed</th>
+                    <th>Thu</th>
+                    <th>Fri</th>
+                    <th>Sat</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>1</td><td>2</td><td>3</td><td>4</td><td>5</td><td>6</td><td>7</td></tr>
+                <tr><td>8</td><td>9</td><td>10</td><td>11</td><td>12</td><td>13</td><td>14</td></tr>
+                <tr><td>15</td><td>16</td><td>17</td><td>18</td><td>19</td><td>20</td><td class="available">21</td></tr>
+                <tr><td class="selected"><span>22</span></td><td class="available">23</td><td>24</td><td class="available">25</td><td class="available">26</td><td class="available">27</td><td class="available">28</td></tr>
+                <tr><td class="available">29</td><td class="available">30</td><td class="available">31</td><td></td><td></td><td></td><td></td></tr>
+            </tbody>
+        </table>
+            
+    </div>
+    <div class="govuk-grid-column-one-quarter">
+        <p><strong>Saturday 22 May 2021</strong></p>
+        {{ govukRadios({
+            idPrefix: "where-do-you-live",
+            name: "where-do-you-live",
+            fieldset: {
+                legend: {
+                text: "Choose a time",
+      classes: "govuk-fieldset__legend--s"
+                }
+            },
+            items: [
+                {
+                value: "england",
+                text: "9:00am (1 hour)"
+                },
+                {
+                value: "scotland",
+                text: "10:30am (1 hour)"
+                },
+                {
+                value: "wales",
+                text: "2:00pm (1 hour)"
+                },
+                {
+                value: "northern-ireland",
+                text: "3:30pm (1 hour)"
+                }
+            ]
+            }) }}
+
+    </div>
+
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+      <form class="form" action="whenconfirm" method="post">
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+    </div>
+</div>
+
+{% endblock %}
