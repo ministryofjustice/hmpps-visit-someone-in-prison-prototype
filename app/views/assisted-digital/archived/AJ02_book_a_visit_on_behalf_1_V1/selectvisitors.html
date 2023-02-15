@@ -1,0 +1,135 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Select visitors from the prisoner's visitor list
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Select visitors from the prisoner's visitor list</h1>
+
+      <p class="govuk-body">Each adult visitor must:</p>
+      <ul class="govuk-list  govuk-list--bullet">
+        <li class="govuk-body">be on the prisoner's visitor list</li>
+        <li class="govuk-body">not be banned from visiting the prisoner</li>
+        <li class="govuk-body">show <a href="#">an acceptable form of ID</a> on the day of the visit that matches the details provided when booking</li>
+      </ul>
+
+      <form class="form" action="when" method="post">
+
+{{ govukTable({
+  caption: "Lead visitor: Sarah Bloggs",
+  captionClasses: "govuk-table__caption--m",
+  firstCellIsHeader: false,
+  head: [
+    {
+      text: ""
+    },
+    {
+      text: "Name"
+    },
+    {
+      text: "Date of birth"
+    },
+    {
+      text: "Address"
+    },
+    {
+      text: "Postcode"
+    },
+    {
+      text: "Alerts"
+    },
+    {
+      text: "Restrictions"
+    },
+    {
+      text: "Reasonable adjustments"
+    },
+    {
+      text: "ID registered"
+    },
+    {
+      text: ""
+    }
+  ],
+  rows: [
+    [
+      {
+        html: '<input type="checkbox">'
+      },
+      {
+        html: '<a href="#">Jane Bloggs</a>'
+      },
+      {
+        text: "1 January 1970"
+      },
+      {
+        text: "123 Highbury Hill, London"
+      },
+      {
+        text: "N5 1AT"
+      },
+      {
+        text: "None"
+      },
+      {
+        text: "None"
+      },
+      {
+        text: "None"
+      },
+      {
+        text: "No"
+      },
+      {
+        html: '<a href="#">Change</a>'
+      }
+    ],
+    [
+      {
+        html: '<input type="checkbox">'
+      },
+      {
+        html: '<a href="#">Michael Bloggs</a>'
+      },
+      {
+        text: "3 March 2000"
+      },
+      {
+        text: "123 Highbury Hill, London"
+      },
+      {
+        text: "N5 1AT"
+      },
+      {
+        text: "None"
+      },
+      {
+        text: "None"
+      },
+      {
+        text: "None"
+      },
+      {
+        text: "No"
+      },
+      {
+        html: '<a href="#">Change</a>'
+      }
+    ]
+  ]
+}) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

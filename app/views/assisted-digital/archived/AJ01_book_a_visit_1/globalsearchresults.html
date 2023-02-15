@@ -1,0 +1,299 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Global search
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+  <h1 class="govuk-heading-l">
+    Global search results
+  </h1>
+
+  
+
+
+
+
+
+
+
+
+
+<form novalidate="novalidate" class="prisoner-search__form" data-test="global-search-form" action="/global-search/results">
+  <input type="hidden" name="referrer" value="" />
+  <div class="horizontal-form govuk-!-margin-bottom-3">
+    
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="searchText">
+    Enter prisoner name or ID
+  </label>
+
+<input class="govuk-input govuk-input--width-10" id="searchText" name="searchText" type="text" value=" G2320VD" data-test="global-search-text">
+</div>
+
+
+    
+
+  
+    
+  
+
+<button type="submit" class="govuk-button" data-module="govuk-button" data-test="global-search-submit">
+  Search
+</button>
+
+  </div>
+
+  <details class="govuk-details govuk-!-margin-bottom-0" data-module="govuk-details" data-test="global-search-filters-container">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Filters
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    
+  
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="locationFilter">
+    Location status of prisoner
+  </label>
+
+
+  <select class="govuk-select" id="locationFilter" name="locationFilter" data-test="location-filter">
+  
+    
+      <option value="ALL" selected>All</option>
+    
+  
+    
+      <option value="IN">Inside</option>
+    
+  
+    
+      <option value="OUT">Outside</option>
+    
+  
+  </select>
+</div>
+
+
+  
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="genderFilter">
+    Prisoner gender
+  </label>
+
+
+  <select class="govuk-select" id="genderFilter" name="genderFilter" data-test="gender-filter">
+  
+    
+      <option value="ALL" selected>All</option>
+    
+  
+    
+      <option value="M">Male</option>
+    
+  
+    
+      <option value="F">Female</option>
+    
+  
+    
+      <option value="NK">Not known</option>
+    
+  
+    
+      <option value="NS">Not specified</option>
+    
+  
+  </select>
+</div>
+
+
+  
+
+
+
+
+  
+
+
+<div class="govuk-form-group">
+<fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
+  
+  <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+  
+    Date of birth (optional)
+  
+  </legend>
+  
+
+  <div id="dob-hint" class="govuk-hint">
+    For example, 31 3 1980
+  </div>
+
+
+  <div class="govuk-date-input" id="dob">
+    
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="dobDay">
+          Day
+        </label>
+      
+      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dobDay" name="dobDay" type="text" pattern="[0-9]*" inputmode="numeric" data-test="dob-day">
+      </div>
+    </div>
+  
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="dobMonth">
+          Month
+        </label>
+      
+      <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dobMonth" name="dobMonth" type="text" pattern="[0-9]*" inputmode="numeric" data-test="dob-month">
+      </div>
+    </div>
+  
+    <div class="govuk-date-input__item">
+      <div class="govuk-form-group">
+        <label class="govuk-label govuk-date-input__label" for="dobYear">
+          Year
+        </label>
+      
+      <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dobYear" name="dobYear" type="text" pattern="[0-9]*" inputmode="numeric" data-test="dob-year">
+      </div>
+    </div>
+  
+  </div>
+  
+
+</fieldset>
+
+
+</div>
+
+
+  
+
+  <a href="./results?searchText= G2320VD" data-test="clear-link" class="govuk-body govuk-link govuk-link--no-visited-state">Clear</a>
+
+  </div>
+</details>
+
+</form>
+
+
+
+  
+    <nav class="moj-pagination govuk-!-font-size-19" id="pagination-label">
+
+  <p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
+
+  <ul class="moj-pagination__list"></ul>
+    <p class="moj-pagination__results">Showing <b>1</b> to <b>1</b> of <b>1</b> results</p>
+  </nav>
+
+    
+
+  
+  
+  
+  
+
+
+<div class="prisoner-search__results-list">
+  <table class="govuk-table" data-test="global-search-results-table">
+  
+  
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+    
+      <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Picture</span></th>
+    
+      <th scope="col" class="govuk-table__header">Name</th>
+    
+      <th scope="col" class="govuk-table__header">Prison number</th>
+    
+      <th scope="col" class="govuk-table__header">Date of birth</th>
+    
+      <th scope="col" class="govuk-table__header">Location</th>
+    
+      <th scope="col" class="govuk-table__header">Actual working name</th>
+    
+      <th scope="col" class="govuk-table__header govuk-visually-hidden"><span class="govuk-visually-hidden">Licences</span></th>
+    
+    </tr>
+  </thead>
+  
+  <tbody class="govuk-table__body">
+    
+      
+        <tr class="govuk-table__row">
+        
+          
+          
+          <td class="govuk-table__cell"
+          ><img src="/app/images/G2320VD/data" alt="Image of Alores, Ykaessumar" class="prisoner-search__results-list__image" /></td>
+          
+        
+          
+          
+          <td class="govuk-table__cell"
+          ><a href="/prisoner/G2320VD" class="govuk-link" target="_blank" rel="noopener noreferrer" data-test="prisoner-profile-link">Alores, Ykaessumar</a></td>
+          
+        
+          
+          
+          <td class="govuk-table__cell"
+          >G2320VD</td>
+          
+        
+          
+          
+          <td class="govuk-table__cell"
+          >28/10/1985</td>
+          
+        
+          
+          
+          <td class="govuk-table__cell"
+          >Outside - Court</td>
+          
+        
+          
+          
+          <td class="govuk-table__cell"
+          >Alores, Ykaessumar</td>
+          
+        
+          
+          
+          <td class="govuk-table__cell"
+          ></td>
+          
+        
+        </tr>
+      
+    
+  </tbody>
+</table>
+
+</div>
+
+
+    <nav class="moj-pagination govuk-!-font-size-19" id="pagination-label">
+
+  <p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
+
+  <ul class="moj-pagination__list"></ul>
+    <p class="moj-pagination__results">Showing <b>1</b> to <b>1</b> of <b>1</b> results</p>
+  </nav>
+  </div>
+
+{% endblock %}

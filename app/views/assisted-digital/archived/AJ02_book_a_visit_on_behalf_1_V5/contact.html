@@ -1,0 +1,47 @@
+{% extends "layouts/main.html" %}
+
+{% set containerClasses = 'app-width-container--wide' %}
+
+{% block pageTitle %}
+  Contact
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div style="box-shadow: inset 0 -1px 0 0 #b1b4b6;">
+            <p class="govuk-!-padding-bottom-2"><strong>Wayland (HMP)</strong> <a href="changecaseload">Change location</a></p>
+        </div>
+    </div>
+  </div>
+
+  <a href="datepicker" class="govuk-back-link">Back</a>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {{ govukInput({
+        label: {
+          text: "What phone number should be used to contact visitors about this booking?",
+          classes: "govuk-label--l",
+          isPageHeading: true
+        },
+        id: "event-name",
+        name: "event-name",
+        classes: "govuk-input--width-20",
+        hint: {
+          text: "Phone number"
+        }
+      }) }}
+
+
+      <form class="form" action="whenconfirm" method="post">
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

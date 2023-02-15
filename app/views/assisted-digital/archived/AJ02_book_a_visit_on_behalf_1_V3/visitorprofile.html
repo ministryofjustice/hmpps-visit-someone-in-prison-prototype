@@ -1,0 +1,234 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Visitor profile
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Visitor profile</h1>
+
+      <form class="form" action="searchresults" method="post">
+
+        <h2 class="govuk-heading-l">Personal details</h2>
+        {{ govukSummaryList({
+        rows: [
+            {
+            key: {
+                text: "Name"
+            },
+            value: {
+                text: "Sarah Bloggs"
+            },
+            actions: {
+                items: [
+                {
+                    href: "#",
+                    text: "Edit",
+                    visuallyHiddenText: "name"
+                }
+                ]
+            }
+            },
+            {
+            key: {
+                text: "Date of birth"
+            },
+            value: {
+                text: "5 January 1978"
+            },
+            actions: {}
+            }
+            ]
+        }) }}
+
+        <h2 class="govuk-heading-l">Contact details</h2>
+        {{ govukSummaryList({
+        rows: [
+            {
+            key: {
+                text: "Email"
+            },
+            value: {
+                text: ""
+            },
+            actions: {
+                items: [
+                {
+                    href: "#",
+                    text: "Edit",
+                    visuallyHiddenText: "name"
+                }
+                ]
+            }
+            },
+            {
+            key: {
+                text: "Contact number"
+            },
+            value: {
+                text: "07777 777 777"
+            },
+            actions: {}
+            },
+            {
+            key: {
+                text: "Address"
+            },
+            value: {
+                text: "5 Highbury Hill, London"
+            },
+            actions: {}
+            },
+            {
+            key: {
+                text: "Postcode"
+            },
+            value: {
+                text: "N5 1AT"
+            },
+            actions: {}
+            },
+            {
+            key: {
+                text: "Preferred contact method"
+            },
+            value: {
+                text: ""
+            },
+            actions: {}
+            }
+            ]
+        }) }}
+        <h2 class="govuk-heading-l">Alerts and restrictions</h2>
+        {{ govukSummaryList({
+        rows: [
+            {
+            key: {
+                text: "Alerts"
+            },
+            value: {
+                text: "None"
+            },
+            actions: {
+                items: [
+                {
+                    href: "#",
+                    text: "Edit",
+                    visuallyHiddenText: "name"
+                }
+                ]
+            }
+            },
+            {
+            key: {
+                text: "Restrictions"
+            },
+            value: {
+                text: "None"
+            },
+            actions: {
+                items: [
+                {
+                    href: "#",
+                    text: "Edit",
+                    visuallyHiddenText: "name"
+                }
+                ]
+            }
+            }
+            ]
+        }) }}
+        <h2 class="govuk-heading-l">Prisoner lists</h2>
+        {{ govukTable({
+  firstCellIsHeader: true,
+  head: [
+    {
+      text: "Prisoner"
+    },
+    {
+      text: "Prisoner ID"
+    },
+    {
+      text: "Prison"
+    },
+    {
+      text: "Prisoner's relationship to visitor"
+    },
+    {
+      text: "Status"
+    }
+  ],
+  rows: [
+    [
+      {
+        html: '<a href="prisonerprofile">Aarell Dublosek</a>'
+      },
+      {
+        text: "ABC123123C"
+      },
+    {
+      text: "Wayland (HMP)"
+    },
+    {
+      text: "Daughter"
+    },
+    {
+      text: "Active"
+    }
+    ]
+  ]
+}) }}
+        <h2 class="govuk-heading-l">Reasonable adjustments</h2>
+        {{ govukSummaryList({
+        rows: [
+            {
+            key: {
+                text: "Yes"
+            },
+            value: {
+                text: "Wheelchair access ramp"
+            },
+            actions: {
+                items: [
+                {
+                    href: "#",
+                    text: "Edit",
+                    visuallyHiddenText: "name"
+                }
+                ]
+            }
+            }
+            ]
+        }) }}
+        <h2 class="govuk-heading-l">Identification registered</h2>
+        {{ govukSummaryList({
+        rows: [
+            {
+            key: {
+                text: "Identification"
+            },
+            value: {
+                html: "<p>Driving license<br></p>"
+            },
+            actions: {
+                items: [
+                {
+                    href: "#",
+                    text: "Edit",
+                    visuallyHiddenText: "name"
+                }
+                ]
+            }
+            }
+            ]
+        }) }}
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

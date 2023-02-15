@@ -1,0 +1,144 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Visitor search results
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Visitor search results</h1>
+
+      <form class="form" action="searchresults" method="post">
+
+<div class="horizontal-form" style="padding-bottom: 15px;">
+        {{ govukInput({
+          label: {
+            text: "Enter visitor name"
+          },
+          classes: "govuk-input--width-20",
+          id: "event-name",
+          name: "event-name"
+        }) }}
+
+        {{ govukButton({
+          text: "Search"
+        }) }}
+</div>
+
+{% set filterHtml %}
+
+        {{ govukDateInput({
+  id: "passport-issued",
+  namePrefix: "passport-issued",
+  fieldset: {
+    legend: {
+      text: "Date of birth (optional)",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  hint: {
+    text: "For example, 31 3 1980"
+  }
+        }) }}
+        {{ govukInput({
+          label: {
+            text: "Postcode",
+            classes: "govuk-label--s"
+          },
+          classes: "govuk-input--width-20",
+          id: "event-name",
+          name: "event-name",
+  hint: {
+    text: "For example, N5 1FG"
+  }
+        }) }}
+{% endset %}
+
+
+        {{ govukDetails({
+            summaryText: "Filters",
+            html: filterHtml
+            }) }}
+<div class="horizontal-form" style="padding-bottom: 15px;">
+{{ govukSelect({
+  id: "sort",
+  name: "sort",
+  label: {
+    text: "Order results by"
+  },
+  items: [
+    {
+      value: "published",
+      text: "Last name, First name A-Z"
+    },
+    {
+      value: "published",
+      text: "Last name, First name Z-A"
+    }
+  ]
+}) }}
+        {{ govukButton({
+          text: "Order"
+        }) }}
+</div>
+
+{{ govukTable({
+  firstCellIsHeader: false,
+  head: [
+    {
+      text: "Name"
+    },
+    {
+      text: "Date of birth"
+    },
+    {
+      text: "Postcode"
+    }
+  ],
+  rows: [
+    [
+      {
+        html: '<a href="visitorprofile">Bloggs, Jane</a>'
+      },
+      {
+        text: "1 January 1970"
+      },
+      {
+        text: "N5 1AT"
+      }
+    ],
+    [
+      {
+        html: '<a href="visitorprofile">Bloggs, Michael</a>'
+      },
+      {
+        text: "3 March 2000"
+      },
+      {
+        text: "N5 1AT"
+      }
+    ],
+    [
+      {
+        html: '<a href="visitorprofile">Bloggs, Sarah</a>'
+      },
+      {
+        text: "7 May 1977"
+      },
+      {
+        text: "N5 1AT"
+      }
+    ]
+  ]
+}) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

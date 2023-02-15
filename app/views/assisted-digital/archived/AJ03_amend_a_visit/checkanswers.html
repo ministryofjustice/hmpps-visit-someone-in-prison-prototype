@@ -1,0 +1,123 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check visit details before you book
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Check details before amending the visit</h1>
+
+        <h2 class="govuk-heading-m">Visitors</h2>
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Lead visitor"
+      },
+      value: {
+        text: "Sara Philips"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "visitor"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Visitor 2"
+      },
+      value: {
+        text: "John Philips"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "visitor"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Visitor 3"
+      },
+      value: {
+        text: "Tim Philips"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "visitor"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+        <h2 class="govuk-heading-m">Date and time</h2>
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Date"
+      },
+      value: {
+        text: "Saturday 15 September"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "date"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Time"
+      },
+      value: {
+        text: "10:00am"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "time"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+
+       
+
+      <form class="form" action="finish" method="post">
+        <button class="govuk-button" data-module="govuk-button">Save changes</button>
+
+      </form>
+
+    </div>
+
+  </div>
+{% endblock %}

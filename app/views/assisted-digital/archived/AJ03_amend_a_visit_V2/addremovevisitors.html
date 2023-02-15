@@ -1,0 +1,222 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Add or remove visitors
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <a href="bookingdetails" class="govuk-back-link">Back</a>
+
+      <h1 class="govuk-heading-xl">Add or remove visitors</h1>
+
+      <p class="govuk-body">Each adult visitor must:</p>
+      <ul class="govuk-list  govuk-list--bullet">
+        <li class="govuk-body">be on the prisoner's visitor list</li>
+        <li class="govuk-body">not be banned from visiting the prisoner</li>
+        <li class="govuk-body">show <a href="#">an acceptable form of ID</a> on the day of the visit that matches the details provided when booking</li>
+      </ul>
+
+      <div class="moj-banner">
+  
+        <div class="moj-banner__message">
+      
+          <h2 class="govuk-heading-m">Visitors on the booking</h2>
+    
+          <table class="govuk-table" data-module="moj-multi-select" data-multi-select-checkbox="#select-all">
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th class="govuk-table__header" scope="col"></th>
+                <th class="govuk-table__header" scope="col">Name</th>
+                <th class="govuk-table__header" scope="col">Date of birth</th>
+                <th class="govuk-table__header" scope="col">Relationship to prisoner</th>
+                <th class="govuk-table__header" scope="col">Primary address</th>
+                <th class="govuk-table__header" scope="col">Postcode</th>
+                <th class="govuk-table__header" scope="col">Restrictions</th>
+                <th class="govuk-table__header" scope="col">Reasonable adjustments</th>
+                <th class="govuk-table__header" scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              <tr class="govuk-table__row govuk-table__row--selected">
+                <td class="govuk-table__cell">
+                  
+                </td>
+                <td class="govuk-table__cell">Sarah Philips</td>
+                <td class="govuk-table__cell">1 January 1970<br> <span class="moj-badge">Adult</span></td>
+                <td class="govuk-table__cell">Girlfriend</td>
+                <td class="govuk-table__cell">123 Highbury Hill, London</td>
+                <td class="govuk-table__cell">N5 1AT</td>
+                <td class="govuk-table__cell">None</td>
+                <td class="govuk-table__cell">None</td>
+                <td class="govuk-table__cell">  <a href="#"><button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  Remove
+                </button></a></td>
+              </tr>
+    
+              <tr class="govuk-table__row govuk-table__row--selected">
+                <td class="govuk-table__cell">
+                  
+                </td>
+                <td class="govuk-table__cell">John Philips</td>
+                <td class="govuk-table__cell">2 March 1990<br> <span class="moj-badge">Adult</span></td>
+                <td class="govuk-table__cell">Brother-in-law</td>
+                <td class="govuk-table__cell">123 Highbury Hill, London</td>
+                <td class="govuk-table__cell">N5 1AT</td>
+                <td class="govuk-table__cell">None</td>
+                <td class="govuk-table__cell">None</td>
+                <td class="govuk-table__cell">  <a href="#"><button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  Remove
+                </button></a></td>
+              </tr>
+              
+              <tr class="govuk-table__row govuk-table__row--selected">
+                <td class="govuk-table__cell">
+                  
+                </td>
+                <td class="govuk-table__cell">Tim Philips</td>
+                <td class="govuk-table__cell">4 September 2010<br> <span class="moj-badge moj-badge--bright-purple">Child</span>
+                </td>
+                <td class="govuk-table__cell">Son</td>
+                <td class="govuk-table__cell">123 Highbury Hill, London</td>
+                <td class="govuk-table__cell">N5 1AT</td>
+                <td class="govuk-table__cell">None</td>
+                <td class="govuk-table__cell">None</td>
+                <td class="govuk-table__cell">  <a href="#"><button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                  Remove
+                </button></a></td>
+                
+              </tr>
+    
+            </tbody>
+          </table>
+          
+        </div>
+      
+      </div>
+
+      <form class="form" action="changedate" method="post">
+        <h2 class="govuk-heading-m">Approved visitors not on the booking</h2>
+
+{{ govukTable({
+  
+  captionClasses: "govuk-table__caption--m",
+  firstCellIsHeader: false,
+  head: [
+    {
+      text: ""
+    },
+    {
+      text: "Name"
+    },
+    {
+      text: "Date of birth"
+    },
+    {
+      text: "Relationship to prisoner"
+    },
+    {
+      text: "Primary address"
+    },
+    {
+      text: "Postcode"
+    },
+    {
+      text: "Restrictions"
+    },
+    {
+      text: "Reasonable adjustments"
+    },
+    {
+      text: "Action"
+    }
+    
+  ],
+  rows: [
+    [
+      {
+        html: ''
+      },
+      {
+        html: 'Tim Wright'
+      },
+      {
+        html: '22 December 1984 <br> <span class="moj-badge">Adult</span></td>'
+      },
+      {
+        text: "Friend"
+      },
+      {
+        text: "84 Street, Sheffield"
+      },
+      {
+        text: "S1 4DD"
+      },
+      
+      {
+        html: '<strong class="govuk-tag govuk-tag--red">
+          BANNED 
+        </strong> <p>until 8 September 2021</p>'
+      },
+
+      {
+        text: "None"
+      },
+      {
+        html: '<a href="#"><button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Add
+        </button></a>'
+      }
+    ],
+    [
+      {
+        html: ''
+      },
+      {
+        html: 'Lisa Wright'
+      },
+      {
+        html: '9 August 1975 <br> <span class="moj-badge">Adult</span></td>'
+      },
+      {
+        text: "Girlfriend"
+      },
+      {
+        text: "48A Brown Road, Hull"
+      },
+      {
+        text: "LR9 OSH"
+      },
+      
+      {
+        text: 'None'
+      },
+
+      {
+        text: "Wheelchair ramp"
+      },
+      {
+        html: '<a href="#"><button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Add
+        </button></a>'
+      }
+    ]
+  ]
+}) }}
+
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+      </form>
+      
+
+    </div>
+  </div>
+
+  
+  
+
+{% endblock %}

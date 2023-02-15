@@ -1,0 +1,115 @@
+{% extends "../layout.html" %}
+
+{% block pageTitle %}
+  Your details
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">Your details</h1>
+
+      <p>Confirm your details.</p>
+
+        <p>These will need to match the ID you bring to the visit.</p>
+
+        <h2 class="govuk-heading-m">Personal details</h2>
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: "Jane Bloggs"
+      },
+      actions: {}
+    },
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        text: "1 January 1970"
+      },
+      actions: {}
+    },
+    {
+      key: {
+        text: "Home address"
+      },
+      value: {
+        html: "<p>1 Stadium Muse<br>Highbury Stadium Square<br>London N5 1FP</p>"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Contact details"
+      },
+      value: {
+        text: "07654 321321"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: ""
+      },
+      value: {
+        text: "phil.bloggs@dwp.gov.uk"
+      },
+      actions: {}
+    },
+    {
+      key: {
+        text: "Identification"
+      },
+      value: {
+        text: "None"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Add",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+        <p>
+            <a href="#">I want to change my name</a>
+            <br><a href="#">My date of birth is incorrect</a>
+        </p>
+
+      <form class="form" action="who" method="post">
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+      </form>
+
+    </div>
+
+  </div>
+{% endblock %}

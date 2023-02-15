@@ -1,0 +1,40 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Search for the visitor
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Search for the prisoner</h1>
+
+      <form class="form" action="searchresults" method="post">
+
+<div class="horizontal-form" style="padding-bottom: 15px;">
+        {{ govukInput({
+          label: {
+            text: "Enter prisoner name or prison number"
+          },
+          classes: "govuk-input govuk-!-width-full",
+          id: "event-name",
+          name: "event-name"
+        }) }}
+
+        {{ govukButton({
+          text: "Search"
+        }) }}
+</div>
+
+
+
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

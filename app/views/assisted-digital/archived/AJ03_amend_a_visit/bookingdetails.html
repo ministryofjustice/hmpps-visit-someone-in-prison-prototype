@@ -1,0 +1,108 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Booking details
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <a href="searchresults" class="govuk-back-link">Back</a>
+
+      <h1 class="govuk-heading-xl">Booking details</h1>
+     
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Prisoner details</caption>
+        
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Name</th>
+            <td class="govuk-table__cell">Aarell Dublosek</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Establishment</th>
+            <td class="govuk-table__cell">HMP Wayland</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Visitors</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Visitor</th>
+            <th scope="col" class="govuk-table__header">Name</th>
+            <th scope="col" class="govuk-table__header">Date of birth</th>
+            <th scope="col" class="govuk-table__header">Contact number</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Lead visitor</th>
+            <td class="govuk-table__cell">Sarah Philips</td>
+            <td class="govuk-table__cell">1 January 1970</td>
+            <td class="govuk-table__cell">07748 533 444</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Visitor 2</th>
+            <td class="govuk-table__cell">John Philips</td>
+            <td class="govuk-table__cell">2 March 1990</td>
+            <td class="govuk-table__cell">None</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Visitor 3</th>
+            <td class="govuk-table__cell">Tim Philips</td>
+            <td class="govuk-table__cell">4 September 2000</td>
+            <td class="govuk-table__cell">None</td>
+          </tr>
+        </tbody>
+      </table>
+      <a href="addremovevisitors"><button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Add or remove visitors
+      </button></a>
+
+      <h2 class="govuk-heading-m">Date and time</h2>
+
+      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date
+          </dt>
+          <dd class="govuk-summary-list__value">
+            Monday 8 September
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="datepicker">
+              Change<span class="govuk-visually-hidden"> date</span>
+            </a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Time
+          </dt>
+          <dd class="govuk-summary-list__value">
+            9:00am
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="#">
+              <span class="govuk-visually-hidden"> time</span>
+            </a>
+          </dd>
+        </div>
+        
+      </dl>
+
+      <button class="govuk-button govuk-button--warning" data-module="govuk-button">
+        Cancel booking
+      </button>
+</div>
+</div>
+
+
+  
+
+
+
+{% endblock %}

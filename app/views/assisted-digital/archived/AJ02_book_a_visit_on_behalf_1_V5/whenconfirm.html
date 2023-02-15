@@ -1,0 +1,233 @@
+{% extends "layouts/main.html" %}
+
+{% set containerClasses = 'app-width-container--wide' %}
+
+{% block pageTitle %}
+  Check visit details before you book
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div style="box-shadow: inset 0 -1px 0 0 #b1b4b6;">
+            <p class="govuk-!-padding-bottom-2"><strong>Wayland (HMP)</strong> <a href="changecaseload">Change location</a></p>
+        </div>
+    </div>
+  </div>
+
+  <a href="datepicker" class="govuk-back-link">Back</a>
+
+
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l">Check visit details before you book</h1>
+
+      <p>A reference number will be provided once the booking is confirmed.</p>
+
+      <h2 class="govuk-heading-m">Prisoner details</h2>
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Prisoner name"
+            },
+            value: {
+              text: "Daniel Green"
+            }
+          },
+          {
+            key: {
+              text: "Prison number"
+            },
+            value: {
+              text: "AB124BD"
+            }
+          },
+          {
+            key: {
+              text: "Location"
+            },
+            value: {
+              text: "1-2-948, Wayland (HMP)"
+            },
+            actions: {}
+          }
+        ]
+      }) }}
+
+        <h2 class="govuk-heading-m">Visit details</h2>
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Date"
+              },
+              value: {
+                text: "Tuesday 23 Feburary 2022"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "name"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Time"
+              },
+              value: {
+                text: "10am to 11am"
+              },
+              actions: {}
+            }
+          ]
+        }) }}
+
+       
+
+        <h2 class="govuk-heading-m">Visitor details</h2>
+        <h3 class="govuk-heading-s">Visitor 1</h3>
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Name"
+              },
+              value: {
+                text: "Sarah Philips"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "name"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Date of birth"
+              },
+              value: {
+                text: "1 January 1970"
+              }
+            },
+            {
+              key: {
+                text: "Post code"
+              },
+              value: {
+                text: "N5 1AT"
+              }
+            }
+          ]
+        }) }}
+        <h3 class="govuk-heading-s">Visitor 2</h3>
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                text: "Name"
+              },
+              value: {
+                text: "Michael Philips"
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "name"
+                  }
+                ]
+              }
+            },
+            {
+              key: {
+                text: "Date of birth"
+              },
+              value: {
+                text: "3 March 2010"
+              }
+            },
+            {
+              key: {
+                text: "Post code"
+              },
+              value: {
+                text: "N5 1AT"
+              }
+            }
+          ]
+        }) }}
+
+
+
+        <h2 class="govuk-heading-m">Additional support</h2>
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                html: '<span class="govuk-body">Wheelchair access ramp</span>'
+              },
+              value: {
+                text: ""
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "name"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+        <h2 class="govuk-heading-m">Phone number</h2>
+        {{ govukSummaryList({
+          rows: [
+            {
+              key: {
+                html: '<span class="govuk-body">07896 353 239</span>'
+              },
+              value: {
+                text: ""
+              },
+              actions: {
+                items: [
+                  {
+                    href: "#",
+                    text: "Change",
+                    visuallyHiddenText: "name"
+                  }
+                ]
+              }
+            }
+          ]
+        }) }}
+
+      <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+         Add a comment to this booking
+      </button>
+      <form class="form" action="finish" method="post">
+        <button class="govuk-button" data-module="govuk-button">Submit booking</button>
+
+      </form>
+
+    </div>
+
+  </div>
+{% endblock %}
