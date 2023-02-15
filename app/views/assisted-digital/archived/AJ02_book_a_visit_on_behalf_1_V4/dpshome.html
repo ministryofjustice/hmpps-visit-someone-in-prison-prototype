@@ -1,0 +1,32 @@
+{% extends "layouts/main.html" %}
+{% set containerClasses = 'app-width-container--wide' %}
+
+{% block pageTitle %}
+  DPS Home
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div style="box-shadow: inset 0 -1px 0 0 #b1b4b6;">
+            <p class="govuk-!-padding-bottom-2"><strong>Wayland (HMP)</strong> <a href="changecaseload">Change location</a></p>
+        </div>
+      <h1 class="govuk-heading-l">DPS Home</h1>
+    </div>
+  </div>
+
+  <ul class="govuk-grid-row card-group">
+
+    <li class="govuk-grid-column-one-third card-group__item">
+      <div class="card card--clickable" data-test="global-search">
+        <h2 class="govuk-heading-m card__heading">
+        <a class="govuk-link card__link" href="managepv">Manage prison visits</a>
+        </h2>
+        <p class="govuk-body card__description">Book, view and cancel a prisoner's social visits.</p>
+      </div>
+    </li>
+
+  </ul>
+
+{% endblock %}

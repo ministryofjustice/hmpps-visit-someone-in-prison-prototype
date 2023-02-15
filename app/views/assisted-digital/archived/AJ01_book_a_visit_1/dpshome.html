@@ -1,0 +1,132 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Change caseload
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div style="box-shadow: inset 0 -1px 0 0 #b1b4b6;">
+            <p class="govuk-!-padding-bottom-2"><strong>Wayland (HMP)</strong> <a href="changecaseload">Change location</a></p>
+        </div>
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-0">Digital Prison Services</h1>
+    </div>
+</div>
+
+</div>
+<div  style="background-color: #e0eef8; padding-top: 15px;">
+<div class="govuk-width-container ">
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-m">Search for a prisoner</h2>
+        <p>Leave blank to view all results for selected residential location</p>
+      <form class="form" action="changecaseload" method="post">
+<div class="govuk-button-group">
+        {{ govukInput({
+            label: {
+                text: "Name or prison number",
+                isPageHeading: false
+            },
+            id: "event-name",
+            name: "event-name"
+            }) }}
+        {{ govukSelect({
+  id: "sort",
+  name: "sort",
+  label: {
+    text: "Residential location"
+  },
+  items: [
+    {
+      value: "updated",
+      text: "Berwyn (HMP)"
+    },
+    {
+      value: "published",
+      text: "Wayland (HMP)",
+      selected: true
+    }
+  ]
+}) }}
+  {{ govukButton({
+    text: "Submit"
+  }) }}</form></div>
+    </div>
+</div>
+</div>
+</div>
+<div class="govuk-width-container ">
+<ul class="govuk-grid-row card-group">
+        
+          <li class="govuk-grid-column-one-third card-group__item">
+            
+  <div class="card card--clickable" data-test="global-search">
+    <h2 class="govuk-heading-m card__heading">
+        <a class="govuk-link card__link" href="globalsearch">Global search</a>
+    </h2>
+      <p class="govuk-body card__description">Search for someone in any establishment, or who has been released.</p>
+  </div>
+
+          </li>
+        
+          <li class="govuk-grid-column-one-third card-group__item">
+            
+  <div class="card card--clickable" data-test="manage-prisoner-whereabouts">
+    <h2 class="govuk-heading-m card__heading">
+        <a class="govuk-link card__link" href="index">Manage prisoner whereabouts</a>
+    </h2>
+      <p class="govuk-body card__description">View unlock lists and manage attendance.</p>
+  </div>
+
+          </li>
+        
+          <li class="govuk-grid-column-one-third card-group__item">
+            
+  <div class="card card--clickable" data-test="change-someones-cell">
+    <h2 class="govuk-heading-m card__heading">
+        <a class="govuk-link card__link" href="index">Change someone’s cell</a>
+    </h2>
+      <p class="govuk-body card__description">Complete a cell move and view the 7 day history of all cell moves completed in your establishment.</p>
+  </div>
+
+          </li>
+        
+          <li class="govuk-grid-column-one-third card-group__item">
+            
+  <div class="card card--clickable" data-test="bulk-appointments">
+    <h2 class="govuk-heading-m card__heading">
+        <a class="govuk-link card__link" href="index">Add bulk appointments</a>
+    </h2>
+      <p class="govuk-body card__description">Upload a spreadsheet to add appointments for multiple people.</p>
+  </div>
+
+          </li>
+        
+          <li class="govuk-grid-column-one-third card-group__item">
+            
+  <div class="card card--clickable" data-test="covid-units">
+    <h2 class="govuk-heading-m card__heading">
+        <a class="govuk-link card__link" href="index">View COVID units</a>
+    </h2>
+      <p class="govuk-body card__description">View who is in each COVID unit in your establishment.</p>
+  </div>
+
+          </li>
+        
+          <li class="govuk-grid-column-one-third card-group__item">
+            
+  <div class="card card--clickable" data-test="establishment-roll">
+    <h2 class="govuk-heading-m card__heading">
+        <a class="govuk-link card__link" href="#">Manage prison visits</a>
+    </h2>
+      <p class="govuk-body card__description">Manage visit requests, time slots and rooms.</p>
+  </div>
+
+          </li>
+        
+      </ul>
+{% endblock %}

@@ -1,0 +1,86 @@
+{% extends "layouts/main.html" %}
+
+{% set containerClasses = 'app-width-container--wide' %}
+
+{% block pageTitle %}
+  Additional support
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div style="box-shadow: inset 0 -1px 0 0 #b1b4b6;">
+            <p class="govuk-!-padding-bottom-2"><strong>Wayland (HMP)</strong> <a href="changecaseload">Change location</a></p>
+        </div>
+    </div>
+  </div>
+
+  <a href="datepicker" class="govuk-back-link">Back</a>
+
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      {% set otherHtml %}
+      {{ govukInput({
+        id: "other-details",
+        name: "other-details",
+        type: "text",
+        classes: "govuk-!-width-one-third",
+        label: {
+          text: "Please provide details"
+        }
+      }) }}
+      {% endset -%}
+
+      {{ govukCheckboxes({
+        idPrefix: "waste",
+        name: "waste",
+        fieldset: {
+          legend: {
+            text: "Is additional support needed for any of the visitors?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        hint: {
+          text: "Select all that apply."
+        },
+        items: [
+          {
+            value: "wheelchair",
+            text: "Wheelchair ramp"
+          },
+          {
+            value: "induction-loop",
+            text: "Portable induction loop for people with hearing aids"
+          },
+          {
+            value: "bsl",
+            text: "British Sign Language (BSL) interpreter"
+          },
+          {
+            value: "other",
+            text: "Other",
+            conditional: {
+              html: otherHtml
+            },
+            checked: false
+          },
+          {
+            value: "none",
+            text: "None"
+          }
+        ]
+      }) }}
+
+
+      <form class="form" action="contact" method="post">
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

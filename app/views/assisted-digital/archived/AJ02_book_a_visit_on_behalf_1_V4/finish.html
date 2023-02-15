@@ -1,0 +1,32 @@
+{% extends "layouts/main.html" %}
+
+{% set containerClasses = 'app-width-container--wide' %}
+
+{% block pageTitle %}
+  Booking complete
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        <h1 class="govuk-panel__title">Booking confirmed</h1>
+        <div class="govuk-panel__body">
+          The reference number is<br><strong>758242</strong>
+        </div>
+      </div>
+
+      <br>
+      <p>HMP Wayland has been informed of the visit.</p>
+
+      <p><a href="#">View details of the visit or cancel the visit</a></p>
+
+      <br>
+      <a href="managepv" class="govuk-button">Manage prison visits</a>
+
+    </div>
+  </div>
+
+{% endblock %}

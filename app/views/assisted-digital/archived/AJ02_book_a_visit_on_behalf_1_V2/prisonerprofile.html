@@ -1,0 +1,547 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Aarell, Dublosek
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">Aarell, Dublosek</h1>
+<div class="prisoner-header">
+    <div class="prisoner-header__image-container">
+        <a href="#">
+            <img src="/public/images/anon.png"
+                 alt="Picture of Alores, Ykaessumar" class="prisoner-image" />
+        </a>
+    </div>
+
+    <div class="prisoner-header__details">
+        <div class="prisoner-header__details__alerts">
+            
+  
+  
+
+        </div>
+
+        <ul class="prisoner-header__details__information">
+            
+    <li class="">
+        <strong>Prison number</strong>
+        <br>
+        <span data-test="">
+             G2320VD
+      </span>
+    </li>
+
+            
+    <li class="">
+        <strong>Category</strong>
+        <br>
+        <span data-test="">
+             
+    
+  
+  
+
+  <span class="">
+    
+    
+      
+        Cat C
+      
+    
+  
+  </span>
+
+
+    
+
+      </span>
+    </li>
+
+            
+    <li class="">
+        <strong>Incentive level</strong>
+        <br>
+        <span data-test="">
+             
+    <span>Standard</span>
+    
+        <br>
+        <a data-test="iep-details-link" class="govuk-link"
+           href="#">
+            View details <span class="govuk-visually-hidden">for Incentive Level</span>
+        </a>
+    
+
+      </span>
+    </li>
+
+            
+    <li class="">
+        <strong>Location</strong>
+        <br>
+        <span data-test="">
+             
+    
+    <br>
+    Outside
+    <br>
+    <a data-qa="cell-history-link" class="govuk-link"
+       href="#">
+        View details
+    </a>
+
+      </span>
+    </li>
+
+            
+    <li class="govuk-!-margin-bottom-4">
+        <strong>CSRA</strong>
+        <br>
+        <span data-test="">
+             
+    <span data-test="csra-details">Standard - 18/03/2021</span>
+    <br>
+    <a data-test="csra-link" class="govuk-link"
+       href="#">
+        View details <span class="govuk-visually-hidden">of CSRA</span>
+    </a>
+
+      </span>
+    </li>
+
+            
+    <li class="">
+        <strong>Alerts</strong>
+        <br>
+        <span data-test="">
+             
+    <span>1 active, 5 inactive</span>
+    <br>
+    <a data-test="view-alerts-link" class="govuk-link"
+       href="#">
+        View alerts
+    </a>
+
+      </span>
+    </li>
+
+
+            
+                
+    <li class="govuk-!-margin-bottom-0">
+        <strong>Key worker</strong>
+        <br>
+        <span data-test="keyworker-name">
+             Not allocated
+      </span>
+    </li>
+
+                
+    <li class="">
+        <strong>Last session</strong>
+        <br>
+        <span data-test="last-session">
+             No previous session
+      </span>
+    </li>
+
+            
+
+            
+    <li class="govuk-!-margin-bottom-0">
+        <strong>Prison Offender Manager</strong>
+        <br>
+        <span data-test="">
+             None assigned
+      </span>
+    </li>
+
+        </ul>
+
+        <div class="prisoner-header__details__actions">
+            
+
+            
+
+            
+                
+  
+
+
+  
+
+<a href="#" role="button" draggable="false" class="govuk-button govuk-button--link govuk-!-margin-bottom-3" data-module="govuk-button">
+  Add a case note
+</a>
+
+
+                
+
+                
+  
+
+
+  
+
+<a href="#" role="button" draggable="false" class="govuk-button govuk-button--link govuk-!-margin-bottom-3" data-module="govuk-button">
+  Add an appointment
+</a>
+<a href="selectvisitors" role="button" draggable="false" class="govuk-button govuk-button--link govuk-!-margin-bottom-3" data-module="govuk-button">
+  Book a prison visit
+</a>
+
+
+                
+            
+        </div>
+    </div>
+</div>
+
+  
+
+<div class="govuk-tabs">
+  <h2 class="govuk-tabs__title">
+    Prisoner profile sections
+  </h2>
+  <ul class="govuk-tabs__list">
+    
+      
+        
+        
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#" data-test="tabs-quick-look">
+          Quick look
+          </a>
+        </li>
+      
+    
+      
+        
+        
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#" data-test="tabs-personal">
+          Personal
+          </a>
+        </li>
+      
+    
+      
+        
+        
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#" data-test="tabs-alerts">
+          Alerts
+          </a>
+        </li>
+      
+    
+      
+        
+        
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#" data-test="tabs-case-notes">
+          Case notes
+          </a>
+        </li>
+      
+    
+      
+        
+        
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#" data-test="tabs-sentence-release">
+          Sentence and release
+          </a>
+        </li>
+      
+    
+  </ul>
+</div>
+<h2 class="govuk-heading-m">View by</h2>
+    <form class="horizontal-form govuk-!-display-none-print govuk-body govuk-!-margin-bottom-3">
+      <input type="hidden" name="_csrf" value="mhyPGorA-ZyuEuALMA-nAhSjq63Sy1PNY_VU" />
+      
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="active">
+    Active or inactive
+  </label>
+
+
+  <select class="govuk-select" id="active" name="active" data-qa="active-filter">
+  
+    
+      <option value="ACTIVE">Active</option>
+    
+  
+    
+      <option value="INACTIVE">Inactive</option>
+    
+  
+  </select>
+</div>
+
+
+      
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="alertType">
+    Type of alert
+  </label>
+
+
+  <select class="govuk-select" id="alertType" name="alertType" data-qa="type-filter">
+  
+    
+      <option value="">Select</option>
+    
+  
+    
+      <option value="L">Care Leaver</option>
+    
+  
+    
+      <option value="C">Child Communication Measures</option>
+    
+  
+    
+      <option value="U">COVID unit management</option>
+    
+  
+    
+      <option value="F1">Ex Armed Forces</option>
+    
+  
+    
+      <option value="T">Hold Against Transfer</option>
+    
+  
+    
+      <option value="P">MAPPP Case</option>
+    
+  
+    
+      <option value="M">Medical</option>
+    
+  
+    
+      <option value="O">Other</option>
+    
+  
+    
+      <option value="R">Risk</option>
+    
+  
+    
+      <option value="X">Security</option>
+    
+  
+    
+      <option value="D">Security. Do not share with offender</option>
+    
+  
+    
+      <option value="H">Self Harm</option>
+    
+  
+    
+      <option value="S">Sexual Offence</option>
+    
+  
+    
+      <option value="A">Social Care</option>
+    
+  
+    
+      <option value="V">Vulnerability</option>
+    
+  
+    
+      <option value="W">Warrant</option>
+    
+  
+  </select>
+</div>
+
+
+      
+    <div class="date-picker-container ">
+        
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="fromDate">
+    Date from
+  </label>
+
+<input class="govuk-input date-input undefined" id="fromDate" name="fromDate" type="text" autocomplete="off" data-qa="from-filter">
+</div>
+
+    </div>
+
+
+      
+    <div class="date-picker-container ">
+        
+
+<div class="govuk-form-group">
+  <label class="govuk-label" for="toDate">
+    Date to
+  </label>
+
+<input class="govuk-input date-input undefined" id="toDate" name="toDate" type="text" autocomplete="off" data-qa="to-filter">
+</div>
+
+    </div>
+
+
+      
+
+  
+    
+  
+
+<button type="submit" data-prevent-double-click="true" class="govuk-button" data-module="govuk-button">
+  Apply
+</button>
+
+
+      <a href="./alerts" data-qa="clear-link" class="govuk-link govuk-link--no-visited-state govuk-!-padding-bottom-1 govuk-body govuk-!-margin-left-3">Clear</a>
+    </form>
+  </div> 
+
+  
+    
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half">
+          <h2 class="govuk-heading-m" data-qa="alerts-table-title">Active alerts</h2>
+        </div>
+          
+  
+      <div class="govuk-grid-column-one-half pull-right">
+        
+  
+
+
+  
+    
+  
+
+<a href="#" role="button" draggable="false" class="govuk-button govuk-button--link" data-module="govuk-button" data-test="active-create-alerts-link">
+  Create an alert
+</a>
+
+      </div>
+  
+
+      </div>
+
+      <nav class="moj-pagination govuk-!-font-size-19" id="pagination-label">
+
+  <p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
+
+  <ul class="moj-pagination__list"></ul>
+    <p class="moj-pagination__results">Showing <b>1</b> to <b>1</b> of <b>1</b> results</p>
+  </nav>
+
+        <table class="govuk-table fixed-table" data-qa="active-alerts-table">
+  
+  
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+    
+      <th scope="col" class="govuk-table__header">Type of alert</th>
+    
+      <th scope="col" class="govuk-table__header">Alert</th>
+    
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Comments</th>
+    
+      <th scope="col" class="govuk-table__header">Date from</th>
+    
+      <th scope="col" class="govuk-table__header">Added by</th>
+    
+      <th scope="col" class="govuk-table__header"> </th>
+    
+    </tr>
+  </thead>
+  
+  <tbody class="govuk-table__body">
+    
+      
+        <tr class="govuk-table__row">
+        
+          
+          
+          <td class="govuk-table__cell"
+          >Self Harm (H)</td>
+          
+        
+          
+          
+          <td class="govuk-table__cell"
+          >Self Harm - Custody (HC)</td>
+          
+        
+          
+          
+          <td class="govuk-table__cell clip-overflow"
+          >qeagYvKoslSCtRGcnPKDJhCQMHaUcLyxwWHhlqeagYvKoslSCtRGcnPKDJhCQMHaUcLyxwWHh</td>
+          
+        
+          
+          
+          <td class="govuk-table__cell"
+          >26 February 2013</td>
+          
+        
+          
+          
+          <td class="govuk-table__cell"
+          >Eouhiaophe Lelerick</td>
+          
+        
+          
+          
+          <td class="govuk-table__cell govuk-table__cell--numeric"
+          ><a class="govuk-button govuk-button--secondary" href="#">Change or close</a></td>
+          
+        
+        </tr>
+      
+    
+  </tbody>
+</table>
+
+    
+
+    
+  
+  
+  <nav class="moj-pagination govuk-!-font-size-19" id="pagination-label">
+
+  <p class="govuk-visually-hidden" aria-labelledby="pagination-label">Pagination navigation</p>
+
+  <ul class="moj-pagination__list"></ul>
+    <p class="moj-pagination__results">Showing <b>1</b> to <b>1</b> of <b>1</b> results</p>
+  </nav>
+
+
+  
+  <div class="prisoner-footer">
+    <p class="govuk-body" data-test="data-retention-record-details">
+      <strong>Prevent removal of this offender record:</strong>
+      Not set - 
+      <a href="#" class="govuk-link">
+        Update
+      </a>
+    </p>
+  </div>
+  
+    </div>
+  </div>
+
+{% endblock %}

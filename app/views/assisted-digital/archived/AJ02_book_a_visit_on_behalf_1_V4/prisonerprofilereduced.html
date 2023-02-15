@@ -1,0 +1,434 @@
+{% extends "layouts/main.html" %}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "govuk/components/select/macro.njk" import govukSelect %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/table/macro.njk" import govukTable %}
+{% set containerClasses = 'app-width-container--wide' %}
+
+{% block pageTitle %}
+  Green, Daniel
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div style="box-shadow: inset 0 -1px 0 0 #b1b4b6;">
+            <p class="govuk-!-padding-bottom-2"><strong>Wayland (HMP)</strong> <a href="changecaseload">Change location</a></p>
+        </div>
+    </div>
+  </div>
+
+  <a href="searchresults.html" class="govuk-back-link">Back</a>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l govuk-!-display-inline-block govuk-!-margin-right-5">Green, Daniel</h1>
+      
+      <div>
+        <span class="moj-badge moj-badge--bright-purple moj-badge--large" style="color: white; background-color: #912b88">Protective isolation unit</span>
+      </div>
+      
+      <br>
+
+      <div class="govuk-grid-row govuk-!-margin-top-3 govuk-!-margin-bottom-7 govuk-body">
+        <div class="govuk-grid-column-full">
+          <div class="govuk-grid-row govuk-!-margin-bottom-4">
+            <div class="govuk-grid-column-one-third">
+              <strong class="govuk-!-margin-right-4">Prisoner number</strong>
+              AB124BD
+            </div>
+            <div class="govuk-grid-column-one-third">
+              <strong class="govuk-!-margin-right-4">Date of birth</strong>
+              19 April 1993
+            </div>
+            <div class="govuk-grid-column-one-third">
+              <strong class="govuk-!-margin-right-4">Location</strong>
+              1-2-948, Wayland (HMP)
+            </div>
+          </div>
+          <div class="govuk-grid-row govuk-!-margin-bottom-4">
+            <div class="govuk-grid-column-one-third">
+              <strong class="govuk-!-margin-right-4">Category</strong>
+              Cat C
+            </div>
+            <div class="govuk-grid-column-one-third">
+              <strong class="govuk-!-margin-right-4">Incentive level</strong>
+              Enhanced
+            </div>
+            <div class="govuk-grid-column-one-third">
+              <strong class="govuk-!-margin-right-4">Conviction status</strong>
+              Convicted
+            </div>
+          </div>
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-third">
+              <strong class="govuk-!-margin-right-4 govuk-!-margin-bottom-2 govuk-!-display-inline-block">Visiting orders</strong>
+              <br>Remaining VOs: 6
+              <br>Remaining PVOs: 2
+            </div>
+            <div class="govuk-grid-column-one-third">
+              <strong class="govuk-!-margin-right-4 govuk-!-margin-bottom-2 govuk-!-display-inline-block">Alerts</strong>
+              <br>1 active, 3 inactive
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <a href="selectvisitors" role="button" draggable="false" class="govuk-button govuk-button--link govuk-!-margin-bottom-9" data-module="govuk-button">
+        Book a prison visit
+      </a>
+
+
+      <div class="govuk-tabs" data-module="govuk-tabs">
+        <h2 class="govuk-tabs__title">
+          Contents
+        </h2>
+        <ul class="govuk-tabs__list">
+          <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+            <a class="govuk-tabs__tab" href="#alerts">
+              Alerts
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#visiting-orders">
+              Visiting orders
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#upcoming-visits">
+              Upcoming visits
+            </a>
+          </li>
+          <li class="govuk-tabs__list-item">
+            <a class="govuk-tabs__tab" href="#visit-history">
+              Visits history
+            </a>
+          </li>
+        </ul>
+        <div class="govuk-tabs__panel" id="alerts">
+          <h2 class="govuk-heading-m">Alerts</h2>
+          <div class="form-background govuk-!-padding-3">
+            <h3 class="govuk-heading-s">View by</h3>
+            <form id="alerts-filter" class="horizontal-form" action="#" method="post">
+
+              {{ govukSelect({
+                id: "status",
+                name: "status",
+                label: {
+                  text: "Active or inactive"
+                },
+                items: [
+                  {
+                    value: "",
+                    text: "-- Select --",
+                    disabled: true,
+                    selected: true
+                  },
+                  {
+                    value: "active",
+                    text: "Active"
+                  },
+                  {
+                    value: "inactive",
+                    text: "Inactive"
+                  }
+                ]
+              }) }}
+
+              {{ govukSelect({
+                id: "alert-type",
+                name: "alert-type",
+                label: {
+                  text: "Type of alert"
+                },
+                items: [
+                  {
+                    value: "",
+                    text: "-- Select --",
+                    disabled: true,
+                    selected: true
+                  },                  {
+                    value: "protective-isolation",
+                    text: "Protective isolation unit"
+                  }
+                ]
+              }) }}
+
+              {{ govukInput({
+                label: {
+                  text: "Date from"
+                },
+                id: "date-from",
+                name: "date-from",
+                attributes: {
+                  placeholder: "DD/MM/YYY"
+                }
+              }) }}
+
+              {{ govukInput({
+                label: {
+                  text: "Date to"
+                },
+                id: "date-to",
+                name: "date-to",
+                attributes: {
+                  placeholder: "DD/MM/YYY"
+                }
+              }) }}
+
+              {{ govukButton({
+                text: "View"
+              }) }}
+
+              <div class="govuk-!-padding-top-7">
+                <a onclick="document.getElementById('alerts-filter').reset(); return false;" class="govuk-link govuk-link--no-visited-state" href="">Clear</a>
+              </div>
+
+            </form>
+          </div>
+
+          {{ govukTable({
+            classes: 'govuk-!-margin-bottom-9',
+            firstCellIsHeader: false,
+            head: [
+              {
+                classes: 'govuk-!-padding-4',
+                text: "Type of alert"
+              },
+              {
+                classes: 'govuk-!-padding-4',
+                text: "Alert"
+              },
+              {
+                classes: 'govuk-!-padding-4',
+                text: "Comments"
+              },
+              {
+                classes: 'govuk-!-padding-4',
+                text: "Date from"
+              },
+              {
+                classes: 'govuk-!-padding-4',
+                text: "Added by"
+              }
+            ],
+            rows: [
+              [
+                {
+                  classes: 'govuk-!-padding-4',
+                  text: 'Protective isolation unit'
+                },
+                {
+                  classes: 'govuk-!-padding-4',
+                  text: 'Isolating'
+                },
+                {
+                  classes: 'govuk-!-padding-4',
+                  text: 'Until 14 February 2022'
+                },
+                {
+                  classes: 'govuk-!-padding-4',
+                  text: '1 February 2022'
+                },
+                {
+                  classes: 'govuk-!-padding-4',
+                  text: 'John Wazackai'
+                }
+              ]
+            ]
+          }) }}
+
+        </div>
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="visiting-orders">
+          <h2 class="govuk-heading-m">Visiting orders</h2>
+
+          <div class="govuk-grid-row govuk-!-margin-top-7 govuk-!-margin-bottom-9">
+            <div class="govuk-grid-column-three-quarters">
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-quarter">
+                  <p><strong>VOs remaining:</strong></p>
+                </div>
+                <div class="govuk-grid-column-one-quarter">
+                  <p>6</p>
+                </div>
+                <div class="govuk-grid-column-one-quarter">
+                  <p><strong>PVOs remaining:</strong></p>
+                </div>
+                <div class="govuk-grid-column-one-quarter">
+                  <p>2</p>
+                </div>
+              </div>
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-quarter">
+                  <p><strong>VO last issue date:</strong></p>
+                </div>
+                <div class="govuk-grid-column-one-quarter">
+                  <p>1 November 2021</p>
+                </div>
+                <div class="govuk-grid-column-one-quarter">
+                  <p><strong>PVO last issue date:</strong></p>
+                </div>
+                <div class="govuk-grid-column-one-quarter">
+                  <p>1 November 2021</p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="upcoming-visits">
+          <h2 class="govuk-heading-m">Upcoming visits</h2>
+
+          {{ govukTable({
+            classes: 'govuk-!-margin-bottom-9',
+            firstCellIsHeader: false,
+            head: [
+              {
+                classes: 'govuk-!-padding-4',
+                text: "Visit type"
+              },
+              {
+                classes: 'govuk-!-padding-4',
+                text: "Visit date"
+              },
+              {
+                classes: 'govuk-!-padding-4',
+                text: "Visitors"
+              },
+              {
+                classes: 'govuk-!-padding-4',
+                text: "Comments"
+              }
+            ],
+            rows: [
+              [
+                {
+                  classes: 'govuk-!-padding-4',
+                  text: 'Social'
+                },
+                {
+                  classes: 'govuk-!-padding-4',
+                  text: '25 December 2021'
+                },
+                {
+                  classes: 'govuk-!-padding-4',
+                  html: 'Sarah Philips<br>Michael Philips'
+                },
+                {
+                  classes: 'govuk-!-padding-4',
+                  text: 'None'
+                }
+              ]
+            ]
+          }) }}
+
+        </div>
+        <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="visit-history">
+          <h2 class="govuk-heading-m">Visit history</h2>
+
+          {{ govukTable({
+            classes: 'govuk-!-margin-bottom-9',
+            firstCellIsHeader: false,
+            head: [
+              {
+                classes: 'govuk-!-padding-4',
+                text: "Visit type"
+              },
+              {
+                classes: 'govuk-!-padding-4',
+                text: "Visit date"
+              },
+              {
+                classes: 'govuk-!-padding-4',
+                text: "Visitors"
+              },
+              {
+                classes: 'govuk-!-padding-4',
+                text: "Comments"
+              }
+            ],
+            rows: [
+              [
+                {
+                  classes: 'govuk-!-padding-4',
+                  text: 'Social'
+                },
+                {
+                  classes: 'govuk-!-padding-4',
+                  text: '10 October 2021'
+                },
+                {
+                  classes: 'govuk-!-padding-4',
+                  html: 'Sarah Philips<br>Michael Philips'
+                },
+                {
+                  classes: 'govuk-!-padding-4',
+                  text: 'None'
+                }
+              ],
+              [
+                {
+                  classes: 'govuk-!-padding-4',
+                  text: 'Social'
+                },
+                {
+                  classes: 'govuk-!-padding-4',
+                  text: '10 September 2021'
+                },
+                {
+                  classes: 'govuk-!-padding-4',
+                  html: 'Sarah Philips<br>Michael Philips'
+                },
+                {
+                  classes: 'govuk-!-padding-4',
+                  text: 'None'
+                }
+              ],
+              [
+                {
+                  classes: 'govuk-!-padding-4',
+                  text: 'Social'
+                },
+                {
+                  classes: 'govuk-!-padding-4',
+                  text: '11 August 2021'
+                },
+                {
+                  classes: 'govuk-!-padding-4',
+                  html: 'Sarah Philips<br>Michael Philips'
+                },
+                {
+                  classes: 'govuk-!-padding-4',
+                  text: 'None'
+                }
+              ],
+              [
+                {
+                  classes: 'govuk-!-padding-4',
+                  text: 'Social'
+                },
+                {
+                  classes: 'govuk-!-padding-4',
+                  text: '8 July 2021'
+                },
+                {
+                  classes: 'govuk-!-padding-4',
+                  html: 'Sarah Philips<br>Michael Philips'
+                },
+                {
+                  classes: 'govuk-!-padding-4',
+                  text: 'None'
+                }
+              ]
+            ]
+          }) }}
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}

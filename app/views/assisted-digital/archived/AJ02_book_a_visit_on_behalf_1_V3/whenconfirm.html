@@ -1,0 +1,181 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check visit details before you book
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">Check visit details before you book</h1>
+
+        <h2 class="govuk-heading-m">Visit details</h2>
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Date"
+      },
+      value: {
+        text: "15 September 2021"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Time"
+      },
+      value: {
+        text: "9:00 am (1 hour)"
+      },
+      actions: {}
+    },
+    {
+      key: {
+        text: "Location"
+      },
+      value: {
+        text: "Visit hall 1"
+      },
+      actions: {}
+    },
+    {
+      key: {
+        text: "Type of visit"
+      },
+      value: {
+        text: "Open"
+      },
+      actions: {}
+    }
+  ]
+}) }}
+
+        <h2 class="govuk-heading-m">Prisoner details</h2>
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Prisoner"
+      },
+      value: {
+        text: "Aarell Dublosek"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Location"
+      },
+      value: {
+        text: "Wayland (HMP)"
+      },
+      actions: {}
+    }
+  ]
+}) }}
+
+
+        <h2 class="govuk-heading-m">Visitors</h2>
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: "Jane Bloggs"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        text: "1 January 1970"
+      },
+      actions: {}
+    },
+    {
+      key: {
+        text: "Postcode"
+      },
+      value: {
+        text: "N5 1AT"
+      },
+      actions: {}
+    },
+    {
+      key: {
+        text: "Reasonable adjustments"
+      },
+      value: {
+        html: "Yes<br>Wheelchair access ramp"
+      },
+      actions: {}
+    }
+  ]
+}) }}
+
+        <h2 class="govuk-heading-m">Accompanying visitors</h2>
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "None"
+      },
+      value: {
+        text: ""
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+      <form class="form" action="finish" method="post">
+        <button class="govuk-button" data-module="govuk-button">Submit booking</button>
+
+      </form>
+
+    </div>
+
+  </div>
+{% endblock %}

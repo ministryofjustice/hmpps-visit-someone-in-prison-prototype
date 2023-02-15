@@ -1,0 +1,89 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Global search
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Global search</h1>
+
+      <form class="form" action="globalsearchresults" method="post">
+
+<div class="govuk-button-group">
+        {{ govukInput({
+          label: {
+            text: "Enter prisoner name or ID"
+          },
+          classes: "govuk-input--width-20",
+          id: "event-name",
+          name: "event-name"
+        }) }}
+
+        {{ govukButton({
+          text: "Search"
+        }) }}
+</div>
+
+{% set filterHtml %}
+{{ govukSelect({
+  id: "sort",
+  name: "sort",
+  label: {
+    text: "Location status of prisoner"
+  },
+  items: [
+    {
+      value: "all",
+      text: "All"
+    }
+  ]
+}) }}
+{{ govukSelect({
+  id: "sort",
+  name: "sort",
+  label: {
+    text: "Prisoner gender"
+  },
+  items: [
+    {
+      value: "all",
+      text: "All"
+    }
+  ]
+}) }}
+
+        {{ govukDateInput({
+  id: "passport-issued",
+  namePrefix: "passport-issued",
+  fieldset: {
+    legend: {
+      text: "Date of birth (optional)",
+      isPageHeading: false,
+      classes: "govuk-fieldset__legend--s"
+    }
+  },
+  hint: {
+    text: "For example, 31 3 1980"
+  }
+        }) }}
+{% endset %}
+
+
+        {{ govukDetails({
+            summaryText: "Filters",
+            html: filterHtml
+            }) }}
+
+
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

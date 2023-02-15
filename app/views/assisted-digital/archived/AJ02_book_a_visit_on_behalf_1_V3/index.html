@@ -1,0 +1,55 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Sign in
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Sign in</h1>
+
+      <form class="form" action="dpshome" method="post">
+
+        {{ govukInput({
+          label: {
+            text: "Username"
+          },
+          classes: "govuk-input--width-20",
+          id: "event-name",
+          name: "event-name"
+        }) }}
+
+        {{ govukInput({
+          label: {
+            text: "Password"
+          },
+          classes: "govuk-input--width-20",
+          id: "event-name",
+          name: "event-name",
+          type: "password"
+        }) }}
+
+        {{ govukButton({
+          text: "Sign in"
+        }) }}
+
+        <p><a href="#">Sign in with a justice.gov.uk email</a></p>
+
+        <h2 class="govuk-heading-m">Problems signing in</h2>
+
+        <p><a href="#">I have forgotten my password</a></p>
+
+        {{ govukDetails({
+            summaryText: "Why won’t my password work?",
+            html: "Your password is case sensitive which means you must enter your password exactly as you first created it. For example if your password is <strong>H3LloWorlD</strong> you must enter it exactly like that."
+            }) }}
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

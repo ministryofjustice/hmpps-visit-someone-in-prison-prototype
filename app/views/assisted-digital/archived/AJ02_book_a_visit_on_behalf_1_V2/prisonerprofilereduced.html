@@ -1,0 +1,125 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Aarell, Dublosek
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">Aarell, Dublosek</h1>
+<div class="prisoner-header">
+    
+
+    <div class="prisoner-header__details">
+
+        <ul class="prisoner-header__details__information">
+            
+          <li class="">
+              <strong>Prison number</strong>
+              <br>
+              <span data-test="">
+                  G2320VD
+            </span>
+          </li>
+
+            
+          <li class="">
+              <strong>Date of birth</strong>
+              <br>
+              <span data-test="">12th January 1979</span>
+          </li>
+
+            
+          <li class="">
+              <strong>Gender</strong>
+              <br>
+              <span data-test="">Male</span>
+          </li>
+    
+   
+          <li class="">
+              <strong>Establishment</strong>
+              <br>
+              <span data-test="">HMP Wayland, Cat C </span>
+          </li>
+
+        </ul>
+        
+        
+        <div >
+          <p class="govuk-body"><strong>Remaining VOs this month:</strong>
+          <span id="notifications" class="moj-notification-badge">1</span></p>
+          <p><strong>Remaining PVOs this month:</strong>
+          <span id="notifications" class="moj-notification-badge">1</span></p>
+
+            
+        </div>
+      
+        
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-table__caption--m">Restrictions and alerts:</caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">Type</th>
+            <th scope="col" class="govuk-table__header">Comments</th>
+            <th scope="col" class="govuk-table__header">Date from</th>
+            <th scope="col" class="govuk-table__header">Added by</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td class="govuk-table__cell">Restriction</th>
+            <td class="govuk-table__cell">Details</td>
+            <td class="govuk-table__cell">10th April 2019</td>
+            <td class="govuk-table__cell">John Doe</td>
+          </tr>
+          
+        </tbody>
+      </table>
+
+      <div > 
+       
+
+      <a href="selectvisitors" role="button" draggable="false" class="govuk-button govuk-button--link govuk-!-margin-bottom-3" data-module="govuk-button">
+        Book a prison visit
+      </a>
+    </div>
+
+    <table class="govuk-table">
+      
+      <caption class="govuk-table__caption govuk-table__caption--m">Upcoming visits</caption>
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Date</th>
+          <th scope="col" class="govuk-table__header">Lead visitor</th>
+          
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">05/08/2021</th>
+          <td class="govuk-table__cell">John Doe</td>
+          
+        </tr>
+        
+      </tbody>
+    </table>
+    <button class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      Cancel or change visit
+    </button>
+
+    </div>
+  </div>
+
+</div>
+
+
+  
+
+
+
+{% endblock %}

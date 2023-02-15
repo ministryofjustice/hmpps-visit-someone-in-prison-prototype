@@ -1,0 +1,44 @@
+{% extends "layouts/main.html" %}
+{%- from "moj/components/search/macro.njk" import mojSearch -%}
+{% set containerClasses = 'app-width-container--wide' %}
+
+{% block pageTitle %}
+  Search for the visitor
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div style="box-shadow: inset 0 -1px 0 0 #b1b4b6;">
+            <p class="govuk-!-padding-bottom-2"><strong>Wayland (HMP)</strong> <a href="changecaseload">Change location</a></p>
+        </div>
+      <h1 class="govuk-heading-l">Search for a prisoner</h1>
+    </div>
+  </div>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <div class="govuk-!-padding-4 govuk-!-padding-top-6 govuk-!-padding-bottom-7 form-background">
+        {{ mojSearch({
+          action: 'searchresults',
+          method: 'post',
+          classes: 'govuk-!-width-one-half',
+          input: {
+            id: 'search',
+            name: 'search'
+          },
+          label: {
+            text: 'Enter name or prison number'
+          },
+          button: {
+            text: 'Search'
+          }
+        }) }}
+      </div>
+
+    </div>
+  </div>
+
+{% endblock %}

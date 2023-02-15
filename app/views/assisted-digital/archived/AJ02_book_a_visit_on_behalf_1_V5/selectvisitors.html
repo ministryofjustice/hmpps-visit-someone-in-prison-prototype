@@ -1,0 +1,168 @@
+{% extends "layouts/main.html" %}
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+{% set containerClasses = 'app-width-container--wide' %}
+
+{% block pageTitle %}
+  Select visitors from the prisoner's visitor list
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div style="box-shadow: inset 0 -1px 0 0 #b1b4b6;">
+            <p class="govuk-!-padding-bottom-2"><strong>Wayland (HMP)</strong> <a href="changecaseload">Change location</a></p>
+        </div>
+    </div>
+  </div>
+
+  <a href="prisonerprofilereduced" class="govuk-back-link">Back</a>
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <h1 class="govuk-heading-l govuk-!-margin-bottom-8">Select visitors from the prisoner's visitor list</h1>
+       
+        
+        <p><strong>Prisoner name:</strong> Daniel Green</p>
+      
+
+        <form action="datepicker" method="post">
+        {{ govukTable({
+          firstCellIsHeader: false,
+          head: [
+            {
+              html: "Add to<br>visit"
+            },
+            {
+              text: "Name"
+            },
+            {
+              text: "Date of birth"
+            },
+            {
+              html: "Relationship to<br>prisoner"
+            },
+            {
+              text: "Address"
+            },
+            
+            {
+              text: "Restrictions"
+            }
+          ],
+          rows: [
+            [
+              {
+                classes: 'govuk-!-padding-top-4 govuk-!-padding-bottom-4',
+                html: '<div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="visitor_1" name="visitor_1" type="checkbox" value="1">
+                <label class="govuk-label govuk-checkboxes__label" for="visitor_1"></label>
+              </div>'
+              },
+              {
+                classes: 'govuk-!-padding-top-5 govuk-!-padding-bottom-5',
+                text: "Michael Philips"
+              },
+              {
+                classes: 'govuk-!-padding-top-5 govuk-!-padding-bottom-5',
+                html: '3 March 2010<br><span class="moj-badge moj-badge--green govuk-!-margin-top-2">Child</span>'
+              },
+              {
+                classes: 'govuk-!-padding-top-5 govuk-!-padding-bottom-5',
+                text: "Son"
+              },
+              {
+                classes: 'govuk-!-padding-top-5 govuk-!-padding-bottom-5',
+                html: "123 Highbury Hill,<br>London,<br>N5 1AT"
+              },
+              
+              {
+                classes: 'govuk-!-padding-top-5 govuk-!-padding-bottom-5',
+                text: "None"
+              }
+            ],
+            [
+              {
+                classes: 'govuk-!-padding-top-4 govuk-!-padding-bottom-4',
+                html: '<div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="visitor_1" name="visitor_1" type="checkbox" value="1">
+                <label class="govuk-label govuk-checkboxes__label" for="visitor_1"></label>
+              </div>'
+              },
+              {
+                classes: 'govuk-!-padding-top-5 govuk-!-padding-bottom-5',
+                text: "Sarah Philips"
+              },
+              {
+                classes: 'govuk-!-padding-top-5 govuk-!-padding-bottom-5',
+                html: '1 January 1979<br><span class="moj-badge moj-badge--purple govuk-!-margin-top-2">Adult</span>'
+              },
+              {
+                classes: 'govuk-!-padding-top-5 govuk-!-padding-bottom-5',
+                text: "Wife"
+              },
+              {
+                classes: 'govuk-!-padding-top-5 govuk-!-padding-bottom-5',
+                html: "123 Highbury Hill,<br>London, <br>N5 1AT"
+              },
+              
+              {
+                classes: 'govuk-!-padding-top-5 govuk-!-padding-bottom-5',
+                text: "None"
+              }
+            ],
+            [
+            
+            ],
+            [
+              {
+                classes: 'govuk-!-padding-top-4 govuk-!-padding-bottom-4',
+                html: '<div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="visitor_1" name="visitor_1" type="checkbox" value="1">
+                <label class="govuk-label govuk-checkboxes__label" for="visitor_1"></label>
+              </div>'
+              },
+              {
+                classes: 'govuk-!-padding-top-5 govuk-!-padding-bottom-5',
+                text: "Tim Wright"
+              },
+              {
+                classes: 'govuk-!-padding-top-5 govuk-!-padding-bottom-5',
+                html: '22 December 1984<br><span class="moj-badge moj-badge--purple govuk-!-margin-top-2">Adult</span>'
+              },
+              {
+                classes: 'govuk-!-padding-top-5 govuk-!-padding-bottom-5',
+                text: "Friend"
+              },
+              {
+                classes: 'govuk-!-padding-top-5 govuk-!-padding-bottom-5',
+                html: "84 Street,<br>Sheffield,<br>S1 4DD"
+              },
+              
+              {
+                classes: 'govuk-!-padding-top-5 govuk-!-padding-bottom-5',
+                html: '<span class="govuk-tag govuk-tag--red	">BANNED</span> until 21 March 2022
+                      <br><details class="govuk-details" data-module="govuk-details">
+                        <summary class="govuk-details__summary">
+                          <span class="govuk-details__summary-text">
+                            See comment
+                          </span>
+                        </summary>
+                        <div class="govuk-details__text">
+                          Altercation in visit hall 
+                        </div>
+                      </details>'
+              }
+            ]
+          ]
+        }) }}
+
+          <button class="govuk-button">Continue</button>
+        </form>
+
+    </div>
+  </div>
+
+
+{% endblock %}
