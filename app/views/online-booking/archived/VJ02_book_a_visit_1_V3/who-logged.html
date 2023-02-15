@@ -1,0 +1,47 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+  Who do you want to visit?
+{% endblock %}
+
+{% set checked = false %}
+{% if data['changed-name'] %}
+{% set checked = true %}
+{% endif %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="addvisitors" method="post">
+{{ govukRadios({
+  
+  idPrefix: "changed-name",
+  name: "changed-name",
+  fieldset: {
+    legend: {
+      text: "Confirm the person you want to visit",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  
+  items: [
+    {
+      value: "yes",
+      text: "Franklin Jones (Belmarsh prison)",
+      checked: checked
+    }
+  ]
+}) }}
+
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

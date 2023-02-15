@@ -1,0 +1,265 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers before booking your prison visit your prison visit
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">Check your answers before booking your prison visit</h1>
+
+        <h2 class="govuk-heading-m">Visit details</h2>
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Date"
+      },
+      value: {
+        text: "6 April 2021"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Time"
+      },
+      value: {
+        text: "9:00 am (1 hour)"
+      },
+      actions: {}
+    }
+  ]
+}) }}
+
+        <h2 class="govuk-heading-m">Prisoner details</h2>
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Prisoner"
+      },
+      value: {
+        text: "Joe Bloggs"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Location"
+      },
+      value: {
+        text: "HMP Belmarsh"
+      },
+      actions: {}
+    }
+  ]
+}) }}
+
+
+        <h2 class="govuk-heading-m">Visitor details</h2>
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: "Jane Bloggs"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        text: "1 January 1970"
+      },
+      actions: {}
+    },
+    {
+      key: {
+        text: "Post code"
+      },
+      value: {
+        text: "S1 4UP"
+      },
+      actions: {}
+    }
+  ]
+}) }}
+{{ govukButton({
+  text: "Remove",
+  classes: "govuk-button--secondary"
+}) }}
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: "Fred Bloggs"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        text: "12 March 1977"
+      },
+      actions: {}
+    },
+    {
+      key: {
+        text: "Post code"
+      },
+      value: {
+        text: "S12 4ZZ"
+      },
+      actions: {}
+    }
+  ]
+}) }}
+{{ govukButton({
+  text: "Remove",
+  classes: "govuk-button--secondary"
+}) }}
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: "Margaret Bloggs"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        text: "22 May 1947"
+      },
+      actions: {}
+    },
+    {
+      key: {
+        text: "Post code"
+      },
+      value: {
+        text: "S4 5BT"
+      },
+      actions: {}
+    }
+  ]
+}) }}
+{{ govukButton({
+  text: "Remove",
+  classes: "govuk-button--secondary"
+}) }}
+
+
+        <h2 class="govuk-heading-m">Reasonable adjustments</h2>
+
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Wheelchair access ramp"
+      },
+      value: {
+        text: ""
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Other"
+      },
+      value: {
+        text: "Some detail about other adjustments"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    }
+  ]
+}) }}
+
+      <form class="form" action="finish" method="post">
+        <button class="govuk-button" data-module="govuk-button">Submit booking</button>
+
+      </form>
+
+    </div>
+
+  </div>
+{% endblock %}

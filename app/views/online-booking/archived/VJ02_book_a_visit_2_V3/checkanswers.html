@@ -1,0 +1,263 @@
+{% extends "layouts/main.html" %}
+{% block pageTitle %}
+  Check your answers before submitting your account details
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">Check your answers before submitting your account details</h1>
+
+        <h2 class="govuk-heading-m">Prisoner details</h2>
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: "Aarell Dublosek"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        text: "5 January 1978"
+      },
+      actions: {}
+    },
+    {
+      key: {
+        text: "Prisoner number"
+      },
+      value: {
+        text: "AB1827C"
+      },
+      actions: {}
+    },
+    {
+      key: {
+        text: "Establishment"
+      },
+      value: {
+        text: "HMP Wayland"
+      },
+      actions: {}
+    }
+  ]
+}) }}
+
+        <h2 class="govuk-heading-m">Your details</h2>
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: "Sarah Philips"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        text: "10 March 1983"
+      },
+      actions: {}
+    },
+    {
+      key: {
+        text: "Home address"
+      },
+      value: {
+        text: "72 Guild Street, London, SE23 6FH"
+      },
+      actions: {}
+    },
+    {
+      key: {
+        text: "Relationship to prisoner"
+      },
+      value: {
+        text: "Wife"
+      },
+      actions: {}
+    },
+    {
+      key: {
+        text: "Contact details"
+      },
+      value: {
+        text: "07700 900457"
+      },
+      actions: {}
+    },
+    {
+      key: {
+        text: ""
+      },
+      value: {
+        text: "sarahphilips@gmail.com"
+      },
+      actions: {}
+    }
+  ]
+}) }}
+
+
+        <h2 class="govuk-heading-m">Contact preferences</h2>
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Preference"
+      },
+      value: {
+        text: "Phone"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    }
+    
+  ]
+}) }}
+
+{% if data['visitor1FirstName'] %}
+{% set visitor1Name = data['visitor1FirstName'] + ' ' + data['visitor1LastName'] %}
+{% set visitor1DOB = data['visitor1DOB-day'] + ' ' + data['visitor1DOB-month'] + ' ' + data['visitor1DOB-year'] %}
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: visitor1Name
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        text: visitor1DOB
+      },
+      actions: {}
+    },
+    {
+      key: {
+        text: "Post code"
+      },
+      value: {
+        text: data['visitor1PostCode']
+      },
+      actions: {}
+    }
+  ]
+}) }}
+{{ govukButton({
+  text: "Remove",
+  classes: "govuk-button--secondary"
+}) }}
+{% endif %}
+
+
+{% if data['visitor2FirstName'] %}
+{% set visitor2Name = data['visitor2FirstName'] + ' ' + data['visitor2LastName'] %}
+{% set visitor2DOB = data['visitor2DOB-day'] + ' ' + data['visitor2DOB-month'] + ' ' + data['visitor2DOB-year'] %}
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: visitor2Name
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        text: visitor2DOB
+      },
+      actions: {}
+    },
+    {
+      key: {
+        text: "Post code"
+      },
+      value: {
+        text: data['visitor2PostCode']
+      },
+      actions: {}
+    }
+  ]
+}) }}
+{{ govukButton({
+  text: "Remove",
+  classes: "govuk-button--secondary"
+}) }}
+{% endif %}
+        
+
+      <form class="form" action="finish" method="post">
+        <button class="govuk-button" data-module="govuk-button">Submit</button>
+
+      </form>
+
+    </div>
+
+  </div>
+{% endblock %}

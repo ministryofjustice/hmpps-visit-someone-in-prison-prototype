@@ -1,0 +1,84 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+  Who do you want to visit?
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Who are you visiting?</h1>
+
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {{ govukInput({
+        label: {
+          text: "Prisoner's first name"
+        },
+        classes: "govuk-!-width-one-third",
+        id: "prisoner-first-name",
+        name: "prisoner-first-name"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Prisoner's last name"
+        },
+        classes: "govuk-!-width-one-third",
+        id: "prisoner-last-name",
+        name: "prisoner-last-name"
+      }) }}
+
+      {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+      {{ govukDateInput({
+        id: "date-of-birth",
+        namePrefix: "date-of-birth",
+        fieldset: {
+          legend: {
+            text: "Prisoner's date of birth"
+          }
+        },
+        hint: {
+          text: "For example, 12 11 1987"
+        }
+      }) }}
+      
+      {{ govukInput({
+        label: {
+          text: "Prisoner number"
+        },
+        hint: {
+          text: "For example, A1234BC."
+        },
+        classes: "govuk-!-width-one-third",
+        id: "prisoner-number",
+        name: "prisoner-number"
+      }) }}
+
+      {{ govukInput({
+        label: {
+          text: "Prison name"
+        },
+        hint: {
+          text: "For example, Cardiff."
+        },
+        classes: "govuk-!-width-one-third",
+        id: "prisoner-name",
+        name: "prisoner-name"
+      }) }}
+
+
+
+
+      <form class="form" action="personaldetails" method="post">
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

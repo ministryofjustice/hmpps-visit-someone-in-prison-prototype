@@ -1,0 +1,52 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Your details
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">How would you prefer to be contacted?</h1>
+
+      <p class="govuk-body">We will contact you to let you know when you are approved to book a visit.</p>
+        
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{{ govukRadios({
+  idPrefix: "where-do-you-live",
+  name: "where-do-you-live",
+  
+  items: [
+    {
+      value: "email",
+      text: "Email"
+    },
+    {
+      value: "telephone",
+      text: "Telephone"
+    },
+    {
+      value: "text message",
+      text: "Text message"
+    },
+    {
+      value: "other",
+      text: "Other"
+    }
+  ]
+}) }}
+        
+
+        
+
+      <form class="form" action="adjustments" method="post">
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+
+  </div>
+{% endblock %}

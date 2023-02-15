@@ -1,0 +1,30 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+  Who are you visiting?
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-l">About the prisoner</span>
+      <h1 class="govuk-heading-xl">Who are you visiting?</h1>
+
+      
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="width-20">
+          Prisoner's full name
+        </label>
+        <input class="govuk-input govuk-input--width-20" id="width-20" name="width-20" type="text"></div>
+
+
+      <form class="form" action="prisonerdetails2" method="post">
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

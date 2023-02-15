@@ -1,0 +1,47 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+  Do you want to add visitors?
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      
+{{ govukRadios({
+  idPrefix: "add-visitors",
+  classes: "add-visitors",
+  name: "add-visitors",
+  fieldset: {
+    legend: {
+      text: "Do you want to add visitors?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  hint: {
+    html: '<p>You can add another 2 adults and 3 children (under 18) to your visit.</p><p>Each adult visitor must:</p><ul class="govuk-list govuk-list--bullet"><li>be on the prisoner\'s visitor list</li><li>not be banned from visiting the prisoner</li><li>show <a href="#">an acceptable form of ID</a> on the day of the visit that matches the details provided when booking</li></ul>'
+  },
+  items: [
+    {
+      value: "yes",
+      text: "Yes"
+    },
+    {
+      value: "no",
+      text: "No"
+    }
+  ]
+}) }}
+
+<form class="form" action="addvisitors2" method="post">
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+        
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

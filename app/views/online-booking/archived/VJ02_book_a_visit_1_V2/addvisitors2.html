@@ -1,0 +1,72 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Add visitors
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Add visitors</h1>
+
+      <p>You can add another 2 adults and 3 children (under 18) to your visit.</p>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+            <h3 class="govuk-fieldset__heading">
+              Saved visitors
+            </h3>
+          </legend>
+          <div id="waste-hint" class="govuk-hint">
+            Select all accompanying visitors.
+          </div>
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+                John Smith
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+              <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                Luke Jones
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste-3" name="waste" type="checkbox" value="farm">
+              <label class="govuk-label govuk-checkboxes__label" for="waste-3">
+                Lily Adams
+              </label>
+            </div>
+          </div>
+      
+        </fieldset>
+      </div>
+
+      <form class="form" action="visitors3" method="post">
+
+        
+
+          {{ govukButton({
+            text: "Add another visitor",
+            classes: "govuk-button--secondary",
+          href: "addvisitors3"
+        }) }}
+        <br>
+  
+        {{ govukButton({
+          text: "Continue",
+          href: "adjustments"
+        }) }}
+
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,59 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+  About you
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-l">About you</span>
+      <h1 class="govuk-heading-xl">How would you prefer to be contacted?</h1>
+      <div id="dob-hint" class="govuk-hint">
+        We will contact you to let you know when you are approved to book a visit.
+      </div>
+      
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          
+          <div class="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
+              <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+                Email
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland">
+              <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                Phone
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="where-do-you-live-3" name="where-do-you-live" type="radio" value="wales">
+              <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+                Text message
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="where-do-you-live-4" name="where-do-you-live" type="radio" value="northern-ireland">
+              <label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
+                I do not wish to be contacted
+              </label>
+            </div>
+          </div>
+      
+        </fieldset>
+      </div>
+
+
+      <form class="form" action="checkanswers" method="post">
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

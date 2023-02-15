@@ -1,0 +1,114 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+  Who do you want to visit?
+{% endblock %}
+
+{% set regExp = r/none/g %}
+{% set noneA = false %}
+{% if regExp.test(data['adjustments']) %}
+{% set noneA = true %}
+{% endif %}
+
+{% set regExp = r/wheelchair/g %}
+{% set wheelchair = false %}
+{% if regExp.test(data['adjustments']) %}
+{% set wheelchair = true %}
+{% endif %}
+
+{% set regExp = r/induction/g %}
+{% set induction = false %}
+{% if regExp.test(data['adjustments']) %}
+{% set induction = true %}
+{% endif %}
+
+{% set regExp = r/bsl/g %}
+{% set bsl = false %}
+{% if regExp.test(data['adjustments']) %}
+{% set bsl = true %}
+{% endif %}
+
+{% set regExp = r/other/g %}
+{% set other = false %}
+{% if regExp.test(data['adjustments']) %}
+{% set other = true %}
+{% endif %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <form class="form" action="datepicker" method="post">
+
+{% set otherTextField %}
+  {{ govukTextarea({
+    name: "other-adjustment",
+    id: "other-adjustment",
+    label: {
+      text: "Can you provide more detail?",
+      classes: "govuk-label--s",
+      isPageHeading: true
+    },
+    hint: {
+      text: "Do not include personal or financial information, like your National Insurance number or credit card details."
+    },
+    value: data['other-adjustment']
+  }) }}
+{% endset %}
+
+{{ govukCheckboxes({
+  idPrefix: "adjustments",
+  name: "adjustments",
+  fieldset: {
+    legend: {
+      text: "Is additional support needed for any of the visitors?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--xl"
+    }
+  },
+  hint: {
+    text: "Select all that apply."
+  },
+  items: [
+    
+    {
+      value: "wheelchair",
+      text: "Wheelchair access ramp",
+      checked: wheelchair
+    },
+    {
+      value: "induction",
+      text: "Portable induction loop for people with hearing aids",
+      checked: induction
+    },
+    {
+      value: "bsl",
+      text: "British Sign Language (BSL) interpreter",
+      checked: bsl
+    },
+    {
+      value: "other",
+      text: "Other",
+      conditional: {
+        html: otherTextField
+      },
+      checked: other
+    },
+    
+    {
+      value: "none",
+      text: "None",
+      checked: noneA
+    }
+  ]
+}) }}
+
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

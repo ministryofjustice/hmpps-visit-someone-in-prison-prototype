@@ -1,0 +1,42 @@
+{% extends "layouts/main.html" %}
+
+
+{% block pageTitle %}
+  About you
+{% endblock %}
+
+{% block content %}
+
+ 
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-l">About you</span>
+      <h1 class="govuk-heading-xl">What are your contact details?</h1>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="email">
+          Email address
+        </label>
+        <div id="email-hint" class="govuk-hint">
+          We’ll send booking confirmations to this address
+        </div>
+        <input class="govuk-input" id="email" name="email" type="email" spellcheck="false" aria-describedby="email-hint" autocomplete="email">
+      </div>
+
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="telephone-number">
+          Telephone number
+        </label>
+        <input class="govuk-input govuk-input--width-20" id="telephone-number" name="telephone-number" type="tel" autocomplete="tel"></div>
+      
+
+
+      <form class="form" action="personaldetails6" method="post">
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

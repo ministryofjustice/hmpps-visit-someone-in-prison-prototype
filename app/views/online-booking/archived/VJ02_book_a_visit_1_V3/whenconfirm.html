@@ -1,0 +1,299 @@
+{% extends "layouts/main.html" %}
+{% block pageTitle %}
+  Check your answers before booking your prison visit your prison visit
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-xl">Check your answers before booking your prison visit</h1>
+
+        <h2 class="govuk-heading-m">Visit details</h2>
+{% if data['visitDate'] %}
+{% set dateTimeSplit = data['visitDate'].split("|")%}
+{% set dateRow = dateTimeSplit[0] %}
+{% set timeRow = dateTimeSplit[1] %}
+{% endif %}
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Date"
+      },
+      value: {
+        text: dateRow
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Time"
+      },
+      value: {
+        text: timeRow
+      },
+      actions: {}
+    }
+  ]
+}) }}
+
+        <h2 class="govuk-heading-m">Prisoner details</h2>
+
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Prisoner"
+      },
+      value: {
+        text: "Franklin Jones"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Location"
+      },
+      value: {
+        text: "HMP Belmarsh"
+      },
+      actions: {}
+    }
+  ]
+}) }}
+
+
+        <h2 class="govuk-heading-m">Visitor details</h2>
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: "Jane Jones"
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        text: "26 April 1978"
+      },
+      actions: {}
+    },
+    {
+      key: {
+        text: "Post code"
+      },
+      value: {
+        text: "S1 4UP"
+      },
+      actions: {}
+    }
+  ]
+}) }}
+{{ govukButton({
+  text: "Remove",
+  classes: "govuk-button--secondary"
+}) }}
+{% if data['visitor1FirstName'] %}
+{% set visitor1Name = data['visitor1FirstName'] + ' ' + data['visitor1LastName'] %}
+{% set visitor1DOB = data['visitor1DOB-day'] + ' ' + data['visitor1DOB-month'] + ' ' + data['visitor1DOB-year'] %}
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: visitor1Name
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        text: visitor1DOB
+      },
+      actions: {}
+    },
+    {
+      key: {
+        text: "Post code"
+      },
+      value: {
+        text: data['visitor1PostCode']
+      },
+      actions: {}
+    }
+  ]
+}) }}
+{{ govukButton({
+  text: "Remove",
+  classes: "govuk-button--secondary"
+}) }}
+{% endif %}
+
+
+{% if data['visitor2FirstName'] %}
+{% set visitor2Name = data['visitor2FirstName'] + ' ' + data['visitor2LastName'] %}
+{% set visitor2DOB = data['visitor2DOB-day'] + ' ' + data['visitor2DOB-month'] + ' ' + data['visitor2DOB-year'] %}
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "Name"
+      },
+      value: {
+        text: visitor2Name
+      },
+      actions: {
+        items: [
+          {
+            href: "#",
+            text: "Change",
+            visuallyHiddenText: "name"
+          }
+        ]
+      }
+    },
+    {
+      key: {
+        text: "Date of birth"
+      },
+      value: {
+        text: visitor2DOB
+      },
+      actions: {}
+    },
+    {
+      key: {
+        text: "Post code"
+      },
+      value: {
+        text: data['visitor2PostCode']
+      },
+      actions: {}
+    }
+  ]
+}) }}
+{{ govukButton({
+  text: "Remove",
+  classes: "govuk-button--secondary"
+}) }}
+{% endif %}
+        <h2 class="govuk-heading-m">Reasonable adjustments</h2>
+
+
+<dl class="govuk-summary-list">
+  {% set regExp = r/wheelchair/g %}
+  {% if regExp.test(data['adjustments']) %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Requirements
+    </dt>
+    <dd class="govuk-summary-list__value">
+      Wheelchair access ramp
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"> name</span>
+      </a>  
+    </dd>
+  </div>
+  {% endif %}
+  {% set regExp = r/induction/g %}
+  {% if regExp.test(data['adjustments']) %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Portable induction loop for people with hearing aids
+    </dt>
+    <dd class="govuk-summary-list__value">
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"> name</span>
+      </a>  
+    </dd>
+  </div>
+  {% endif %}
+  {% set regExp = r/bsl/g %}
+  {% if regExp.test(data['adjustments']) %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      British Sign Language (BSL) interpreter
+    </dt>
+    <dd class="govuk-summary-list__value">
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"> name</span>
+      </a>  
+    </dd>
+  </div>
+  {% endif %}
+  {% set regExp = r/other/g %}
+  {% if regExp.test(data['adjustments']) %}
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Other
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['other-adjustment'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">
+        Change<span class="govuk-visually-hidden"> name</span>
+      </a>
+    </dd>
+  </div>
+  {% endif %}
+</dl>
+
+      <form class="form" action="finish" method="post">
+        <button class="govuk-button" data-module="govuk-button">Submit booking</button>
+
+      </form>
+
+    </div>
+
+  </div>
+{% endblock %}

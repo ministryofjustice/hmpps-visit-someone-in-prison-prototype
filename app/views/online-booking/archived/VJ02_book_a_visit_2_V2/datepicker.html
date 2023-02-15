@@ -1,0 +1,530 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Select date and time of visit
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+        <h1 class="govuk-heading-xl">Select date and time of visit</h1>
+        
+      <ol class="govuk-list govuk-list--bullet">
+        <li>Choose a date </li>
+        <li>Choose a time</li>
+      </ol>
+      <p>Available dates over the next 28 days are shown</p>
+    </div>
+</div>
+
+      <form class="form" action="whenconfirm" method="post">
+<h3 class="govuk-heading-m">Filters</h3>
+
+{% set regExp = r/morning/g %}
+{% set timeOfDayMorning = false %}
+{% if regExp.test(data['timeOfDay']) %}
+{% set timeOfDayMorning = true %}
+{% endif %}
+
+{% set regExp = r/afternoon/g %}
+{% set timeOfDayAfternoon = false %}
+{% if regExp.test(data['timeOfDay']) %}
+{% set timeOfDayAfternoon = true %}
+{% endif %}
+
+{% set timeOfDay %}
+  {{ govukCheckboxes({
+    idPrefix: "timeOfDay",
+    name: "timeOfDay",
+    items: [
+      {
+        value: "morning",
+        text: "Morning",
+        checked: timeOfDayMorning
+      },
+      {
+        value: "afternoon",
+        text: "Afternoon",
+        checked: timeOfDayAfternoon
+      }
+    ]
+  }) }}
+{% endset %}
+
+{% set regExp = r/mon/g %}
+{% set dayOfWeekMon = false %}
+{% if regExp.test(data['dayOfWeek']) %}
+{% set dayOfWeekMon = true %}
+{% endif %}
+
+{% set regExp = r/tue/g %}
+{% set dayOfWeekTue = false %}
+{% if regExp.test(data['dayOfWeek']) %}
+{% set dayOfWeekTue = true %}
+{% endif %}
+
+{% set regExp = r/wed/g %}
+{% set dayOfWeekWed = false %}
+{% if regExp.test(data['dayOfWeek']) %}
+{% set dayOfWeekWed = true %}
+{% endif %}
+
+{% set regExp = r/thu/g %}
+{% set dayOfWeekThu = false %}
+{% if regExp.test(data['dayOfWeek']) %}
+{% set dayOfWeekThu = true %}
+{% endif %}
+
+{% set regExp = r/fri/g %}
+{% set dayOfWeekFri = false %}
+{% if regExp.test(data['dayOfWeek']) %}
+{% set dayOfWeekFri = true %}
+{% endif %}
+
+{% set regExp = r/sat/g %}
+{% set dayOfWeekSat = false %}
+{% if regExp.test(data['dayOfWeek']) %}
+{% set dayOfWeekSat = true %}
+{% endif %}
+
+{% set regExp = r/sun/g %}
+{% set dayOfWeekSun = false %}
+{% if regExp.test(data['dayOfWeek']) %}
+{% set dayOfWeekSun = true %}
+{% endif %}
+
+{% set dayOfWeek %}
+  {{ govukCheckboxes({
+    idPrefix: "dayOfWeek",
+    name: "dayOfWeek",
+    items: [
+      {
+        value: "mon",
+        text: "Monday",
+        checked: dayOfWeekMon
+      },
+      {
+        value: "tue",
+        text: "Tuesday",
+        checked: dayOfWeekTue
+      },
+      {
+        value: "wed",
+        text: "Wednesday",
+        checked: dayOfWeekWed
+      },
+      {
+        value: "thu",
+        text: "Thursday",
+        checked: dayOfWeekThu
+      },
+      {
+        value: "fri",
+        text: "Friday",
+        checked: dayOfWeekFri
+      },
+      {
+        value: "sat",
+        text: "Saturday",
+        checked: dayOfWeekSat
+      },
+      {
+        value: "sun",
+        text: "Sunday",
+        checked: dayOfWeekSun
+      }
+    ]
+  }) }}
+{% endset %}
+
+{{ govukAccordion({
+  id: "accordion-default",
+  classes: "govuk-heading-s",
+  
+  items: [
+    {
+      heading: {
+        text: "Time"
+      },
+      content: {
+        html: timeOfDay
+      }
+    },
+    {
+      heading: {
+        text: "Day of the week"
+      },
+      content: {
+        html: dayOfWeek
+      }
+    }
+  ]
+}) }}
+<h3 class="govuk-heading-m">September 2021</h3>
+<div class="govuk-accordion govuk-heading-s" data-module="govuk-accordion" id="accordion-default">
+    <div class="govuk-accordion__section ">
+        <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                    Tuesday 14 September
+                </span>
+            </h2>
+        </div>
+        <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+            <div class="govuk-form-group">
+                <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="sept14" name="visitDate" type="radio" value="14 September 2021|9:00 am (1 hour)" {% if data['visitDate'] == '14 September 2021|9:00 am (1 hour)' %} checked{% endif %}>
+                        <label class="govuk-label govuk-radios__label" for="sept14">
+                            9:00am (12 spaces available)
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="sept14-2" name="visitDate" type="radio" value="14 September 2021|12:00 pm (1 hour)" {% if data['visitDate'] == '14 September 2021|12:00 pm (1 hour)' %} checked{% endif %}>
+                        <label class="govuk-label govuk-radios__label" for="sept14-2">
+                            12:00pm (5 spaces available)
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="govuk-accordion__section ">
+        <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+                    Thursday 16 September
+                </span>
+            </h2>
+        </div>
+        <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+            <div class="govuk-form-group">
+                <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="sept16" name="visitDate" type="radio" value="16 September 2021|9:00 am (1 hour)" disabled>
+                        <label class="govuk-label govuk-radios__label" for="sept16">
+                            9:00am (full booked)
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="sept16-2" name="visitDate" type="radio" value="16 September 2021|12:00 pm (1 hour)" {% if data['visitDate'] == '16 September 2021|12:00 pm (1 hour)' %} checked{% endif %}>
+                        <label class="govuk-label govuk-radios__label" for="sept16-2">
+                            12:00pm (5 spaces available)
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="govuk-accordion__section ">
+        <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
+                    Saturday 18 September
+                </span>
+            </h2>
+        </div>
+        <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
+            <div class="govuk-form-group">
+                <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="sept18" name="visitDate" type="radio" value="18 September 2021|9:00 am (1 hour)" {% if data['visitDate'] == '18 September 2021|9:00 am (1 hour)' %} checked{% endif %}>
+                        <label class="govuk-label govuk-radios__label" for="sept18">
+                            9:00am (12 spaces available)
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="sept18-2" name="visitDate" type="radio" value="18 September 2021|12:00 pm (1 hour)" {% if data['visitDate'] == '18 September 2021|12:00 pm (1 hour)' %} checked{% endif %}>
+                        <label class="govuk-label govuk-radios__label" for="sept18-2">
+                            12:00pm (5 spaces available)
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="govuk-accordion__section ">
+        <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
+                    Tuesday 21 September
+                </span>
+            </h2>
+        </div>
+        <div id="accordion-default-content-4" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-4">
+            <div class="govuk-form-group">
+                <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="sept21" name="visitDate" type="radio" value="21 September 2021|9:00 am (1 hour)" {% if data['visitDate'] == '21 September 2021|9:00 am (1 hour)' %} checked{% endif %}>
+                        <label class="govuk-label govuk-radios__label" for="sept21">
+                            9:00am (12 spaces available)
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="sept21-2" name="visitDate" type="radio" value="21 September 2021|12:00 pm (1 hour)" {% if data['visitDate'] == '21 September 2021|12:00 pm (1 hour)' %} checked{% endif %}>
+                        <label class="govuk-label govuk-radios__label" for="sept21-2">
+                            12:00pm (5 spaces available)
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="govuk-accordion__section ">
+        <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-5">
+                    Thursday 23 September
+                </span>
+            </h2>
+        </div>
+        <div id="accordion-default-content-5" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-5">
+            <div class="govuk-form-group">
+                <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="sept23" name="visitDate" type="radio" value="23 September 2021|9:00 am (1 hour)" {% if data['visitDate'] == '23 September 2021|9:00 am (1 hour)' %} checked{% endif %}>
+                        <label class="govuk-label govuk-radios__label" for="sept23">
+                            9:00am (12 spaces available)
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="sept23-2" name="visitDate" type="radio" value="23 September 2021|12:00 pm (1 hour)" {% if data['visitDate'] == '23 September 2021|12:00 pm (1 hour)' %} checked{% endif %}>
+                        <label class="govuk-label govuk-radios__label" for="sept23-2">
+                            12:00pm (5 spaces available)
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="govuk-accordion__section ">
+        <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-6">
+                    Saturday 25 September
+                </span>
+            </h2>
+        </div>
+        <div id="accordion-default-content-6" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-6">
+            <div class="govuk-form-group">
+                <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="sept25" name="visitDate" type="radio" value="25 September 2021|9:00 am (1 hour)" {% if data['visitDate'] == '25 September 2021|9:00 am (1 hour)' %} checked{% endif %}>
+                        <label class="govuk-label govuk-radios__label" for="sept25">
+                            9:00am (12 spaces available)
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="sept25-2" name="visitDate" type="radio" value="25 September 2021|12:00 pm (1 hour)" {% if data['visitDate'] == '25 September 2021|12:00 pm (1 hour)' %} checked{% endif %}>
+                        <label class="govuk-label govuk-radios__label" for="sept25-2">
+                            12:00pm (5 spaces available)
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="govuk-accordion__section ">
+        <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-7">
+                    Tuesday 28 September
+                </span>
+            </h2>
+        </div>
+        <div id="accordion-default-content-7" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-7">
+            <div class="govuk-form-group">
+                <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="sept28" name="visitDate" type="radio" value="28 September 2021|9:00 am (1 hour)" {% if data['visitDate'] == '28 September 2021|9:00 am (1 hour)' %} checked{% endif %}>
+                        <label class="govuk-label govuk-radios__label" for="sept28">
+                            9:00am (12 spaces available)
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="sept28-2" name="visitDate" type="radio" value="28 September 2021|12:00 pm (1 hour)" {% if data['visitDate'] == '28 September 2021|12:00 pm (1 hour)' %} checked{% endif %}>
+                        <label class="govuk-label govuk-radios__label" for="sept28-2">
+                            12:00pm (5 spaces available)
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="govuk-accordion__section ">
+        <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-8">
+                    Thursday 30 September
+                </span>
+            </h2>
+        </div>
+        <div id="accordion-default-content-8" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-8">
+            <div class="govuk-form-group">
+                <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="sept30" name="visitDate" type="radio" value="30 September 2021|9:00 am (1 hour)" {% if data['visitDate'] == '30 September 2021|9:00 am (1 hour)' %} checked{% endif %}>
+                        <label class="govuk-label govuk-radios__label" for="sept30">
+                            9:00am (12 spaces available)
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="sept30-2" name="visitDate" type="radio" value="30 September 2021|12:00 pm (1 hour)" {% if data['visitDate'] == '30 September 2021|12:00 pm (1 hour)' %} checked{% endif %}>
+                        <label class="govuk-label govuk-radios__label" for="sept30-2">
+                            12:00pm (5 spaces available)
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<h3 class="govuk-heading-m">October 2021</h3>
+<div class="govuk-accordion govuk-heading-s" data-module="govuk-accordion" id="accordion-default">
+    <div class="govuk-accordion__section ">
+        <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+                    Saturday 2 October
+                </span>
+            </h2>
+        </div>
+        <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+            <div class="govuk-form-group">
+                <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="oct2" name="visitDate" type="radio" value="2 October 2021|9:00 am (1 hour)" {% if data['visitDate'] == '2 October 2021|9:00 am (1 hour)' %} checked{% endif %}>
+                        <label class="govuk-label govuk-radios__label" for="oct2">
+                            9:00am (12 spaces available)
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="oct2-2" name="visitDate" type="radio" value="2 October 2021|12:00 pm (1 hour)" {% if data['visitDate'] == '2 October 2021|12:00 pm (1 hour)' %} checked{% endif %}>
+                        <label class="govuk-label govuk-radios__label" for="oct2-2">
+                            12:00pm (5 spaces available)
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="govuk-accordion__section ">
+        <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+                    Tuesday 5 October
+                </span>
+            </h2>
+        </div>
+        <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+            <div class="govuk-form-group">
+                <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="oct5" name="visitDate" type="radio" value="5 October 2021|9:00 am (1 hour)" {% if data['visitDate'] == '5 October 2021|9:00 am (1 hour)' %} checked{% endif %}>
+                        <label class="govuk-label govuk-radios__label" for="oct5">
+                            9:00am (12 spaces available)
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="oct5-2" name="visitDate" type="radio" value="5 October 2021|12:00 pm (1 hour)" {% if data['visitDate'] == '5 October 2021|12:00 pm (1 hour)' %} checked{% endif %}>
+                        <label class="govuk-label govuk-radios__label" for="oct5-2">
+                            12:00pm (5 spaces available)
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="govuk-accordion__section ">
+        <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
+                    Thursday 7 October
+                </span>
+            </h2>
+        </div>
+        <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
+            <div class="govuk-form-group">
+                <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="oct7" name="visitDate" type="radio" value="7 October 2021|9:00 am (1 hour)" {% if data['visitDate'] == '7 October 2021|9:00 am (1 hour)' %} checked{% endif %}>
+                        <label class="govuk-label govuk-radios__label" for="oct7">
+                            9:00am (12 spaces available)
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="oct7-2" name="visitDate" type="radio" value="7 October 2021|12:00 pm (1 hour)" {% if data['visitDate'] == '7 October 2021|12:00 pm (1 hour)' %} checked{% endif %}>
+                        <label class="govuk-label govuk-radios__label" for="oct7-2">
+                            12:00pm (5 spaces available)
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="govuk-accordion__section ">
+        <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-4">
+                    Saturday 9 October
+                </span>
+            </h2>
+        </div>
+        <div id="accordion-default-content-4" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-4">
+            <div class="govuk-form-group">
+                <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="oct9" name="visitDate" type="radio" value="9 October 2021|9:00 am (1 hour)" {% if data['visitDate'] == '9 October 2021|9:00 am (1 hour)' %} checked{% endif %}>
+                        <label class="govuk-label govuk-radios__label" for="oct9">
+                            9:00am (12 spaces available)
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="oct9-2" name="visitDate" type="radio" value="9 October 2021|12:00 pm (1 hour)" {% if data['visitDate'] == '9 October 2021|12:00 pm (1 hour)' %} checked{% endif %}>
+                        <label class="govuk-label govuk-radios__label" for="oct9-2">
+                            12:00pm (5 spaces available)
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="govuk-accordion__section ">
+        <div class="govuk-accordion__section-header">
+            <h2 class="govuk-accordion__section-heading">
+                <span class="govuk-accordion__section-button" id="accordion-default-heading-5">
+                    Tuesday 12 October
+                </span>
+            </h2>
+        </div>
+        <div id="accordion-default-content-5" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-5">
+            <div class="govuk-form-group">
+                <div class="govuk-radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="oct12" name="visitDate" type="radio" value="12 October 2021|9:00 am (1 hour)" {% if data['visitDate'] == '12 October 2021|9:00 am (1 hour)' %} checked{% endif %}>
+                        <label class="govuk-label govuk-radios__label" for="oct12">
+                            9:00am (12 spaces available)
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="oct12-2" name="visitDate" type="radio" value="12 October 2021|12:00 pm (1 hour)" {% if data['visitDate'] == '12 October 2021|12:00 pm (1 hour)' %} checked{% endif %}>
+                        <label class="govuk-label govuk-radios__label" for="oct12-2">
+                            12:00pm (5 spaces available)
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-three-quarters">
+        <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
+    </div>
+</div>
+      </form>
+
+{% endblock %}
