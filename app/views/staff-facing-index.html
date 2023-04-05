@@ -50,41 +50,67 @@
 }) }}
 
 
-      
+<h2 class="govuk-heading-m">
+  Service reporting v1
+</br>
 
-      
+  {%- from "govuk/components/tag/macro.njk" import govukTag -%}
+  {{ govukTag({
+  text: "Ready for UR",
+  classes: "govuk-tag--purple"
+  }) }}
+</h2>
 
-    </div>
+<p class="govuk-body">What's new:</p>
+  <ul class="govuk-list govuk-list--bullet">
+    <li>Service reporting table view and download button for staff</li>
+  </ul>
 
-    <div class="govuk-grid-column-one-third">
 
-      <aside class="app-related-items" role="complementary">
-        <h2 class="govuk-heading-m" id="subsection-title">
-          Useful links
-        </h2>
-        <nav role="navigation" aria-labelledby="subsection-title">
-          <ul class="govuk-list govuk-!-font-size-16">
-            <li>
-              <a href="#">
-                Design history
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                Figma
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                Miro
-              </a>
-            </li>
-            
-          </ul>
-        </nav>
-      </aside>
+<form class="form" action="staff-facing/SR01_Service_reporting_v1" method="post">
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{{ govukButton({
+  text: "View prototype"
+}) }}
+</form>
 
-    </div>
-    
-  </div>
+<hr class="govuk-section-break govuk-section-break--visible">
+
+</br>
+
+</div>
+<div class="govuk-grid-column-one-third">
+
+<aside class="app-related-items" role="complementary">
+<h2 class="govuk-heading-m" id="subsection-title">
+Useful links
+</h2>
+<nav role="navigation" aria-labelledby="subsection-title">
+<ul class="govuk-list govuk-!-font-size-16">
+  <li>
+    <a href="#">
+      Design history
+    </a>
+  </li>
+  <li>
+    <a href="#">
+      Figma
+    </a>
+  </li>
+  <li>
+    <a href="#">
+      Miro
+    </a>
+  </li>
+  
+</ul>
+</nav>
+</aside>
+
+</div>
+
+
+</div>
+
+
 {% endblock %}
