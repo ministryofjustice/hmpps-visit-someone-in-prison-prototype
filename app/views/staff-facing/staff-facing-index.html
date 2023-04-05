@@ -37,15 +37,14 @@
   label: 'Sub navigation',
   items: [{
     text: 'Online booking',
-    href: 'online-booking-index.html'
-    
+    href: '/online-booking/online-booking-index',
+    active: true
   }, {
     text: 'Assisted digital',
-    href: 'assisted-digital-index.html'
+    href: '/assisted-digital/assisted-digital-index.html'
   }, {
     text: 'Staff-facing',
-    href: '#',
-    active: true
+    href: '/staff-facing/staff-facing-index.html'
   }]
 }) }}
 
@@ -67,7 +66,7 @@
   </ul>
 
 
-<form class="form" action="staff-facing/SR01_service_data_v1" method="post">
+<form class="form" action="/staff-facing/SR01_service_data_v1" method="post">
 {% from "govuk/components/button/macro.njk" import govukButton %}
 {{ govukButton({
   text: "View prototype"
