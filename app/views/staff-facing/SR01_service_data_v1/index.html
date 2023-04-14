@@ -11,142 +11,66 @@
 
 {% block content %}
 
-<h1 class="govuk-heading-l">Service data</h1>
+<h1 class="govuk-heading-l">Download service data</h1>
 
-<p class="govuk-body">Data on this page is updated every 30 minutes. If you require data from further back than 30 days, please contact the service team via <a href="mailto:prisonvisitsbooking@digital.justice.gov.uk " class="govuk-link govuk-link--no-visited-state">prisonvisitsbooking@digital.justice.gov.uk.</a></p>
+<p class="govuk-body">Data reports are created every night. Each report contains data for 1 day.</p>
 
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
 
-{% from "govuk/components/button/macro.njk" import govukButton %}
+      <th scope="col" class="govuk-table__header" aria-sort="ascending">Date</th>
 
-{{ govukButton({
-  text: "Download data"
-}) }}
+      <th scope="col" class="govuk-table__header" aria-sort="none">Link</th>
 
+    </tr>
+  </thead>
 
-{%- from "moj/components/sub-navigation/macro.njk" import mojSubNavigation -%}
+  <tbody class="govuk-table__body">
 
-{{ mojSubNavigation({
-  label: 'Sub navigation',
-  items: [{
-    text: 'Today',
-    href: '#1',
-    active: true
-  }, {
-    text: 'Last 7 days',
-    href: '#2'
-  }, {
-    text: 'last 30 days',
-    href: '#3'
-  }
-  ]
-}) }}
+    <tr class="govuk-table__row">
+      
+      <td class="govuk-table__cell">Monday, 17 April 2023</td>
 
+      <td class="govuk-table__cell" data-sort-value="6961"><a href="#" class="govuk-link">Download</a></td>
 
-{%- from "govuk/components/table/macro.njk" import govukTable -%}
+    </tr>
 
-{{ govukTable({
-  attributes: {
-    'data-module': 'moj-sortable-table'
-  },
-  head: [
-    {
-      text: "Date and time",
-      attributes: {
-        "aria-sort": "ascending"
-      }
-    },
-    {
-      text: "Visit type",
-      attributes: {
-        "aria-sort": "none"
-      }
-    },
-    {
-      text: "Establishment",
-      attributes: {
-        "aria-sort": "none"
-      }
-    },
-    {
-      text: "Action",
-      attributes: {
-        "aria-sort": "none"
-      }
-    },
-    {
-      text: "Request method",
-      attributes: {
-        "aria-sort": "none"
-      }
-    },
-    {
-      text: "Reference",
-      attributes: {
-        "aria-sort": "none"
-      }
-    },
-    {
-      text: "Actioned by",
-      attributes: {
-        "aria-sort": "none"
-      }
-    }
-  ],
-  rows: [
-    [
-      {
-        text: "Monday 3 April 2023 at 1:42pm",
-        attributes: {
-          "data-sort-value": "2023-04-03T13:42:00Z"
-        }
-      },
-      {
-        text: "Social"
-      },
-      {
-        text: "HMP Bristol"
-      },
-      {
-        text: "Booked"
-      },
-      {
-        text: "Email"
-      },
-      {
-        text: "z-gi-jg-ob"
-      },
-      {
-        text: "John Smith"
-      }
-    ],
-        [
-      {
-        text: "Wednesday 5 April 2023 at 3:42pm",
-        attributes: {
-          "data-sort-value": "2023-04-05T15:42:00Z"
-        }
-      },
-      {
-        text: "Social"
-      },
-      {
-        text: "HMP Hewell"
-      },
-      {
-        text: "Cancelled"
-      },
-      {
-        text: "Phone call"
-      },
-      {
-        text: "ze-gi-jg-ob"
-      },
-      {
-        text: "Alex Jones"
-      }
-    ]
-  ]
-}) }}
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell">Tuesday, 18 April 2023</td>
+
+      <td class="govuk-table__cell" data-sort-value="6961"><a href="#" class="govuk-link">Download</a></td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell">Wednesday, 19 April 2023</td>
+
+      <td class="govuk-table__cell" data-sort-value="6961"><a href="#" class="govuk-link">Download</a></td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell">Thursday, 20 April 2023</td>
+
+      <td class="govuk-table__cell" data-sort-value="6961"><a href="#" class="govuk-link">Download</a></td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell">Friday, 21 April 2023</td>
+
+      <td class="govuk-table__cell" data-sort-value="6961"><a href="#" class="govuk-link">Download</a></td>
+
+    </tr>
+
+  </tbody>
+</table>
+
  
 
 

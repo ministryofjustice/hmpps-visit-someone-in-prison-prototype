@@ -37,21 +37,22 @@
   label: 'Sub navigation',
   items: [{
     text: 'Online booking',
-    href: '/online-booking/online-booking-index',
-    active: true
+    href: '/online-booking/online-booking-index'
   }, {
     text: 'Assisted digital',
     href: '/assisted-digital/assisted-digital-index.html'
   }, {
     text: 'Staff-facing',
-    href: '/staff-facing/staff-facing-index.html'
+    href: '/staff-facing/staff-facing-index.html',
+    active: true
   }]
 }) }}
 
 
 <h2 class="govuk-heading-m">
-  Service data v1
-</br>
+  Download service data v1
+<br>
+</h2>
 
   {%- from "govuk/components/tag/macro.njk" import govukTag -%}
   {{ govukTag({
@@ -59,7 +60,8 @@
   classes: "govuk-tag--purple"
   }) }}
 </h2>
-
+<br>
+<br>
 <p class="govuk-body">What's new:</p>
   <ul class="govuk-list govuk-list--bullet">
     <li>Service data table view and download button for staff</li>
