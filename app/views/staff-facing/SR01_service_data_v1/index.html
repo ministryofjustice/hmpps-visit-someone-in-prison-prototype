@@ -1,0 +1,78 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Start – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block header %}
+  <!-- Blank header with no service name for the start page -->
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block content %}
+
+<h1 class="govuk-heading-l">Download service data</h1>
+
+<p class="govuk-body">Data reports are created every night. Each report contains data for 1 day.</p>
+
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+
+      <th scope="col" class="govuk-table__header" aria-sort="ascending">Date</th>
+
+      <th scope="col" class="govuk-table__header" aria-sort="none">Link</th>
+
+    </tr>
+  </thead>
+
+  <tbody class="govuk-table__body">
+
+    <tr class="govuk-table__row">
+      
+      <td class="govuk-table__cell">Monday, 17 April 2023</td>
+
+      <td class="govuk-table__cell" data-sort-value="6961"><a href="#" class="govuk-link">Download</a></td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell">Tuesday, 18 April 2023</td>
+
+      <td class="govuk-table__cell" data-sort-value="6961"><a href="#" class="govuk-link">Download</a></td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell">Wednesday, 19 April 2023</td>
+
+      <td class="govuk-table__cell" data-sort-value="6961"><a href="#" class="govuk-link">Download</a></td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell">Thursday, 20 April 2023</td>
+
+      <td class="govuk-table__cell" data-sort-value="6961"><a href="#" class="govuk-link">Download</a></td>
+
+    </tr>
+
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell">Friday, 21 April 2023</td>
+
+      <td class="govuk-table__cell" data-sort-value="6961"><a href="#" class="govuk-link">Download</a></td>
+
+    </tr>
+
+  </tbody>
+</table>
+
+ 
+
+
+
+{% endblock %}
