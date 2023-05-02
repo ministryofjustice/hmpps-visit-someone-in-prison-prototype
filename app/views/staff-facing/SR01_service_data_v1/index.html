@@ -13,7 +13,7 @@
 
 <h1 class="govuk-heading-l">Download service data</h1>
 
-<p class="govuk-body">Data reports are created every night. Each report contains data for 1 day.</p>
+<p class="govuk-body">Data reports are created every night. Each report contains data for 1 day. The reports are in a CSV file.</p>
 
 <table class="govuk-table">
   <thead class="govuk-table__head">
@@ -21,7 +21,7 @@
 
       <th scope="col" class="govuk-table__header" aria-sort="ascending">Date</th>
 
-      <th scope="col" class="govuk-table__header" aria-sort="none">Link</th>
+      <th scope="col" class="govuk-table__header" aria-sort="none">Action</th>
 
     </tr>
   </thead>
@@ -29,29 +29,13 @@
   <tbody class="govuk-table__body">
 
     <tr class="govuk-table__row">
-      
-      <td class="govuk-table__cell">Monday, 17 April 2023</td>
+
+      <td class="govuk-table__cell">Friday, 21 April 2023</td>
 
       <td class="govuk-table__cell" data-sort-value="6961"><a href="#" class="govuk-link">Download</a></td>
 
     </tr>
-
-    <tr class="govuk-table__row">
-
-      <td class="govuk-table__cell">Tuesday, 18 April 2023</td>
-
-      <td class="govuk-table__cell" data-sort-value="6961"><a href="#" class="govuk-link">Download</a></td>
-
-    </tr>
-
-    <tr class="govuk-table__row">
-
-      <td class="govuk-table__cell">Wednesday, 19 April 2023</td>
-
-      <td class="govuk-table__cell" data-sort-value="6961"><a href="#" class="govuk-link">Download</a></td>
-
-    </tr>
-
+    
     <tr class="govuk-table__row">
 
       <td class="govuk-table__cell">Thursday, 20 April 2023</td>
@@ -59,10 +43,26 @@
       <td class="govuk-table__cell" data-sort-value="6961"><a href="#" class="govuk-link">Download</a></td>
 
     </tr>
-
+    
     <tr class="govuk-table__row">
 
-      <td class="govuk-table__cell">Friday, 21 April 2023</td>
+      <td class="govuk-table__cell">Wednesday, 19 April 2023</td>
+
+      <td class="govuk-table__cell" data-sort-value="6961"><a href="#" class="govuk-link">Download</a></td>
+
+    </tr>
+    
+    <tr class="govuk-table__row">
+
+      <td class="govuk-table__cell">Tuesday, 18 April 2023</td>
+
+      <td class="govuk-table__cell" data-sort-value="6961"><a href="#" class="govuk-link">Download</a></td>
+
+    </tr>
+    
+    <tr class="govuk-table__row">
+      
+      <td class="govuk-table__cell">Monday, 17 April 2023</td>
 
       <td class="govuk-table__cell" data-sort-value="6961"><a href="#" class="govuk-link">Download</a></td>
 
@@ -73,6 +73,18 @@
 
  
 
+{%- from "moj/components/pagination/macro.njk" import mojPagination -%}
+
+{{ mojPagination({
+  previous: {
+    text: 'Previous',
+    href: '#'
+  },
+  next: {
+    text: 'Next',
+    href: '#'
+  }
+}) }}
 
 
 {% endblock %}
