@@ -1,0 +1,55 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  One Login – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Check your phone
+      </h1>
+
+      <div class="govuk-inset-text">
+        We have sent a code to <p class="govuk-body govuk-!-font-weight-bold">*******8815</p>
+      </div>
+
+      <form class="form" action="one-login-complete" method="post">
+
+        <p>It might take a few minutes to arrive. The code will expire after 2 hours.</p>
+
+        <p>Enter the 6 digit security code</p>
+
+      <div class="govuk-form-group">
+      
+        <input class="govuk-input govuk-!-width-one-quarter" id="one-quarter" name="one-quarter" type="text">
+      </div>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Problems with the code?
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>We can <a href="#">send the code again</a> or you can <a href="#">use a different phone number</a></p>
+
+          <p><a href="#">Get a code another way</a>.</p>
+        
+      </details>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
