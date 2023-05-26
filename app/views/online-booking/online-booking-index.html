@@ -47,56 +47,32 @@
           href: '/staff-facing/staff-facing-index.html'
         }]
       }) }}
-
-          <h2 class="govuk-heading-m">
-            Register to Visit
-          </br>
-
-            {%- from "govuk/components/tag/macro.njk" import govukTag -%}
-            {{ govukTag({
-            text: "Ready for UR",
-            classes: "govuk-tag--purple"
-            }) }}
-          </h2>
-
-          <p class="govuk-body">What's new:</p>
-            <ul class="govuk-list govuk-list--bullet">
-              <li>New calendar component</li>
-            </ul>
-          
-
-          <form class="form" action="/online-booking/book-a-visit-v1/start" method="post">
-          {% from "govuk/components/button/macro.njk" import govukButton %}
-          {{ govukButton({
-            text: "View prototype"
-          }) }}
-        </form>
-          <hr class="govuk-section-break govuk-section-break--visible">
+      <h2 class="govuk-heading-m">
+        Register to visit V4
       </br>
 
-          <h2 class="govuk-heading-m">
-            Book a visit v4
-          </br>
+        {%- from "govuk/components/tag/macro.njk" import govukTag -%}
+        {{ govukTag({
+        text: "IN DEVELOPMENT",
+        classes: "govuk-tag--purple"
+        }) }}
+      </h2>
 
-            {%- from "govuk/components/tag/macro.njk" import govukTag -%}
-            {{ govukTag({
-            text: "Tested",
-            classes: "govuk-tag--turquoise"
-            }) }}
-          </h2>
+      <p class="govuk-body">What's new:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>Updated registration journey since testing in June 2022</li>
+          <li>Inclusion of GOV.UK One Login screens</li>
+          <li>Branching question to go through to new service</li>
+          <li>One question per page</li>
+        </ul>
+      
 
-          <p class="govuk-body">What's new:</p>
-            <ul class="govuk-list govuk-list--bullet">
-              <li>New calendar component</li>
-            </ul>
-          
-
-          <form class="form" action="/online-booking/book-a-visit-v1/start" method="post">
-          {% from "govuk/components/button/macro.njk" import govukButton %}
-          {{ govukButton({
-            text: "View prototype"
-          }) }}
-        </form>
+      <form class="form" action="/online-booking/register-to-visit-v4/start" method="post">
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "View prototype"
+      }) }}
+    </form>
           <hr class="govuk-section-break govuk-section-break--visible">
          
           <div>
@@ -109,13 +85,13 @@
           </span>
         </summary>
         <div class="govuk-details__text">
-          <p class="govuk-body"><a href="online-booking/archived/VJ02_book_a_visit_1_V3/" class="govuk-link">VJ02 Book a visit V3</a></p>
-          <p class="govuk-body"><a href="online-booking/archived/VJ02_book_a_visit_1_V2/" class="govuk-link">VJ02 Book a visit V2</a></p>
-          <p class="govuk-body"><a href="online-booking/archived/VJ02_book_a_visit_1_V1/" class="govuk-link">VJ02 Book a visit V1</a></p>
+          <p class="govuk-body"><a href="archived/VJ02_book_a_visit_1_V3/" class="govuk-link">VJ02 Book a visit V3</a></p>
+          <p class="govuk-body"><a href="archived/VJ02_book_a_visit_1_V2/" class="govuk-link">VJ02 Book a visit V2</a></p>
+          <p class="govuk-body"><a href="archived/VJ02_book_a_visit_1_V1/" class="govuk-link">VJ02 Book a visit V1</a></p>
 
-          <p class="govuk-body"><a href="online-booking/archived/VJ02_book_a_visit_2_V3/" class="govuk-link">VJ02 Register to book a visit V3</a></p>
-          <p class="govuk-body"><a href="online-booking/archived/VJ02_book_a_visit_2_V2/" class="govuk-link">VJ02 Register to book a visit V2</a></p>
-          <p class="govuk-body"><a href="online-booking/archived/VJ02_book_a_visit_2_V1/" class="govuk-link">VJ02 Register to book a visit V1</a></p>
+          <p class="govuk-body"><a href="archived/VJ02_book_a_visit_2_V3/" class="govuk-link">VJ02 Register to book a visit V3</a></p>
+          <p class="govuk-body"><a href="archived/VJ02_book_a_visit_2_V2/" class="govuk-link">VJ02 Register to book a visit V2</a></p>
+          <p class="govuk-body"><a href="archived/VJ02_book_a_visit_2_V1/" class="govuk-link">VJ02 Register to book a visit V1</a></p>
 
 
         </details>
