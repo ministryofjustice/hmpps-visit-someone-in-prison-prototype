@@ -15,34 +15,34 @@
 
      
 
-      <form class="form" action="visitor-check-answers" method="post">
+      <form class="form" action="/register-another-visitor-answer" method="post">
 
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="changed-name-hint">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-              <h1 class="govuk-fieldset__heading">
-                Do you want to register another visitor?
-              </h1>
-            </legend>
-            <div id="changed-name-hint" class="govuk-hint">
-              You can register more visitors now or at a later date
-            </div>
-            <div class="govuk-radios govuk-radios--inline" data-module="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="changed-name" name="changed-name" type="radio" value="yes">
-                <label class="govuk-label govuk-radios__label" for="changed-name">
-                  Yes
-                </label>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="changed-name-2" name="changed-name" type="radio" value="no">
-                <label class="govuk-label govuk-radios__label" for="changed-name-2">
-                  No
-                </label>
-              </div>
-            </div>
-          </fieldset>
-        </div>
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+          {{ govukRadios({
+            classes: "govuk-radios--inline",
+            name: "register-another-visitor-answer",
+            fieldset: {
+              legend: {
+                text: "Do you want to register another visitor?",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--l"
+              }
+            },
+            
+            items: [
+              {
+                value: "yes",
+                text: "Yes"
+              },
+              {
+                value: "no",
+                text: "No"
+              }
+            ]
+          }) }}
+
+
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
