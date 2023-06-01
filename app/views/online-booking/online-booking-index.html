@@ -42,8 +42,8 @@
 
         {%- from "govuk/components/tag/macro.njk" import govukTag -%}
         {{ govukTag({
-        text: "IN DEVELOPMENT",
-        classes: "govuk-tag--purple"
+        text: "READY FOR UR",
+        classes: "govuk-tag--pink"
         }) }}
       </h2>
 
@@ -53,13 +53,22 @@
           <li>Inclusion of GOV.UK One Login screens</li>
           <li>Branching question to go through to new service</li>
           <li>One question per page</li>
+          <li>Two versions for testing - one with one visitor on the check answers page, the other with two</li>
         </ul>
       
 
       <form class="form" action="/online-booking/register-to-visit-v4/start" method="post">
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({
-        text: "View prototype"
+        text: "View prototype - two visitors"
+      }) }}
+    </form>
+
+    <form class="form" action="/online-booking/register-to-visit-v4-2/start" method="post">
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+        text: "View prototype - one visitor",
+        classes: "govuk-button--secondary"
       }) }}
     </form>
           <hr class="govuk-section-break govuk-section-break--visible">
