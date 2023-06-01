@@ -1,0 +1,49 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Visiting HMP Hewell – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Visiting HMP Hewell
+      </h1>
+
+      <form class="form" action="one-login-start" method="post">
+
+        <p>You’ll need a GOV.UK One Login to register and book visits online at this prison.</p>
+
+        <p>If you do not have a GOV.UK One Login, you can create one. Or <a href="#">sign into your account</a>.</p>
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              Registering for the first time?
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <h3 class="govuk-heading-s">Register with the prison</h3>
+            <p>The first time you use GOV.UK One Login for prison visits, you also need to register with the prison.</p>
+            <p>The prison will check the details you submit match the prisoner’s approved visitor list. The prison will check the details you submit match the prisoner’s approved visitor list. </p>
+            <p>This typically takes one to three weeks.</p>
+            <h3 class="govuk-heading-s">Book visits</h3>
+            <p>Once approved by the prison, you can book a visit online. You won’t need to resubmit visitor details.</p>
+          </div>
+        </details>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

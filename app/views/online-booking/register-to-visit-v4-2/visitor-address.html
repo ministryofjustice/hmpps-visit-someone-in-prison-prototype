@@ -1,0 +1,81 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Visitor’s home address – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Visitor’s home address
+      </h1>
+
+      <form class="form" action="visitor-relationship" method="post">
+
+        <fieldset class="govuk-fieldset">
+      
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-line-1">
+              Address line 1
+            </label>
+            <input class="govuk-input" id="address-line-1" name="address-line-1" type="text" autocomplete="address-line1">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-line-2">
+              Address line 2 (optional)
+            </label>
+            <input class="govuk-input" id="address-line-2" name="address-line-2" type="text" autocomplete="address-line2">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-town">
+              Town or city
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="address-town" name="address-town" type="text" autocomplete="address-level2">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-county">
+              County (optional)
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="address-county" name="address-county" type="text">
+          </div>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="address-postcode">
+              Postcode
+            </label>
+            <input class="govuk-input govuk-input--width-10" id="address-postcode" name="address-postcode" type="text" autocomplete="postal-code">
+          </div>
+        </fieldset>
+
+        <details class="govuk-details" data-module="govuk-details">
+          <summary class="govuk-details__summary">
+            <span class="govuk-details__summary-text">
+              I live outside the UK
+            </span>
+          </summary>
+          <div class="govuk-details__text">
+            <div class="govuk-form-group">
+              <label class="govuk-label" for="address">
+                What is your address?
+              </label>
+              <textarea class="govuk-textarea" id="address" name="address" rows="5" autocomplete="street-address"></textarea>
+            </div>
+          </div>
+        </details>
+
+        
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}

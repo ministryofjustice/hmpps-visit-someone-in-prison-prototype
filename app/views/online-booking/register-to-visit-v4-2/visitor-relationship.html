@@ -1,0 +1,36 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Visitor relationship – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Relationship
+      </h1>
+
+      <form class="form" action="register-another-visitor" method="post">
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="event-name">
+            The visitor is the prisoner’s:
+          </label>
+          <input class="govuk-input" id="event-name" name="event-name" type="text">
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
