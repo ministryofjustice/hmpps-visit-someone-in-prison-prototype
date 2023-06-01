@@ -1,0 +1,73 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+ One Login – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Enter your mobile phone number
+      </h1>
+
+      <form class="form" action="one-login-mobile-code" method="post">
+
+        <p>We will send a 6 digit security code to the number you give us.</p>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="width-10">
+            UK mobile phone number
+          </label>
+          <input class="govuk-input govuk-!-width-one-half" id="one-half" name="one-half" type="text">
+
+        </div>
+
+
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+            
+            
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="email" data-aria-controls="conditional-contact">
+                <label class="govuk-label govuk-checkboxes__label" for="contact">
+                  I do not have a UK mobile number
+                </label>
+              </div>
+              <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="contact-by-email">
+                    Mobile phone number
+                  </label>
+                  <div id="account-number-hint" class="govuk-hint">
+                    Include the country code, for example +33 for France
+                    </div>
+
+
+                    <input class="govuk-input govuk-!-width-one-half" id="one-half" name="one-half" type="text">
+
+                </div>
+              </div>
+             
+             
+              
+            </div>
+          </fieldset>
+        </div>
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+    </div>
+  </div>
+
+{% endblock %}
