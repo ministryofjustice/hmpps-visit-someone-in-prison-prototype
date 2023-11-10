@@ -10,6 +10,6 @@
     "@govuk-prototype-kit/task-list": "1.1.2",
     "@ministryofjustice/frontend": "^1.8.0",
     "govuk-frontend": "4.7.0",
-    "govuk-prototype-kit": "13.14.0"
+    "govuk-prototype-kit": "13.14.1"
   }
 }
