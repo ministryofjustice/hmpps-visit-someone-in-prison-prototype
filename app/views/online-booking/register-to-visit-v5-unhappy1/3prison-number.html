@@ -1,0 +1,58 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+Prison number – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Prison number
+      </h1>
+
+      <div class="govuk-form-group">
+        
+        <div id="account-number-hint" class="govuk-hint">
+          For example, A1234BC
+        </div>
+
+        <input class="govuk-input govuk-!-width-one-half" id="one-half" name="one-half" type="text">
+
+      </div>
+     
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            What is the prison number?
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p>When someone enters prison, they are given a prison number.</p>
+          <p>Their prison number stays the same if they move to another prison.  </p>
+        </div>
+      </details>
+
+      <form class="form" action="3prisoner-dob" method="post">
+
+        
+        
+
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+      <h3 class="govuk-heading-s">What if I don’t know their prison number?</h3>
+
+      <p>You need to ask the prisoner for this information before you can book. </p>
+
+    </div>
+  </div>
+
+{% endblock %}

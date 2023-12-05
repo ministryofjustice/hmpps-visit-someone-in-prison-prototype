@@ -16,10 +16,12 @@ router.post('/register-another-visitor-answer', function (req, res) {
     // Check whether the variable matches a condition
     if (registerAnother == "yes"){
       // Send user to next page
-      res.redirect('online-booking/register-to-visit-v4/visitor-name')
+      res.redirect('online-booking/register-to-visit-v5/4visitor-name')
     } else {
       // Send user to ineligible page
-      res.redirect('online-booking/register-to-visit-v4/visitor-check-answers')
+      res.redirect('online-booking/register-to-visit-v5/4visitor-check-answers')
     }
   
   })
+
+ 

@@ -32,13 +32,65 @@
     }) }}
 
     <h2 class="govuk-heading-m">
+      Register to visit V5
+      </br>
+
+      {%- from "govuk/components/tag/macro.njk" import govukTag -%}
+      {{ govukTag({
+      text: "In progress",
+      classes: "govuk-tag--purple"
+      }) }}
+    </h2>
+
+    <p class="govuk-body">What's new:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>TBC</li>
+    
+    </ul>
+
+    <form class="form" action="/online-booking/register-to-visit-v5/1start" method="post">
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+      text: "Happy path prototype"
+      }) }}
+    </form>
+
+    <form class="form" action="/online-booking/register-to-visit-v5-unhappy1/1start" method="post">
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+      text: "Unhappy - email",
+      classes: "govuk-button--secondary"
+      }) }}
+    </form>
+
+    <form class="form" action="/online-booking/register-to-visit-v5/1start" method="post">
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+      text: "Unhappy - mixed approval",
+      classes: "govuk-button--secondary"
+      }) }}
+    </form>
+
+    <form class="form" action="/online-booking/register-to-visit-v5/1start" method="post">
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+      text: "Unhappy - reserve",
+      classes: "govuk-button--secondary"
+      }) }}
+    </form>
+
+
+    <hr class="govuk-section-break govuk-section-break--visible">
+
+  </br>
+    <h2 class="govuk-heading-m">
       Register to visit V4
       </br>
 
       {%- from "govuk/components/tag/macro.njk" import govukTag -%}
       {{ govukTag({
-      text: "READY FOR UR",
-      classes: "govuk-tag--pink"
+      text: "Tested",
+      classes: "govuk-tag--green"
       }) }}
     </h2>
 
