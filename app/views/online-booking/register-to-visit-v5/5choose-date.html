@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  One Login – {{ serviceName }} – GOV.UK Prototype Kit
+  Choose date– {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,20 +13,25 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-l">
-        Enter your email address
-      </h1>
+      <form class="form" action="5reasonable-adjustments" method="post">
 
-      <form class="form" action="2one-login-email-check" method="post">
 
-        <div class="govuk-form-group">
-          
-          <input class="govuk-input govuk-!-width-one-half" id="one-half" name="one-half" type="text">
-        </div>
+        {%- from "govuk/components/tag/macro.njk" import govukTag -%}
+        {{ govukTag({
+        text: "In progress",
+        classes: "govuk-tag--purple"
+        }) }}
+        <h1 class="govuk-heading-l">
+            When do you want to visit?
+          </h1>
 
+       
+
+    
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
       </form>
+
 
     </div>
   </div>

@@ -13,11 +13,18 @@ Register to visit someone at HMP Hewell – {{ serviceName }} – GOV.UK Prototy
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
+      {%- from "govuk/components/tag/macro.njk" import govukTag -%}
+      {{ govukTag({
+      text: "In progress",
+      classes: "govuk-tag--purple"
+      }) }}
       <h1 class="govuk-heading-l">
-        Register to visit someone at HMP Hewell
+        Register to visit someone at [prison]
       </h1>
 
-      <form class="form" action="prisoner-name" method="post">
+      
+
+      <form class="form" action="3prisoner-name" method="post">
 
         <p>To register, you need to submit:</p>
           <ul class="govuk-list govuk-list--bullet"">
@@ -35,6 +42,8 @@ Register to visit someone at HMP Hewell – {{ serviceName }} – GOV.UK Prototy
 
         <p>When approved, you can book visits without needing to enter prisoner and visitor details again. You will also get text message confirmation of your bookings.</p>
         <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+        
 
       </form>
 

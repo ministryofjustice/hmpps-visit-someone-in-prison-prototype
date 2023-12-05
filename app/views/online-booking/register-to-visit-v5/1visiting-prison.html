@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  One Login – {{ serviceName }} – GOV.UK Prototype Kit
+  Visiting HMP Hewell – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -14,15 +14,17 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        Enter your email address
+        Visiting HMP Hewell
       </h1>
 
-      <form class="form" action="2one-login-email-check" method="post">
+      <form class="form" action="2one-login-start" method="post">
 
-        <div class="govuk-form-group">
-          
-          <input class="govuk-input govuk-!-width-one-half" id="one-half" name="one-half" type="text">
-        </div>
+        <p>You’ll need a GOV.UK One Login to book visits online at this prison.</p>
+
+        <p>If you have a GOV.UK One Login, you can <a href="#">sign in.</a></p>
+
+        <p>Or you can create one.</p>
+
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 

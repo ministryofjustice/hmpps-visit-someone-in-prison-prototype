@@ -17,6 +17,12 @@
 
       <form class="form" action="/register-another-visitor-answer" method="post">
 
+        {%- from "govuk/components/tag/macro.njk" import govukTag -%}
+      {{ govukTag({
+      text: "Not working",
+      classes: "govuk-tag--red"
+      }) }}
+
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
           {{ govukRadios({

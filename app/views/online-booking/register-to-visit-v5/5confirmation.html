@@ -10,12 +10,19 @@
     <div class="govuk-grid-column-two-thirds">
 
       <div class="govuk-panel govuk-panel--confirmation">
-        <h1 class="govuk-panel__title">Registration submitted</h1>
+        
+        <h1 class="govuk-panel__title">Visit booked</h1>
         <div class="govuk-panel__body">
           Your reference number<br><strong>HDJ2123F</strong>
         </div>
       </div>
-
+       
+      {%- from "govuk/components/tag/macro.njk" import govukTag -%}
+      {{ govukTag({
+      text: "In progress",
+      classes: "govuk-tag--purple"
+      }) }}
+      
       <p>
         We have sent you a confirmation text message.
       </p>
