@@ -32,13 +32,40 @@
     }) }}
 
     <h2 class="govuk-heading-m">
+      Register to visit V5
+      </br>
+
+      {%- from "govuk/components/tag/macro.njk" import govukTag -%}
+      {{ govukTag({
+      text: "In progress",
+      classes: "govuk-tag--purple"
+      }) }}
+    </h2>
+
+    <p class="govuk-body">What's new:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>TBC</li>
+    
+    </ul>
+
+    <form class="form" action="/online-booking/register-to-visit-v5/start" method="post">
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+      text: "View prototype"
+      }) }}
+    </form>
+
+    <hr class="govuk-section-break govuk-section-break--visible">
+
+  </br>
+    <h2 class="govuk-heading-m">
       Register to visit V4
       </br>
 
       {%- from "govuk/components/tag/macro.njk" import govukTag -%}
       {{ govukTag({
-      text: "READY FOR UR",
-      classes: "govuk-tag--pink"
+      text: "Tested",
+      classes: "govuk-tag--green"
       }) }}
     </h2>
 
