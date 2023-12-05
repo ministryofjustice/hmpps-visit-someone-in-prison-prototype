@@ -51,9 +51,34 @@
     <form class="form" action="/online-booking/register-to-visit-v5/1start" method="post">
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({
-      text: "View prototype"
+      text: "Happy path prototype"
       }) }}
     </form>
+
+    <form class="form" action="/online-booking/register-to-visit-v5-unhappy1/1start" method="post">
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+      text: "Unhappy - email",
+      classes: "govuk-button--secondary"
+      }) }}
+    </form>
+
+    <form class="form" action="/online-booking/register-to-visit-v5/1start" method="post">
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+      text: "Unhappy - mixed approval",
+      classes: "govuk-button--secondary"
+      }) }}
+    </form>
+
+    <form class="form" action="/online-booking/register-to-visit-v5/1start" method="post">
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+      text: "Unhappy - reserve",
+      classes: "govuk-button--secondary"
+      }) }}
+    </form>
+
 
     <hr class="govuk-section-break govuk-section-break--visible">
 

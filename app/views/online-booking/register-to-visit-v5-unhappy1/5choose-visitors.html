@@ -1,0 +1,56 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Choose visitors– {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="5choose-date" method="post">
+
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+{{ govukCheckboxes({
+  name: "visitors",
+  fieldset: {
+    legend: {
+      text: "Who is going on the visit?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  hint: {
+    text: "You can add up to 3 adults and three 3 children (under 18) to your visit."
+  },
+  items: [
+    {
+      value: "visitor-1",
+      text: "Alexander Tanner (31 years old)"
+    },
+    {
+      value: "visitor-2",
+      text: "Frances Spence (59 years old)"
+    },
+    {
+      value: "visitor-3",
+      text: "Kareem French (10 years old)"
+    }
+  ]
+}) }}
+        
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+
+    </div>
+  </div>
+
+{% endblock %}
