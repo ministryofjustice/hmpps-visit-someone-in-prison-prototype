@@ -4,3 +4,23 @@
 // 
 
 // Add extra styles here
+
+.floating-button {
+  @include govuk-media-query($until: desktop) {
+    padding: govuk-spacing(5) 0 govuk-spacing(2) 0;
+    background-color: govuk-colour("light-grey");
+    border-top: 1px solid govuk-colour("mid-grey");
+    position: sticky;
+    bottom: 0;
+    width: 100vw;
+    margin-left: govuk-spacing(-3);
+    @include govuk-media-query(tablet) {
+      margin-left: govuk-spacing(-6);
+    }
+
+    & > .govuk-button {
+      margin-left: 5%;
+      width: 90%;
+    }
+  }
+}
