@@ -24,3 +24,55 @@
     }
   }
 }
+
+.calendar-slots {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  width: 100%;
+
+  & > li {
+    flex-basis: 2rem;
+    height: 2rem;
+    line-height: 2rem;
+    padding: 0.5rem;
+  }
+
+  & a {
+    @include govuk-link-style-no-visited-state;
+    font-weight: bold;
+  }
+
+  & a:focus {
+    background-color: govuk-colour("blue");
+    box-shadow: none;
+  }
+}
+
+.calendar-slots__day {
+  @include govuk-media-query($until: desktop) {
+    display: none;
+  }
+}
+
+li.calendar-slots__active {
+  background-color: govuk-colour("blue");
+  border-radius: 50%;
+
+  & > a {
+    font-weight: bold;
+    color: white !important;
+    text-decoration: none;
+    cursor: default;
+  }
+}
+
+.day-slots,
+.calendar-slot-button {
+  display: none;
+}
+
+.day-slots__active,
+.calendar-slot-button__active {
+  display: block;
+}
