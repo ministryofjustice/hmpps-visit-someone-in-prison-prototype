@@ -19,7 +19,28 @@
       
 
       <h2 class="govuk-heading-m">What happens next</h2>
-      <p>Drake Hall will check the visitor details you submitted. They will see if these details match anyone on Jane Smith’s visitor list. This can take up to 5 working days.</p>
+
+      <p>You can book a visit for:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Susan Smith</li>
+        <li>Michael Smith</li>
+      </ul>
+
+      <form class="form" action="/online-booking/register-to-visit-v5-unhappy2/5homepage" method="post">
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+        {{ govukButton({
+        text: "Book a visit",
+        classes: "govuk-button"
+        }) }}
+      </form>
+
+      <p>Drake hall will check the visitor details you sumitted for:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>John Smith</li>
+        <li>Linda Parrell</li>
+      </ul>
+
+      <p>They will see if these details match anyone on Jane Smith’s visitor list. This can take up to 5 working days.</p>
       <p>There is no need to contact the prison for updates. They will contact you either to confirm your registration, or to ask for more information.</p>
       
       <p>If you provided a contact method, we will contact you when you can book.</p>

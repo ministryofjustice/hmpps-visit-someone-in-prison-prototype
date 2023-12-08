@@ -17,12 +17,7 @@
 
       <form class="form" action="/register-another-visitor-answer" method="post">
 
-        {%- from "govuk/components/tag/macro.njk" import govukTag -%}
-      {{ govukTag({
-      text: "Not working",
-      classes: "govuk-tag--red"
-      }) }}
-
+       
         {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
           {{ govukRadios({
@@ -35,7 +30,8 @@
                 classes: "govuk-fieldset__legend--l"
               }
             },
-            
+
+          
             items: [
               {
                 value: "yes",
@@ -47,6 +43,16 @@
               }
             ]
           }) }}
+
+          {% from "govuk/components/details/macro.njk" import govukDetails %}
+
+{{ govukDetails({
+  summaryText: "How many people can go on a visit",
+  text: "You can add up to 3 people aged 17 and over, and 4 children under 17 years old. 
+
+  At least one visitor must be 18 or older.
+  "
+}) }}
 
 
 
