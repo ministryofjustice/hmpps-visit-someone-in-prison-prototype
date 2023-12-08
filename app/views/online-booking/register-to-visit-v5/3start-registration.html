@@ -12,35 +12,19 @@ Register to visit someone at HMP Hewell – {{ serviceName }} – GOV.UK Prototy
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-      {%- from "govuk/components/tag/macro.njk" import govukTag -%}
-      {{ govukTag({
-      text: "In progress",
-      classes: "govuk-tag--purple"
-      }) }}
       <h1 class="govuk-heading-l">
-        Register to visit someone at [prison]
+        Booking a visit a Drake Hall
       </h1>
 
       
 
       <form class="form" action="3prisoner-name" method="post">
 
-        <p>To register, you need to submit:</p>
-          <ul class="govuk-list govuk-list--bullet"">
-            <li>the prisoner’s details</li>
-            <li>visitor details</li>
-            
-          </ul>
-
-
-        <p>The prison will check the details you submit match the prisoner’s approved visitor list. The prison may also carry out security checks. </p>
-        
-        <div class="govuk-inset-text">
-          Approving registrations typically takes one to three weeks.
-        </div>
-
-        <p>When approved, you can book visits without needing to enter prisoner and visitor details again. You will also get text message confirmation of your bookings.</p>
+        <p>You will need to submit details about the prisoner and visitors.</p>
+          
+        <p>This will need to match visitor details submitted by the prisoner.</p>
+    
+        <p>Once these details are matched, you will not need to submit them again to book more visits.</p>
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
         

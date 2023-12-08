@@ -17,33 +17,35 @@
 
         {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
 
-{{ govukCheckboxes({
-  name: "visitors",
-  fieldset: {
-    legend: {
-      text: "Who is going on the visit?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--l"
-    }
-  },
-  hint: {
-    text: "You can add up to 3 adults and three 3 children (under 18) to your visit."
-  },
-  items: [
-    {
-      value: "visitor-1",
-      text: "Alexander Tanner (31 years old)"
-    },
-    {
-      value: "visitor-2",
-      text: "Frances Spence (59 years old)"
-    },
-    {
-      value: "visitor-3",
-      text: "Kareem French (10 years old)"
-    }
-  ]
-}) }}
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Who is going on the visit?
+              </h1>
+            </legend>
+            <p>
+              You can add up to 3 people aged 17 and over, and 4 children under 17 years old. 
+              </p>
+              <p>At least one visitor must be 18 or older.
+            </p>
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                <label class="govuk-label govuk-checkboxes__label" for="waste">
+                  Susan Smith (39 years old)
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+                <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                  Michael Smith (15 years old)
+                </label>
+              </div>
+              
+            </div>
+          </fieldset>
+        </div>
         
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
