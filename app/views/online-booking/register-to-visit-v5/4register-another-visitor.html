@@ -17,43 +17,47 @@
 
       <form class="form" action="/register-another-visitor-answer" method="post">
 
+  
        
-        {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
-          {{ govukRadios({
-            classes: "govuk-radios--inline",
-            name: "register-another-visitor-answer",
-            fieldset: {
-              legend: {
-                text: "Do you want to register another visitor?",
-                isPageHeading: true,
-                classes: "govuk-fieldset__legend--l"
-              }
-            },
 
-          
-            items: [
-              {
-                value: "yes",
-                text: "Yes"
-              },
-              {
-                value: "no",
-                text: "No"
-              }
-            ]
-          }) }}
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                <h1 class="govuk-fieldset__heading">
+                  Do you want to register another visitor?
+                </h1>
+              </legend>
 
-          {% from "govuk/components/details/macro.njk" import govukDetails %}
-
-{{ govukDetails({
-  summaryText: "How many people can go on a visit",
-  text: "You can add up to 3 people aged 17 and over, and 4 children under 17 years old. 
-
-  At least one visitor must be 18 or older.
-  "
-}) }}
-
+              <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    How many people can go on a visit
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  <p>
+                    You can add up to 3 people aged 17 and over, and 4 children under 17 years old. </p>
+                    <p>At least one visitor must be 18 or older.</p>
+              </details>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="yes" name="register-another-visitor-answer" type="radio" value="yes">
+                  <label class="govuk-label govuk-radios__label" for="yes">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="no" name="register-another-visitor-answer" type="radio" value="no">
+                  <label class="govuk-label govuk-radios__label" for="no">
+                    No
+                  </label>
+                </div>
+                
+                
+              </div>
+            </fieldset>
+          </div>
 
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
