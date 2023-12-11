@@ -1,7 +1,13 @@
 {% extends "layouts/main.html" %}
 
-{% block pageTitle %}
-  Visitor's name– {{ serviceName }} – GOV.UK Prototype Kit
+{% from "di-govuk-one-login-service-header/service-header.njk" import govukOneLoginServiceHeader %}
+
+{% block header %}
+  {{ govukOneLoginServiceHeader({
+    serviceName: "Visit someone in prison",
+    
+    activeLinkId: 'servicelink3'
+  }) }}
 {% endblock %}
 
 {% block beforeContent %}

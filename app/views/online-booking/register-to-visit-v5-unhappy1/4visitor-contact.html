@@ -1,7 +1,12 @@
 {% extends "layouts/main.html" %}
+{% from "di-govuk-one-login-service-header/service-header.njk" import govukOneLoginServiceHeader %}
 
-{% block pageTitle %}
-  Choose prisoner – {{ serviceName }} – GOV.UK Prototype Kit
+{% block header %}
+  {{ govukOneLoginServiceHeader({
+    serviceName: "Visit someone in prison",
+    
+    activeLinkId: 'servicelink3'
+  }) }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -29,7 +34,7 @@
               
              <p> If you provide a contact method, we will tell you when you can book.</p>
               
-             <p> You can also sign in to OneLogin and see the visitors you can book for.</p>
+             <p> You can also sign in to One Login and see the visitors you can book for.</p>
 
             
         </div>

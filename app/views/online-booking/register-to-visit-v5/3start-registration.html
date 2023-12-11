@@ -1,7 +1,12 @@
 {% extends "layouts/main.html" %}
+{% from "di-govuk-one-login-service-header/service-header.njk" import govukOneLoginServiceHeader %}
 
-{% block pageTitle %}
-Register to visit someone at HMP Hewell – {{ serviceName }} – GOV.UK Prototype Kit
+{% block header %}
+  {{ govukOneLoginServiceHeader({
+    serviceName: "Visit someone in prison",
+    
+    activeLinkId: 'servicelink3'
+  }) }}
 {% endblock %}
 
 {% block beforeContent %}
@@ -20,11 +25,7 @@ Register to visit someone at HMP Hewell – {{ serviceName }} – GOV.UK Prototy
 
       <form class="form" action="3prisoner-name" method="post">
 
-        <p>You will need to submit details about the prisoner and visitors.</p>
-          
-        <p>This will need to match visitor details submitted by the prisoner.</p>
-    
-        <p>Once these details are matched, you will not need to submit them again to book more visits.</p>
+      
         <p>You will need to submit details about the prisoner and visitors.</p>
           
         <p>This will need to match visitor details submitted by the prisoner.</p>

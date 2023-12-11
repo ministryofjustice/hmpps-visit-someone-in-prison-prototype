@@ -1,7 +1,13 @@
 {% extends "layouts/main.html" %}
 
-{% block pageTitle %}
-  Confirmation page – {{ serviceName }} – GOV.UK Prototype Kit
+{% from "di-govuk-one-login-service-header/service-header.njk" import govukOneLoginServiceHeader %}
+
+{% block header %}
+  {{ govukOneLoginServiceHeader({
+    serviceName: "Visit someone in prison",
+    
+    activeLinkId: 'servicelink3'
+  }) }}
 {% endblock %}
 
 {% block content %}
@@ -26,7 +32,7 @@
         <li>Michael Smith</li>
       </ul>
 
-      <form class="form" action="/online-booking/register-to-visit-v5-unhappy2/5homepage" method="post">
+      <form class="form" action="/online-booking/register-to-visit-v5-unhappy2-calendar/5homepage" method="post">
         {% from "govuk/components/button/macro.njk" import govukButton %}
         {{ govukButton({
         text: "Book a visit",
@@ -34,7 +40,9 @@
         }) }}
       </form>
 
-      <p>Drake Hall will check the visitor details you sumitted for:</p>
+
+      <p>Drake Hall will check the visitor details you submitted for:</p>
+
       <ul class="govuk-list govuk-list--bullet">
         <li>John Smith</li>
         <li>Linda Parrell</li>
