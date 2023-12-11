@@ -1,9 +1,13 @@
 {% extends "layouts/main.html" %}
+{% from "di-govuk-one-login-service-header/service-header.njk" import govukOneLoginServiceHeader %}
 
-{% block pageTitle %}
-Prisoner’s date of birth– {{ serviceName }} – GOV.UK Prototype Kit
+{% block header %}
+  {{ govukOneLoginServiceHeader({
+    serviceName: "Visit someone in prison",
+    
+    activeLinkId: 'servicelink3'
+  }) }}
 {% endblock %}
-
 {% block beforeContent %}
   <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 {% endblock %}
