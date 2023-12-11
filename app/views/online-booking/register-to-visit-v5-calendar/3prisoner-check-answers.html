@@ -1,16 +1,23 @@
 {% extends "layouts/main.html" %}
 
-{% block pageTitle %}
-  Check your answers – {{ serviceName }} – GOV.UK Prototype Kit
-{% endblock %}
+{% from "di-govuk-one-login-service-header/service-header.njk" import govukOneLoginServiceHeader %}
 
+{% block header %}
+  {{ govukOneLoginServiceHeader({
+    serviceName: "Visit someone in prison",
+    
+    activeLinkId: 'servicelink3'
+  }) }}
+{% endblock %}
 
 
 {% block content %}
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
+
       <h1 class="govuk-heading-l">Check your answers about the prisoner</h1>
+
       <div class="govuk-summary-card">
         <div class="govuk-summary-card__title-wrapper">
           <h2 class="govuk-summary-card__title">Prisoner details</h2>
