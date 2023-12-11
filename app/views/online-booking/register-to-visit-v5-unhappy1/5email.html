@@ -1,0 +1,49 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Choose visitors– {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="5choose-date" method="post">
+
+        {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <h1 class="govuk-fieldset__heading">
+                Update on your booking
+              </h1>
+            </legend>
+            <p>
+              Drake Hall has approved you to book for:
+
+              <ul class="govuk-list govuk-list--bullet">
+                <li>Susan Smith</li>
+                <li>Michael Smith</li>
+              </ul>
+              </p>
+              
+              <p>You can now <a class="govuk-link govuk-link--no-visited-state" href="5homepage">book for these visitors</a>.</p>
+            
+          </fieldset>
+        </div>
+        
+      
+
+      </form>
+
+
+    </div>
+  </div>
+
+{% endblock %}

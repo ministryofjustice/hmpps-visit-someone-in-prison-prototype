@@ -16,44 +16,100 @@
       <form class="form" action="5reasonable-adjustments" method="post">
 
 
-       
         <h1 class="govuk-heading-l">
           When do you want to visit?
         </h1>
 
-          
         <p>You can book visits at HMP Drake Hall between 14 December 2023 and 11 January 2024.</p>
 
         <p>Only times that Jane Smith can attend are shown.</p>
 
-          <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
-            <div class="govuk-accordion__section">
-              <div class="govuk-accordion__section-header">
-                <h2 class="govuk-accordion__section-heading">
-                  <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-                    Thursday 14 December 2023
-                  </span>
-                </h2>
-              </div>
-              <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
-                <fieldset class="govuk-fieldset">
-                  <div class="govuk-radios" data-module="govuk-radios">
-                    <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
-                      <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
-                        10am to 11am (1 hour)
-                      </label>
-                    </div>
-                    <div class="govuk-radios__item">
-                      <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
-                      <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
-                        2pm to 4pm (2 hours)
-                      </label>
-                    </div>
-                  </div>
-                </fieldset>
-              </div>
-            </div>
+        <div id="calendar-slot-picker">
+          <h2 class="govuk-heading-m">
+            December 2023
+          </h2>
+
+          <ul class="govuk-list calendar-slots">
+            <li>M<span class="calendar-slots__day">on</span></li>
+            <li>T<span class="calendar-slots__day">ue</span></li>
+            <li>W<span class="calendar-slots__day">ed</span></li>
+            <li>T<span class="calendar-slots__day">hu</span></li>
+            <li>F<span class="calendar-slots__day">ri</span></li>
+            <li>S<span class="calendar-slots__day">at</span></li>
+            <li>S<span class="calendar-slots__day">un</span></li>
+          </ul>
+
+          <ul class="govuk-list calendar-slots">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li><a href="#date-14-dec">14</a></li>
+            <li>15</li>
+            <li><a href="#date-16-dec">16</a></li>
+            <li><a href="#date-17-dec">17</a></li>
+          </ul>
+
+          <ul class="govuk-list calendar-slots">
+            <li>18</li>
+            <li>19</li>
+            <li><a href="#date-20-dec">20</a></li>
+            <li><a href="#date-21-dec">21</a></li>
+            <li>22</li>
+            <li><a href="#date-23-dec">23</a></li>
+            <li><a href="#date-24-dec">24</a></li>
+          </ul>
+
+          <ul class="govuk-list calendar-slots">
+            <li>25</li>
+            <li>26</li>
+            <li><a href="#date-27-dec">27</a></li>
+            <li><a href="#date-28-dec">28</a></li>
+            <li>29</li>
+            <li><a href="#date-30-dec">30</a></li>
+            <li><a href="#date-31-dec">31</a></li>
+          </ul>
+
+          <h2 class="govuk-heading-m">
+            January 2024
+          </h2>
+
+          <ul class="govuk-list calendar-slots">
+            <li>1</li>
+            <li>2</li>
+            <li><a href="#date-3-jan">3</a></li>
+            <li><a href="#date-4-jan">4</a></li>
+            <li>5</li>
+            <li><a href="#date-6-jan">6</a></li>
+            <li><a href="#date-7-jan">7</a></li>
+          </ul>
+
+          <ul class="govuk-list calendar-slots">
+            <li>8</li>
+            <li>9</li>
+            <li><a href="#date-10-jan">10</a></li>
+            <li><a href="#date-11-jan">11</a></li>
+            <li></li>
+            <li></li>
+            <li></li>
+          </ul>
+
+          <br>
+
+          <div class="day-slots" id="date-14-dec">
+            {{ govukRadios({
+              name: "slots",
+              fieldset: {
+                legend: {
+                  text: "Thursday 14th December 2023",
+                  classes: "govuk-fieldset__legend--m"
+                }
+              },
+              items: [
+                { value: "", text: "10am to 11am (1 hour)" },
+                { value: "", text: "2pm to 3pm (1 hour)" }
+              ]
+            }) }}
+          </div>
 
           <div class="day-slots" id="date-16-dec">
             {{ govukRadios({
@@ -310,12 +366,11 @@
               ]
             }) }}
           </div>
-        
-          <div class="floating-button" >
-            <button class="govuk-button" data-module="govuk-button">
-              Continue
-            </button>
-          </div>
+
+          <button class="govuk-button govuk-!-margin-top-6 calendar-slot-button" data-module="govuk-button">
+            Continue
+          </button>
+        </div>
 
       </form>
 
