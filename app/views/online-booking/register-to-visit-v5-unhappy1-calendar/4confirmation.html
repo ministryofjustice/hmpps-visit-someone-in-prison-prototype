@@ -1,0 +1,44 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Confirmation page – {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        
+        <h1 class="govuk-panel__title">Visitor details submitted</h1>
+        <div class="govuk-panel__body">
+          Your reference number<br><strong>HDJ2123F</strong>
+        </div>
+      </div>
+      
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <p>Drake Hall will check the visitor details you submitted. They will see if these details match anyone on Jane Smith’s visitor list. This can take up to 5 working days.</p>
+      <p>There is no need to contact the prison for updates. They will contact you either to confirm your registration, or to ask for more information.</p>
+      
+      <p>If you provided a contact method, we will contact you when you can book.</p>
+      
+     
+      <p><a href="5homepage" class="govuk-link govuk-link--no-visited-state">Your prison visits account</a> also shows the visitors you can book for. </p>
+
+
+      <br>
+      <br>
+      <br>
+      <br>
+
+      <form class="form" action="5email" method="post">
+        <button class="govuk-button govuk-button--secondary" data-module="govuk-button">Continue to email</button>
+      </form>
+
+     
+    </div>
+  </div>
+
+{% endblock %}

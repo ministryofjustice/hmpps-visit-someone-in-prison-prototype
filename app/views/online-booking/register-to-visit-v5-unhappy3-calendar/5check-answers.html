@@ -1,0 +1,124 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  Check your answers– {{ serviceName }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <form class="form" action="5confirmation" method="post">
+
+        <h1 class="govuk-heading-l">
+            Check the visit details before booking
+          </h1>
+
+  
+
+          <div class="govuk-summary-card">
+            <div class="govuk-summary-card__title-wrapper">
+              <h2 class="govuk-summary-card__title">Visit details</h2>
+            </div>
+            <div class="govuk-summary-card__content">
+              <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Prisoner
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Jane Smith
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                      Change<span class="govuk-visually-hidden"> age</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Visitors
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Linda Parrell (40 years old)
+              </br>
+              Michael Smith (15 years old)
+              <br>
+              Susan Smith (39 years old)
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                      Change<span class="govuk-visually-hidden"> nationality</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Date and time
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Thursday 21 December 2023
+                  </br>
+                  9am to 10am
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                      Change<span class="govuk-visually-hidden"> working situation</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Additional support requests
+
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    None
+
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                      Change<span class="govuk-visually-hidden"> working situation</span>
+                    </a>
+                  </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                  <dt class="govuk-summary-list__key">
+                    Main contact
+
+                  </dt>
+                  <dd class="govuk-summary-list__value">
+                    Susan Smith
+                  </br>
+                  0789085627
+                  </dd>
+                  <dd class="govuk-summary-list__actions">
+                    <a class="govuk-link" href="#">
+                      Change<span class="govuk-visually-hidden"> working situation</span>
+                    </a>
+                  </dd>
+                </div>
+               
+              
+              </dl>
+            </div>
+          </div>
+        
+
+       
+
+    
+        <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+      </form>
+
+
+    </div>
+  </div>
+
+{% endblock %}
