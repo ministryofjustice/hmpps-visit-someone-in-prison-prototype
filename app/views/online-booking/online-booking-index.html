@@ -30,36 +30,51 @@
     }]
     }) }}
 
-
     <h2 class="govuk-heading-m">
       Register to visit V5
       </br>
 
       {%- from "govuk/components/tag/macro.njk" import govukTag -%}
       {{ govukTag({
-      text: "In progress",
-      classes: "govuk-tag--purple"
+      text: "Ready for UR",
+      classes: "govuk-tag--green"
       }) }}
     </h2>
 
     <p class="govuk-body">What's new:</p>
     <ul class="govuk-list govuk-list--bullet">
-      <li>TBC</li>
-    
+      <li>New date picker styles</li>
+      <li>Continuous booking journey happy path</li>
+      <li>Move away from registration</li>
+      <li>Lots of updated content</li>
     </ul>
 
-   
     <form class="form" action="/online-booking/register-to-visit-v5/1start" method="post">
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({
-      text: "Happy path prototype"
+      text: "Happy path prototype (accordion)"
+      }) }}
+    </form>
+
+    <form class="form" action="/online-booking/register-to-visit-v5-calendar/1start" method="post">
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+      text: "Happy path prototype (calendar)"
       }) }}
     </form>
 
     <form class="form" action="/online-booking/register-to-visit-v5-unhappy1/4visitor-check-answers" method="post">
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({
-      text: "Unhappy - email",
+      text: "Unhappy - email (accordion)",
+      classes: "govuk-button--secondary"
+      }) }}
+    </form>
+
+    <form class="form" action="/online-booking/register-to-visit-v5-unhappy1-calendar/4visitor-check-answers" method="post">
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+      text: "Unhappy - email (calendar)",
       classes: "govuk-button--secondary"
       }) }}
     </form>
@@ -67,7 +82,15 @@
     <form class="form" action="/online-booking/register-to-visit-v5-unhappy2/4visitor-check-answers" method="post">
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({
-      text: "Unhappy - mixed approval",
+      text: "Unhappy - mixed approval (accordion)",
+      classes: "govuk-button--secondary"
+      }) }}
+    </form>
+
+    <form class="form" action="/online-booking/register-to-visit-v5-unhappy2-calendar/4visitor-check-answers" method="post">
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+      text: "Unhappy - mixed approval (calendar)",
       classes: "govuk-button--secondary"
       }) }}
     </form>
@@ -75,11 +98,23 @@
     <form class="form" action="/online-booking/register-to-visit-v5-unhappy3/5homepage" method="post">
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({
-      text: "Unhappy - reserve",
+      text: "Unhappy - reserve (accordion)",
       classes: "govuk-button--secondary"
       }) }}
     </form>
 
+    <form class="form" action="/online-booking/register-to-visit-v5-unhappy3-calendar/5homepage" method="post">
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+      text: "Unhappy - reserve (calendar)",
+      classes: "govuk-button--secondary"
+      }) }}
+    </form>
+
+    <p>
+      <a href="/online-booking/choose-date-calendar">Date picker - calendar view</a>
+    </p>
+    
     <hr class="govuk-section-break govuk-section-break--visible">
 
   </br>
@@ -91,7 +126,7 @@
       {%- from "govuk/components/tag/macro.njk" import govukTag -%}
       {{ govukTag({
       text: "TESTED",
-      classes: "govuk-tag--green"
+      classes: "govuk-tag--blue"
       }) }}
     </h2>
 
