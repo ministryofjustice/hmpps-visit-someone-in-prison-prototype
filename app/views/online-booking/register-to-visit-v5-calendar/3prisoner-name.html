@@ -1,7 +1,7 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-  Choose prison– {{ serviceName }} – GOV.UK Prototype Kit
+Prisoner’s name – {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
 {% block beforeContent %}
@@ -14,26 +14,27 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        Which prison are you visiting?
+        Prisoner’s name
       </h1>
 
-      <form class="form" action="1visiting-prison" method="post">
+      <form class="form" action="3prison-number" method="post">
 
         <div class="govuk-form-group">
-          <div id="account-number-hint" class="govuk-hint">
-            For example, Cardiff
-          </div>
-          
+          <label class="govuk-label" for="one-half">
+            First name
+          </label>
+          <input class="govuk-input govuk-!-width-one-half" id="one-half" name="one-half" type="text">
+        </div>
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="one-half">
+            Last name
+          </label>
           <input class="govuk-input govuk-!-width-one-half" id="one-half" name="one-half" type="text">
         </div>
 
         <button class="govuk-button" data-module="govuk-button">Continue</button>
 
       </form>
-
-      <h3 class="govuk-heading-s">What if I don’t know their location?</h3>
-
-      <p>You can <a href="#">use the Find a Prisoner service</a>. </p>
 
     </div>
   </div>
