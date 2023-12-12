@@ -11,6 +11,7 @@
     "@ministryofjustice/frontend": "^1.8.0",
     "govuk-frontend": "4.7.0",
     "govuk-one-login-service-header": "github:alphagov/di-govuk-one-login-service-header",
-    "govuk-prototype-kit": "13.14.0"
+    "govuk-prototype-kit": "13.14.0",
+    "notifications-node-client": "7.0.6"
   }
 }

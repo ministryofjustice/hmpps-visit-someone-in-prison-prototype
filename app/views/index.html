@@ -48,7 +48,7 @@
       <li>Continuous booking journey happy path</li>
       <li>Move away from registration</li>
       <li>Lots of updated content</li>
-    
+
     </ul>
 
     <form class="form" action="/online-booking/register-to-visit-v5/1start" method="post">
@@ -73,7 +73,8 @@
       }) }}
     </form>
 
-    <form class="form" action="/online-booking/register-to-visit-v5-unhappy1-calendar/4visitor-check-answers" method="post">
+    <form class="form" action="/online-booking/register-to-visit-v5-unhappy1-calendar/4visitor-check-answers"
+      method="post">
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({
       text: "Email - calendar",
@@ -89,10 +90,11 @@
       }) }}
     </form>
 
-    <form class="form" action="/online-booking/register-to-visit-v5-unhappy2-calendar/4visitor-check-answers" method="post">
+    <form class="form" action="/online-booking/register-to-visit-v5-unhappy2-calendar/4visitor-check-answers"
+      method="post">
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({
-      text: "Mixed approval -  calendar",
+      text: "Mixed approval - calendar",
       classes: "govuk-button--secondary"
       }) }}
     </form>
@@ -116,10 +118,15 @@
     <p>
       <a href="/online-booking/choose-date-calendar">Date picker - calendar view</a>
     </p>
+    <p>
+      <a href="/email-address-page">Send a email</a>
+    </p>
+    <p>
+      <a href="/sms-page">Send a text</a>
+    </p>
 
     <hr class="govuk-section-break govuk-section-break--visible">
-
-  </br>
+    </br>
     <h2 class="govuk-heading-m">
       Register to visit V4
       </br>
