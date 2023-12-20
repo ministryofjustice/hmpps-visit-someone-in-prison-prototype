@@ -1,13 +1,7 @@
-{% extends "layouts/main.html" %}
-{% from "di-govuk-one-login-service-header/service-header.njk" import govukOneLoginServiceHeader %}
-
-{% block header %}
-  {{ govukOneLoginServiceHeader({
-    serviceName: "Visit someone in prison",
-    
-    activeLinkId: 'servicelink3'
-  }) }}
-{% endblock %}
+{% set homepageLink = "/" %}
+{% set oneLoginLink = "/" %}
+{% set signOutLink = "/" %}
+{% extends "di-govuk-one-login-service-header/layouts/service-header.html" %}
 
 {% block content %}
 
