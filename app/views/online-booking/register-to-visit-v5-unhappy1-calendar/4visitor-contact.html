@@ -33,56 +33,82 @@
             
         </div>
 
-        <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
-         
-              <h2 class="govuk-heading-m">
-                How would you prefer to be contacted?
-              </h2>
-            
-            <div id="contact-hint" class="govuk-hint">
-              We will only use this to contact you about the approval or rejection of visitor details you submitted. 
-            </div>
-            <div class="govuk-radios" data-module="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email" data-aria-controls="conditional-contact">
-                <label class="govuk-label govuk-radios__label" for="contact">
-                  Text message
-                </label>
-              </div>
-              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="contact-by-email">
-                    Phone number
-                  </label>
-                  <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contactByEmail" type="tel" spellcheck="false" autocomplete="email">
-                </div>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone" data-aria-controls="conditional-contact-2">
-                <label class="govuk-label govuk-radios__label" for="contact-2">
-                  Email
-                </label>
-              </div>
-              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2">
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="contact-by-phone">
-                    Email address
-                  </label>
-                  <input class="govuk-input govuk-!-width-one-third" id="contact-by-phone" name="contactByPhone" type="email" autocomplete="tel">
-                </div>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="contact-3" name="contact" type="radio" value="text" data-aria-controls="conditional-contact-3">
-                <label class="govuk-label govuk-radios__label" for="contact-3">
-                  Do not contact me
-                </label>
-              </div>
-              
-            </div>
-          </fieldset>
-        </div>
-
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+        {% from "govuk/components/input/macro.njk" import govukInput %}
+        
+        {% set emailHtml %}
+        {{ govukInput({
+          id: "contact-by-email",
+          name: "contactByEmail",
+          type: "email",
+          autocomplete: "email",
+          spellcheck: false,
+          classes: "govuk-!-width-one-third",
+          label: {
+            text: "Email address"
+          }
+        }) }}
+        {% endset -%}
+        
+        {% set phoneHtml %}
+        {{ govukInput({
+          id: "contact-by-phone",
+          name: "contactByPhone",
+          type: "tel",
+          autocomplete: "tel",
+          classes: "govuk-!-width-one-third",
+          label: {
+            text: "Do not contact"
+          }
+        }) }}
+        {% endset -%}
+        
+        {% set textHtml %}
+        {{ govukInput({
+          id: "contact-by-text",
+          name: "contactByText",
+          type: "tel",
+          autocomplete: "tel",
+          classes: "govuk-!-width-one-third",
+          label: {
+            text: "Mobile phone number"
+          }
+        }) }}
+        {% endset -%}
+        
+        {{ govukRadios({
+          name: "contact",
+          fieldset: {
+            legend: {
+              text: "How would you prefer to be contacted?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          hint: {
+            text: "We will only use this to contact you about the approval or rejection of visitor details you submitted."
+          },
+          items: [
+          {
+            value: "text",
+            text: "Text message",
+            conditional: {
+              html: textHtml
+            }
+              }  ,          
+          {
+              value: "email",
+              text: "Email",
+              conditional: {
+                html: emailHtml
+              }
+            },
+            {
+              value: "phone",
+              text: "Do not contact me"
+            }
+          ]
+        }) }}
 
         
         <button class="govuk-button" data-module="govuk-button">Continue</button>
