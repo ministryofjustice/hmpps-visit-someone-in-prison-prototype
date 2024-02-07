@@ -5,31 +5,35 @@
 {% endblock %}
 
 {% block header %}
-<!-- Blank header with no service name for the start page -->
-{{ govukHeader() }}
-{% endblock %}
 
+{{ govukHeader() }}
+
+{%- from "moj/components/primary-navigation/macro.njk" import mojPrimaryNavigation -%}
+
+{{ mojPrimaryNavigation({
+  label: 'Primary navigation',
+  items: [
+    {
+      text: 'Online booking',
+      href: '/'
+    },
+    {
+      text: 'Staff service',
+      href: '/assisted-digital/assisted-digital-index.html',
+      active: true
+    }
+  ]
+}) }}
+
+{% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+
     <h1 class="govuk-heading-xl">
       {% if serviceName %} {{ serviceName }} {% endif %}
     </h1>
-
-    {%- from "moj/components/sub-navigation/macro.njk" import mojSubNavigation -%}
-
-    {{ mojSubNavigation({
-    label: 'Sub navigation',
-    items: [{
-    text: 'Online booking',
-    href: '/online-booking/online-booking-index'
-    }, {
-    text: 'Assisted digital',
-    href: '/assisted-digital/assisted-digital-index.html',
-    active: true
-    }]
-    }) }}
 
     <details class="govuk-details" data-module="govuk-details">
       <summary class="govuk-details__summary">

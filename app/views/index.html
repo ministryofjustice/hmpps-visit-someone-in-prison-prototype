@@ -5,8 +5,25 @@
 {% endblock %}
 
 {% block header %}
-<!-- Blank header with no service name for the start page -->
+
 {{ govukHeader() }}
+
+{%- from "moj/components/primary-navigation/macro.njk" import mojPrimaryNavigation -%}
+
+{{ mojPrimaryNavigation({
+  label: 'Primary navigation',
+  items: [
+    {
+      text: 'Online booking',
+      href: '/',
+      active: true
+    },
+    {
+      text: 'Staff service',
+      href: '/assisted-digital/assisted-digital-index.html'
+    }
+  ]
+}) }}
 {% endblock %}
 
 {% block content %}
@@ -17,28 +34,14 @@
       {% if serviceName %} {{ serviceName }} {% endif %}
     </h1>
 
-    {%- from "moj/components/sub-navigation/macro.njk" import mojSubNavigation -%}
-
-    {{ mojSubNavigation({
-    label: 'Sub navigation',
-    items: [{
-    text: 'Online booking',
-    href: '/online-booking/online-booking-index',
-    active: true
-    }, {
-    text: 'Assisted digital',
-    href: '/assisted-digital/assisted-digital-index.html'
-    }]
-    }) }}
-
     <h2 class="govuk-heading-m">
       Register to visit V5
       </br>
 
       {%- from "govuk/components/tag/macro.njk" import govukTag -%}
       {{ govukTag({
-      text: "Ready for UR",
-      classes: "govuk-tag--green"
+        text: "Tested",
+        classes: "govuk-tag--blue"
       }) }}
     </h2>
 
