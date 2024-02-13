@@ -5,6 +5,18 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
 
+{% block header %}
+  {{ 
+      govukHeader({
+          homepageUrl: "/",
+          serviceName: serviceName,
+          serviceUrl: "/",
+          containerClasses: "govuk-width-container",
+          useTudorCrown: true
+      })
+}}
+{% endblock %}
+
 {% block head %}
   {{ super() }}
   <script type="text/javascript">

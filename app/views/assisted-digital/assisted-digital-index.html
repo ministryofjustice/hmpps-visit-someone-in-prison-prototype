@@ -5,8 +5,16 @@
 {% endblock %}
 
 {% block header %}
+  {{ 
+      govukHeader({
+          homepageUrl: "/",
+          serviceName: serviceName,
+          serviceUrl: "/",
+          containerClasses: "govuk-width-container",
+          useTudorCrown: true
+      })
+}}
 
-{{ govukHeader() }}
 
 {%- from "moj/components/primary-navigation/macro.njk" import mojPrimaryNavigation -%}
 
