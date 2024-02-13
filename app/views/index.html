@@ -34,6 +34,32 @@
       {% if serviceName %} {{ serviceName }} {% endif %}
     </h1>
 
+      <h2 class="govuk-heading-m">
+      MVP
+      </br>
+
+      {%- from "govuk/components/tag/macro.njk" import govukTag -%}
+      {{ govukTag({
+        text: "In dev",
+        classes: "govuk-tag--blue"
+      }) }}
+    </h2>
+
+    <p class="govuk-body">What's new:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>TBC</li>    
+    </ul>
+
+    <form class="form" action="/online-booking/mvp/homepage" method="post">
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+      text: "Start"
+      }) }}
+    </form>
+
+    <hr class="govuk-section-break govuk-section-break--visible">
+    <br>
+
     <h2 class="govuk-heading-m">
       Register to visit V5
       </br>
