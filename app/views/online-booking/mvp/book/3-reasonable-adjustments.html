@@ -1,0 +1,74 @@
+{% set homepageLink = "/" %}
+{% set oneLoginLink = "/" %}
+{% set signOutLink = "/" %}
+{% extends "di-govuk-one-login-service-header/layouts/service-header.html" %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="4-main-contact" method="post">
+
+      {% from "govuk/components/radios/macro.njk" import govukRadios %}
+      {% from "govuk/components/input/macro.njk" import govukInput %}
+
+      {% set emailHtml %}
+      {{ govukInput({
+      id: "contact-by-email",
+      name: "contactByEmail",
+      type: "text",
+      autocomplete: "email",
+      spellcheck: false,
+      classes: "govuk-!-width-one-third",
+      label: {
+      text: "Details"
+      }
+      }) }}
+      {% endset -%}
+
+      {{ govukRadios({
+      name: "contact",
+      fieldset: {
+      legend: {
+      text: "Is additional support needed for any of the visitors?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+      }
+      },
+      hint: {
+      text: "For example, a wheelchair ramp"
+      },
+      items: [
+      {
+      value: "email",
+      text: "Yes",
+      conditional: {
+      html: emailHtml
+      }
+      },
+      {
+      value: "text",
+      text: "No",
+      conditional: {
+      html: textHtml
+      }
+      }
+      ]
+      }) }}
+
+
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+    </form>
+
+
+  </div>
+</div>
+
+{% endblock %}
