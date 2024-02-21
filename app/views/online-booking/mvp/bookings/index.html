@@ -1,0 +1,42 @@
+{% set homepageLink = "/" %}
+{% set oneLoginLink = "/" %}
+{% set signOutLink = "/" %}
+{% extends "di-govuk-one-login-service-header/layouts/service-header.html" %}
+{%- from "moj/components/primary-navigation/macro.njk" import mojPrimaryNavigation -%}
+
+{% block beforeContent %}
+
+{{ mojPrimaryNavigation({
+label: 'Primary navigation',
+items: [
+{
+text: 'Home',
+href: '/online-booking/mvp/'
+},
+{
+text: 'Bookings',
+href: '/online-booking/mvp/bookings',
+active: true
+},
+{
+text: 'Visitors',
+href: '/online-booking/mvp/visitors'
+}
+]
+}) }}
+{% endblock %}
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Bookings
+    </h1>
+    
+  </div>
+</div>
+
+{% endblock %}

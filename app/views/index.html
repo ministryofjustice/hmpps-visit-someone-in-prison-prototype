@@ -5,8 +5,14 @@
 {% endblock %}
 
 {% block header %}
-
-{{ govukHeader() }}
+  {{ 
+      govukHeader({
+          homepageUrl: "/",
+          serviceName: serviceName,
+          serviceUrl: "/",
+          containerClasses: "govuk-width-container"
+      })
+}}
 
 {%- from "moj/components/primary-navigation/macro.njk" import mojPrimaryNavigation -%}
 
@@ -14,7 +20,7 @@
   label: 'Primary navigation',
   items: [
     {
-      text: 'Online booking',
+      text: 'Public service',
       href: '/',
       active: true
     },
@@ -33,6 +39,35 @@
     <h1 class="govuk-heading-xl">
       {% if serviceName %} {{ serviceName }} {% endif %}
     </h1>
+
+      <h2 class="govuk-heading-m">
+      MVP
+      </br>
+
+      {%- from "govuk/components/tag/macro.njk" import govukTag -%}
+      {{ govukTag({
+        text: "In dev",
+        classes: "govuk-tag--blue"
+      }) }}
+    </h2>
+
+    <p class="govuk-body">What's new:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>added MOJ navigation</li>
+      <li>added basic booking journey with calendar</li>    
+      <li>added basic 'Bookings' view</li>
+      <li>added basic 'Visitors' view</li>
+    </ul>
+
+    <form class="form" action="/online-booking/mvp/" method="post">
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+      text: "Start"
+      }) }}
+    </form>
+
+    <hr class="govuk-section-break govuk-section-break--visible">
+    <br>
 
     <h2 class="govuk-heading-m">
       Register to visit V5
@@ -122,44 +157,7 @@
     </p>
 
     <hr class="govuk-section-break govuk-section-break--visible">
-
-  </br>
-    <h2 class="govuk-heading-m">
-      Register to visit V4
-      </br>
-
-      {%- from "govuk/components/tag/macro.njk" import govukTag -%}
-      {{ govukTag({
-      text: "Tested",
-      classes: "govuk-tag--blue"
-      }) }}
-    </h2>
-
-    <p class="govuk-body">What's new:</p>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>Updated registration journey since testing in June 2022</li>
-      <li>Inclusion of GOV.UK One Login screens</li>
-      <li>Branching question to go through to new service</li>
-      <li>One question per page</li>
-      <li>Two versions for testing - one with one visitor on the check answers page, the other with two</li>
-    </ul>
-
-    <form class="form" action="/online-booking/register-to-visit-v4/start" method="post">
-      {% from "govuk/components/button/macro.njk" import govukButton %}
-      {{ govukButton({
-      text: "View prototype - two visitors"
-      }) }}
-    </form>
-
-    <form class="form" action="/online-booking/register-to-visit-v4-2/start" method="post">
-      {% from "govuk/components/button/macro.njk" import govukButton %}
-      {{ govukButton({
-      text: "View prototype - one visitor",
-      classes: "govuk-button--secondary"
-      }) }}
-    </form>
-
-    <hr class="govuk-section-break govuk-section-break--visible">
+    <br>
 
     <details class="govuk-details" data-module="govuk-details">
       <summary class="govuk-details__summary">
@@ -168,6 +166,8 @@
         </span>
       </summary>
       <div class="govuk-details__text">
+        <p class="govuk-body"><a href="online-booking/archived/register-to-visit-v4/start" class="govuk-link">Register to visit V4 - two visitors</a></p>
+        <p class="govuk-body"><a href="online-booking/archived/register-to-visit-v4-2/start" class="govuk-link">Register to visit V4 - one visitor</a></p>
         <p class="govuk-body"><a href="online-booking/archived/VJ02_book_a_visit_1_V3/" class="govuk-link">VJ02 Book a
             visit V3</a></p>
         <p class="govuk-body"><a href="online-booking/archived/VJ02_book_a_visit_1_V2/" class="govuk-link">VJ02 Book a
