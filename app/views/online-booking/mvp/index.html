@@ -2,31 +2,23 @@
 {% set oneLoginLink = "/" %}
 {% set signOutLink = "/" %}
 {% extends "di-govuk-one-login-service-header/layouts/service-header.html" %}
-{%- from "moj/components/primary-navigation/macro.njk" import mojPrimaryNavigation -%}
-
-
-{% block beforeContent %}
-
-{{ mojPrimaryNavigation({
-label: 'Primary navigation',
-items: [
-{
-text: 'Home',
-href: './',
-active: true
-},
-{
-text: 'Bookings',
-href: './bookings'
-},
-{
-text: 'Visitors',
-href: './visitors'
-}
-]
-}) }}
-{% endblock %}
-
+{% set navigationItems = [
+  {
+    href: "/online-booking/mvp",
+    text: 'Home',
+    id: 'home-link'
+  },{
+    href: "/online-booking/mvp/bookings",
+    text: 'Bookings',
+    id: 'bookings-link'
+  },{
+    href: "/online-booking/mvp/visitors",
+    text: 'Visitors',
+    id: 'visitors-link'
+  }]
+%}
+{% set activeLinkId = "home-link" %}
+{% set serviceName = "Visit someone in prison" %}
 
 {% block content %}
 
@@ -43,7 +35,7 @@ href: './visitors'
 
       {{ govukButton({
       text: "Start now",
-      href: "./book/1-visitors.html",
+      href: "/online-booking/mvp/book/1-visitors.html",
       isStartButton: true
       }) }}
 
