@@ -5,6 +5,8 @@
 
 // Add extra styles here
 
+$govuk-new-typography-scale: true;
+
 .floating-button {
   @include govuk-media-query($until: desktop) {
     padding: govuk-spacing(5) 0 govuk-spacing(2) 0;
