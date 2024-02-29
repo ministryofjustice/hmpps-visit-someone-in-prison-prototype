@@ -27,3 +27,25 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
     })(window, document, "clarity", "script", "k58akkv41l");
 </script>
 {% endblock %}
+
+
+{% block footer %}
+{{ govukFooter({
+  meta: {
+    items: [
+      {
+        href: "/online-booking/mvp/support/cookies",
+        text: "Cookies"
+      },
+      {
+        href: "/online-booking/mvp/support/privacy-notice",
+        text: "Privacy"
+      },
+      {
+        href: "/online-booking/mvp/support/terms-conditions",
+        text: "Terms and conditions"
+      }
+    ]
+  }
+}) }}
+{% endblock %}
