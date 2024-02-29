@@ -3,19 +3,10 @@ For guidance on how to use layouts see:
 https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 #}
 
-{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
-
-{% block header %}
-  {{ 
-      govukHeader({
-          homepageUrl: "/",
-          serviceName: serviceName,
-          serviceUrl: "/",
-          containerClasses: "govuk-width-container",
-          useTudorCrown: true
-      })
-}}
-{% endblock %}
+{% extends "di-govuk-one-login-service-header/layouts/service-header.html" %}
+{% set homepageLink = "/" %}
+{% set oneLoginLink = "/" %}
+{% set signOutLink = "/" %}
 
 {% block head %}
   {{ super() }}

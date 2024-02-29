@@ -1,24 +1,4 @@
-{% set homepageLink = "/" %}
-{% set oneLoginLink = "/" %}
-{% set signOutLink = "/" %}
-{% extends "di-govuk-one-login-service-header/layouts/service-header.html" %}
-{% set navigationItems = [
-  {
-    href: "/online-booking/mvp",
-    text: 'Home',
-    id: 'home-link'
-  },{
-    href: "/online-booking/mvp/bookings",
-    text: 'Bookings',
-    id: 'bookings-link'
-  },{
-    href: "/online-booking/mvp/visitors",
-    text: 'Visitors',
-    id: 'visitors-link'
-  }]
-%}
-{% set activeLinkId = "home-link" %}
-{% set serviceName = "Visit someone in prison" %}
+{% extends "layouts/mvp-homepage.html" %}
 
 {% block content %}
 

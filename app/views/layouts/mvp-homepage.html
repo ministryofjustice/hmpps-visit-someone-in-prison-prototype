@@ -3,19 +3,27 @@ For guidance on how to use layouts see:
 https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
 #}
 
-{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
-
-{% block header %}
-  {{ 
-      govukHeader({
-          homepageUrl: "/",
-          serviceName: serviceName,
-          serviceUrl: "/",
-          containerClasses: "govuk-width-container",
-          useTudorCrown: true
-      })
-}}
-{% endblock %}
+{% extends "di-govuk-one-login-service-header/layouts/service-header.html" %}
+{% set homepageLink = "/" %}
+{% set oneLoginLink = "/" %}
+{% set signOutLink = "/" %}
+{% set navigationItems = [
+  {
+    href: "/online-booking/mvp",
+    text: 'Home',
+    id: 'home-link'
+  },{
+    href: "/online-booking/mvp/bookings",
+    text: 'Bookings',
+    id: 'bookings-link'
+  },{
+    href: "/online-booking/mvp/visitors",
+    text: 'Visitors',
+    id: 'visitors-link'
+  }]
+%}
+{% set activeLinkId = "home-link" %}
+{% set serviceName = "Visit someone in prison" %}
 
 {% block head %}
   {{ super() }}
@@ -27,7 +35,6 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
     })(window, document, "clarity", "script", "k58akkv41l");
 </script>
 {% endblock %}
-
 
 {% block footer %}
 {{ govukFooter({

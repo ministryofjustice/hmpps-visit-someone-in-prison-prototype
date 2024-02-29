@@ -1,7 +1,8 @@
-{% set homepageLink = "/" %}
-{% set oneLoginLink = "/" %}
-{% set signOutLink = "/" %}
-{% extends "di-govuk-one-login-service-header/layouts/service-header.html" %}
+{% extends "layouts/mvp-logged-in.html" %}
+
+{% block pageTitle %}
+Is additional support needed for any of the visitors? – {{ serviceName }}
+{% endblock %}
 
 {% block beforeContent %}
 <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
