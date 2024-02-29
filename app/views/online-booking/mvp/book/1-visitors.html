@@ -1,7 +1,8 @@
-{% set homepageLink = "/" %}
-{% set oneLoginLink = "/" %}
-{% set signOutLink = "/" %}
-{% extends "di-govuk-one-login-service-header/layouts/service-header.html" %}
+{% extends "layouts/mvp-logged-in.html" %}
+
+{% block pageTitle %}
+Who is going on the visit? – {{ serviceName }}
+{% endblock %}
 
 {% block beforeContent %}
 <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
@@ -70,27 +71,4 @@
   </div>
 </div>
 
-{% endblock %}
-
-{% block footer %}
-{% from "govuk/components/footer/macro.njk" import govukFooter %}
-
-{{ govukFooter({
-  meta: {
-    items: [
-      {
-        href: "/online-booking/mvp/support/cookies",
-        text: "Cookies"
-      },
-      {
-        href: "/online-booking/mvp/support/privacy-notice",
-        text: "Privacy"
-      },
-      {
-        href: "/online-booking/mvp/support/terms-conditions",
-        text: "Terms and conditions"
-      }
-    ]
-  }
-}) }}
 {% endblock %}
