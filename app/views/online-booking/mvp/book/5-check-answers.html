@@ -16,84 +16,100 @@ Check the visit details before booking – {{ serviceName }}
         Check the visit details before booking
       </h1>
 
-      <div class="govuk-summary-card">
-        <div class="govuk-summary-card__title-wrapper">
-          <h2 class="govuk-summary-card__title">Visit details</h2>
-        </div>
-        <div class="govuk-summary-card__content">
-          <dl class="govuk-summary-list">
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Prisoner
-              </dt>
-              <dd class="govuk-summary-list__value">
-                Jane Smith
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Visitors
-              </dt>
-              <dd class="govuk-summary-list__value">
-                Susan Smith (39 years old)
-                </br>
-                Michael Smith (15 years old)
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="./1-visitors.html">
-                  Change<span class="govuk-visually-hidden"> visitors</span>
-                </a>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Date and time
-              </dt>
-              <dd class="govuk-summary-list__value">
-                Thursday 18 January 2024
-                </br>
-                9am to 10am
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="./2-choose-date.html">
-                  Change<span class="govuk-visually-hidden"> date and time</span>
-                </a>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Additional support requests
+      {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 
-              </dt>
-              <dd class="govuk-summary-list__value">
-                None
-
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="./3-reasonable-adjustments.html">
-                  Change<span class="govuk-visually-hidden"> support needs</span>
-                </a>
-              </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-              <dt class="govuk-summary-list__key">
-                Main contact
-
-              </dt>
-              <dd class="govuk-summary-list__value">
-                Susan Smith
-                </br>
-                0789085627
-              </dd>
-              <dd class="govuk-summary-list__actions">
-                <a class="govuk-link" href="./4-main-contact.html">
-                  Change<span class="govuk-visually-hidden"> main contact</span>
-                </a>
-              </dd>
-            </div>
-          </dl>
-        </div>
-      </div>
+      {{ govukSummaryList({
+        card: {
+          title: {
+            text: "Visit details"
+          }
+        },
+        rows: [
+          {
+            key: {
+              text: "Prisoner"
+            },
+            value: {
+              html: "Jane Smith"
+            },
+            actions: {
+              items: [
+                {
+                  visuallyHiddenText: "prisoner"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Visitors"
+            },
+            value: {
+              html: "Neil Name (39 years old)<br>Michael Name (15 years old)"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "visitors"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Date and time"
+            },
+            value: {
+              html: "Thursday 18 January 2024<br>9am to 10am"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "date and time"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Additional support"
+            },
+            value: {
+              html: "None"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "support"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Main contact"
+            },
+            value: {
+              html: "Neil Name<br>0789085627"
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "contact"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
 
       <button class="govuk-button" data-module="govuk-button">Continue</button>
 

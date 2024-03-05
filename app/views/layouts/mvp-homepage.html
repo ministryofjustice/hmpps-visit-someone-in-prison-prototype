@@ -1,7 +1,4 @@
-{#
-For guidance on how to use layouts see:
-https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
-#}
+{% extends "layouts/mvp-footer" %}
 
 {% extends "di-govuk-one-login-service-header/layouts/service-header.html" %}
 {% set homepageLink = "/" %}
@@ -33,25 +30,4 @@ https://prototype-kit.service.gov.uk/docs/how-to-use-layouts
         y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
     })(window, document, "clarity", "script", "k58akkv41l");
 </script>
-{% endblock %}
-
-{% block footer %}
-{{ govukFooter({
-  meta: {
-    items: [
-      {
-        href: "/online-booking/mvp/support/cookies",
-        text: "Cookies"
-      },
-      {
-        href: "/online-booking/mvp/support/privacy-notice",
-        text: "Privacy"
-      },
-      {
-        href: "/online-booking/mvp/support/terms-conditions",
-        text: "Terms and conditions"
-      }
-    ]
-  }
-}) }}
 {% endblock %}
