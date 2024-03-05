@@ -1,25 +1,10 @@
-{% set homepageLink = "/" %}
-{% set oneLoginLink = "/" %}
-{% set signOutLink = "/" %}
-{% extends "di-govuk-one-login-service-header/layouts/service-header.html" %}
-{% set navigationItems = [
-  {
-    href: "/online-booking/mvp",
-    text: 'Home',
-    id: 'home-link'
-  },{
-    href: "/online-booking/mvp/bookings",
-    text: 'Bookings',
-    id: 'bookings-link'
-  },{
-    href: "/online-booking/mvp/visitors",
-    text: 'Visitors',
-    id: 'visitors-link'
-  }]
-%}
-{% set activeLinkId = "bookings-link" %}
-{% set serviceName = "Visit someone in prison" %}
+{% extends "layouts/mvp-homepage.html" %}
 
+{% set activeLinkId = "bookings-link" %}
+
+{% block pageTitle %}
+Bookings – {{ serviceName }}
+{% endblock %}
 
 {% block content %}
 
@@ -30,10 +15,23 @@
       Bookings
     </h1>
 
-    <p class="govuk-body">
-      TBC
-    </p>
-    
+    <p class="govuk-body">Only bookings made using this pilot service are shown.</p>
+
+    <h2 class="govuk-heading-m">Future visits</h2>
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Tuesday 29 January 2024</h3>
+    <p class="govuk-body govuk-!-margin-bottom-1">10am to 11am</p>
+    <p class="govuk-body govuk-!-margin-bottom-1">Visiting Jane Smith</p>
+    <p class="govuk-body govuk-!-margin-bottom-1"><a href="#" class="govuk-link">View booking details</a></p>
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Thursday 14 March 2024</h3>
+    <p class="govuk-body govuk-!-margin-bottom-1">10am to 11am</p>
+    <p class="govuk-body govuk-!-margin-bottom-1">Visiting Jane Smith</p>
+    <p class="govuk-body govuk-!-margin-bottom-1"><a href="#" class="govuk-link">View booking details</a></p>
+    <br><br>
+    <h2 class="govuk-heading-m">Past and cancelled visits</h2>
+    <p class="govuk-body"><a href="#" class="govuk-link">View past visits</a></p>
+    <p class="govuk-body"><a href="#" class="govuk-link">View cancelled visits</a></p>
+
   </div>
 </div>
 
