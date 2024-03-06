@@ -1,0 +1,58 @@
+{% extends "layouts/mvp-homepage.html" %}
+
+{% set activeLinkId = "bookings-link" %}
+
+{% block pageTitle %}
+Visit booking details – {{ serviceName }}
+{% endblock %}
+
+{% block beforeContent %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Visit booking details
+    </h1>
+
+    <p class="govuk-body">Booking reference: hd-wo-fx-mv</p>
+
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Date and time</h2>
+    <p class="govuk-body govuk-!-margin-bottom-1">Tuesday 26 March 2024</p>
+    <p class="govuk-body govuk-!-margin-bottom-1">10am to 11am</p>
+
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Prisoner</h2>
+    <p class="govuk-body govuk-!-margin-bottom-1">Jane Smith</p>
+
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Additional support requests</h2>
+    <p class="govuk-body govuk-!-margin-bottom-1">None</p>
+
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Main contact</h2>
+    <p class="govuk-body govuk-!-margin-bottom-1">Neil Name</p>   
+    <p class="govuk-body govuk-!-margin-bottom-1">07866 464587</p>
+
+    <h2 class="govuk-heading-m">How to change your booking</h2>
+    <p class="govuk-body">To update or cancel your booking, call Foston Hall on [phone number] between 9am and 5pm, Monday to Friday.</p>  
+    <p class="govuk-body">You will need the booking reference to make changes.</p>  
+
+    <h2 class="govuk-heading-m">Prepare for visiting Foston Hall</h2>
+    <p class="govuk-body">All visitors over 16 years old must show acceptable forms of ID to enter the prison.</p>  
+    <p class="govuk-body">Visitors should arrive [x] minutes before the visit starts.</p>  
+    <p class="govuk-body">You can read more about visits at [prison name]. This includes information on getting to the prison and visiting facilities.</p>  
+
+    <h2 class="govuk-heading-m">What to expect when visiting a prison</h2>
+    <p class="govuk-body">Visitors will be searched before entering the prison visiting room.</p>  
+    <p class="govuk-body">Prison staff may check visitors’ pockets, pat them down and ask them to go through a metal detector. Dogs may also be used to detect illegal substances.</p> 
+
+    <h2 class="govuk-heading-m">Help with the cost of prison visits</h2>
+    <p class="govuk-body">You may be able to get help with the cost of prison visits if you’re getting certain benefits or have a health certificate.</p>  
+
+  </div>
+</div>
+{% endblock %}
+
+
