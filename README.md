@@ -1,6 +1,6 @@
 # Visit Someone in Prison Prototype
 
-Based on the [Gov.UK Prototype Kit](https://prototype-kit.service.gov.uk/docs/) version 13, hosted on the [MoJ Cloud Platform](https://user-guide.cloud-platform.service.justice.gov.uk/documentation/getting-started/prototype-kit.html).
+Based on the [Gov.UK Prototype Kit](https://prototype-kit.service.gov.uk/docs/) and hosted on the [MoJ Cloud Platform](https://user-guide.cloud-platform.service.justice.gov.uk/documentation/getting-started/prototype-kit.html).
 
 Deployed from `main` at: https://hmpps-visit-someone-in-prison-prototype-main.apps.live.cloud-platform.service.justice.gov.uk 
 
