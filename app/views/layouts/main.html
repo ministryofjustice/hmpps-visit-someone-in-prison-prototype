@@ -23,7 +23,6 @@
 </script>
 {% endblock %}
 
-
 {% block footer %}
 
 <footer class="govuk-footer">
@@ -31,7 +30,9 @@
     <div class="govuk-footer__meta">
       <div class="govuk-footer__meta-item govuk-footer__meta-item--grow">
         <h2 class="govuk-visually-hidden">Support links</h2>
-        <p class="govuk-body-s">The following links open in a new tab:</p>
+        <div class="govuk-footer__meta-custom">
+          The following links open in a new tab:
+        </div>
         <ul class="govuk-footer__inline-list">
           <li class="govuk-footer__inline-list-item">
             <a class="govuk-footer__link" href="/online-booking/mvp/support/cookies" target="_blank">
@@ -54,6 +55,9 @@
             </a>
           </li>
         </ul>
+        <div class="govuk-footer__meta-custom">
+          Built by the <a href="https://mojdigital.blog.gov.uk/" class="govuk-footer__link">Ministry of Justice Digital</a>
+        </div>
         <svg
           aria-hidden="true"
           focusable="false"
