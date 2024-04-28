@@ -8,8 +8,8 @@
     "@govuk-prototype-kit/common-templates": "2.0.1",
     "@govuk-prototype-kit/step-by-step": "2.2.2",
     "@govuk-prototype-kit/task-list": "2.0.0",
-    "@ministryofjustice/frontend": "2.1.1",
-    "govuk-frontend": "5.3.0",
+    "@ministryofjustice/frontend": "2.1.2",
+    "govuk-frontend": "5.3.1",
     "govuk-one-login-service-header": "github:alphagov/di-govuk-one-login-service-header",
     "govuk-prototype-kit": "^13.16.1"
   }
