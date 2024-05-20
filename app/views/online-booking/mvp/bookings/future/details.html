@@ -22,17 +22,17 @@ Visit booking details – {{ serviceName }}
     <p class="govuk-body govuk-!-margin-bottom-1">10am to 11am</p>
 
     <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Prisoner</h2>
-    <p class="govuk-body govuk-!-margin-bottom-1">Jane Smith</p>
+    <p class="govuk-body govuk-!-margin-bottom-1">{{ data['prisoner-name'] }}</p>
 
     <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Visitors</h2>
-    <p class="govuk-body govuk-!-margin-bottom-1">Neil Name</p>
-    <p class="govuk-body govuk-!-margin-bottom-1">Michael Name</p>
+    <p class="govuk-body govuk-!-margin-bottom-1">{{ data['visitor-1-name'] }}</p>
+    <p class="govuk-body govuk-!-margin-bottom-1">{{ data['visitor-2-name'] }}</p>
 
     <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Additional support requests</h2>
     <p class="govuk-body govuk-!-margin-bottom-1">None</p>
 
     <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Main contact</h2>
-    <p class="govuk-body govuk-!-margin-bottom-1">Neil Name</p>   
+    <p class="govuk-body govuk-!-margin-bottom-1">{{ data['visitor-1-name'] }}</p>   
     <p class="govuk-body govuk-!-margin-bottom-1">07866 464587</p>
 
     <h2 class="govuk-heading-m">How to change your booking</h2>
@@ -41,7 +41,7 @@ Visit booking details – {{ serviceName }}
 
     <h2 class="govuk-heading-m">Prepare for visiting {{ data['prison-name'] }}</h2>
     <p class="govuk-body">All visitors over 16 years old must show acceptable forms of ID to enter the prison.</p>  
-    <p class="govuk-body">Visitors should arrive [x] minutes before the visit starts.</p>  
+    <p class="govuk-body">Visitors should arrive 45 minutes before the visit starts.</p>  
     <p class="govuk-body">You can read more about visits at {{ data['prison-name'] }}. This includes information on getting to the prison and visiting facilities.</p>  
 
     <h2 class="govuk-heading-m">What to expect when visiting a prison</h2>
