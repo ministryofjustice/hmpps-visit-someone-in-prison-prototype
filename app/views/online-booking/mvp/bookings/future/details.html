@@ -36,13 +36,13 @@ Visit booking details – {{ serviceName }}
     <p class="govuk-body govuk-!-margin-bottom-1">07866 464587</p>
 
     <h2 class="govuk-heading-m">How to change your booking</h2>
-    <p class="govuk-body">To update or cancel your booking, call Foston Hall on [phone number] between 9am and 5pm, Monday to Friday.</p>  
+    <p class="govuk-body">To update or cancel your booking, call {{ data['prison-name'] }} on {{ data['telephone-number'] }} between 9am and 5pm, Monday to Friday.</p>  
     <p class="govuk-body">You will need the booking reference to make changes.</p>  
 
-    <h2 class="govuk-heading-m">Prepare for visiting Foston Hall</h2>
+    <h2 class="govuk-heading-m">Prepare for visiting {{ data['prison-name'] }}</h2>
     <p class="govuk-body">All visitors over 16 years old must show acceptable forms of ID to enter the prison.</p>  
     <p class="govuk-body">Visitors should arrive [x] minutes before the visit starts.</p>  
-    <p class="govuk-body">You can read more about visits at [prison name]. This includes information on getting to the prison and visiting facilities.</p>  
+    <p class="govuk-body">You can read more about visits at {{ data['prison-name'] }}. This includes information on getting to the prison and visiting facilities.</p>  
 
     <h2 class="govuk-heading-m">What to expect when visiting a prison</h2>
     <p class="govuk-body">Visitors will be searched before entering the prison visiting room.</p>  
