@@ -27,101 +27,75 @@ Check the visit details before booking – {{ serviceName }}
         Check the visit details before booking
       </h1>
 
-      {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
-
-      {{ govukSummaryList({
-        card: {
-          title: {
-            text: "Visit details"
-          }
-        },
-        rows: [
-          {
-            key: {
-              text: "Prisoner"
-            },
-            value: {
-              html: "{{ data['prisoner-name'] }}"
-            },
-            actions: {
-              items: [
-                {
-                  visuallyHiddenText: "prisoner"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Visitors"
-            },
-            value: {
-              html: "{{ data['visitor-1-name'] }} ({ data['visitor-1-age'] }} years old)<br>
-                    {{ data['visitor-2-name'] }} ({{ data['visitor-2-age'] }} years old)"
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "visitors"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Date and time"
-            },
-            value: {
-              html: "Thursday 18 January 2024<br>9am to 10am"
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "date and time"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Additional support"
-            },
-            value: {
-              html: "None"
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "support"
-                }
-              ]
-            }
-          },
-          {
-            key: {
-              text: "Main contact"
-            },
-            value: {
-              html: "{{ data['visitor-1-name'] }}<br>0789085627"
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "contact"
-                }
-              ]
-            }
-          }
-        ]
-      }) }}
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">
+              Visit details
+            </h2>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Prisoner
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['prisoner-name'] }}
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Visitors
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  {{ data['visitor-1-name'] }} ({ data['visitor-1-age'] }} years old) 
+                    <br>
+                  {{ data['visitor-2-name'] }} ({{ data['visitor-2-age'] }} years old)
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> visitors</span></a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Date and time
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Thursday 18 January 2024
+                    <br>
+                   9am to 10am 
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> date and time of visit</span></a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Additional support
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  None
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> additional support</span></a>
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Main contact
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  	{{ data['visitor-1-name'] }}
+                    <br>
+                    0789085627
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> main contact</span></a>
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
 
       <button class="govuk-button" data-module="govuk-button">Continue</button>
 
