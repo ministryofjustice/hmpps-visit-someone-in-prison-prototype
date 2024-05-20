@@ -1,4 +1,4 @@
-# Visit Someone in Prison Prototype
+# Visit someone in prison Prototype
 
 Based on the [GOV.UK Prototype Kit](https://prototype-kit.service.gov.uk/docs/) and hosted on the [MoJ Cloud Platform](https://user-guide.cloud-platform.service.justice.gov.uk/documentation/getting-started/prototype-kit.html).
 
