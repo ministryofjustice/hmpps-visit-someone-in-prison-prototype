@@ -25,7 +25,7 @@ Book a visit – {{ serviceName }}
         Book a visit
       </h1>
 
-      <p>Prisoner: Jane Smith</p>
+      <p>Prisoner: {{ data['prisoner-name'] }}</p>
 
       {% from "govuk/components/button/macro.njk" import govukButton %}
 
