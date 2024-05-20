@@ -41,7 +41,7 @@ Check the visit details before booking – {{ serviceName }}
               text: "Prisoner"
             },
             value: {
-              html: "Jane Smith"
+              html: "{{ data['prisoner-name'] }}"
             },
             actions: {
               items: [
@@ -56,7 +56,8 @@ Check the visit details before booking – {{ serviceName }}
               text: "Visitors"
             },
             value: {
-              html: "Neil Name (39 years old)<br>Michael Name (15 years old)"
+              html: "{{ data['visitor-1-name'] }} ({ data['visitor-1-age'] }} years old)<br>
+                    {{ data['visitor-2-name'] }} ({{ data['visitor-2-age'] }} years old)"
             },
             actions: {
               items: [
@@ -107,7 +108,7 @@ Check the visit details before booking – {{ serviceName }}
               text: "Main contact"
             },
             value: {
-              html: "Neil Name<br>0789085627"
+              html: "{{ data['visitor-1-name'] }}<br>0789085627"
             },
             actions: {
               items: [
