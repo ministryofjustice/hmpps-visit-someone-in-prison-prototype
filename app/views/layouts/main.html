@@ -23,20 +23,6 @@
 </script>
 {% endblock %}
 
-{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
-{% block beforeContent %}
-
-{{ govukPhaseBanner({
-  tag: {
-    text: "Beta"
-  },
-  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-}) }}
-
-<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
-
-{% endblock %}
-
 {% block footer %}
 
 <footer class="govuk-footer">
