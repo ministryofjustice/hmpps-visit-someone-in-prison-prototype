@@ -1,4 +1,4 @@
-{% extends "/online-booking/mvp/layouts/mvp-footer.html" %}
+{% extends "./mvp-footer.html" %}
 
 {% extends "di-govuk-one-login-service-header/layouts/service-header.html" %}
 {% set homepageLink = "/" %}
@@ -6,11 +6,11 @@
 {% set signOutLink = "/" %}
 {% set navigationItems = [
   {
-    href: "/online-booking/mvp",
+    href: "./",
     text: 'Home',
     id: 'home-link'
   },{
-    href: "/online-booking/mvp/bookings",
+    href: "./bookings",
     text: 'Bookings',
     id: 'bookings-link'
   }]
@@ -31,15 +31,4 @@
 
 <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
 
-{% endblock %}
-
-{% block head %}
-  {{ super() }}
-  <script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "k58akkv41l");
-</script>
 {% endblock %}
