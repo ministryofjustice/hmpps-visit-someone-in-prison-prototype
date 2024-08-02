@@ -5,30 +5,30 @@
 {% endblock %}
 
 {% block header %}
-  {{ 
-      govukHeader({
-          homepageUrl: "/",
-          serviceName: serviceName,
-          serviceUrl: "/",
-          containerClasses: "govuk-width-container"
-      })
+{{
+govukHeader({
+homepageUrl: "/",
+serviceName: serviceName,
+serviceUrl: "/",
+containerClasses: "govuk-width-container"
+})
 }}
 
 {%- from "moj/components/primary-navigation/macro.njk" import mojPrimaryNavigation -%}
 
 {{ mojPrimaryNavigation({
-  label: 'Primary navigation',
-  items: [
-    {
-      text: 'Public service',
-      href: '/',
-      active: true
-    },
-    {
-      text: 'Staff service',
-      href: '/assisted-digital/assisted-digital-index.html'
-    }
-  ]
+label: 'Primary navigation',
+items: [
+{
+text: 'Public service',
+href: '/',
+active: true
+},
+{
+text: 'Staff service',
+href: '/assisted-digital/assisted-digital-index.html'
+}
+]
 }) }}
 {% endblock %}
 
@@ -40,23 +40,50 @@
       {% if serviceName %} {{ serviceName }} {% endif %}
     </h1>
 
-      <h2 class="govuk-heading-m">
+    <h2 class="govuk-heading-m">
+      MVP +1
+      </br>
+
+      {%- from "govuk/components/tag/macro.njk" import govukTag -%}
+      {{ govukTag({
+      text: "In dev",
+      classes: "govuk-tag--blue"
+      }) }}
+    </h2>
+
+    <p class="govuk-body">What's new:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>added past visits to 'Bookings'</li>
+      <li>added cancelled visits to 'Bookings'</li>
+    </ul>
+
+    <form class="form" action="/online-booking/mvp+1/" method="post">
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+      text: "Start"
+      }) }}
+    </form>
+
+    <hr class="govuk-section-break govuk-section-break--visible">
+    <br>
+
+    <h2 class="govuk-heading-m">
       MVP
       </br>
 
       {%- from "govuk/components/tag/macro.njk" import govukTag -%}
       {{ govukTag({
-        text: "In dev",
-        classes: "govuk-tag--blue"
+      text: "Private Beta",
+      classes: "govuk-tag--turquoise"
       }) }}
     </h2>
 
     <p class="govuk-body">What's new:</p>
     <ul class="govuk-list govuk-list--bullet">
       <li>added GOV.UK One Login navigation</li>
-      <li>added booking journey with calendar</li>    
+      <li>added booking journey with calendar</li>
       <li>added phase banner</li>
-      <li>added 'support' pages</li>
+      <li>added support pages</li>
       <li>added 'Bookings' area with future bookings</li>
     </ul>
 
@@ -76,8 +103,8 @@
 
       {%- from "govuk/components/tag/macro.njk" import govukTag -%}
       {{ govukTag({
-        text: "Tested",
-        classes: "govuk-tag--blue"
+      text: "Tested",
+      classes: "govuk-tag--blue"
       }) }}
     </h2>
 
@@ -88,7 +115,7 @@
       <li>Move away from registration</li>
       <li>Lots of updated content</li>
       <li>Updated GOV.UK One Login headers</li>
-    
+
     </ul>
 
     <form class="form" action="/online-booking/register-to-visit-v5/1start" method="post">
@@ -113,7 +140,8 @@
       }) }}
     </form>
 
-    <form class="form" action="/online-booking/register-to-visit-v5-unhappy1-calendar/4visitor-check-answers" method="post">
+    <form class="form" action="/online-booking/register-to-visit-v5-unhappy1-calendar/4visitor-check-answers"
+      method="post">
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({
       text: "Email - calendar",
@@ -129,10 +157,11 @@
       }) }}
     </form>
 
-    <form class="form" action="/online-booking/register-to-visit-v5-unhappy2-calendar/4visitor-check-answers" method="post">
+    <form class="form" action="/online-booking/register-to-visit-v5-unhappy2-calendar/4visitor-check-answers"
+      method="post">
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({
-      text: "Mixed approval -  calendar",
+      text: "Mixed approval - calendar",
       classes: "govuk-button--secondary"
       }) }}
     </form>
@@ -163,8 +192,10 @@
         </span>
       </summary>
       <div class="govuk-details__text">
-        <p class="govuk-body"><a href="online-booking/archived/register-to-visit-v4/start" class="govuk-link">Register to visit V4 - two visitors</a></p>
-        <p class="govuk-body"><a href="online-booking/archived/register-to-visit-v4-2/start" class="govuk-link">Register to visit V4 - one visitor</a></p>
+        <p class="govuk-body"><a href="online-booking/archived/register-to-visit-v4/start" class="govuk-link">Register
+            to visit V4 - two visitors</a></p>
+        <p class="govuk-body"><a href="online-booking/archived/register-to-visit-v4-2/start" class="govuk-link">Register
+            to visit V4 - one visitor</a></p>
         <p class="govuk-body"><a href="online-booking/archived/VJ02_book_a_visit_1_V3/" class="govuk-link">VJ02 Book a
             visit V3</a></p>
         <p class="govuk-body"><a href="online-booking/archived/VJ02_book_a_visit_1_V2/" class="govuk-link">VJ02 Book a

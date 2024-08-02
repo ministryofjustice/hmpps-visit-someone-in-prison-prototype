@@ -1,0 +1,34 @@
+{% extends "./mvp-footer.html" %}
+
+{% extends "di-govuk-one-login-service-header/layouts/service-header.html" %}
+{% set homepageLink = "/" %}
+{% set oneLoginLink = "/" %}
+{% set signOutLink = "/" %}
+{% set navigationItems = [
+  {
+    href: "./",
+    text: 'Home',
+    id: 'home-link'
+  },{
+    href: "./bookings",
+    text: 'Bookings',
+    id: 'bookings-link'
+  }]
+%}
+
+{% set serviceName = "Visit someone in prison" %}
+
+
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{% block beforeContent %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "Beta"
+  },
+  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+}) }}
+
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+
+{% endblock %}

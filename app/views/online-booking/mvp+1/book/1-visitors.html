@@ -1,0 +1,70 @@
+{% extends "/online-booking/mvp/layouts/mvp-logged-in.html" %}
+
+{% block pageTitle %}
+Who is going on the visit? – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="2-choose-date" method="post">
+
+      {% from "govuk/components/checkboxes/macro.njk" import govukCheckboxes %}
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Who is going on the visit?
+            </h1>
+          </legend>
+          <p class="govuk-body">
+            Up to 7 people can visit someone at {{ data['prison-name'] }}. This includes:
+          </p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>3 people 17 years old or older</li>
+            <li>4 people under 17 years old</li>
+          </ul>
+
+          <p class="govuk-body">One visitor must be 18 years old or older.</p>
+
+          <h2 class="govuk-heading-m">Select visitors</h2>
+
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+              <label class="govuk-label govuk-checkboxes__label" for="waste">
+                {{ data['visitor-1-name'] }} ({{ data['visitor-1-age'] }} years old)
+              </label>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
+              <label class="govuk-label govuk-checkboxes__label" for="waste-2">
+                {{ data['visitor-2-name'] }} ({{ data['visitor-2-age'] }} years old)
+              </label>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+    </form>
+
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          Add a new visitor
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        The person you want to book for must be on the prisoner's visitor list.<br><br>
+        To make a request to book for someone new, <a href="#" class="govuk-link">complete the form (opens in a new tab)</a>. We will respond within 5
+        working days.
+      </div>
+    </details>
+
+  </div>
+</div>
+
+{% endblock %}
