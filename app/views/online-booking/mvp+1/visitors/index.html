@@ -1,4 +1,4 @@
-{% extends "/online-booking/mvp/layouts/mvp-homepage.html" %}
+{% extends "../layouts/mvp-homepage.html" %}
 {% set activeLinkId = "visitors-link" %}
 
 {% block pageTitle %}
@@ -25,7 +25,7 @@ Visitors – {{ serviceName }}
       Visitors you can book for
     </h1>
 
-    <h2 class="govuk-heading-m">Jane Smith's visitors</h2>
+    <h2 class="govuk-heading-m">{{ data['prisoner-name'] }}'s visitors</h2>
 
     <table class="govuk-table">
       <thead class="govuk-table__head">
@@ -36,20 +36,20 @@ Visitors – {{ serviceName }}
       </thead>
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Linda Name</th>
-          <td class="govuk-table__cell">12 March 1987</td>
+          <th scope="row" class="govuk-table__header">{{ data['visitor-1-name'] }}</th>
+          <td class="govuk-table__cell">{{ data['visitor-1-dob'] }}</td>
         </tr>
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Michael Name</th>
-          <td class="govuk-table__cell">2 June 1990</td>
+          <th scope="row" class="govuk-table__header">{{ data['visitor-2-name'] }}</th>
+          <td class="govuk-table__cell">{{ data['visitor-2-dob'] }}</td>
         </tr>
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Neil Name</th>
-          <td class="govuk-table__cell">10 October 1995</td>
+          <th scope="row" class="govuk-table__header">{{ data['visitor-3-name'] }}</th>
+          <td class="govuk-table__cell">{{ data['visitor-3-dob'] }}</td>
         </tr>
         <tr class="govuk-table__row">
-          <th scope="row" class="govuk-table__header">Barry Name</th>
-          <td class="govuk-table__cell">1 January 2000</td>
+          <th scope="row" class="govuk-table__header">{{ data['visitor-4-name'] }}</th>
+          <td class="govuk-table__cell">{{ data['visitor-4-dob'] }}</td>
         </tr>
       </tbody>
     </table>
