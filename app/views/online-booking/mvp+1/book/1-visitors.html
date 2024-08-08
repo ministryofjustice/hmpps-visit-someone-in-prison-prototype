@@ -1,4 +1,4 @@
-{% extends "/online-booking/mvp/layouts/mvp-logged-in.html" %}
+{% extends "../layouts/logged-in.html" %}
 
 {% block pageTitle %}
 Who is going on the visit? – {{ serviceName }}
@@ -59,8 +59,7 @@ Who is going on the visit? – {{ serviceName }}
       </summary>
       <div class="govuk-details__text">
         The person you want to book for must be on the prisoner's visitor list.<br><br>
-        To make a request to book for someone new, <a href="#" class="govuk-link">complete the form (opens in a new tab)</a>. We will respond within 5
-        working days.
+        To make a request to book for someone new, <a href="{{ data['add-a-visitor-url'] }}" target="_blank" class="govuk-link">complete the form (opens in a new tab)</a>. We will respond within 5 working days.
       </div>
     </details>
 

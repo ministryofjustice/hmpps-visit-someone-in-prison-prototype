@@ -1,21 +1,10 @@
-{% extends "../layouts/mvp-homepage.html" %}
+{% extends "../layouts/homepage.html" %}
 
 {% set activeLinkId = "bookings-link" %}
 
 {% block pageTitle %}
 Bookings – {{ serviceName }}
 {% endblock %}
-
-{% block beforeContent %}
-    {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
-
-    {{ govukPhaseBanner({
-      tag: {
-        text: "Beta"
-      },
-      html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-    }) }}
- {% endblock %}
 
 {% block content %}
 
@@ -32,7 +21,7 @@ Bookings – {{ serviceName }}
     <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Tuesday 26 March 2024</h3>
     <p class="govuk-body govuk-!-margin-bottom-1">10am to 11am</p>
     <p class="govuk-body govuk-!-margin-bottom-1">Booking reference: hd-wo-fx-mv </p>
-    <p class="govuk-body govuk-!-margin-bottom-1"><a href="./bookings/future/details" class="govuk-link">View booking details</a></p>
+    <p class="govuk-body govuk-!-margin-bottom-1"><a href="./future/details" class="govuk-link">View booking details</a></p>
 
     <br>
     <h2 class="govuk-heading-m">How to change your booking</h2>
@@ -41,8 +30,8 @@ Bookings – {{ serviceName }}
 
     <br>
     <h2 class="govuk-heading-m">Past and cancelled visits</h2>
-    <p class="govuk-body"><a href="./bookings/past" class="govuk-link">View past visits</a></p>
-    <p class="govuk-body"><a href="./bookings/cancelled" class="govuk-link">View cancelled visits</a></p>
+    <p class="govuk-body"><a href="./past" class="govuk-link">View past visits</a></p>
+    <p class="govuk-body"><a href="./cancelled" class="govuk-link">View cancelled visits</a></p>
 
   </div>
 </div>

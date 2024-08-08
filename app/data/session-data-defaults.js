@@ -15,5 +15,8 @@ module.exports = {
   'visitor-3-dob': '10 October 1995',
   'visitor-4-name': 'Neil Smith',
   'visitor-4-age': '24',
-  'visitor-4-dob': '1 January 2000'
+  'visitor-4-dob': '1 January 2000',
+  'add-a-visitor-url': 'https://visit-someone-in-prison-add-visitor.form.service.justice.gov.uk/',
+  'feedback-url': 'https://visit-someone-in-prison-test-feedback.form.service.justice.gov.uk/'
+
 }

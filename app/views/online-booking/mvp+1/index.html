@@ -1,21 +1,11 @@
-{% extends "./layouts/mvp-homepage.html" %}
+{% extends "./layouts/homepage.html" %}
 {% set activeLinkId = "home-link" %}
+
 {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
 
 {% block pageTitle %}
 Book a visit – {{ serviceName }}
 {% endblock %}
-
-{% block beforeContent %}
-    {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
-
-    {{ govukPhaseBanner({
-      tag: {
-        text: "Beta"
-      },
-      html: 'This is a new service – your <a href="https://visit-someone-in-prison-test-feedback.form.service.justice.gov.uk/" target="_blank">feedback</a> will help us to improve it.'
-    }) }}
- {% endblock %}
 
 {% block content %}
 
