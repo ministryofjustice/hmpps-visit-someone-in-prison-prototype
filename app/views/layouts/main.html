@@ -1,27 +1,13 @@
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
 
 {% block header %}
-{{ govukHeader({
-  classes: "govuk-header--full-width-border"
-
-}) }}
-
-{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
-
-{{ govukServiceNavigation({
-  serviceName: "Visit someone in prison",
-  serviceUrl: "#",
-  navigation: [
-    {
-      href: "/",
-      text: "Public service",
-      active: true
-    },
-    {
-      href: "/assisted-digital/assisted-digital-index.html",
-      text: "Staff service"
-    }
-  ]
-}) }}
-
+  {{ 
+      govukHeader({
+          homepageUrl: "/",
+          serviceName: serviceName,
+          serviceUrl: "/",
+          containerClasses: "govuk-width-container",
+          useTudorCrown: true
+      })
+}}
 {% endblock %}

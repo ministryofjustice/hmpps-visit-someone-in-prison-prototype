@@ -4,27 +4,44 @@
 {{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
 
+{% block header %}
+  {{ 
+      govukHeader({
+          homepageUrl: "/",
+          serviceName: serviceName,
+          serviceUrl: "/",
+          containerClasses: "govuk-width-container",
+          useTudorCrown: true
+      })
+}}
+
 
 {%- from "moj/components/primary-navigation/macro.njk" import mojPrimaryNavigation -%}
 
 {{ mojPrimaryNavigation({
-label: 'Primary navigation',
-items: [
-{
-text: 'Public service',
-href: '/'
-},
-{
-text: 'Staff service',
-href: '/assisted-digital/assisted-digital-index.html',
-active: true
-}
-]
+  label: 'Primary navigation',
+  items: [
+    {
+      text: 'Public service',
+      href: '/'
+    },
+    {
+      text: 'Staff service',
+      href: '/assisted-digital/assisted-digital-index.html',
+      active: true
+    }
+  ]
 }) }}
+
+{% endblock %}
 
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">
+      Manage prison visits
+    </h1>
 
     <details class="govuk-details" data-module="govuk-details">
       <summary class="govuk-details__summary">
