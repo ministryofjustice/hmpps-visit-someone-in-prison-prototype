@@ -1,111 +1,96 @@
 {% extends "layouts/main.html" %}
 
 {% block pageTitle %}
-Visits – GOV.UK Prototype Kit
+{{ serviceName }} – GOV.UK Prototype Kit
 {% endblock %}
-
 
 {% block content %}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-xl">
-      {{ serviceName }}
-    </h1>
-
     <h2 class="govuk-heading-m">
-      Book a visit MVP +1
+      Register to visit V5
       </br>
 
       {%- from "govuk/components/tag/macro.njk" import govukTag -%}
       {{ govukTag({
-      text: "In dev",
+      text: "Tested",
       classes: "govuk-tag--blue"
       }) }}
     </h2>
 
     <p class="govuk-body">What's new:</p>
     <ul class="govuk-list govuk-list--bullet">
-      <li>added past visits to 'Bookings'</li>
-      <li>added cancelled visits to 'Bookings'</li>
-      <li>added 'Visitors' area</li>
-      <li>using the new 'Service Navigation' component on support pages</li>
+      <li>New date picker styles</li>
+      <li>Continuous booking journey happy path</li>
+      <li>Move away from registration</li>
+      <li>Lots of updated content</li>
+      <li>Updated GOV.UK One Login headers</li>
+
     </ul>
 
-    <p class="govuk-body">Also maybe:</p>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>added notification banner on homepage to inform user of service improvements</li>
-    </ul>
-
-
-    <form class="form" action="/online-booking/mvp+1/" method="post">
+    <form class="form" action="register-to-visit-v5/register-to-visit-v5-accordian/1start" method="post">
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({
-      text: "Start"
+      text: "Book a visit - accordion"
       }) }}
     </form>
 
-    <hr class="govuk-section-break govuk-section-break--visible">
-    <br>
-
-    <h2 class="govuk-heading-m">
-      Book a visit MVP
-      </br>
-
-      {%- from "govuk/components/tag/macro.njk" import govukTag -%}
-      {{ govukTag({
-      text: "Private Beta",
-      classes: "govuk-tag--turquoise"
-      }) }}
-    </h2>
-
-    <p class="govuk-body">What's new:</p>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>added GOV.UK One Login navigation</li>
-      <li>added booking journey with calendar</li>
-      <li>added phase banner</li>
-      <li>added support pages</li>
-      <li>added 'Bookings' area with future bookings</li>
-    </ul>
-
-    <form class="form" action="/online-booking/mvp/" method="post">
+    <form class="form" action="register-to-visit-v5/register-to-visit-v5-calendar/1start" method="post">
       {% from "govuk/components/button/macro.njk" import govukButton %}
       {{ govukButton({
-      text: "Start"
+      text: "Book a visit - calendar"
       }) }}
     </form>
 
-    <hr class="govuk-section-break govuk-section-break--visible">
-    <br>
+    <form class="form" action="register-to-visit-v5/register-to-visit-v5-unhappy1/4visitor-check-answers" method="post">
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+      text: "Email - accordion",
+      classes: "govuk-button--secondary"
+      }) }}
+    </form>
 
-    <hr class="govuk-section-break govuk-section-break--visible">
-    <br>
+    <form class="form" action="/online-booking/register-to-visit-v5-unhappy1-calendar/4visitor-check-answers"
+      method="post">
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+      text: "Email - calendar",
+      classes: "govuk-button--secondary"
+      }) }}
+    </form>
 
-    <details class="govuk-details" data-module="govuk-details">
-      <summary class="govuk-details__summary">
-        <span class="govuk-details__summary-text">
-          Old prototypes
-        </span>
-      </summary>
-      <div class="govuk-details__text">
-        <p class="govuk-body"><a href="online-booking/archived/register-to-visit-v4/start" class="govuk-link">Register
-            to visit V4 - two visitors</a></p>
-        <p class="govuk-body"><a href="online-booking/archived/register-to-visit-v4-2/start" class="govuk-link">Register
-            to visit V4 - one visitor</a></p>
-        <p class="govuk-body"><a href="online-booking/archived/VJ02_book_a_visit_1_V3/" class="govuk-link">VJ02 Book a
-            visit V3</a></p>
-        <p class="govuk-body"><a href="online-booking/archived/VJ02_book_a_visit_1_V2/" class="govuk-link">VJ02 Book a
-            visit V2</a></p>
-        <p class="govuk-body"><a href="online-booking/archived/VJ02_book_a_visit_1_V1/" class="govuk-link">VJ02 Book a
-            visit V1</a></p>
-        <p class="govuk-body"><a href="online-booking/archived/VJ02_book_a_visit_2_V3/" class="govuk-link">VJ02 Register
-            to book a visit V3</a></p>
-        <p class="govuk-body"><a href="online-booking/archived/VJ02_book_a_visit_2_V2/" class="govuk-link">VJ02 Register
-            to book a visit V2</a></p>
-        <p class="govuk-body"><a href="online-booking/archived/VJ02_book_a_visit_2_V1/" class="govuk-link">VJ02 Register
-            to book a visit V1</a></p>
-    </details>
-  </div>
-</div>
+    <form class="form" action="register-to-visit-v5/register-to-visit-v5-unhappy2/4visitor-check-answers" method="post">
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+      text: "Mixed approval - accordion",
+      classes: "govuk-button--secondary"
+      }) }}
+    </form>
+
+    <form class="form" action="register-to-visit-v5/register-to-visit-v5-unhappy2-calendar/4visitor-check-answers"
+      method="post">
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+      text: "Mixed approval - calendar",
+      classes: "govuk-button--secondary"
+      }) }}
+    </form>
+
+    <form class="form" action="register-to-visit-v5/register-to-visit-v5-unhappy3/5homepage" method="post">
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+      text: "Reserve - accordion",
+      classes: "govuk-button--secondary"
+      }) }}
+    </form>
+
+    <form class="form" action="register-to-visit-v5/register-to-visit-v5-unhappy3-calendar/5homepage" method="post">
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+      {{ govukButton({
+      text: "Reserve - calendar",
+      classes: "govuk-button--secondary"
+      }) }}
+    </form>
 
 {% endblock %}
