@@ -29,7 +29,9 @@ Visits - Prototype
 
 {% endblock %}
 
+
 {% block content %}
+
 <div class="govuk-width-container"></div>
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
@@ -37,8 +39,36 @@ Visits - Prototype
         <h1 class="govuk-heading-xl">Manage prison visits</h1>
       </div>
     </div>
+    
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
+    
+        <h2 class="govuk-heading-m">
+          Visits
+          </br>
+    
+          {%- from "govuk/components/tag/macro.njk" import govukTag -%}
+          {{ govukTag({
+          text: "Planning",
+          classes: "govuk-tag--yellow"
+          }) }}
+        </h2>
+    
+        <p class="govuk-body">What's new:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>new single area in DPS for visits related products and services</li>
+        </ul>
+    
+        <form class="form" action="/assisted-digital/visits/" method="post">
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+          {{ govukButton({
+          text: "Start"
+          }) }}
+        </form>
+    
+        <hr class="govuk-section-break govuk-section-break--visible">
+        <br>
+    
         <details class="govuk-details" data-module="govuk-details">
           <summary class="govuk-details__summary">
             <span class="govuk-details__summary-text">
@@ -65,7 +95,7 @@ Visits - Prototype
         </details>
       </div>
       <div class="govuk-grid-column-one-third">
-        <h3 class="govuk-heading-m">About this product</h3>
+        <h3 class="govuk-heading-m">About the product</h3>
         <p class="govuk-body">This prodict will enable staff to book, update and cancel social visits. <br><br> It will provide all the information staff need to process visits, ensuring that the visits booked are safe and appropriate for prisoners, visitors and staff.</p>
       </div>
     </div>
