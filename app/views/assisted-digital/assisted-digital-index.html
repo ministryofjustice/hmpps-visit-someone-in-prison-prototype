@@ -5,33 +5,27 @@
 {% endblock %}
 
 {% block header %}
-  {{ 
-      govukHeader({
-          homepageUrl: "/",
-          serviceName: serviceName,
-          serviceUrl: "/",
-          containerClasses: "govuk-width-container",
-          useTudorCrown: true
-      })
-}}
 
-
-{%- from "moj/components/primary-navigation/macro.njk" import mojPrimaryNavigation -%}
-
-{{ mojPrimaryNavigation({
-  label: 'Primary navigation',
-  items: [
-    {
-      text: 'Public service',
-      href: '/'
-    },
-    {
-      text: 'Staff service',
-      href: '/assisted-digital/assisted-digital-index.html',
-      active: true
-    }
-  ]
+{{ govukHeader({
+  classes: "govuk-header--full-width-border",
+  homepageUrl: "/"
 }) }}
+
+{{ govukServiceNavigation({
+    serviceName: "Visits",
+    serviceUrl: "/",
+    navigation: [
+      {
+        href: "/",
+        text: "Public"
+      },
+      {
+        href: "/assisted-digital/assisted-digital-index.html",
+        text: "Staff",
+        active: true
+      }
+    ]
+  }) }}
 
 {% endblock %}
 
