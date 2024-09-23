@@ -1,0 +1,19 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+{%- from "moj/components/header/macro.njk" import mojHeader -%}
+
+
+{% block header %}
+
+{{ mojHeader({
+  organisationLabel: {
+    text: 'Digital Prison Services',
+    href: '/assisted-digital/assisted-digital-index.html'
+  },
+  serviceLabel: {
+    text: 'Manage prison visits',
+    href: '/assisted-digital/assisted-digital-index.html'
+  }
+
+}) }}
+
+{% endblock %}
