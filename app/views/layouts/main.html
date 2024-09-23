@@ -1,28 +1,13 @@
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
 
 {% block header %}
-{% from "govuk/components/header/macro.njk" import govukHeader %}
-{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
-
-{{ govukHeader({
-  classes: "govuk-header--full-width-border",
-  homepageUrl: "/"
-}) }}
-
-{{ govukServiceNavigation({
-    serviceName: "Visits",
-    serviceUrl: "/",
-    navigation: [
-      {
-        href: "/",
-        text: "Public",
-        active: true
-      },
-      {
-        href: "/assisted-digital/assisted-digital-index.html",
-        text: "Staff"
-      }
-    ]
-  }) }}
-
+  {{ 
+      govukHeader({
+          homepageUrl: "/",
+          serviceName: serviceName,
+          serviceUrl: "/",
+          containerClasses: "govuk-width-container",
+          useTudorCrown: true
+      })
+}}
 {% endblock %}
