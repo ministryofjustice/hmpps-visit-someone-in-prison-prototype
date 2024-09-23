@@ -4,6 +4,31 @@
 Visits - Prototype
 {% endblock %}
 
+{% block header %}
+
+{{ govukHeader({
+  classes: "govuk-header--full-width-border",
+  homepageUrl: "/"
+}) }}
+
+{{ govukServiceNavigation({
+    serviceName: "Visits",
+    serviceUrl: "/",
+    navigation: [
+      {
+        href: "/",
+        text: "Public",
+        active: true
+      },
+      {
+        href: "/assisted-digital/assisted-digital-index.html",
+        text: "Staff"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
 {% block content %}
 
 <div class="govuk-width-container"></div>
