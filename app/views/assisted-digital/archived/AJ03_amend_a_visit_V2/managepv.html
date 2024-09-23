@@ -1,76 +1,45 @@
 {% extends "layouts/moj.html" %}
-
-{% block pageTitle %}
-  Change caseload
-{% endblock %}
-
 {% block content %}
-
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-full">
-        <div style="box-shadow: inset 0 -1px 0 0 #b1b4b6;">
-            <p class="govuk-!-padding-bottom-2"><strong>Wayland (HMP)</strong> <a href="changecaseload">Change location</a></p>
-        </div>
-      <h1 class="govuk-heading-l">Manage prison visits</h1>
-    </div>
-</div>
 <ul class="govuk-grid-row card-group">
-        
-          <li class="govuk-grid-column-one-third card-group__item">
-            
-  <div class="card card--clickable" data-test="global-search">
-    <h2 class="govuk-heading-m card__heading">
-        <a class="govuk-link card__link" href="index">Visit requests</a>
-    </h2>
-      <p class="govuk-body card__description">Confirm or reject booking requests.</p>
-  </div>
-
-          </li>
-        
-          <li class="govuk-grid-column-one-third card-group__item">
-            
-  <div class="card card--clickable" data-test="covid-units">
-    <h2 class="govuk-heading-m card__heading">
-        <a class="govuk-link card__link" href="search">Book a prison visit</a>
-    </h2>
-      <p class="govuk-body card__description">Book a prison visit for a visitor.</p>
-  </div>
-
-          </li>
-        
-          <li class="govuk-grid-column-one-third card-group__item">
-            
-  <div class="card card--clickable" data-test="manage-prisoner-whereabouts">
-    <h2 class="govuk-heading-m card__heading">
-        <a class="govuk-link card__link" href="search">Find a booked visit</a>
-    </h2>
-      <p class="govuk-body card__description">Cancel or make changes to an exisiting visit booking</p>
-  </div>
-
-          </li>
-        
-          <li class="govuk-grid-column-one-third card-group__item">
-            
-  <div class="card card--clickable" data-test="change-someones-cell">
-    <h2 class="govuk-heading-m card__heading">
-        <a class="govuk-link card__link" href="index">Manage visit schedule</a>
-    </h2>
-      <p class="govuk-body card__description">Create, update or remove time slots.</p>
-  </div>
-
-          </li>
-        
-          <li class="govuk-grid-column-one-third card-group__item">
-            
-  <div class="card card--clickable" data-test="bulk-appointments">
-    <h2 class="govuk-heading-m card__heading">
-        <a class="govuk-link card__link" href="index">Manage rooms</a>
-    </h2>
-      <p class="govuk-body card__description">View and update the list of visit rooms in the prison.</p>
-  </div>
-
-          </li>
-        
-      </ul>
-
+   <li class="govuk-grid-column-one-third card-group__item">
+      <div class="card card--clickable" data-test="global-search">
+         <h2 class="govuk-heading-m card__heading">
+            <a class="govuk-link card__link" href="index">Visit requests</a>
+         </h2>
+         <p class="govuk-body card__description">Confirm or reject booking requests.</p>
+      </div>
+   </li>
+   <li class="govuk-grid-column-one-third card-group__item">
+      <div class="card card--clickable" data-test="covid-units">
+         <h2 class="govuk-heading-m card__heading">
+            <a class="govuk-link card__link" href="search">Book a prison visit</a>
+         </h2>
+         <p class="govuk-body card__description">Book a prison visit for a visitor.</p>
+      </div>
+   </li>
+   <li class="govuk-grid-column-one-third card-group__item">
+      <div class="card card--clickable" data-test="manage-prisoner-whereabouts">
+         <h2 class="govuk-heading-m card__heading">
+            <a class="govuk-link card__link" href="search">Find a booked visit</a>
+         </h2>
+         <p class="govuk-body card__description">Cancel or make changes to an exisiting visit booking</p>
+      </div>
+   </li>
+   <li class="govuk-grid-column-one-third card-group__item">
+      <div class="card card--clickable" data-test="change-someones-cell">
+         <h2 class="govuk-heading-m card__heading">
+            <a class="govuk-link card__link" href="index">Manage visit schedule</a>
+         </h2>
+         <p class="govuk-body card__description">Create, update or remove time slots.</p>
+      </div>
+   </li>
+   <li class="govuk-grid-column-one-third card-group__item">
+      <div class="card card--clickable" data-test="bulk-appointments">
+         <h2 class="govuk-heading-m card__heading">
+            <a class="govuk-link card__link" href="index">Manage rooms</a>
+         </h2>
+         <p class="govuk-body card__description">View and update the list of visit rooms in the prison.</p>
+      </div>
+   </li>
+</ul>
 {% endblock %}

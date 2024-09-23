@@ -3,7 +3,6 @@
 
 
 {% block header %}
-
 {{ mojHeader({
   organisationLabel: {
     text: 'Digital Prison Services',
@@ -13,7 +12,15 @@
     text: 'Manage prison visits',
     href: '/assisted-digital/assisted-digital-index.html'
   }
+  }) 
+}}
+{% endblock %}
 
-}) }}
-
+{% block beforeContent %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <div style="box-shadow: inset 0 -1px 0 0 #b1b4b6;">
+            <p class="govuk-!-padding-bottom-2"><strong>Wayland (HMP)</strong> <a href="/">Change establishment</a></p>
+        </div>
+    </div>
 {% endblock %}
