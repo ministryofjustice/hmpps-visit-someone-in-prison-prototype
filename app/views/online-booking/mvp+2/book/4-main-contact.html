@@ -1,0 +1,106 @@
+{% extends "../layouts/logged-in.html" %}
+
+{% block pageTitle %}
+Who is the main contact for this booking? – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="5-check-answers" method="post">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Who is the main contact for this booking?
+            </h1>
+          </legend>
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="visitor1" name="visitor" type="radio" value="name">
+              <label class="govuk-label govuk-radios__label" for="visitor1">
+                {{ data['visitor-1-name'] }}
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="someone-else" name="visitor" type="radio" value="phone"
+                data-aria-controls="someone-else-2">
+              <label class="govuk-label govuk-radios__label" for="someone-else">
+                Someone else
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="someone-else-2">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="full-name">
+                  Name
+                </label>
+                <input class="govuk-input govuk-!-width-one-half" id="full-name" name="fullName" type="text" spellcheck="false"
+                  autocomplete="name">
+              </div>
+            </div>
+        </fieldset>
+      </div>
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+              Contact method
+            </h1>
+          </legend>
+          <div id="contact-hint" class="govuk-hint">
+            We will use this to update the main contact about changes to the booking
+          </div>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="phone"
+                data-aria-controls="conditional-contact">
+              <label class="govuk-label govuk-radios__label" for="contact">
+                Phone number
+              </label>
+              <div id="contact-hint" class="govuk-hint govuk-checkboxes__hint">
+                If this is a mobile number, the main contact will receive a text message confirmation
+              </div>
+            </div>
+
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
+              <div class="govuk-form-group">
+
+                <div class="govuk-form-group">
+                </div>
+                <br>
+                <label class="govuk-label" for="contact-by-tel">
+                  Phone number
+                </label>
+                <input class="govuk-input govuk-!-width-one-third" id="contact-by-tel" name="contactByTel" type="tel"
+                  spellcheck="false" autocomplete="tel">
+              </div>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="contact-4" name="contact" type="radio" value="email">
+              <label class="govuk-label govuk-radios__label" for="contact-4">
+                Do not send any updates
+              </label>
+              <div id="contact-hint" class="govuk-hint govuk-checkboxes__hint">
+                We will not be able to contact visitors if the visit is cancelled or changed
+              </div>
+            </div>
+
+          </div>
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

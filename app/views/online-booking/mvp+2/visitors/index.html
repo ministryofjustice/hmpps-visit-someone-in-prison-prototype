@@ -1,0 +1,57 @@
+{% extends "../layouts/homepage.html" %}
+{% set activeLinkId = "visitors-link" %}
+
+{% block pageTitle %}
+Visitors – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Visitors you can book for
+    </h1>
+
+    <h2 class="govuk-heading-m">{{ data['prisoner-name'] }}'s visitors</h2>
+
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Name</th>
+          <th scope="col" class="govuk-table__header">Date of birth</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">{{ data['visitor-1-name'] }}</th>
+          <td class="govuk-table__cell">{{ data['visitor-1-dob'] }}</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">{{ data['visitor-2-name'] }}</th>
+          <td class="govuk-table__cell">{{ data['visitor-2-dob'] }}</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">{{ data['visitor-3-name'] }}</th>
+          <td class="govuk-table__cell">{{ data['visitor-3-dob'] }}</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">{{ data['visitor-4-name'] }}</th>
+          <td class="govuk-table__cell">{{ data['visitor-4-dob'] }}</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 class="govuk-heading-m">Add a new visitor</h2>
+
+    <p class="govuk-body">
+      The person you want to book for must be on the prisoner’s visitor list.
+      <br><br>
+      To make a request, <a href="{{ data['add-a-visitor-url'] }}" target="_blank" class="govuk-link">complete the form (opens in a new tab)</a>. We will respond within 5 working days.
+    </p>
+
+  </div>
+</div>
+
+{% endblock %}
