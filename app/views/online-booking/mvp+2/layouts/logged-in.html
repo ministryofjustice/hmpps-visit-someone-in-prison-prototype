@@ -1,0 +1,13 @@
+{% extends "./banner.html" %}
+{% extends "./footer.html" %}
+
+{% extends "di-govuk-one-login-service-header/layouts/service-header.html" %}
+{% set homepageLink = "/" %}
+{% set oneLoginLink = "/" %}
+{% set signOutLink = "/" %}
+
+{% block beforeContent %}
+
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+
+{% endblock %}

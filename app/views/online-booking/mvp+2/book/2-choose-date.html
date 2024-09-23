@@ -1,0 +1,228 @@
+{% extends "../layouts/logged-in.html" %}
+
+{% block pageTitle %}
+Choose date and time – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="3-reasonable-adjustments" method="post">
+
+      <h1 class="govuk-heading-l">
+        Choose date and time
+      </h1>
+
+      <p>Select one visit time. It will be reserved for 10 minutes.</p>
+
+      <p>You can book a visit at {{ data['prison-name'] }} between 2 September 2024 and 30 September 2024.</p>
+
+      <p>Only times that Jane Smith can attend are shown.</p>
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+    
+          <div id="calendar-slot-picker">
+            <h2 class="govuk-heading-m">
+              September 2024
+            </h2>
+    
+            <ul class="govuk-list calendar-slots">
+              <li>M<span class="calendar-slots__day">on</span></li>
+              <li>T<span class="calendar-slots__day">ue</span></li>
+              <li>W<span class="calendar-slots__day">ed</span></li>
+              <li>T<span class="calendar-slots__day">hu</span></li>
+              <li>F<span class="calendar-slots__day">ri</span></li>
+              <li>S<span class="calendar-slots__day">at</span></li>
+              <li>S<span class="calendar-slots__day">un</span></li>
+            </ul>
+    
+            <ul class="govuk-list calendar-slots">
+              <li>2</li>
+              <li>3</li>
+              <li><a href="#date-4-september">4</a></li>
+              <li><a href="#date-5-september">5</a></li>
+              <li>6</li>
+              <li>7</li>
+              <li>8</li>
+            </ul>
+    
+            <ul class="govuk-list calendar-slots">
+              <li>9</li>
+              <li>10</li>
+              <li><a href="#date-11-september">11</a></li>
+              <li><a href="#date-12-september">12</a></li>
+              <li>13</li>
+              <li>14</li>
+              <li>15</li>
+            </ul>
+    
+            <ul class="govuk-list calendar-slots">
+              <li>16</li>
+              <li>17</li>
+              <li><a href="#date-18-september">18</a></li>
+              <li><a href="#date-19-september">19</a></li>
+              <li>20</li>
+              <li>21</li>
+              <li>22</li>
+            </ul>
+
+            <ul class="govuk-list calendar-slots">
+              <li>23</li>
+              <li>24</li>
+              <li><a href="#date-25-september">25</a></li>
+              <li><a href="#date-26-september">26</a></li>
+              <li>27</li>
+              <li>28</li>
+              <li>29</li>
+            </ul>
+
+            <ul class="govuk-list calendar-slots">
+              <li>30</li>
+              <!-- No more days left in September 2024 -->
+            </ul>
+    
+            <br>
+    
+            <div class="day-slots" id="date-4-september">
+              {{ govukRadios({
+              name: "slots",
+              fieldset: {
+              legend: {
+              text: "Wednesday 4 September 2024",
+              classes: "govuk-fieldset__legend--m"
+              }
+              },
+              items: [
+              { value: "", text: "10am to 11am (1 hour)" },
+              { value: "", text: "2pm to 3pm (1 hour)" }
+              ]
+              }) }}
+            </div>
+    
+            <div class="day-slots" id="date-5-september">
+              {{ govukRadios({
+              name: "slots",
+              fieldset: {
+              legend: {
+              text: "Thursday 5 September 2024",
+              classes: "govuk-fieldset__legend--m"
+              }
+              },
+              items: [
+              { value: "", text: "10am to 11am (1 hour)" },
+              { value: "", text: "2pm to 3pm (1 hour)" }
+              ]
+              }) }}
+            </div>
+    
+            <div class="day-slots" id="date-11-september">
+              {{ govukRadios({
+              name: "slots",
+              fieldset: {
+              legend: {
+              text: "Wednesday 11 September 2024",
+              classes: "govuk-fieldset__legend--m"
+              }
+              },
+              items: [
+              { value: "", text: "10am to 11am (1 hour)" },
+              { value: "", text: "2pm to 3pm (1 hour)" }
+              ]
+              }) }}
+            </div>
+    
+            <div class="day-slots" id="date-12-september">
+              {{ govukRadios({
+              name: "slots",
+              fieldset: {
+              legend: {
+              text: "Thursday 12 September 2024",
+              classes: "govuk-fieldset__legend--m"
+              }
+              },
+              items: [
+              { value: "", text: "10am to 11am (1 hour)" },
+              { value: "", text: "2pm to 3pm (1 hour)" }
+              ]
+              }) }}
+            </div>
+    
+            <div class="day-slots" id="date-18-september">
+              {{ govukRadios({
+              name: "slots",
+              fieldset: {
+              legend: {
+              text: "Wednesday 18 September 2024",
+              classes: "govuk-fieldset__legend--m"
+              }
+              },
+              items: [
+              { value: "", text: "10am to 11am (1 hour)" },
+              { value: "", text: "2pm to 3pm (1 hour)" }
+              ]
+              }) }}
+            </div>
+    
+            <div class="day-slots" id="date-19-september">
+              {{ govukRadios({
+              name: "slots",
+              fieldset: {
+              legend: {
+              text: "Thursday 19 September 2024",
+              classes: "govuk-fieldset__legend--m"
+              }
+              },
+              items: [
+              { value: "", text: "10am to 11am (1 hour)" },
+              { value: "", text: "2pm to 3pm (1 hour)" }
+              ]
+              }) }}
+            </div>
+
+            <div class="day-slots" id="date-25-september">
+              {{ govukRadios({
+              name: "slots",
+              fieldset: {
+              legend: {
+              text: "Wednesday 25 September 2024",
+              classes: "govuk-fieldset__legend--m"
+              }
+              },
+              items: [
+              { value: "", text: "10am to 11am (1 hour)" },
+              { value: "", text: "2pm to 3pm (1 hour)" }
+              ]
+              }) }}
+            </div>
+
+            <div class="day-slots" id="date-26-september">
+              {{ govukRadios({
+              name: "slots",
+              fieldset: {
+              legend: {
+              text: "Thursday 26 September 2024",
+              classes: "govuk-fieldset__legend--m"
+              }
+              },
+              items: [
+              { value: "", text: "10am to 11am (1 hour)" },
+              { value: "", text: "2pm to 3pm (1 hour)" }
+              ]
+              }) }}
+            </div>
+
+            <button class="govuk-button govuk-!-margin-top-6 calendar-slot-button" data-module="govuk-button">
+              Continue
+            </button>
+    
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+
+{% endblock %}
