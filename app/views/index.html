@@ -48,7 +48,7 @@ Visits - Prototype
     
           {%- from "govuk/components/tag/macro.njk" import govukTag -%}
           {{ govukTag({
-          text: "Planning",
+          text: "In dev",
           classes: "govuk-tag--yellow"
           }) }}
         </h2>
@@ -75,8 +75,8 @@ Visits - Prototype
     
           {%- from "govuk/components/tag/macro.njk" import govukTag -%}
           {{ govukTag({
-          text: "In dev",
-          classes: "govuk-tag--blue"
+          text: "Private Beta",
+          classes: "govuk-tag--turquoise"
           }) }}
         </h2>
     
@@ -86,38 +86,17 @@ Visits - Prototype
           <li>added cancelled visits to 'Bookings'</li>
           <li>added 'Visitors' area</li>
         </ul>
-    
-        <form class="form" action="/online-booking/mvp+1/" method="post">
-          {% from "govuk/components/button/macro.njk" import govukButton %}
-          {{ govukButton({
-          text: "Start"
-          }) }}
-        </form>
-    
-        <hr class="govuk-section-break govuk-section-break--visible">
-        <br>
-    
-        <h2 class="govuk-heading-m">
-          Book a visit MVP
-          </br>
-    
-          {%- from "govuk/components/tag/macro.njk" import govukTag -%}
-          {{ govukTag({
-          text: "Private Beta",
-          classes: "govuk-tag--turquoise"
-          }) }}
-        </h2>
-    
-        <p class="govuk-body">What's new:</p>
+
+        <p class="govuk-body">Includes:</p>
         <ul class="govuk-list govuk-list--bullet">
-          <li>added GOV.UK One Login navigation</li>
-          <li>added booking journey with calendar</li>
-          <li>added phase banner</li>
-          <li>added support pages</li>
-          <li>added 'Bookings' area with future bookings</li>
+          <li>GOV.UK One Login navigation</li>
+          <li>booking journey with calendar</li>
+          <li>phase banner</li>
+          <li>support pages</li>
+          <li>'Bookings' area with future bookings</li>
         </ul>
     
-        <form class="form" action="/online-booking/mvp/" method="post">
+        <form class="form" action="/online-booking/mvp+1/" method="post">
           {% from "govuk/components/button/macro.njk" import govukButton %}
           {{ govukButton({
           text: "Start"
@@ -134,6 +113,7 @@ Visits - Prototype
             </span>
           </summary>
           <div class="govuk-details__text">
+            <p class="govuk-body"><a href="online-booking/archived/mvp" class="govuk-link">MVP</a></p>
             <p class="govuk-body"><a href="online-booking/archived/register-to-visit-v5" class="govuk-link">Register
               to visit V5</a></p>
             <p class="govuk-body"><a href="online-booking/archived/register-to-visit-v4/start" class="govuk-link">Register

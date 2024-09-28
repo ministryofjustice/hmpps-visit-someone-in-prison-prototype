@@ -1,4 +1,4 @@
-{% extends "/online-booking/mvp/layouts/mvp-logged-in.html" %}
+{% extends "../layouts/mvp-logged-in.html" %}
 
 {% block pageTitle %}
 Confirmation – {{ serviceName }}
@@ -52,7 +52,7 @@ Confirmation – {{ serviceName }}
 
       <p>You may be able to <a href="https://www.gov.uk/help-with-prison-visits">get help with the cost of prison visits</a> if you’re getting certain benefits or have a health certificate.</p>
 
-      <form class="form" action="/online-booking/mvp" method="post">
+      <form class="form" action="../" method="post">
         {% from "govuk/components/button/macro.njk" import govukButton %}
         {{ govukButton({
         text: "Back to homepage"

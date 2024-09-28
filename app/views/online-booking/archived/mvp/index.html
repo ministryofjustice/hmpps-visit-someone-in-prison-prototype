@@ -1,4 +1,4 @@
-{% extends "/online-booking/mvp/layouts/mvp-homepage.html" %}
+{% extends "./layouts/mvp-homepage.html" %}
 {% set activeLinkId = "home-link" %}
 
 {% block pageTitle %}
@@ -31,7 +31,7 @@ Book a visit – {{ serviceName }}
 
       {{ govukButton({
       text: "Start now",
-      href: "/online-booking/mvp/book/1-visitors.html",
+      href: "mvp/book/1-visitors.html",
       isStartButton: true
       }) }}
 
