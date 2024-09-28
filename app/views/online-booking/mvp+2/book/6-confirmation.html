@@ -36,17 +36,17 @@ Confirmation – {{ serviceName }}
       <p>Prison staff may check visitor’s pockets, pat them down and ask them to go through a metal detector. Dogs may also be used to detect illegal substances.</p>
 
       <h2 class="govuk-heading-m">How to change your booking</h2>
-      <p>To update you booking, <a href="https://www.gov.uk/guidance/foston-hall-prison">contact {{ data['prison-name'] }}</a>.</p>
+      <p>To update your booking, call the prison on {{ data['telephone-number'] }} between 9am and 5pm, Monday to Friday.</p>
       <p>You will need the booking reference to make changes. Your booking reference is xg-vw-va-fm.</p>
 
-      <p>Or you can cancel your booking from <a href="../bookings/index.html">bookings page</a>.</p>
+      <p>Or you can cancel your booking from <a href="../index.html">bookings page</a>.</p>
       </p>
 
       <h2 class="govuk-heading-m">Help with the costs of prison visits</h2>
 
       <p>You may be able to <a href="https://www.gov.uk/help-with-prison-visits">get help with the cost of prison visits</a> if you’re getting certain benefits or have a health certificate.</p>
 
-      <form class="form" action="/online-booking/mvp+1" method="post">
+      <form class="form" action="../index.html" method="post">
         {% from "govuk/components/button/macro.njk" import govukButton %}
         {{ govukButton({
         text: "Back to homepage"
