@@ -15,80 +15,80 @@ Check the visit details before booking – {{ serviceName }}
         Check the visit details before booking
       </h1>
 
-        <div class="govuk-summary-card">
-          <div class="govuk-summary-card__title-wrapper">
-            <h2 class="govuk-summary-card__title">
-              Visit details
-            </h2>
-          </div>
-          <div class="govuk-summary-card__content">
-            <dl class="govuk-summary-list">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Prisoner
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ data['prisoner-name'] }}
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Visitors
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  {{ data['visitor-1-name'] }} ({{ data['visitor-1-age'] }} years old) 
-                    <br>
-                  {{ data['visitor-2-name'] }} ({{ data['visitor-2-age'] }} years old)
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="./1-visitors.html">Change<span class="govuk-visually-hidden"> visitors</span></a>
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Date and time
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  Thursday 6 June 2024
-                    <br>
-                   10am to 11am
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="./2-choose-date.html">Change<span class="govuk-visually-hidden"> date and time of visit</span></a>
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Additional support
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  None
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="./3-reasonable-adjustments.html">Change<span class="govuk-visually-hidden"> additional support</span></a>
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Main contact
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  	{{ data['visitor-1-name'] }}
-                    <br>
-                    {{ data['visitor-1-tel'] }}
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="./4-main-contact.html">Change<span class="govuk-visually-hidden"> main contact</span></a>
-                </dd>
-              </div>
-            </dl>
-          </div>
+      <dl class="govuk-summary-list">
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Prisoner
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['prisoner-name'] }}
+          </dd>
         </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Visitors
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['visitor-1-name'] }} ({{ data['visitor-1-age'] }} years old) 
+            <br>
+            {{ data['visitor-2-name'] }} ({{ data['visitor-2-age'] }} years old)
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="./1-visitors.html">Change<span class="govuk-visually-hidden"> visitors</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Date and time
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['visit-0-date'] }}
+            <br>
+             {{ data['visit-0-time'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <a class="govuk-link" href="./2-choose-date.html">Change<span class="govuk-visually-hidden"> date and time</span></a>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Additional support
+          </dt>
+          <dd class="govuk-summary-list__value">
+            <p class="govuk-body">None</p>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <ul class="govuk-summary-list__actions-list">
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="./3-reasonable-adjustments.html">Change<span class="govuk-visually-hidden"> contact details</span></a>
+              </li>
+            </ul>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Main contact
+          </dt>
+          <dd class="govuk-summary-list__value">
+            {{ data['visitor-1-name'] }}
+            <br>
+            {{ data['visitor-1-tel'] }}
+            <br>
+            {{ data['visitor-1-email'] }}
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <ul class="govuk-summary-list__actions-list">
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="./4-main-contact.html">Change<span class="govuk-visually-hidden"> contact details</span></a>
+              </li>
+            </ul>
+          </dd>
+        </div>
+      </dl>
 
       <button class="govuk-button" data-module="govuk-button">Continue</button>
 
     </form>
-
 
   </div>
 </div>

@@ -4,11 +4,14 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+
+
     <form class="form" action="cancel" method="post">
+
       <h1 class="govuk-heading-l"> Are you sure you want to cancel this booking? </h1>
       <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Date and time</h2>
-      <p class="govuk-body govuk-!-margin-bottom-1">Tuesday 26 March 2024</p>
-      <p class="govuk-body govuk-!-margin-bottom-1">10am to 11am</p>
+      <p class="govuk-body govuk-!-margin-bottom-1">{{ data['visit-0-date'] }}</p>
+      <p class="govuk-body govuk-!-margin-bottom-1">{{ data['visit-0-time'] }}</p>
       <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Prisoner</h2>
       <p class="govuk-body govuk-!-margin-bottom-1">{{ data['prisoner-name'] }}</p>
       <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Visitors</h2>
@@ -23,13 +26,15 @@
               <label class="govuk-label govuk-radios__label" for="cancel"> Yes, cancel this booking </label>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="cacenl-2" name="cancel" type="radio" value="no">
+              <input class="govuk-radios__input" id="cancel-2" name="cancel" type="radio" value="no">
               <label class="govuk-label govuk-radios__label" for="cancel-2"> No, keep this booking </label>
             </div>
           </div>
         </fieldset>
       </div>
+
       <button class="govuk-button" data-module="govuk-button">Continue</button>
     </form>
+
   </div>
 </div> {% endblock %}
