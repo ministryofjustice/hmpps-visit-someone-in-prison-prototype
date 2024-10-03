@@ -15,7 +15,7 @@ Confirmation – {{ serviceName }}
         
         <h1 class="govuk-panel__title">Visit booked</h1>
         <div class="govuk-panel__body">
-          Your booking reference is<br><strong>xg-vw-va-fm</strong>
+          Your booking reference is<br><strong>{{ data['visit-0-ref'] }}</strong>
         </div>
       </div>
           
@@ -37,9 +37,10 @@ Confirmation – {{ serviceName }}
 
       <h2 class="govuk-heading-m">How to change your booking</h2>
       <p>To update your booking, call the prison on {{ data['telephone-number'] }} between 9am and 5pm, Monday to Friday.</p>
-      <p>You will need the booking reference to make changes. Your booking reference is xg-vw-va-fm.</p>
+      <p>You will need the booking reference to make changes. Your booking reference is {{ data['visit
+        -1-ref'] }}.</p>
 
-      <p>Or you can cancel your booking from <a href="../index.html">bookings page</a>.</p>
+      <p>Or you can cancel your booking from <a href="../bookings/">bookings page</a>.</p>
       </p>
 
       <h2 class="govuk-heading-m">Help with the costs of prison visits</h2>

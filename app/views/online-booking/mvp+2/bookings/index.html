@@ -18,9 +18,9 @@ Bookings – {{ serviceName }}
     <p class="govuk-body">Only bookings made using this pilot service are shown.</p>
 
     <h2 class="govuk-heading-m">Future visits</h2>
-    <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Tuesday 26 March 2024</h3>
-    <p class="govuk-body govuk-!-margin-bottom-1">10am to 11am</p>
-    <p class="govuk-body govuk-!-margin-bottom-1">Booking reference: hd-wo-fx-mv </p>
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-1">{{ data['visit-0-date'] }}</h3>
+    <p class="govuk-body govuk-!-margin-bottom-1">{{ data['visit-0-time'] }}</p>
+    <p class="govuk-body govuk-!-margin-bottom-1">Booking reference: {{ data['visit-0-ref'] }}</p>
     <p class="govuk-body govuk-!-margin-bottom-1"><a href="./future/details" class="govuk-link">View details</a>&nbsp;&nbsp;<a href="./future/cancel" class="govuk-link">Cancel booking</a></p>
 
     <br>
