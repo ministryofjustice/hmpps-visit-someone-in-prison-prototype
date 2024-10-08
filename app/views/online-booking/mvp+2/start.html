@@ -1,0 +1,117 @@
+{% extends "layouts/main.html" %}
+
+{% block pageTitle %}
+  {{ serviceName }} – GOV.UK
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader() }}
+{% endblock %}
+
+{% block beforeContent %}
+
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "Home",
+        href: "/"
+      },
+      {
+        text: "Crime, justice and the law",
+        href: "/"
+      },
+      {
+        text: "Prisons and probation",
+        href: "/"
+      }
+    ]
+  }) }}
+
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        {{ serviceName }}
+      </h1>
+
+      <p>Use this service to request a social visit to a prisoner in England or Wales. There’s a different way to book a prison visit in Northern Ireland or a prison visit in Scotland.</p>
+
+      <p>To use this service you need the:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>prisoner number</li>
+        <li>prisoner’s date of birth</li>
+        <li>dates of birth for all visitors coming with you</li>
+      </ul>
+
+      <p>You need a GOV.UK One Login to sign in to this service. You can create one if you do not already have one.</p>
+
+      {{ govukButton({
+        text: "Start now",
+        href: "#",
+        isStartButton: true
+      }) }}
+
+      <h2 class="govuk-heading-m">Before you start</h2>
+
+      <p>This service is also <a href="#">available in Welsh (ar gael yn Gymraeg)</a>.</p>
+
+      <p>If you do not have the prisoner’s location or prisoner number, use the ‘Find a prisoner’ service.</p>
+
+      <p>The prisoner must add you to their visitor list before you can request a visit. This can take up to 2 weeks.</p>
+
+      <p>Contact the prison directly if you need to arrange any of the following:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>legal visits, for example legal professionals discussing the prisoner’s case</li>
+        <li>reception visits, for example the first visit to the prisoner within 72 hours of being admitted</li>
+        <li>double visits, for example visiting for 2 hours instead of 1</li>
+        <li>family day visits - special family events that the prison organises</li>
+      </ul>
+
+      <h2 class="govuk-heading-m">Other support</h2>
+
+      <p>You may be able to get help with the cost of prison visits if you’re getting certain benefits or have a health certificate.</p>
+      
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Related content
+        </h2>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-!-font-size-16">
+            <li>
+              <a href="#">
+                Staying in touch with someone in prison
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Send money to someone in prison
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Get help with the cost of prison visits
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Find a prisoner
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+  </div>
+
+{% endblock %}
