@@ -36,6 +36,12 @@ Visit booking details – {{ serviceName }}
     <p class="govuk-body govuk-!-margin-bottom-1">{{ data['visitor-1-tel'] }}</p>
     <p class="govuk-body govuk-!-margin-bottom-1">{{ data['visitor-1-email'] }}</p>
 
+    <form action="cancel-confirm" method="post">
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+         Cancel booking
+      </button>
+     </form>
+
     <h2 class="govuk-heading-m">How to change your booking</h2>
     <p class="govuk-body">To update or cancel your booking, call {{ data['prison-name'] }} on {{ data['telephone-number'] }} between 9am and 5pm, Monday to Friday.</p>  
     <p class="govuk-body">You will need the booking reference to make changes.</p>  
