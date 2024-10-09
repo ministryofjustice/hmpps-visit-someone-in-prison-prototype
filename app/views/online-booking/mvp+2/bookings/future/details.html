@@ -15,7 +15,7 @@ Visit booking details – {{ serviceName }}
       Visit booking details
     </h1>
 
-    <p class="govuk-body">Booking reference: hd-wo-fx-mv</p>
+    <p class="govuk-body">Booking reference:{{ data['ref'] }}</p>
 
     <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Date and time</h2>
     <p class="govuk-body govuk-!-margin-bottom-1">{{ data['visit-0-date'] }}</p>
@@ -36,18 +36,20 @@ Visit booking details – {{ serviceName }}
     <p class="govuk-body govuk-!-margin-bottom-1">{{ data['visitor-1-tel'] }}</p>
     <p class="govuk-body govuk-!-margin-bottom-1">{{ data['visitor-1-email'] }}</p>
 
-    <form action="cancel-confirm" method="post">
+    <br>
+    
+    <form action="cancel" method="post">
       <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
          Cancel booking
       </button>
      </form>
 
-    <h2 class="govuk-heading-m">How to change your booking</h2>
-    <p class="govuk-body">To update or cancel your booking, call {{ data['prison-name'] }} on {{ data['telephone-number'] }} between 9am and 5pm, Monday to Friday.</p>  
-    <p class="govuk-body">You will need the booking reference to make changes.</p>  
+    <h2 class="govuk-heading-m">How to update your booking</h2>
+    <p class="govuk-body">To update your booking, call {{ data['prison-name'] }} on {{ data['telephone-number'] }} between 9am and 5pm, Monday to Friday.</p>  
+    <p class="govuk-body">You will need the booking reference ({{ data['visit-0-ref'] }}) to make changes.</p>  
 
     <h2 class="govuk-heading-m">Prepare for visiting {{ data['prison-name'] }}</h2>
-    <p class="govuk-body">All visitors over 16 years old must show acceptable forms of ID to enter the prison.</p>  
+    <p class="govuk-body">All visitors over 16 years old must show <a href="https://www.gov.uk/government/publications/management-of-security-at-visits-policy-framework-open-estate/acceptable-forms-of-identification-id-when-visiting-a-prison-in-england-and-wales-annex-a" class="govuk-link">acceptable forms of ID</a> to enter the prison.</p>  
     <p class="govuk-body">Visitors should arrive 45 minutes before the visit starts.</p>  
     <p class="govuk-body">You can read more about visits at <a href="https://www.gov.uk/guidance/foston-hall-prison" class="govuk-link">{{ data['prison-name'] }}.</a> This includes information on getting to the prison and visiting facilities.</p>  
 
