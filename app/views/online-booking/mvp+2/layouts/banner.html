@@ -1,4 +1,5 @@
 {% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 
 {% block beforeContent %}
     {{ govukPhaseBanner({
@@ -7,4 +8,8 @@
       },
       html: 'This is a new service – your <a href="https://visit-someone-in-prison-test-feedback.form.service.justice.gov.uk/" target="_blank">feedback</a> will help us to improve it.'
     }) }}
- {% endblock %}
+    {{ govukBackLink({
+      href: "javascript:window.history.back()",
+      text: "Back"
+    }) }}
+{% endblock %}
