@@ -14,9 +14,14 @@ Booking cancelled – {{ serviceName }}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {{ govukPanel({
-      titleText: "Booking cancelled"
-    }) }}
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">
+        Booking cancelled
+      </h1>
+      <div class="govuk-panel__body">
+          Your booking reference<br><strong>{{ data['visit-0-ref'] }}</strong>
+      </div>
+    </div>
 
     <h1 class="govuk-heading-m">
       What happens next?
