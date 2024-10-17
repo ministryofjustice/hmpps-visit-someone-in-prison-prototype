@@ -1,34 +1,4 @@
-{% extends "layouts/main.html" %}
-
-{% block pageTitle %}
-Visits - Prototype
-{% endblock %}
-
-{% block header %}
-
-{{ govukHeader({
-  classes: "govuk-header--full-width-border",
-  homepageUrl: "/"
-}) }}
-
-{{ govukServiceNavigation({
-    serviceName: "Visits",
-    serviceUrl: "/",
-    navigation: [
-      {
-        href: "/",
-        text: "Visit someone in prison"
-      },
-      {
-        href: "/assisted-digital/assisted-digital-index.html",
-        text: "Manage prison visits",
-        active: true
-      }
-    ]
-  }) }}
-
-{% endblock %}
-
+{% extends "layouts/menu.html" %}
 
 {% block content %}
 
@@ -36,7 +6,7 @@ Visits - Prototype
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">Manage prison visits</h1>
+        <h1 class="govuk-heading-xl">DPS</h1>
       </div>
     </div>
     
