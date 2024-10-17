@@ -1,0 +1,48 @@
+{% extends "layouts/menu.html" %}
+
+{% block content %}
+
+<div class="govuk-width-container"></div>
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Get help with the cost of prison visits</h1>
+      </div>
+    </div>
+    
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+    
+        <h2 class="govuk-heading-m">
+          V2
+          <br>
+    
+          {%- from "govuk/components/tag/macro.njk" import govukTag -%}
+          {{ govukTag({
+          text: "Planning",
+          classes: "govuk-tag--yellow"
+          }) }}
+        </h2>
+    
+        <p class="govuk-body">What's new:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>TBC</li>
+        </ul>
+    
+        <form class="form" action="/hwpv/" method="post">
+          {% from "govuk/components/button/macro.njk" import govukButton %}
+          {{ govukButton({
+          text: "Start"
+          }) }}
+        </form>
+        <br>
+      </div>
+      <div class="govuk-grid-column-one-third">
+        <h3 class="govuk-heading-m">About the product</h3>
+        <p class="govuk-body">This product helps prison visitors with the costs of visiting someone in prison.</p>
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}

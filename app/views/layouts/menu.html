@@ -1,0 +1,29 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% block pageTitle %}
+Visits - Prototype
+{% endblock %}
+
+{% block header %}
+
+{{ govukHeader({
+  classes: "govuk-header--full-width-border",
+  homepageUrl: "/"
+}) }}
+
+{{ govukServiceNavigation({
+    serviceName: "Visits",
+    serviceUrl: "/",
+    navigation: [
+      {
+        href: "/",
+        text: "Visit someone in prison"
+      },
+      {
+        href: "/assisted-digital/assisted-digital-index.html",
+        text: "Digital Prison Services"
+      }
+    ]
+  }) }}
+
+{% endblock %}

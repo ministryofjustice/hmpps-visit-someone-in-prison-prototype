@@ -1,5 +1,6 @@
 [![Continuous Deployment](https://github.com/ministryofjustice/hmpps-visit-someone-in-prison-prototype/actions/workflows/cd-main.yaml/badge.svg)](https://github.com/ministryofjustice/hmpps-visit-someone-in-prison-prototype/actions/workflows/cd-main.yaml)
-# Visits prototype
+
+# Visits prototypes
 
 Based on the [GOV.UK Prototype Kit](https://prototype-kit.service.gov.uk/docs/) and hosted on the [MoJ Cloud Platform](https://user-guide.cloud-platform.service.justice.gov.uk/documentation/getting-started/prototype-kit.html).
 

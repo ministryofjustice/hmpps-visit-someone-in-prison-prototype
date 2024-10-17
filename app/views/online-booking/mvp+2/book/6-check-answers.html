@@ -52,7 +52,7 @@ Check the visit details before booking – {{ serviceName }}
         </div>
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
-            Additional support
+            Additional support requests
           </dt>
           <dd class="govuk-summary-list__value">
             <p class="govuk-body">None</p>
@@ -71,7 +71,20 @@ Check the visit details before booking – {{ serviceName }}
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['visitor-1-name'] }}
-            <br>
+          </dd>
+          <dd class="govuk-summary-list__actions">
+            <ul class="govuk-summary-list__actions-list">
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="./4-main-contact.html">Change<span class="govuk-visually-hidden"> main contact</span></a>
+              </li>
+            </ul>
+          </dd>
+        </div>
+        <div class="govuk-summary-list__row">
+          <dt class="govuk-summary-list__key">
+            Contact details
+          </dt>
+          <dd class="govuk-summary-list__value">
             {{ data['visitor-1-tel'] }}
             <br>
             {{ data['visitor-1-email'] }}
@@ -79,7 +92,7 @@ Check the visit details before booking – {{ serviceName }}
           <dd class="govuk-summary-list__actions">
             <ul class="govuk-summary-list__actions-list">
               <li class="govuk-summary-list__actions-list-item">
-                <a class="govuk-link" href="./4-main-contact.html">Change<span class="govuk-visually-hidden"> contact details</span></a>
+                <a class="govuk-link" href="./5-contact-details.html">Change<span class="govuk-visually-hidden"> contact details</span></a>
               </li>
             </ul>
           </dd>
