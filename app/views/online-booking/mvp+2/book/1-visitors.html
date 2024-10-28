@@ -42,7 +42,10 @@ Who is going on the visit? – {{ serviceName }}
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="visitor-2" name="waste" type="checkbox" value="mines">
               <label class="govuk-label govuk-checkboxes__label" for="visitor-2">
-                {{ data['visitor-2-name'] }} ({{ data['visitor-2-age'] }} years old) <span class="moj-badge moj-badge--red">Banned until 14 October 2024</span>
+                {{ data['visitor-2-name'] }} ({{ data['visitor-2-age'] }} years old) <span class="moj-badge moj-badge--red">Banned</span>
+                <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
+                  They can only visit after 10 November 2024 when their ban ends.
+                </div>
               </label>
             </div>
           </div>
@@ -51,7 +54,8 @@ Who is going on the visit? – {{ serviceName }}
 
           <h2 class="govuk-heading-m">Unavailable visitors</h2>
 
-          <p>{{ data['visitor-4-name'] }} ({{ data['visitor-4-age'] }} years old) <span class="moj-badge moj-badge--red">Banned until 14 January 2025</span></p>
+          <p>{{ data['visitor-4-name'] }} ({{ data['visitor-4-age'] }} years old) <span class="moj-badge moj-badge--red">Banned</span></p>
+          <p class="govuk-body-s">They can only visit after 9 March 2025 when their ban ends.</p>
 
         </fieldset>
       </div>
