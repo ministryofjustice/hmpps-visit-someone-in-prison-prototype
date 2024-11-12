@@ -45,7 +45,8 @@ Who is going on the visit? – {{ serviceName }}
                 {{ data['visitor-2-name'] }} ({{ data['visitor-2-age'] }} years old) <strong class="govuk-tag govuk-tag--red">Banned</strong>
               </label>
                 <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
-                  They can only visit after 10 November 2024 when their ban ends.
+                  {{ data['visitor-2-name'] }} is banned until 10 November 2024. 
+                  If they are selected as a visitor, the visit must be on or after this date.
                 </div>
             </div>
           </div>
@@ -55,7 +56,10 @@ Who is going on the visit? – {{ serviceName }}
           <h2 class="govuk-heading-m">Unavailable visitors</h2>
 
           <p>{{ data['visitor-4-name'] }} ({{ data['visitor-4-age'] }} years old) <strong class="govuk-tag govuk-tag--red">Banned</strong></p>
-          <p class="govuk-hint govuk-checkboxes__hint">They can only visit after 9 March 2025 when their ban ends.</p>
+          <p class="govuk-body-s">
+            {{ data['visitor-4-name'] }} is banned until 27 December 2024.
+            Visits on or after this date are not currently available to book.
+          </p>
 
         </fieldset>
       </div>
