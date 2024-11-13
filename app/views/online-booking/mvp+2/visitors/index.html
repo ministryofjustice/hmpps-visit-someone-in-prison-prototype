@@ -11,7 +11,7 @@ Visitors – {{ serviceName }}
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-l">
-      Visitors you can book for
+      Visitors
     </h1>
 
     <h2 class="govuk-heading-m">{{ data['prisoner-name'] }}'s visitors</h2>
@@ -21,14 +21,14 @@ Visitors – {{ serviceName }}
         <tr class="govuk-table__row">
           <th scope="col" class="govuk-table__header">Name</th>
           <th scope="col" class="govuk-table__header">Date of birth</th>
-          <th scope="col" class="govuk-table__header">Status</th>
+          <th scope="col" class="govuk-table__header">Can you book a visit for them?</th>
         </tr>
       </thead>
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">{{ data['visitor-1-name'] }}</th>
           <td class="govuk-table__cell">{{ data['visitor-1-dob'] }}</td>
-          <td class="govuk-table__cell">Approved to book</td>
+          <td class="govuk-table__cell">Yes</td>
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">{{ data['visitor-2-name'] }}</th>
@@ -39,7 +39,7 @@ Visitors – {{ serviceName }}
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">{{ data['visitor-3-name'] }}</th>
           <td class="govuk-table__cell">{{ data['visitor-3-dob'] }}</td>
-          <td class="govuk-table__cell">Approved to book</td>
+          <td class="govuk-table__cell">Waitiing to be checked by prison</td>
         </tr>
         <tr class="govuk-table__row">
           <th scope="row" class="govuk-table__header">{{ data['visitor-4-name'] }}</th>
