@@ -1,7 +1,8 @@
 module.exports = {
 
-  'telephone-number': '0121 661 2101',
+  'prison-tel': '0121 661 2101',
   'prison-name': 'Foston Hall (HMP & YOI)',
+  'prison-url': 'https://www.gov.uk/guidance/foston-hall-prison',
   'prisoner-name': 'Jane Smith',
   'visitor-1-name': 'Susan Smith',
   'visitor-1-age': '39',
