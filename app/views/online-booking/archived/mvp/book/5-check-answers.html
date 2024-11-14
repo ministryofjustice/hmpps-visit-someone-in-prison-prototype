@@ -48,9 +48,9 @@ Check the visit details before booking – {{ serviceName }}
                   Visitors
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  {{ data['visitor-1-name'] }} ({{ data['visitor-1-age'] }} years old) 
+                  {{ data['visitor-1-first-name'] }} {{ data['visitor-1-surname'] }} ({{ data['visitor-1-age'] }} years old) 
                     <br>
-                  {{ data['visitor-2-name'] }} ({{ data['visitor-2-age'] }} years old)
+                  {{ data['visitor-2-first-name'] }} {{ data['visitor-2-surname'] }} ({{ data['visitor-2-age'] }} years old)
                 </dd>
                 <dd class="govuk-summary-list__actions">
                   <a class="govuk-link" href="/online-booking/mvp/book/1-visitors">Change<span class="govuk-visually-hidden"> visitors</span></a>
@@ -85,7 +85,7 @@ Check the visit details before booking – {{ serviceName }}
                   Main contact
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  	{{ data['visitor-1-name'] }}
+                  	{{ data['visitor-1-first-name'] }} {{ data['visitor-1-surname'] }}
                     <br>
                     {{ data['visitor-1-tel'] }}
                 </dd>
