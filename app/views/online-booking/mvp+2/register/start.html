@@ -1,98 +1,143 @@
-{% extends "layouts/main.html" %}
-
-{% block pageTitle %}
-  {{ serviceName }} – GOV.UK
-{% endblock %}
-
-{% block header %}
-  {{ govukHeader() }}
-{% endblock %}
+{% extends "/online-booking/mvp+2/layouts/start.html" %} 
 
 {% block content %}
 
-  <div class="govuk-grid-row">
+<div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+
+      {% if data['languagePreference'] == "en" %}
 
       <h1 class="govuk-heading-xl">
         {{ serviceName }}
-      </h1>
-
-      <p>This new service can be used to visit one prisoner in:</p>
-
-      <ul class="govuk-list govuk-list--bullet">
-        <li>Foston Hall (HMP & YOI)</li>
-        <li>Drake Hall (HMP & YOI)</li>
-      </ul>
-
-      <p>If you need to visit someone in another prison or visit more than one prisoner, use <a href="#" class="govuk-link">the existing visit request service.</a>.</p>
-
-      <h2 class="govuk-heading-m">Before you start</h2>
-
-      <p>You will need:</p>
-
-      <ul class="govuk-list govuk-list--bullet">
-        <li>the name, prison number and date of birth for the prisoner</li>
-        <li>the anmes and dates of birth for visitors</li>
-      </ul>
-
-      <p>You only need to supply this information once. Checks usually take X working days but can take up to Y working days.</p>
-
-      <p>After this check, you can book and get instant confirmation of your visit.</p>
-
-      <p>You need a GOV.UK One Login to sign in to this service. You can create one if you do not already have one.</p>
-
-      {{ govukButton({
-        text: "Start now",
-        href: "#",
-        isStartButton: true
-      }) }}
-
-      <h2 class="govuk-heading-m">Visits you cannot book online</h2>
-
-      <p><a href="https://www.gov.uk/government/collections/prisons-in-england-and-wales" class="govuk-link">Contact the prison directly</a> if you need to arrange any of the following:</p>
-
-      <ul class="govuk-list govuk-list--bullet">
-        <li>legal visits, for example legal professionals discussing the prisoner’s case</li>
-        <li>reception visits, for example the first visit to the prisoner within 72 hours of being admitted</li>
-        <li>double visits, for example visiting for 2 hours instead of 1</li>
-        <li>family day visits - special family events that the prison organises</li>
-      </ul>
-
-      <h2 class="govuk-heading-m">Help with the cost of prison visits/h2>
-
-      <p>You may be able to <a href="https://www.gov.uk/help-with-prison-visits" class="govuk-link">get help with the cost of prison visits</a> if you’re getting certain benefits or have a health certificate.</p>
+      </h1> 
       
+        <div>
+            <p>This new service can be used to visit one prisoner in:</p>
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li>Foston Hall (HMP & YOI)</li>
+                <li>Drake Hall (HMP & YOI)</li>
+            </ul>
+
+            <p>If you need to visit someone in another prison or visit more than one prisoner, use <a href="#" class="govuk-link">the existing visit request service</a>.</p>
+
+            <h2 class="govuk-heading-m">Before you start</h2>
+
+            <p>You will need:</p>
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li>the name, prison number and date of birth for the prisoner</li>
+                <li>the names and dates of birth for visitors</li>
+            </ul>
+
+            <p>You only need to supply this information once. Checks usually take 2 working days but can take up to 5 working days.</p>
+
+            <p>After this check, you can book and get instant confirmation of your visit.</p>
+
+            <p>You need a GOV.UK One Login to sign in to this service. You can create one if you do not already have one.</p>
+
+            {{ govukButton({ text: "Start now", href: "./add-prisoner.html", isStartButton: true }) }}
+
+            <h2 class="govuk-heading-m">Visits you cannot book online</h2>
+
+            <p><a href="https://www.gov.uk/government/collections/prisons-in-england-and-wales" class="govuk-link">Contact the prison directly</a> if you need to arrange any of the following:</p>
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li>legal visits, for example legal professionals discussing the prisoner’s case</li>
+                <li>reception visits, for example the first visit to the prisoner within 72 hours of being admitted</li>
+                <li>double visits, for example visiting for 2 hours instead of 1</li>
+                <li>family day visits - special family events that the prison organises</li>
+            </ul>
+
+            <h2 class="govuk-heading-m">Help with the cost of prison visits</h2>
+
+            <p>You may be able to <a href="https://www.gov.uk/help-with-prison-visits" class="govuk-link">get help with the cost of prison visits</a> if you’re getting certain benefits or have a health certificate.</p>
+
+        </div>
+
     </div>
+    {% else %}
 
-    <div class="govuk-grid-column-one-third">
+    <div>
+      <h1 class="govuk-heading-xl">
+        Ymweld â rhywun yn y carchar
+      </h1> 
+      
+        <div>
+            <p>TGellir defnyddio’r gwasanaeth newydd hwn i ymweld ag un carcharor yn:
+            </p>
 
-      <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
-        <h2 class="govuk-heading-m" id="subsection-title">
-          Related content
-        </h2>
-        <nav role="navigation" aria-labelledby="subsection-title">
-          <ul class="govuk-list govuk-!-font-size-16">
+            <ul class="govuk-list govuk-list--bullet">
+                <li>Foston Hall (HMP & YOI)</li>
+                <li>Drake Hall (HMP & YOI)</li>
+            </ul>
 
-            <li>
-              <a href="https://www.gov.uk/help-with-prison-visits">
-                Get help with the cost of prison visits
-              </a>
-            </li>
-            <li>
-              <a href="https://www.gov.uk/find-prisoner">
-                Find a prisoner
-              </a>
-            </li>
-            <li>
-              <a href="https://www.gov.uk/staying-in-touch-with-someone-in-prison">
-                Staying in touch with someone in prison
-              </a>
-            </li>
-          </ul>
-        </nav>
-      </aside>
+            <p>
+              Os oes angen i chi ymweld â rhywun mewn carchar arall neu ymweld â mwy nag un carcharor, defnyddiwch y gwasanaeth cais am ymweliad presennol.
+            </p>
+
+            <h2 class="govuk-heading-m">
+              Cyn i chi ddechrau
+            </h2>
+
+            <p>
+              Bydd angen:
+            </p>
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li>enw, rhif carchar a dyddiad geni’r</li>
+                <li>carcharor enwau a dyddiadau geni ymwelwyr</li>
+            </ul>
+
+            <p>
+              Dim ond unwaith y mae angen i chi ddarparu'r wybodaeth hon. Mae gwiriadau fel arfer yn cymryd 2 ddiwrnod gwaith ond gall gymryd hyd at 5 diwrnod gwaith.
+            </p>
+
+            <p>
+              Ar ôl y gwiriad hwn, gallwch archebu a chael cadarnhad ar unwaith o'ch ymweliad.
+            </p>
+
+            <p>
+              Mae angen One Login GOV.UK arnoch i fewngofnodi i'r gwasanaeth hwn. Gallwch greu un os nad oes gennych un yn barod.
+            </p>
+
+            {{ govukButton({ text: "Start now", href: "./add-prisoner.html", isStartButton: true }) }}
+
+            <h2 class="govuk-heading-m">
+              Ymweliadau na allwch eu harchebu ar-lein
+            </h2>
+
+            <p>
+              Cysylltwch â’r carchar yn uniongyrchol os oes angen i chi drefnu unrhyw un o’r canlynol:
+            </p>
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li>
+                  ymweliadau cyfreithiol, er enghraifft gweithwyr cyfreithiol proffesiynol yn trafod achos y carcharor
+                </li>
+                <li>
+                  ymweliadau derbyn, er enghraifft yr ymweliad cyntaf â’r carcharor o fewn 72 awr i gael ei dderbyn
+                </li>
+                <li>
+                  ymweliadau dwbl, er enghraifft ymweld am 2 awr yn lle 1
+                </li>
+                <li>
+                  ymweliadau diwrnod teulu - digwyddiadau teuluol arbennig y mae'r carchar yn eu trefnu
+                </li>
+            </ul>
+
+            <h2 class="govuk-heading-m">
+              Help gyda chost ymweliadau carchar
+            </h2>
+
+            <p>
+              Efallai y gallwch gael help gyda chost ymweliadau carchar os ydych yn cael budd-daliadau penodol neu os oes gennych dystysgrif iechyd.
+            </p>
+
+        </div>
 
     </div>
-  </div>
+    {% endif %} 
+</div>
 
 {% endblock %}

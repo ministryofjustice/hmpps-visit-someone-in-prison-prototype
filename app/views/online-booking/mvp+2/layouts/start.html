@@ -1,0 +1,10 @@
+{% extends "./footer.html" %}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% block pageTitle %} {{ serviceName }} – GOV.UK {% endblock %} 
+
+{% block header %} {{ govukHeader() }} {% endblock %} 
+
+{% block beforeContent %} {{ hmrcLanguageSelect({ language: 'cy' if data['languagePreference'] === 'cy' else 'en', en: { href: '?languagePreference=en' }, cy: { href: '?languagePreference=cy' } }) }}
+
+{% endblock %}
