@@ -8,27 +8,6 @@
   {{ govukHeader() }}
 {% endblock %}
 
-{% block beforeContent %}
-
-  {{ govukBreadcrumbs({
-    items: [
-      {
-        text: "Home",
-        href: "/"
-      },
-      {
-        text: "Crime, justice and the law",
-        href: "/"
-      },
-      {
-        text: "Prisons and probation",
-        href: "/"
-      }
-    ]
-  }) }}
-
-{% endblock %}
-
 {% block content %}
 
   <div class="govuk-grid-row">
@@ -38,17 +17,27 @@
         {{ serviceName }}
       </h1>
 
-      <p>Use this service to request a social visit to a prisoner in England or Wales.</p>
-      
-      <p>There’s a different way to book a <a href="https://www.justice-ni.gov.uk/topics/prisons/prison-visits" class="govuk-link">prison visit in Northern Ireland</a> or a <a href="https://www.sps.gov.uk/family-and-friends/visits" class="govuk-link">prison visit in Scotland</a>.</p>
-
-      <p>To use this service you need the:</p>
+      <p>This new service can be used to visit one prisoner in:</p>
 
       <ul class="govuk-list govuk-list--bullet">
-        <li>prisoner number</li>
-        <li>prisoner’s date of birth</li>
-        <li>dates of birth for all visitors coming with you</li>
+        <li>Foston Hall (HMP & YOI)</li>
+        <li>Drake Hall (HMP & YOI)</li>
       </ul>
+
+      <p>If you need to visit someone in another prison or visit more than one prisoner, use <a href="#" class="govuk-link">the existing visit request service.</a>.</p>
+
+      <h2 class="govuk-heading-m">Before you start</h2>
+
+      <p>You will need:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>the name, prison number and date of birth for the prisoner</li>
+        <li>the anmes and dates of birth for visitors</li>
+      </ul>
+
+      <p>You only need to supply this information once. Checks usually take X working days but can take up to Y working days.</p>
+
+      <p>After this check, you can book and get instant confirmation of your visit.</p>
 
       <p>You need a GOV.UK One Login to sign in to this service. You can create one if you do not already have one.</p>
 
@@ -58,11 +47,7 @@
         isStartButton: true
       }) }}
 
-      <h2 class="govuk-heading-m">Before you start</h2>
-
-      <p>If you do not have the prisoner’s location or prisoner number, <a href="https://www.gov.uk/find-prisoner" class="govuk-link">use the Find a prisoner service</a>.</p>
-
-      <p>The prisoner must add you to their visitor list before you can request a visit. This can take up to 2 weeks.</p>
+      <h2 class="govuk-heading-m">Visits you cannot book online</h2>
 
       <p><a href="https://www.gov.uk/government/collections/prisons-in-england-and-wales" class="govuk-link">Contact the prison directly</a> if you need to arrange any of the following:</p>
 
@@ -73,7 +58,7 @@
         <li>family day visits - special family events that the prison organises</li>
       </ul>
 
-      <h2 class="govuk-heading-m">Other support</h2>
+      <h2 class="govuk-heading-m">Help with the cost of prison visits/h2>
 
       <p>You may be able to <a href="https://www.gov.uk/help-with-prison-visits" class="govuk-link">get help with the cost of prison visits</a> if you’re getting certain benefits or have a health certificate.</p>
       
