@@ -1,31 +1,35 @@
 {% extends "./footer.html" %}
 {% extends "./banner.html" %}
-
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
 
 {% block header %}
-{{ govukHeader({
-  classes: "govuk-header--full-width-border"
+  {{ govukHeader({
+    classes: "govuk-header--full-width-border"
+  }) }}
 
-}) }}
-
-{{ govukServiceNavigation({
-  serviceName:  serviceName,
-  serviceUrl: "/"
-}) }}
+  {{ govukServiceNavigation({
+    serviceName:  serviceName,
+    serviceUrl: "/"
+  }) }}
 
 {% endblock %}
 
-{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
 {% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
 
-{{ govukPhaseBanner({
-  tag: {
-    text: "Prototype"
-  },
-  html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
-}) }}
-
-
+  {{
+    hmrcLanguageSelect({
+        language: 'cy' if data['languagePreference'] === 'cy' else 'en',
+        en: { href: '?languagePreference=en' },
+        cy: { href: '?languagePreference=cy' }
+    })
+  }}
 
 {% endblock %}
