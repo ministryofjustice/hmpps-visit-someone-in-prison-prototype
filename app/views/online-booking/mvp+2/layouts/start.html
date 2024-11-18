@@ -5,6 +5,20 @@
 
 {% block header %} {{ govukHeader() }} {% endblock %} 
 
-{% block beforeContent %} {{ hmrcLanguageSelect({ language: 'cy' if data['languagePreference'] === 'cy' else 'en', en: { href: '?languagePreference=en' }, cy: { href: '?languagePreference=cy' } }) }}
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+  {{
+    hmrcLanguageSelect({
+        language: 'cy' if data['languagePreference'] === 'cy' else 'en',
+        en: { href: '?languagePreference=en' },
+        cy: { href: '?languagePreference=cy' }
+    })
+  }}
 
 {% endblock %}
