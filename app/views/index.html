@@ -1,4 +1,5 @@
 {% extends "layouts/menu.html" %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
 
 {% block content %}
 
@@ -37,13 +38,18 @@
           <li>booker registers to the service</li>
           <li>booker adds prisoner to their account</li>
         </ul>
-    
-        <form class="form" action="/online-booking/mvp+2/" method="post">
-          {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        <div class="govuk-button-group">
           {{ govukButton({
-          text: "Start"
+            text: "Returning booker",
+            href: "/online-booking/mvp+2/"
           }) }}
-        </form>
+        
+          {{ govukButton({
+            text: "New booker",
+            href: "/online-booking/mvp+2/register/start.html?languagePreference=en"
+          }) }}
+        </div>
     
         <hr class="govuk-section-break govuk-section-break--visible">
         <br>

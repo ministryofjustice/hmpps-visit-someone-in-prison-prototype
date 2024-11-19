@@ -1,21 +1,10 @@
 {% extends "./footer.html" %}
-{% extends "./banner.html" %}
-{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
 
-{% block header %}
-  {{ govukHeader({
-    classes: "govuk-header--full-width-border"
-  }) }}
-
-  {{ govukServiceNavigation({
-    serviceName:  serviceName,
-    serviceUrl: "/"
-  }) }}
-
-{% endblock %}
+{% block header %} {{ govukHeader() }} {% endblock %} 
 
 {% block beforeContent %}
+
   {{ govukPhaseBanner({
     tag: {
       text: "Prototype"
