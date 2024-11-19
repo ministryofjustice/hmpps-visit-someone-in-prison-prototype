@@ -1,35 +1,91 @@
 {% extends "/online-booking/mvp+2/layouts/main.html" %} 
-{% block pageTitle %} Privacy notice – {{ serviceName }} {% endblock %} 
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/select/macro.njk" import govukSelect %}
+
+
+{% block pageTitle %} 
+  Enter prisoner details - Visit someone in prison
+{% endblock %} 
 
 {% block content %}
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-    {% if data['languagePreference'] == "en" %}
-
         <div>
             <h1 class="govuk-heading-l">
-                Who are you visiting?
+                Enter prisoner details
             </h1>
-    
-            <p class="govuk-body">
-                TBC
-            </p>
-        </div>
-    
-    {% else %}
 
-        <div>
-            <h1 class="govuk-heading-l">
-                Pwy ydych chi'n ymweld â nhw?
-            </h1>
-    
-            <p class="govuk-body">
-                TBC
-            </p>
-        </div>
+            {{ govukInput({
+            label: {
+                text: "Prisoner name"
+            },
+            id: "full-name",
+            name: "fullName",
+            autocomplete: "name",
+            spellcheck: false
+            }) }}
 
-    {% endif %}
+            {{ govukDateInput({
+            id: "passport-issued",
+            namePrefix: "passport-issued",
+            fieldset: {
+                legend: {
+                text: "Prisoner date of birth"
+                }
+            },
+            hint: {
+                text: "For example, 27 3 2007"
+            }
+            }) }}
+
+            {{ govukInput({
+                label: {
+                  text: "Prisoner number"
+                },
+                classes: "govuk-input--width-10",
+                hint: {
+                  text: "For example, A1234BC"
+                },
+                id: "account-number",
+                name: "accountNumber",
+                inputmode: "numeric",
+                spellcheck: false
+            }) }}
+
+            {{ govukSelect({
+            id: "location",
+            name: "location",
+            label: {
+                text: "Choose prison"
+            },
+
+            items: [
+                {
+                value: "choose",
+                text: "Choose prison",
+                selected: true
+                },
+                {
+                value: "DHI",
+                text: "Drake Hall (HMP & YOI)"
+                },
+                {
+                value: "FHI",
+                text: "Foston Hall (HMP & YOI)"
+                }
+            ]
+            }) }}
+
+            {{ govukButton({
+                text: "Continue",
+                href: "#"
+              }) }}
+    
+        </div>
+    </div>
+</div>
 
 {% endblock %}
