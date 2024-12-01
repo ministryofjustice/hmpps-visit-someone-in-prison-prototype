@@ -2,7 +2,7 @@
 {% from "govuk/components/button/macro.njk" import govukButton %}
 {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 {% from "govuk/components/input/macro.njk" import govukInput %}
-
+{% from "govuk/components/details/macro.njk" import govukDetails %}
 
 {% block pageTitle %} 
   Check your phone - GOV.UK One Login
@@ -35,6 +35,11 @@
       {{ govukButton({
         text: "Continue",
         href: "../add-prisoner"
+      }) }}
+
+      {{ govukDetails({
+        summaryText: "Problems with the code?",
+        text: "We can send the code again if the code is not working or you did not receive it. If you cannot access the phone number for your GOV.UK One Login, you can securely change how you get security codes."
       }) }}
 
     </div>
