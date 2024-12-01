@@ -5,8 +5,6 @@
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      {% if data['languagePreference'] == "en" %}
-
       <h1 class="govuk-heading-xl">
         {{ serviceName }}
       </h1> 
@@ -54,90 +52,7 @@
             <p>You may be able to <a href="https://www.gov.uk/help-with-prison-visits" class="govuk-link">get help with the cost of prison visits</a> if you’re getting certain benefits or have a health certificate.</p>
 
         </div>
-
     </div>
-    {% else %}
-
-    <div>
-      <h1 class="govuk-heading-xl">
-        Ymweld â rhywun yn y carchar
-      </h1> 
-      
-        <div>
-            <p>TGellir defnyddio’r gwasanaeth newydd hwn i ymweld ag un carcharor yn:
-            </p>
-
-            <ul class="govuk-list govuk-list--bullet">
-                <li>Foston Hall (HMP & YOI)</li>
-                <li>Drake Hall (HMP & YOI)</li>
-            </ul>
-
-            <p>
-              Os oes angen i chi ymweld â rhywun mewn carchar arall neu ymweld â mwy nag un carcharor, defnyddiwch y gwasanaeth cais am ymweliad presennol.
-            </p>
-
-            <h2 class="govuk-heading-m">
-              Cyn i chi ddechrau
-            </h2>
-
-            <p>
-              Bydd angen:
-            </p>
-
-            <ul class="govuk-list govuk-list--bullet">
-                <li>enw, rhif carchar a dyddiad geni’r</li>
-                <li>carcharor enwau a dyddiadau geni ymwelwyr</li>
-            </ul>
-
-            <p>
-              Dim ond unwaith y mae angen i chi ddarparu'r wybodaeth hon. Mae gwiriadau fel arfer yn cymryd 2 ddiwrnod gwaith ond gall gymryd hyd at 5 diwrnod gwaith.
-            </p>
-
-            <p>
-              Ar ôl y gwiriad hwn, gallwch archebu a chael cadarnhad ar unwaith o'ch ymweliad.
-            </p>
-
-            <p>
-              Mae angen One Login GOV.UK arnoch i fewngofnodi i'r gwasanaeth hwn. Gallwch greu un os nad oes gennych un yn barod.
-            </p>
-
-            {{ govukButton({ text: "Start now", href: "./add-prisoner.html", isStartButton: true }) }}
-
-            <h2 class="govuk-heading-m">
-              Ymweliadau na allwch eu harchebu ar-lein
-            </h2>
-
-            <p>
-              Cysylltwch â’r carchar yn uniongyrchol os oes angen i chi drefnu unrhyw un o’r canlynol:
-            </p>
-
-            <ul class="govuk-list govuk-list--bullet">
-                <li>
-                  ymweliadau cyfreithiol, er enghraifft gweithwyr cyfreithiol proffesiynol yn trafod achos y carcharor
-                </li>
-                <li>
-                  ymweliadau derbyn, er enghraifft yr ymweliad cyntaf â’r carcharor o fewn 72 awr i gael ei dderbyn
-                </li>
-                <li>
-                  ymweliadau dwbl, er enghraifft ymweld am 2 awr yn lle 1
-                </li>
-                <li>
-                  ymweliadau diwrnod teulu - digwyddiadau teuluol arbennig y mae'r carchar yn eu trefnu
-                </li>
-            </ul>
-
-            <h2 class="govuk-heading-m">
-              Help gyda chost ymweliadau carchar
-            </h2>
-
-            <p>
-              Efallai y gallwch gael help gyda chost ymweliadau carchar os ydych yn cael budd-daliadau penodol neu os oes gennych dystysgrif iechyd.
-            </p>
-
-        </div>
-
-    </div>
-    {% endif %} 
 </div>
 
 {% endblock %}

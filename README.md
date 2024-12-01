@@ -53,3 +53,6 @@ git push
 The prototype is configured to build and deploy automatically upon new commits to the `main` branch.
 
 Once a pull request is merged the build that this triggers can be followed on the [Actions tab](https://github.com/ministryofjustice/hmpps-visit-someone-in-prison-prototype/actions). When this completes, the changes should be published.
+
+## Updating packages
+The node packages can be updated by running `npm update`.
