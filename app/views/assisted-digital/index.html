@@ -1,14 +1,38 @@
-{% extends "layouts/menu.html" %}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block pageTitle %}
+Visits - Prototypes
+{% endblock %}
+
+{% block header %}
+
+{{ govukHeader({
+  classes: "govuk-header--full-width-border",
+  homepageUrl: "/"
+}) }}
+
+{{ xGovukPrimaryNavigation({
+  visuallyHiddenTitle: "Navigation",
+  items: [{
+    text: "Home",
+    href: "/"
+    }, {
+    text: "Visit someone in prison",
+    href: "/online-booking"
+  }, {
+    text: "Digital Prison Services",
+    href: "/assisted-digital",
+    current: true
+  }]
+}) }}
+
+{% endblock %}
 
 {% block content %}
 
 <div class="govuk-width-container"></div>
   <main class="govuk-main-wrapper">
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">Digital Prison Services</h1>
-      </div>
-    </div>
     
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
