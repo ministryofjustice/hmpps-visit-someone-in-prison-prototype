@@ -12,31 +12,19 @@ Visits - Prototypes
   homepageUrl: "/"
 }) }}
 
-{{ xGovukPrimaryNavigation({
-  visuallyHiddenTitle: "Navigation",
-  items: [{
-    text: "Home",
-    href: "/"
-    }, {
-    text: "Visit someone in prison",
-    href: "/online-booking",
-    current: true
-  }, {
-    text: "Digital Prison Services",
-    href: "/assisted-digital"
-  }]
-}) }}
+{% endblock %}
 
+{% block beforeContent %}
+  <a href="/" class="govuk-back-link">Back</a>
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-width-container"></div>
   <main class="govuk-main-wrapper">
-
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-    
+        <h1 class="govuk-heading-l">Visit someone in prison</h1>
         <h2 class="govuk-heading-m">
           MVP +2
           <br>
@@ -135,12 +123,6 @@ Visits - Prototypes
             <p class="govuk-body"><a href="online-booking/archived/VJ02_book_a_visit_2_V1/" class="govuk-link">VJ02 Register
                 to book a visit V1</a></p>
         </details>
-      </div>
-      <div class="govuk-grid-column-one-third">
-        <h3 class="govuk-heading-m">About the product</h3>
-        <p class="govuk-body">This product will allow the public to book, update and cancel social visits with prisoners across the country.<br><br>
-        The service will ensure safe visits, with only suitable visitors being booked onto visits. <br><br>
-        It will replace the exisiting booking request service.</p>
       </div>
     </div>
   </main>
