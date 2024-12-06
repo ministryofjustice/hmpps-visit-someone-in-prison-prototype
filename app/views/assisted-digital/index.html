@@ -6,16 +6,26 @@ Visits - Prototypes
 {% endblock %}
 
 {% block header %}
-
-  {{ govukHeader({
-    classes: "govuk-header--full-width-border",
-    homepageUrl: "/"
+{{ govukHeader({
+  classes: "govuk-header--full-width-border"
+}) }}
+  
+  {{ xGovukMasthead(
+    
+    {
+  
+    classes: "x-govuk-masthead–medium",
+    breadcrumbs: {
+      items: [            
+          { href: "/", text: "Home" }      ]
+  },
+    title: {
+    
+    text: "Digital Prison Services"
+    
+    }
+  
   }) }}
-
-{% endblock %}
-
-{% block beforeContent %}
-  <a href="/" class="govuk-back-link">Back</a>
 {% endblock %}
 
 
@@ -26,7 +36,6 @@ Visits - Prototypes
     
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l">Digital Prison Services</h1>
         <h2 class="govuk-heading-m">
           Visits
           <br>
