@@ -37,19 +37,13 @@
       <div class="govuk-grid-column-two-thirds">
         <h2 class="govuk-heading-m">
           MVP +3
-          <br>
-    
-          {%- from "govuk/components/tag/macro.njk" import govukTag -%}
-          {{ govukTag({
-          text: "In dev",
-          classes: "govuk-tag--yellow"
-          }) }}
         </h2>
 
         <p class="govuk-body">To be developed:</p>
         <ul class="govuk-list govuk-list--bullet">
-          <li>booker registers to the service</li>
           <li>booker adds prisoner to their account</li>
+          <li>booker registers to the service</li>
+          <li>support for requesting bookings</li>
         </ul>
 
         <div class="govuk-button-group">
@@ -69,21 +63,14 @@
     
         <h2 class="govuk-heading-m">
           MVP +2
-          <br>
-    
-          {%- from "govuk/components/tag/macro.njk" import govukTag -%}
-          {{ govukTag({
-          text: "Private Beta",
-          classes: "govuk-tag--turquoise"
-          }) }}
         </h2>
 
         <p class="govuk-body">Includes:</p>
         <ul class="govuk-list govuk-list--bullet">
           <li>GOV.UK One Login navigation</li>
           <li>booking and cancellation of visits</li>
-          <li>'Bookings' area with future, past and cancelled bookings</li>
-          <li>'Visitors' area</li>
+          <li>Bookings area with future, past and cancelled bookings</li>
+          <li>Visitors area</li>
           <li>email support</li>
           <li>start page</li>
         </ul>
