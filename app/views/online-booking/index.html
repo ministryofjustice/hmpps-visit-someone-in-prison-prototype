@@ -72,20 +72,15 @@
           <li>Bookings area with future, past and cancelled bookings</li>
           <li>Visitors area</li>
           <li>email support</li>
-          <li>start page</li>
+          <li>
+            <a class="govuk-link" href="/online-booking/mvp+2/register/start.html">start page</a>
+          </li>
         </ul>
-    
-        <div class="govuk-button-group">
-          {{ govukButton({
-            text: "Returning booker",
-            href: "/online-booking/mvp+2/"
-          }) }}
-        
-          {{ govukButton({
-            text: "New booker",
-            href: "/online-booking/mvp+2/register/start.html"
-          }) }}
-        </div>
+
+        {{ govukButton({
+          text: "Start",
+          href: "/online-booking/mvp+2/"
+        }) }}
     
         <hr class="govuk-section-break govuk-section-break--visible">
         <br>
