@@ -36,40 +36,25 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <h2 class="govuk-heading-m">
-          MVP +2
-          <br>
-    
-          {%- from "govuk/components/tag/macro.njk" import govukTag -%}
-          {{ govukTag({
-          text: "In dev",
-          classes: "govuk-tag--yellow"
-          }) }}
+          MVP +3
         </h2>
-    
-        <p class="govuk-body">What's new:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>ability to cancel a visit</li>
-          <li>using the new 'Service Navigation' component on support pages</li>
-          <li>ability to add email to main contact</li>
-          <li>updated Accessibility statement</li>
-          <li>start page</li>
-        </ul>
 
         <p class="govuk-body">To be developed:</p>
         <ul class="govuk-list govuk-list--bullet">
-          <li>booker registers to the service</li>
           <li>booker adds prisoner to their account</li>
+          <li>booker registers to the service</li>
+          <li>support for requesting bookings</li>
         </ul>
 
         <div class="govuk-button-group">
           {{ govukButton({
             text: "Returning booker",
-            href: "/online-booking/mvp+2/"
+            href: "/online-booking/mvp+3/"
           }) }}
         
           {{ govukButton({
             text: "New booker",
-            href: "/online-booking/mvp+2/register/start.html?languagePreference=en"
+            href: "/online-booking/mvp+3/register/start.html"
           }) }}
         </div>
     
@@ -77,31 +62,25 @@
         <br>
     
         <h2 class="govuk-heading-m">
-          MVP +1
-          <br>
-    
-          {%- from "govuk/components/tag/macro.njk" import govukTag -%}
-          {{ govukTag({
-          text: "Private Beta",
-          classes: "govuk-tag--turquoise"
-          }) }}
+          MVP +2
         </h2>
 
         <p class="govuk-body">Includes:</p>
         <ul class="govuk-list govuk-list--bullet">
           <li>GOV.UK One Login navigation</li>
-          <li>booking journey with calendar</li>
-          <li>support pages</li>
-          <li>'Bookings' area with future, past and cancelled bookings</li>
-          <li>'Visitors' area</li>
+          <li>booking and cancellation of visits</li>
+          <li>Bookings area with future, past and cancelled bookings</li>
+          <li>Visitors area</li>
+          <li>email support</li>
+          <li>
+            <a class="govuk-link" href="/online-booking/mvp+2/register/start.html">start page</a>
+          </li>
         </ul>
-    
-        <form class="form" action="/online-booking/mvp+1/" method="post">
-          {% from "govuk/components/button/macro.njk" import govukButton %}
-          {{ govukButton({
-          text: "Start"
-          }) }}
-        </form>
+
+        {{ govukButton({
+          text: "Start",
+          href: "/online-booking/mvp+2/"
+        }) }}
     
         <hr class="govuk-section-break govuk-section-break--visible">
         <br>
@@ -113,6 +92,7 @@
             </span>
           </summary>
           <div class="govuk-details__text">
+            <p class="govuk-body"><a href="online-booking/mvp+1/" class="govuk-link">MVP+1</a></p>
             <p class="govuk-body"><a href="online-booking/archived/mvp" class="govuk-link">MVP</a></p>
             <p class="govuk-body"><a href="online-booking/archived/register-to-visit-v5" class="govuk-link">Register
               to visit V5</a></p>

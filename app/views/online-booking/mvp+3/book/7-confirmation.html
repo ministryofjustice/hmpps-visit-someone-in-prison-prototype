@@ -1,0 +1,50 @@
+{% extends "../layouts/homepage.html" %}
+
+{% block pageTitle %}
+Confirmation – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        
+        <h1 class="govuk-panel__title">Visit booked</h1>
+        <div class="govuk-panel__body">
+          Your booking reference is<br><strong>{{ data['visit-0-ref'] }}</strong>
+        </div>
+      </div>
+          
+      <p>An email and a text message confirming the visit will be sent to the main contact. This will include the booking reference.</p>
+      <p>When signed in to GOV.UK One Login, you can <a href="../bookings/">check the details of your bookings.</a></p>
+      <p>You can help us to improve this service by giving <a href="">feedback.</a></p>
+
+      <h2 class="govuk-heading-m">How to change your booking</h2>
+      <p>To update your booking, call {{ data['prison-name'] }} on {{ data['prison-tel'] }} between 9am and 5pm, Monday to Friday.</p>
+      <p>You will need the booking reference to make changes. Your booking reference is {{ data['visit-0-ref'] }}.</p>
+      <p>Or you can cancel your booking from <a href="../bookings/">bookings page</a>.</p>
+      
+      <h2 class="govuk-heading-m">Prepare for visiting {{ data['prison-name'] }}</h2>      
+      <p>All visitors over 16 years old must show <a href="https://www.gov.uk/government/publications/management-of-security-at-visits-policy-framework-open-estate/acceptable-forms-of-identification-id-when-visiting-a-prison-in-england-and-wales-annex-a">acceptable forms of ID to enter the prison.</a></p>
+      <p>Visitors should arrive 45 minutes before the visit starts. </p>
+      <p class="govuk-body">You can read more about visits at <a href="https://www.gov.uk/guidance/foston-hall-prison" class="govuk-link">{{ data['prison-name'] }}.</a> This includes information on getting to the prison and visiting facilities.</p>        
+      
+      <h2 class="govuk-heading-m">What to expect when visiting prison</h2>
+      <p>Visitors will be searched before entering the prison visiting room.</p>
+      <p>Prison staff may check visitor’s pockets, pat them down and ask them to go through a metal detector. Dogs may also be used to detect illegal substances.</p>
+
+      <h2 class="govuk-heading-m">Help with the costs of prison visits</h2>
+      <p>You may be able to <a href="https://www.gov.uk/help-with-prison-visits">get help with the cost of prison visits</a> if you’re getting certain benefits or have a health certificate.</p>
+
+      <form class="form" action="../" method="post">
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+        {{ govukButton({
+        text: "Back to homepage"
+        }) }}
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
