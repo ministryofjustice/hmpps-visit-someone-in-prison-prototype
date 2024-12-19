@@ -1,8 +1,6 @@
 {% extends "/online-booking/mvp+2/layouts/main.html" %} 
 {% from "govuk/components/input/macro.njk" import govukInput %}
 {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
-{% from "govuk/components/input/macro.njk" import govukInput %}
-{% from "govuk/components/select/macro.njk" import govukSelect %}
 
 {% block pageTitle %} 
   Enter prisoner details - Visit someone in prison
@@ -15,21 +13,30 @@
         <div>
             <h1 class="govuk-heading-l">
                 Prisoner details
-            </h1>
+            </h1>  
 
             {{ govukInput({
-            label: {
-                text: "Prisoner name"
-            },
-            id: "full-name",
-            name: "fullName",
-            autocomplete: "name",
-            spellcheck: false
-            }) }}
+                label: {
+                    text: "First name"
+                },
+                classes: "govuk-input--width-20",
+                id: "width-20",
+                name: "width20"
+                }) }}
+
+            {{ govukInput({
+                label: {
+                    text: "Last name"
+                },
+                classes: "govuk-input--width-20",
+                id: "width-20",
+                name: "width20"
+                }) }}
+                
 
             {{ govukDateInput({
-            id: "passport-issued",
-            namePrefix: "passport-issued",
+            id: "prisoner-dob",
+            namePrefix: "prisoner-dob",
             fieldset: {
                 legend: {
                 text: "Prisoner date of birth"
@@ -42,40 +49,15 @@
 
             {{ govukInput({
                 label: {
-                  text: "Prisoner number"
+                  text: "Prison number"
                 },
                 classes: "govuk-input--width-10",
                 hint: {
                   text: "For example, A1234BC"
                 },
-                id: "account-number",
-                name: "accountNumber",
-                inputmode: "numeric",
+                id: "prison-number",
+                name: "prisonnumber",
                 spellcheck: false
-            }) }}
-
-            {{ govukSelect({
-            id: "location",
-            name: "location",
-            label: {
-                text: "Prison name"
-            },
-
-            items: [
-                {
-                value: "choose",
-                text: "Choose prison",
-                selected: true
-                },
-                {
-                value: "DHI",
-                text: "Drake Hall (HMP & YOI)"
-                },
-                {
-                value: "FHI",
-                text: "Foston Hall (HMP & YOI)"
-                }
-            ]
             }) }}
 
             {{ govukButton({
