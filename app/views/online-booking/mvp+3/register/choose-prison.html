@@ -1,0 +1,30 @@
+{% extends "/online-booking/mvp+2/layouts/main.html" %} 
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/select/macro.njk" import govukSelect %}
+
+{% block pageTitle %} 
+  Where is the prisoner you want to visit? - Visit someone in prison
+{% endblock %} 
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div>
+            <h1 class="govuk-heading-l">
+                Where is the prisoner you want to visit?
+            </h1>
+
+
+            {{ govukButton({
+                text: "Continue",
+                href: "./add-prisoner"
+              }) }}
+    
+        </div>
+    </div>
+</div>
+
+{% endblock %}

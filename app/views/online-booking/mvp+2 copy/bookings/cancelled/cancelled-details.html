@@ -1,0 +1,51 @@
+{% extends "../../layouts/logged-in.html" %}
+
+{% set activeLinkId = "bookings-link" %}
+
+{% block pageTitle %}
+Visit booking details – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Visit booking details
+    </h1>
+
+    <p class="govuk-body">Booking reference: pq-rs-tu-vw</p>
+
+    {%- from "moj/components/banner/macro.njk" import mojBanner -%}
+
+    {% set bannerHtml %}
+      <h2 class="govuk-heading-m">This visit was cancelled by a visitor.</h2>
+    {% endset %}
+    
+    {{ mojBanner({
+      type: 'information',
+      html: bannerHtml
+    }) }}
+
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Date and time</h2>
+    <p class="govuk-body govuk-!-margin-bottom-1">Tuesday 30 January 2024</p>
+    <p class="govuk-body govuk-!-margin-bottom-1">10am to 11am</p>
+
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Prisoner</h2>
+    <p class="govuk-body govuk-!-margin-bottom-1">{{ data['prisoner-name'] }}</p>
+
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Visitors</h2>
+    <p class="govuk-body govuk-!-margin-bottom-1">{{ data['visitor-2-name'] }}</p>
+
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Additional support requests</h2>
+    <p class="govuk-body govuk-!-margin-bottom-1">Wheelchair access required</p>
+
+    <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Main contact</h2>
+    <p class="govuk-body govuk-!-margin-bottom-1">{{ data['visitor-2-name'] }}</p>   
+    <p class="govuk-body govuk-!-margin-bottom-1">07866 464587</p>
+
+  </div>
+</div>
+
+{% endblock %}
