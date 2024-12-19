@@ -3,7 +3,7 @@
 {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
 
 {% block pageTitle %} 
-  Enter prisoner details - Visit someone in prison
+    Prisoner details - Visit someone in prison
 {% endblock %} 
 
 {% block content %}
@@ -53,12 +53,25 @@
                 },
                 classes: "govuk-input--width-10",
                 hint: {
-                  text: "For example, A1234BC"
+                  text: "This is the number given to people when they enter prison, for example, A1234BC"
                 },
                 id: "prison-number",
                 name: "prisonnumber",
                 spellcheck: false
             }) }}
+
+        <details class="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                Help with the prison number
+                </span>
+            </summary>
+            <div class="govuk-details__text">
+                Their prison number stays the same if they move to another prison. 
+                <br><br>
+                You need to ask the prisoner for this information before you can book.
+            </div>
+            </details>
 
             {{ govukButton({
                 text: "Continue",
