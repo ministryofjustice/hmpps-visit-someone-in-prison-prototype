@@ -1,0 +1,85 @@
+{% extends "/online-booking/mvp+2/layouts/main.html" %} 
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+{% block pageTitle %} 
+    Prisoner details - Visit someone in prison
+{% endblock %} 
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div>
+            <h1 class="govuk-heading-l">
+                Prisoner details
+            </h1>  
+
+            {{ govukInput({
+                label: {
+                    text: "First name"
+                },
+                classes: "govuk-input--width-20",
+                id: "width-20",
+                name: "width20"
+                }) }}
+
+            {{ govukInput({
+                label: {
+                    text: "Last name"
+                },
+                classes: "govuk-input--width-20",
+                id: "width-20",
+                name: "width20"
+                }) }}
+                
+
+            {{ govukDateInput({
+            id: "prisoner-dob",
+            namePrefix: "prisoner-dob",
+            fieldset: {
+                legend: {
+                text: "Prisoner date of birth"
+                }
+            },
+            hint: {
+                text: "For example, 27 3 2007"
+            }
+            }) }}
+
+            {{ govukInput({
+                label: {
+                  text: "Prison number"
+                },
+                classes: "govuk-input--width-10",
+                hint: {
+                  text: "This is the number given to people when they enter prison, for example, A1234BC"
+                },
+                id: "prison-number",
+                name: "prisonnumber",
+                spellcheck: false
+            }) }}
+
+        <details class="govuk-details">
+            <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                Help with the prison number
+                </span>
+            </summary>
+            <div class="govuk-details__text">
+                Their prison number stays the same if they move to another prison. 
+                <br><br>
+                You need to ask the prisoner for this information before you can book.
+            </div>
+            </details>
+
+            {{ govukButton({
+                text: "Continue",
+                href: "./add-visitor"
+              }) }}
+    
+        </div>
+    </div>
+</div>
+
+{% endblock %}
