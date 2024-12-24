@@ -1,0 +1,109 @@
+{% extends "/online-booking/mvp+2/layouts/start.html" %} 
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Get help with the cost of prison visits
+      </h1> 
+      
+        <div>
+            <p>
+                Use this service to reclaim the cost of visiting a prisoner in England or Wales. You might be able to get help paying for:
+            </p>
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li>travel to the prison</li>
+                <li>overnight accommodation</li>
+                <li>meals</li>
+            </ul>
+
+            <p>
+                You can apply to get help paying for visits that you have already been on, or have booked for the future.
+            </p>
+
+            <p>
+                You must be getting certain benefits or have a health certificate to get help.
+            </p>
+
+            <p>
+                If you take a child with you or someone to help you (for example because you’re disabled) you might also be able to get help paying for their visit.
+            </p>
+
+            <h2 class="govuk-heading-m">
+                Before you start
+            </h2>
+
+            <p>
+                You will need:
+            </p>
+
+            <ul class="govuk-list govuk-list--bullet">
+                <li>your visit booking reference</li>
+                <li>your National Insurance number</li>
+                <li>any receipts</li>
+                <li>a prison visit form stamped by the prison</li>
+            </ul>
+
+            <p>You will also need to sign in or create a GOV.UK One Login to use this service.</p>
+
+            {{ govukButton({ text: "Start now", href: "./one-login/create.html", isStartButton: true }) }}
+
+            <h2 class="govuk-heading-m">
+                If you cannot use the online service
+            </h2>
+
+            <p>
+                If you cannot claim online, you can contact the HMPPS Family Services team by email, phone or post to request an application form.
+            </p>
+
+            <h3 class="govuk-heading-s">
+                By telephone
+            </h3>
+
+            <div class="govuk-inset-text">
+                <p>
+                    Telephone: 0300 063 2100<br>
+                    Monday to Friday, 9am to 5pm<br>
+                    <a href="https://www.gov.uk/call-charges" class="govuk-link">Find out about call charges</a>
+                </p>
+            </div>
+
+            <h3 class="govuk-heading-s">
+                By email
+            </h3>
+
+            <div class="govuk-inset-text">
+                <a href="mailto:helpwithprisonvisits@justice.gov.uk" class="govuk-link">helpwithprisonvisits@justice.gov.uk</a>
+            </div>
+
+            <h3 class="govuk-heading-s">
+                By post
+            </h3>
+
+            <div class="govuk-inset-text">
+                <p>
+                    HMPPS Family Services<br>
+                    Help with Prison Visits team<br>
+                    PO Box 17594<br>
+                    Birmingham<br>
+                    B2 2QP
+                </p>
+            </div>
+
+
+            <h2 class="govuk-heading-m">
+                Help using the service
+            </h2>
+
+            <p>
+                <a href="https://help-with-prison-visits.service.gov.uk/help" class="govuk-link">You can get help</a> with making a claim, ask a question about a claim you’ve already made, or get help with accessing the service.
+            </p>
+
+        </div>
+    </div>
+</div>
+
+{% endblock %}
