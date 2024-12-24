@@ -4,7 +4,7 @@
 {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
 
 {% block pageTitle %}
-Book a visit – {{ serviceName }}
+Make a claim – Get help with cost of prison visits
 {% endblock %}
 
 {% block content %}
@@ -13,7 +13,7 @@ Book a visit – {{ serviceName }}
   <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        Book a visit
+        Make a claim
       </h1>
 
       <p>Prisoner: {{ data['prisoner-name'] }}</p>
@@ -24,7 +24,7 @@ Book a visit – {{ serviceName }}
 
       {{ govukButton({
       text: "Start now",
-      href: "/online-booking/mvp+2/book/1-visitors.html",
+      href: "#",
       isStartButton: true
       }) }}
 
