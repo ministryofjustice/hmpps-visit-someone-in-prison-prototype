@@ -24,12 +24,11 @@
       <p>It might take a few minutes to arrive. The code will expire after 15 minutes.</p>
 
       {{ govukInput({
-        label: {
-          text: "Enter the 6 digit code"
-        },
+        label: {text: "Enter the 6 digit code"},
         classes: "govuk-input--width-10",
         id: "width-10",
-        name: "width10"
+        name: "width10",
+        autofocus: true
       }) }}
 
       {{ govukButton({
