@@ -39,7 +39,7 @@
           MVP +3
         </h2>
 
-        <p class="govuk-body">To be developed:</p>
+        <p class="govuk-body">In development:</p>
         <ul class="govuk-list govuk-list--bullet">
           <li>booker adds prisoner to their account</li>
           <li>booker registers to the service</li>
@@ -48,14 +48,21 @@
 
         <div class="govuk-button-group">
           {{ govukButton({
-            text: "Returning booker",
-            href: "/online-booking/mvp+3/"
+            text: "Start booking",
+            href: "/online-booking/mvp+3/0-home.html"
           }) }}
+
+          {{ govukButton({
+            text: "Login as returning booker",
+            href: "/online-booking/mvp+3/-1-start.html"
+          }) }}          
         
           {{ govukButton({
-            text: "New booker",
+            text: "Register as new booker",
             href: "/online-booking/mvp+3/register/start.html"
           }) }}
+
+
         </div>
     
         <hr class="govuk-section-break govuk-section-break--visible">
