@@ -35,15 +35,15 @@ Choose date and time – {{ serviceName }}
               <li>M<span class="calendar-slots__day">on</span></li>
               <li>T<span class="calendar-slots__day">ue</span></li>
               <li>W<span class="calendar-slots__day">ed</span></li>
-              <li>T<span class="calendar-slots__day">thu</span></li>
+              <li>T<span class="calendar-slots__day">hu</span></li>
               <li>F<span class="calendar-slots__day">ri</span></li>
               <li>S<span class="calendar-slots__day">at</span></li>
               <li>S<span class="calendar-slots__day">un</span></li>
             </ul>
 
             <ul class="govuk-list calendar-slots">
-              <li>20</li>
-              <li><a href="#date-21-january">21</a></li>
+              <li></li>
+              <li></li>
               <li>22</li>
               <li>23</li>
               <li><a href="#date-24-january">24</a></li>
@@ -69,7 +69,7 @@ Choose date and time – {{ serviceName }}
               <li>M<span class="calendar-slots__day">on</span></li>
               <li>T<span class="calendar-slots__day">ue</span></li>
               <li>W<span class="calendar-slots__day">ed</span></li>
-              <li>T<span class="calendar-slots__day">thu</span></li>
+              <li>T<span class="calendar-slots__day">hu</span></li>
               <li>F<span class="calendar-slots__day">ri</span></li>
               <li>S<span class="calendar-slots__day">at</span></li>
               <li>S<span class="calendar-slots__day">un</span></li>
@@ -105,43 +105,7 @@ Choose date and time – {{ serviceName }}
               <li>16</li>
             </ul>
 
-            <ul class="govuk-list calendar-slots">
-              <li>17</li>
-              <li><a href="#date-18-february">18</a></li>
-              <li>19</li>
-              <li>20</li>
-              <li><a href="#date-21-february">21</a></li>
-              <li>22</li>
-              <li>23</li>
-            </ul>
-
-            <ul class="govuk-list calendar-slots">
-              <li>24</li>
-              <li><a href="#date-25-february">25</a></li>
-              <li>26</li>
-              <li>27</li>
-              <li><a href="#date-28-february">28</a></li>
-              <li></li>
-              <li></li>
-            </ul>
-
             <br>
-
-            <div class="day-slots" id="date-21-january">
-              {{ govukRadios({
-              name: "slots",
-              fieldset: {
-              legend: {
-              text: "Tuesday 21 January 2025",
-              classes: "govuk-fieldset__legend--s"
-              }
-              },
-              items: [
-              { value: "", text: "10am to 11am (1 hour)" },
-              { value: "", text: "2pm to 3pm (1 hour)" }
-              ]
-              }) }}
-            </div>
 
             <div class="day-slots" id="date-24-january">
               {{ govukRadios({
@@ -213,70 +177,6 @@ Choose date and time – {{ serviceName }}
               fieldset: {
               legend: {
               text: "Friday 14 February 2025",
-              classes: "govuk-fieldset__legend--s"
-              }
-              },
-              items: [
-              { value: "", text: "10am to 11am (1 hour)" },
-              { value: "", text: "2pm to 3pm (1 hour)" }
-              ]
-              }) }}
-            </div>
-
-            <div class="day-slots" id="date-18-february">
-              {{ govukRadios({
-              name: "slots",
-              fieldset: {
-              legend: {
-              text: "Tuesday 18 February 2025",
-              classes: "govuk-fieldset__legend--s"
-              }
-              },
-              items: [
-              { value: "", text: "10am to 11am (1 hour)" },
-              { value: "", text: "2pm to 3pm (1 hour)" }
-              ]
-              }) }}
-            </div>
-
-            <div class="day-slots" id="date-21-february">
-              {{ govukRadios({
-              name: "slots",
-              fieldset: {
-              legend: {
-              text: "Friday 21 February 2025",
-              classes: "govuk-fieldset__legend--s"
-              }
-              },
-              items: [
-              { value: "", text: "10am to 11am (1 hour)" },
-              { value: "", text: "2pm to 3pm (1 hour)" }
-              ]
-              }) }}
-            </div>
-
-            <div class="day-slots" id="date-25-february">
-              {{ govukRadios({
-              name: "slots",
-              fieldset: {
-              legend: {
-              text: "Tuesday 25 February 2025",
-              classes: "govuk-fieldset__legend--s"
-              }
-              },
-              items: [
-              { value: "", text: "10am to 11am (1 hour)" },
-              { value: "", text: "2pm to 3pm (1 hour)" }
-              ]
-              }) }}
-            </div>
-
-            <div class="day-slots" id="date-28-february">
-              {{ govukRadios({
-              name: "slots",
-              fieldset: {
-              legend: {
-              text: "Friday 28 February 2025",
               classes: "govuk-fieldset__legend--s"
               }
               },
