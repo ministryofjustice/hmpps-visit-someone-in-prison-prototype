@@ -33,7 +33,7 @@ Visitors – {{ serviceName }}
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">{{ data['visitor-2-name'] }}</td>
           <td class="govuk-table__cell">{{ data['visitor-2-dob'] }}</td>
-          <td class="govuk-table__cell">Banned until 10 November 2024</td>
+          <td class="govuk-table__cell">Banned until {{ data['visitor-2-ban'] }}</td>
 
         </tr>
         <tr class="govuk-table__row">
@@ -44,7 +44,7 @@ Visitors – {{ serviceName }}
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">{{ data['visitor-4-name'] }}</td>
           <td class="govuk-table__cell">{{ data['visitor-4-dob'] }}</td>
-          <td class="govuk-table__cell">Banned until 27 December 2024</td>     
+          <td class="govuk-table__cell">Banned until {{ data['visitor-4-ban'] }}</td>     
         </tr>
       </tbody>
     </table>
