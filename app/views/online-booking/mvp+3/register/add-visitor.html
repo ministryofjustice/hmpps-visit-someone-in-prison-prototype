@@ -1,4 +1,4 @@
-{% extends "/online-booking/mvp+2/layouts/main.html" %} 
+{% extends "/online-booking/mvp+3/layouts/one-login.html" %} 
 
 {% block pageTitle %} 
   Add visitor information - Visit someone in prison
@@ -15,9 +15,9 @@
         </h1>
       </div>
 
-      <p>The prisoner details you submitted  were successfully matched, and the prisoner was added to your account.</p>
+      <p>The prisoner details you submitted were successfully matched.</p>
       
-      <p>In order to be able to book a visit, you must next add visitors to your account by <a href="{{ data['add-a-visitor-url'] }}" target="_blank" class="govuk-link">completing this form (opens in a new tab)</a>.</p>
+      <p>To book a visit for this prisoner, you need to <a href="{{ data['add-a-visitor-url'] }}" target="_blank" class="govuk-link">add visitors</a>.</p>
 
     </div>
 </div>
