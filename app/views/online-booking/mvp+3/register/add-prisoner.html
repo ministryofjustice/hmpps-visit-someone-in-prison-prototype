@@ -1,4 +1,4 @@
-{% extends "/online-booking/mvp+2/layouts/main.html" %} 
+{% extends "/online-booking/mvp+3/layouts/registration.html" %} 
 {% from "govuk/components/input/macro.njk" import govukInput %}
 {% from "govuk/components/date-input/macro.njk" import govukDateInput %}
 
@@ -53,7 +53,7 @@
                 },
                 classes: "govuk-input--width-10",
                 hint: {
-                  text: "This is the number given to people when they enter prison, for example, A1234BC"
+                  text: "For example, A1234BC"
                 },
                 id: "prison-number",
                 name: "prisonnumber",
@@ -67,6 +67,8 @@
                 </span>
             </summary>
             <div class="govuk-details__text">
+                This is the number given to people when they enter prison.
+                <br><br>
                 Their prison number stays the same if they move to another prison. 
                 <br><br>
                 You need to ask the prisoner for this information before you can book.
