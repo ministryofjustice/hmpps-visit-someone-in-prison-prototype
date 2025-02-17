@@ -79,3 +79,22 @@ li.calendar-slots__active {
 .calendar-slot-button__active {
   display: block;
 }
+
+.equal-height-row {
+  display: flex;
+}
+
+.equal-height-row .govuk-grid-column-one-third {
+  display: flex;
+  flex-direction: column;
+}
+
+.moj-ticket-panel {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.moj-ticket-panel__content {
+  flex-grow: 1;
+}

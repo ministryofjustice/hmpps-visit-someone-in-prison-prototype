@@ -6,10 +6,24 @@
 {{ mojHeader({
   organisationLabel: {
     text: 'HMPPS',
-    href: '/assisted-digital/assisted-digital-index.html'
+    href: '/assisted-digital/index.html'
+  },
+  serviceLabel: {
+    text: 'Digital Prison Services',
+    href: '#'
+  },
+  navigation: {
+    label: 'Account navigation',
+    items: [{
+      text: 'J. Smith',
+      href: '#',
+      active: true
+    }, {
+      text: 'Sign out',
+      href: '#'
+    }]
   }
-  }) 
-}}
+}) }}
 {% endblock %}
 
 {% block beforeContent %}
