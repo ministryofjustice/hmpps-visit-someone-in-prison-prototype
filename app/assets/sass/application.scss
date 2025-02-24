@@ -8,8 +8,6 @@
 $govuk-global-styles: true;
 $govuk-new-typography-scale: true;
 
-@import './components/card';
-
 .floating-button {
   @include govuk-media-query($until: desktop) {
     padding: govuk-spacing(5) 0 govuk-spacing(2) 0;
