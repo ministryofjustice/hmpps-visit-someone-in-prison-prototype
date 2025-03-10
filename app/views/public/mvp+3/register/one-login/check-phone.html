@@ -1,4 +1,4 @@
-{% extends "/public/mvp+2/layouts/one-login.html" %} 
+{% extends "/public/mvp+3/layouts/one-login.html" %} 
 {% from "govuk/components/button/macro.njk" import govukButton %}
 {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 {% from "govuk/components/input/macro.njk" import govukInput %}
@@ -24,12 +24,11 @@
       <p>It might take a few minutes to arrive. The code will expire after 15 minutes.</p>
 
       {{ govukInput({
-        label: {
-          text: "Enter the 6 digit code"
-        },
+        label: {text: "Enter the 6 digit code"},
         classes: "govuk-input--width-10",
         id: "width-10",
-        name: "width10"
+        name: "width10",
+        autofocus: true
       }) }}
 
       {{ govukButton({

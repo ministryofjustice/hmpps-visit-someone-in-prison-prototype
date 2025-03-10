@@ -1,0 +1,55 @@
+{% extends "../layouts/homepage.html" %}
+
+{% set activeLinkId = "bookings-link" %}
+
+{% block pageTitle %}
+Confirmation – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        
+        <h1 class="govuk-panel__title">Visit booked</h1>
+        <div class="govuk-panel__body">
+          Your booking reference is<br><strong>xg-vw-va-fm</strong>
+        </div>
+      </div>
+          
+      <p>
+        If you provided a contact method, a booking confirmation will be sent to the main contact. This will include the booking reference.  
+      </p>
+
+      <h2 class="govuk-heading-m">Prepare for the visit</h2>
+      
+      <p>All visitors over 16 years old must show <a href="https://www.gov.uk/government/publications/management-of-security-at-visits-policy-framework-open-estate/acceptable-forms-of-identification-id-when-visiting-a-prison-in-england-and-wales-annex-a">acceptable forms of ID to enter the prison.</a></p>
+      
+      <p>Visitors should arrive 45 minutes before the visit starts. </p>
+      
+      <p>You can read more about <a href="#">visits at {{ data['prison-name'] }}.</a></p>
+      
+      <h2 class="govuk-heading-m">What to expect when visiting prison</h2>
+      <p>Visitors will be searched before entering the prison visiting room.</p>
+      <p>Prison staff may check visitor’s pockets, pat them down and ask them to go through a metal detector. Dogs may also be used to detect illegal substances.</p>
+
+      <h2 class="govuk-heading-m">How to change your booking</h2>
+      <p><a href="#">Contact {{ data['prison-name'] }}</a> to update or cancel your booking.  </p>
+      <p>You will need the booking reference to make changes.</p>
+
+      <h2 class="govuk-heading-m">Help with the costs of prison visits</h2>
+
+      <p>You may be able to <a href="https://www.gov.uk/help-with-prison-visits">get help with the cost of prison visits</a> if you’re getting certain benefits or have a health certificate.</p>
+
+      <form class="form" action="/public/mvp+1" method="post">
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+        {{ govukButton({
+        text: "Back to homepage"
+        }) }}
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

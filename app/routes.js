@@ -16,10 +16,10 @@ router.post('/register-another-visitor-answer', function (req, res) {
     // Check whether the variable matches a condition
     if (registerAnother == "yes"){
       // Send user to next page
-      res.redirect('online-booking/register-to-visit-v5/4visitor-name')
+      res.redirect('public/register-to-visit-v5/4visitor-name')
     } else {
       // Send user to ineligible page
-      res.redirect('online-booking/register-to-visit-v5/4visitor-check-answers')
+      res.redirect('public/register-to-visit-v5/4visitor-check-answers')
     }
   
   })
@@ -32,10 +32,10 @@ router.post('/register-another-visitor-answer', function (req, res) {
     // Check whether the variable matches a condition
     if (registerAnother == "yes"){
       // Send user to next page
-      res.redirect('online-booking/register-to-visit-v5-calendar/4visitor-name')
+      res.redirect('public/register-to-visit-v5-calendar/4visitor-name')
     } else {
       // Send user to ineligible page
-      res.redirect('online-booking/register-to-visit-v5-calendar/4visitor-check-answers')
+      res.redirect('public/register-to-visit-v5-calendar/4visitor-check-answers')
     }
   
   })

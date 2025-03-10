@@ -1,0 +1,47 @@
+{% extends "../layouts/logged-in.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/select/macro.njk" import govukSelect %}
+
+{% block pageTitle %} 
+  Where is the prisoner you want to visit? - Visit someone in prison
+{% endblock %} 
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <div>
+
+                {{ govukRadios({
+                name: "prison",
+                fieldset: {
+                    legend: {
+                    text: "Where is the prisoner you want to visit?",
+                    isPageHeading: true,
+                    classes: "govuk-fieldset__legend--l"
+                    }
+                },
+                items: [
+                    {
+                    value: "foston-hall",
+                    text: "Foston Hall (HMP & YOI)"
+                    },
+                    {
+                    value: "drake-hall",
+                    text: "Drake Hall (HMP & YOI)"
+                    }
+                ]
+                }) }}
+
+            <p>If you do not know, you can <a href="https://www.gov.uk/find-prisoner" class="govuk-link">apply to find the prisoner’s location</a>.</p>
+
+            {{ govukButton({
+                text: "Continue",
+                href: "./add-prisoner"
+              }) }}
+    
+        </div>
+    </div>
+</div>
+
+{% endblock %}

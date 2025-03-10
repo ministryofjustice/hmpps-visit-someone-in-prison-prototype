@@ -1,0 +1,34 @@
+{% extends "./layouts/homepage.html" %}
+{% set activeLinkId = "home-link" %}
+
+{% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+{% block pageTitle %}
+Book a visit – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Book a visit
+      </h1>
+
+      <p>Prisoner: {{ data['prisoner-name'] }}</p>
+    
+      <br>
+    
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      {{ govukButton({
+      text: "Start now",
+      href: "/public/mvp+3/book/1-visitors.html",
+      isStartButton: true
+      }) }}
+
+  </div>
+</div>
+
+{% endblock %}
