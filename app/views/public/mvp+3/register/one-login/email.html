@@ -1,4 +1,4 @@
-{% extends "/public/mvp+2/layouts/one-login.html" %} 
+{% extends "/public/mvp+3/layouts/one-login.html" %} 
 {% from "govuk/components/button/macro.njk" import govukButton %}
 {% from "govuk/components/input/macro.njk" import govukInput %}
 
@@ -20,6 +20,7 @@
         name: "email",
         type: "email",
         autocomplete: "email",
+        autofocus: true,
         spellcheck: false
       }) }}
 

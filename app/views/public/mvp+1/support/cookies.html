@@ -1,0 +1,123 @@
+{% extends "/public/mvp+1/layouts/main.html" %}
+
+{% block pageTitle %}
+Cookies – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">Cookies</h1>
+
+        <p class="govuk-body">Cookies are small files saved on your phone, tablet or computer when you visit a website.
+        </p>
+
+        <p class="govuk-body">We use cookies to make 'Visit someone in prison' work and collect information about how
+            you use the service.</p>
+
+        <h2 class="govuk-heading-m">Essential cookies</h2>
+
+        <p class="govuk-body">Essential cookies keep your information secure while you use the service. We do not need
+            to ask permission to use them.</p>
+
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header app-custom-class">Name</th>
+                    <th scope="col" class="govuk-table__header app-custom-class">Purpose</th>
+                    <th scope="col" class="govuk-table__header app-custom-class">Expires</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">admin_session</td>
+                    <td class="govuk-table__cell">Used to keep you signed in</td>
+                    <td class="govuk-table__cell">20 hours</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">cookie_policy</td>
+                    <td class="govuk-table__cell">Saves your cookie consent settings</td>
+                    <td class="govuk-table__cell">1 year</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2 class="govuk-heading-m">Analytics cookies (optional)</h2>
+
+        <p class="govuk-body">With your permission, we use Google Analytics to collect data about how you use 'Visit
+            someone in prison'. This information helps us to improve the service.</p>
+
+        <p class="govuk-body">Google is not allowed to use or share our analytics data with anyone.</p>
+
+        <p class="govuk-body">Google Analytics stores anonymised information about:</p>
+        <ul class="govuk-list govuk-list--bullet">
+            <li>how you got to the service</li>
+            <li>the pages you visit on the service and how long you spend on them</li>
+            <li>any errors you see while using the service</li>
+        </ul>
+
+        <p class="govuk-body">Google Analytics sets the following cookies.</p>
+
+        <table class="govuk-table">
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header app-custom-class">Name</th>
+                    <th scope="col" class="govuk-table__header app-custom-class">Purpose</th>
+                    <th scope="col" class="govuk-table__header app-custom-class">Expires</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">_ga</td>
+                    <td class="govuk-table__cell">Checks if you’ve visited the service before. This helps us count how
+                        many people visit our site.</td>
+                    <td class="govuk-table__cell">2 years</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">_gid</td>
+                    <td class="govuk-table__cell">Checks if you’ve visited the service before. This helps us count how
+                        many people visit our site.</td>
+                    <td class="govuk-table__cell">24 hours</td>
+                </tr>
+            </tbody>
+        </table>
+
+
+
+
+        {% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+        {{ govukRadios({
+        classes: "govuk-radios--inline",
+        name: "changedName",
+        fieldset: {
+        legend: {
+        text: "Do you want to accept analytics cookies?",
+        isPageHeading: true,
+        classes: "govuk-fieldset__legend--s"
+        }
+        },
+        items: [
+        {
+        value: "yes",
+        text: "Yes"
+        },
+        {
+        value: "no",
+        text: "No"
+        }
+        ]
+        }) }}
+
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+
+        {{ govukButton({
+        text: "Save cookie settings"
+        }) }}
+
+    </div>
+</div>
+
+{% endblock %}

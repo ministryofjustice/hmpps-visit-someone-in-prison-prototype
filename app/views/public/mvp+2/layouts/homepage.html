@@ -1,0 +1,37 @@
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+
+{% block beforeContent %}
+    {{ govukPhaseBanner({
+      tag: {
+        text: "Prototype"
+      },
+      html: 'This is a new service – your <a href="https://visit-someone-in-prison-test-feedback.form.service.justice.gov.uk/" target="_blank">feedback</a> will help us to improve it.'
+    }) }}
+    
+{% endblock %}
+
+
+{% extends "./footer.html" %}
+
+{% extends "di-govuk-one-login-service-header/layouts/service-header.html" %}
+{% set homepageLink = "/" %}
+{% set oneLoginLink = "/" %}
+{% set signOutLink = "/" %}
+{% set navigationItems = [
+  {
+    href: "/public/mvp+2/",
+    text: 'Home',
+    id: 'home-link'
+  },{
+    href: "/public/mvp+2/bookings/",
+    text: 'Bookings',
+    id: 'bookings-link'
+  },{
+    href: "/public/mvp+2/visitors",
+    text: 'Visitors',
+    id: 'visitors-link'
+  }
+  ]
+%}
+
+{% set serviceName = "Visit someone in prison" %}

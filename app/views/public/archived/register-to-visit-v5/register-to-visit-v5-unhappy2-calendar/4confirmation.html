@@ -1,0 +1,58 @@
+{% set homepageLink = "/" %}
+{% set oneLoginLink = "/" %}
+{% set signOutLink = "/" %}
+{% extends "di-govuk-one-login-service-header/layouts/service-header.html" %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        
+        <h1 class="govuk-panel__title">Visitor details submitted</h1>
+        <div class="govuk-panel__body">
+          Your reference number<br><strong>HDJ2123F</strong>
+        </div>
+      </div>
+      
+
+      <h2 class="govuk-heading-m">What happens next</h2>
+
+      <p>You can book a visit for:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>Susan Smith</li>
+        <li>Michael Smith</li>
+      </ul>
+
+      <form class="form" action="/public/register-to-visit-v5-unhappy2-calendar/5homepage" method="post">
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+        {{ govukButton({
+        text: "Book a visit",
+        classes: "govuk-button"
+        }) }}
+      </form>
+
+
+      <p>Foston Hall will check the visitor details you submitted for:</p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        <li>John Smith</li>
+        <li>Linda Parrell</li>
+      </ul>
+
+      <p>They will see if these details match anyone on Jane Smith’s visitor list. This can take up to 5 working days.</p>
+      <p>There is no need to contact the prison for updates. They will contact you either to confirm your registration, or to ask for more information.</p>
+      
+      <p>If you provided a contact method, we will contact you when you can book.</p>
+      
+     
+      <p><a href="5homepage" class="govuk-link govuk-link--no-visited-state">Your prison visits account</a> also shows the visitors you can book for. </p>
+
+  
+
+     
+    </div>
+  </div>
+
+{% endblock %}
