@@ -1,23 +1,30 @@
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
 {%- from "moj/components/header/macro.njk" import mojHeader -%}
-{%- from "moj/components/organisation-switcher/macro.njk" import mojOrganisationSwitcher -%}
+
+{% block pageTitle %}
+  DPS - Visits
+{% endblock %}
 
 {% block header %}
 {{ mojHeader({
   organisationLabel: {
-    text: 'HMPPS',
-    href: '/dps'
+    text: "HMPPS",
+    href: "/"
+  },
+  serviceLabel: {
+    text: "Digital Prison Services",
+    href: "#"
+  },
+  navigation: {
+    label: "Prison",
+    items: [{
+      text: "Hewell (HMP)",
+      href: "#",
+      active: true
+    }, {
+      text: "J. Smith",
+      href: "#"
+    }]
   }
-  }) 
-}}
-{% endblock %}
-
-{% block beforeContent %}
-  {{ mojOrganisationSwitcher({
-    text: 'Buckley Hall (HMP)',
-    link: {
-      text: 'Change prison',
-      href: '/dps'
-    }
 }) }}
 {% endblock %}

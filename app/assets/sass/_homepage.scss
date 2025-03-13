@@ -1,0 +1,42 @@
+.dps-homepage-today {
+    .today-card-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 30px;
+    }
+
+    .today-card {
+        display: flex;
+        flex-direction: column;
+        box-sizing: border-box;
+        height: 198px;
+        width: 270px;
+        padding: 15px 15px 20px 15px;
+        border: 1px solid govuk-colour('black');
+        box-shadow: 0 4px govuk-colour('mid-grey');
+
+        h3 {
+            font-size: 19px;
+            margin: 0;
+        }
+
+        &__count {
+            font-size: 48px;
+            font-weight: 700;
+        }
+
+        &__link {
+            padding-top: 15px;
+            border-top: 1px solid govuk-colour('mid-grey');
+            margin-top: auto;
+        }
+    }
+}
+
+.today-section-break--blue {
+    height: 3px;
+    background-color: govuk-colour('blue');
+    border: none;
+    margin-top: 35px;
+    margin-bottom: 30px;
+}
