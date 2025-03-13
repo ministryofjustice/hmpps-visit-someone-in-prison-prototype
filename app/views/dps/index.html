@@ -7,73 +7,78 @@ Visits - Prototypes
 
 {% block header %}
 {{ govukHeader({
-  classes: "govuk-header--full-width-border"
+classes: "govuk-header--full-width-border"
 }) }}
-  
-  {{ xGovukMasthead(
-    
-    {
-  
-    classes: "x-govuk-masthead–medium",
-    breadcrumbs: {
-      items: [            
-          { href: "/", text: "Home" }      ]
-  },
-    title: {
-    
-    text: "Digital Prison Services"
-    
-    }
-  
-  }) }}
-{% endblock %}
 
+{{ xGovukMasthead(
+
+{
+
+classes: "x-govuk-masthead–medium",
+breadcrumbs: {
+items: [
+{ href: "/", text: "Home" } ]
+},
+title: {
+text: "Digital Prison Services"
+}
+
+}) }}
+{% endblock %}
 
 {% block content %}
 
 <div class="govuk-width-container"></div>
-  <main class="govuk-main-wrapper">
-    
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-heading-m">
-          Visits
-        </h2>
-    
-        <p class="govuk-body">What's new:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>new single area in DPS for visits related products and services</li>
-        </ul>
-    
-        <form class="form" action="dps/visits/" method="post">
-          {% from "govuk/components/button/macro.njk" import govukButton %}
-          {{ govukButton({
-          text: "Start"
-          }) }}
-        </form>
-    
-        <hr class="govuk-section-break govuk-section-break--visible">
-        <br>
-    
-        <details class="govuk-details" data-module="govuk-details">
-          <summary class="govuk-details__summary">
-            <span class="govuk-details__summary-text">
-              Old prototypes
-            </span>
-          </summary>
-          <div class="govuk-details__text">
-            <p class="govuk-body"><a href="dps/archived/AJ03_amend_a_visit_V2/" class="govuk-link">AJ03 Amend a visit V2</a></p>
-            <p class="govuk-body"><a href="dps/archived/AJ03_amend_a_visit/" class="govuk-link">AJ03 Amend a visit V1</a></p>
-            <p class="govuk-body"><a href="dps/archived/AJ02_book_a_visit_on_behalf_1_V5" class="govuk-link">AJ02 Book a visit on behalf V5</a></p>
-            <p class="govuk-body"><a href="dps/archived/AJ02_book_a_visit_on_behalf_1_V4" class="govuk-link">AJ02 Book a visit on behalf V4</a></p>
-            <p class="govuk-body"><a href="dps/archived/AJ02_book_a_visit_on_behalf_1_V3" class="govuk-link">AJ02 Book a visit on behalf V3</a></p>
-            <p class="govuk-body"><a href="dps/archived/AJ02_book_a_visit_on_behalf_1_V2" class="govuk-link">AJ02 Book a visit on behalf V2</a></p>
-            <p class="govuk-body"><a href="dps/archived/AJ02_book_a_visit_on_behalf_1_V1" class="govuk-link">AJ02 Book a visit on behalf V1</a></p>
-            <p class="govuk-body"><a href="dps/archived/AJ01_book_a_visit_1" class="govuk-link">AJ01 Book a visit V1</a></p>
-        </details>
-      </div>
+<main class="govuk-main-wrapper">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h2 class="govuk-heading-m">
+        Visits
+      </h2>
+
+      <p class="govuk-body">What's new:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>new single area in DPS for visits related products and services</li>
+      </ul>
+
+      <form class="form" action="dps/visits/" method="post">
+        {% from "govuk/components/button/macro.njk" import govukButton %}
+        {{ govukButton({
+        text: "Start"
+        }) }}
+      </form>
+
+      <hr class="govuk-section-break govuk-section-break--visible">
+      <br>
+
+      <details class="govuk-details" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Old prototypes
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p class="govuk-body"><a href="dps/archived/AJ03_amend_a_visit_V2/" class="govuk-link">AJ03 Amend a visit
+              V2</a></p>
+          <p class="govuk-body"><a href="dps/archived/AJ03_amend_a_visit/" class="govuk-link">AJ03 Amend a visit V1</a>
+          </p>
+          <p class="govuk-body"><a href="dps/archived/AJ02_book_a_visit_on_behalf_1_V5" class="govuk-link">AJ02 Book a
+              visit on behalf V5</a></p>
+          <p class="govuk-body"><a href="dps/archived/AJ02_book_a_visit_on_behalf_1_V4" class="govuk-link">AJ02 Book a
+              visit on behalf V4</a></p>
+          <p class="govuk-body"><a href="dps/archived/AJ02_book_a_visit_on_behalf_1_V3" class="govuk-link">AJ02 Book a
+              visit on behalf V3</a></p>
+          <p class="govuk-body"><a href="dps/archived/AJ02_book_a_visit_on_behalf_1_V2" class="govuk-link">AJ02 Book a
+              visit on behalf V2</a></p>
+          <p class="govuk-body"><a href="dps/archived/AJ02_book_a_visit_on_behalf_1_V1" class="govuk-link">AJ02 Book a
+              visit on behalf V1</a></p>
+          <p class="govuk-body"><a href="dps/archived/AJ01_book_a_visit_1" class="govuk-link">AJ01 Book a visit V1</a>
+          </p>
+      </details>
     </div>
-  </main>
+  </div>
+</main>
 </div>
 
 {% endblock %}
