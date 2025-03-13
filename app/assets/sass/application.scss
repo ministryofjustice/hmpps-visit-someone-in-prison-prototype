@@ -80,7 +80,6 @@ li.calendar-slots__active {
   display: block;
 }
 
-.dps-homepage-today {
   .today-card-container {
     display: flex;
     flex-wrap: wrap;
@@ -97,7 +96,7 @@ li.calendar-slots__active {
     border: 1px solid govuk-colour('black');
     box-shadow: 0 4px govuk-colour('mid-grey');
 
-    h3 {
+    &__h3 {
       font-size: 19px;
       margin: 0;
     }
@@ -113,7 +112,6 @@ li.calendar-slots__active {
       margin-top: auto;
     }
   }
-}
 
 .today-section-break--blue {
   height: 3px;
