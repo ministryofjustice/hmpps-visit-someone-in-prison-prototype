@@ -2,13 +2,16 @@
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
 {% block pageTitle %}
-Visits - Prototypes
+  Visits - Prototypes
 {% endblock %}
 
 {% block header %}
-{{ govukHeader({
-classes: "govuk-header--full-width-border"
-}) }}
+  {{ mojHeader({
+    organisationLabel: {
+      text: "HMPPS",
+      href: "/"
+    }
+  }) }}
 
 {{ xGovukMasthead(
 

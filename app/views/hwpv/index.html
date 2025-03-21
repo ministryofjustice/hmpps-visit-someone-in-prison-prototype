@@ -7,9 +7,12 @@
 {% endblock %}
 
 {% block header %}
-{{ govukHeader({
-  classes: "govuk-header--full-width-border"
-}) }}
+  {{ mojHeader({
+    organisationLabel: {
+      text: "HMPPS",
+      href: "/"
+    }
+  }) }}
   
   {{ xGovukMasthead(
     
