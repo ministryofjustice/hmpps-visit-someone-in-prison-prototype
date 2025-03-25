@@ -1,62 +1,22 @@
-{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+{% extends "layouts/prototype.html" %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
-{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
 
-{% block pageTitle %}
-  Visits - Prototypes
-{% endblock %}
-
-{% block header %}
-{{ mojHeader({
-  organisationLabel: {
-  text: "HM Prison & Probation Service",
-  href: "#"
-  },
-  navigation: {
-  label: "Account navigation",
-    items: [
-    {
-    text: "GitHub",
-    href: "https://github.com/ministryofjustice/hmpps-visit-someone-in-prison-prototype"
-    }]
-  }
-  }) }}
-  
-  {{ xGovukMasthead(
-    
-    {
-  
-    classes: "x-govuk-masthead–medium",
-    breadcrumbs: {
-      items: [            
-          { href: "/", text: "Home" }      ]
-  },
-    title: {
-    
-    text: "Get help with the cost of prison visits"
-    
-    }
-  
-  }) }}
-{% endblock %}
+{% set titleText = "Help with prison visits" %}
+{% set titleDesc = "A public service for visitors to claim the costs of visiting someone in prison." %}
 
 {% block content %}
 
-<div class="govuk-width-container"></div>
-  <main class="govuk-main-wrapper">
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        <h2 class="govuk-heading-m">
-          Version 2
-        </h2>
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h2 class="govuk-heading-m">
+      Version 2
+    </h2>
 
-        <p class="govuk-body">To be developed:</p>
-        <ul class="govuk-list govuk-list--bullet">
-          <li>TBC</li>
-        </ul>
-        </div> 
-    </div>
-  </main>
+    <p class="govuk-body">To be developed:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>TBC</li>
+    </ul>
+    </div> 
 </div>
 
 {% endblock %}

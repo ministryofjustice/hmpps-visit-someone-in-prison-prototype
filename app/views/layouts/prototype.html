@@ -1,0 +1,38 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% block pageTitle %}
+  Visits - Prototypes
+{% endblock %}
+
+{% block header %}
+  {{ mojHeader({
+  organisationLabel: {
+  text: "HM Prison & Probation Service",
+  href: "#"
+  },
+  navigation: {
+  label: "Account navigation",
+    items: [
+    {
+    text: "GitHub",
+    href: "https://github.com/ministryofjustice/hmpps-visit-someone-in-prison-prototype"
+    }]
+  }
+  }) }}
+
+  {{ xGovukMasthead({
+    classes: "x-govuk-masthead–medium",
+    breadcrumbs: {
+    items: [
+    { href: "/", text: "Home" } ]
+    },
+    classes: "x-govuk-masthead–large",
+    title: {
+    text: titleText
+    },
+    description: {
+    text: titleDesc
+  }
+  }) }}
+
+{% endblock %}
