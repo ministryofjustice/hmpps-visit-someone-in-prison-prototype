@@ -7,26 +7,30 @@
 {% endblock %}
 
 {% block header %}
-  {{ mojHeader({
-    organisationLabel: {
-      text: "HMPPS",
-      href: "/"
-    }
+{{ mojHeader({
+  organisationLabel: {
+  text: "HM Prison & Probation Service",
+  href: "#"
+  },
+  navigation: {
+  label: "Account navigation",
+    items: [
+    {
+    text: "GitHub",
+    href: "https://github.com/ministryofjustice/hmpps-visit-someone-in-prison-prototype"
+    }]
+  }
   }) }}
   
   {{ xGovukMasthead(
-    
     {
-  
     classes: "x-govuk-masthead–medium",
     breadcrumbs: {
       items: [            
           { href: "/", text: "Home" }      ]
   },
     title: {
-    
     text: "Visit someone in prison"
-    
     }
   
   }) }}
@@ -39,6 +43,25 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <h2 class="govuk-heading-m">
+          MVP +4
+        </h2>
+
+        <p class="govuk-body">In design:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>booker requests a visit</li>
+        </ul>
+
+        <div class="govuk-button-group">
+          {{ govukButton({
+            text: "Start",
+            href: "#"
+          }) }}       
+        </div>
+
+        <hr class="govuk-section-break govuk-section-break--visible">
+        <br>
+        
+        <h2 class="govuk-heading-m">
           MVP +3
         </h2>
 
@@ -50,7 +73,7 @@
 
         <div class="govuk-button-group">
           {{ govukButton({
-            text: "Start booking",
+            text: "Start",
             href: "/public/mvp+3/book/0-home.html"
           }) }}       
         
@@ -58,8 +81,6 @@
             text: "Register and add prisoner",
             href: "/public/mvp+3/register/start.html"
           }) }}
-
-
         </div>
     
         <hr class="govuk-section-break govuk-section-break--visible">

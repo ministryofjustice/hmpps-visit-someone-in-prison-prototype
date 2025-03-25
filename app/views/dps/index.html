@@ -6,11 +6,19 @@
 {% endblock %}
 
 {% block header %}
-  {{ mojHeader({
-    organisationLabel: {
-      text: "HMPPS",
-      href: "/"
-    }
+{{ mojHeader({
+  organisationLabel: {
+  text: "HM Prison & Probation Service",
+  href: "#"
+  },
+  navigation: {
+  label: "Account navigation",
+    items: [
+    {
+    text: "GitHub",
+    href: "https://github.com/ministryofjustice/hmpps-visit-someone-in-prison-prototype"
+    }]
+  }
   }) }}
 
 {{ xGovukMasthead(
