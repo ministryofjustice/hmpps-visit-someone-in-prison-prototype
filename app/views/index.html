@@ -1,87 +1,47 @@
-{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+{% extends "layouts/prototype.html" %}
 
-{% block pageTitle %}
-  Visits - Prototypes
-{% endblock %}
-
-{% block header %}
-  {{ mojHeader({
-  organisationLabel: {
-  text: "HM Prison & Probation Service",
-  href: "#"
-  },
-  navigation: {
-  label: "Account navigation",
-    items: [
-    {
-    text: "GitHub",
-    href: "https://github.com/ministryofjustice/hmpps-visit-someone-in-prison-prototype"
-    }]
-  }
-  }) }}
-
-  {{ xGovukMasthead({
-    classes: "x-govuk-masthead–large",
-    title: {
-    text: "Visit prototypes"
-    },
-    description: {
-    text: "Staff, friends and family will be able to book and manage prison visits - through safer, simpler, smarter
-    services."
-  }
-  }) }}
-
-{% endblock %}
+{% set titleText = "Visit Prototypes" %}
+{% set titleDesc = "Staff, friends and family will be able to book and manage prison visits - through safer, simpler, smarter services." %}
 
 {% block content %}
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-one-half">
-    <h1 class="govuk-heading-m">
-      <a href="/public" class="govuk-link">Visit someone in prison</a>
-    </h1>
-    <strong class="govuk-tag govuk-tag--yellow">
-      Private Beta
-    </strong>
-    <br><br>
-    <p class="govuk-body">
-      A new public service that will replace the existing booking request service.
-    </p>
-  </div>
 
-  <div class="govuk-grid-column-one-half">
-    <h1 class="govuk-heading-m">
-      <a href="/dps" class="govuk-link">
-        Digital Prison Services
-      </a>
-    </h1>
-    <strong class="govuk-tag govuk-tag--green">
-      Public Beta
-    </strong>
-    <br><br>
-    <p class="govuk-body">
-      The staff service currently being rolled out across the prison estate.
-    </p>
-  </div>
-
-  <br>
-  <hr>
-  <br>
-
-  <div class="govuk-grid-column-one-half">
-    <h1 class="govuk-heading-m">
-      <a href="/hwpv" class="govuk-link">
-        Get help with the cost of prison visits
-      </a>
-    </h1>
-    <strong class="govuk-tag govuk-tag--blue">
-      Exploration
-    </strong>
-    <br><br>
-    <p class="govuk-body">
-      A public service for visitors to claim the costs of visiting someone in prison. This is an exploration of how a
-      new version of the service could evolve.
-    </p>
-  </div>
-</div>
+<ul class="govuk-grid-row card-group">
+  <li class="govuk-grid-column-one-half card-group__item">
+     <div class="card card--clickable">
+        <h2 class="govuk-heading-m card__heading">
+           <a class="govuk-link card__link" href="/public">Visit someone in prison</a>
+        </h2>
+        <strong class="govuk-tag govuk-tag--yellow">
+          Private Beta
+        </strong>
+        <br><br>
+        <p class="govuk-body card__description">A new public service that will replace the existing booking request service.</p>
+     </div>
+  </li>
+  <li class="govuk-grid-column-one-half card-group__item">
+     <div class="card card--clickable">
+        <h2 class="govuk-heading-m card__heading">
+           <a class="govuk-link card__link" href="/dps">Digital Prison Services</a>
+        </h2>
+        <strong class="govuk-tag govuk-tag--green">
+          Public Beta
+        </strong>
+        <br><br>
+        <p class="govuk-body card__description">The staff service currently being rolled out across the prison estate.</p>
+     </div>
+  </li>
+  <li class="govuk-grid-column-one-half card-group__item">
+     <div class="card card--clickable">
+        <h2 class="govuk-heading-m card__heading">
+           <a class="govuk-link card__link" href="/hwpv">Help with prison visits</a>
+        </h2>
+        <strong class="govuk-tag govuk-tag--blue">
+          Exploration
+        </strong>
+        <br><br>
+        <p class="govuk-body card__description">A public service for visitors to claim the costs of visiting someone in prison.</p>
+     </div>
+  </li>
+</ul>
 
 {% endblock %}
