@@ -4,6 +4,32 @@
 
 <h1 class="govuk-heading-l">Visits</h1>
 
+<div class="govuk-grid-row">
+   <div class="govuk-grid-column-one-third">
+      <article class="moj-ticket-panel" aria-label="Requested">
+         <section class="moj-ticket-panel__content moj-ticket-panel__content--red" aria-label="Section 1">
+           <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Requested bookings</h2>
+           <span id="notifications" class="moj-notification-badge">15</span>
+         </section>
+       </article>
+   </div>
+   <div class="govuk-grid-column-one-third">
+      <article class="moj-ticket-panel" aria-label="Visits">
+         <section class="moj-ticket-panel__content moj-ticket-panel__content--orange" aria-label="Section 1">
+           <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Visits that need review</h2>           <span id="notifications" class="moj-notification-badge">10</span>
+         </section>
+       </article>
+   </div>
+   <div class="govuk-grid-column-one-third">
+      <article class="moj-ticket-panel" aria-label="Past">
+         <section class="moj-ticket-panel__content moj-ticket-panel__content--blue" aria-label="Section 1">
+           <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Past visits to review</h2>
+           <span id="notifications" class="moj-notification-badge">5</span>
+         </section>
+       </article>
+   </div>
+ </div>
+
 <ul class="govuk-grid-row card-group">
    <li class="govuk-grid-column-one-third card-group__item">
       <div class="card card--clickable">
@@ -16,19 +42,16 @@
    <li class="govuk-grid-column-one-third card-group__item">
       <div class="card card--clickable">
          <h2 class="govuk-heading-m card__heading">
-            <a class="govuk-link card__link" href="#">Need review</a>
-         </h2>
-         <p class="govuk-body card__description">Check bookings that need review</p>
-      </div>
-   </li>
-   <li class="govuk-grid-column-one-third card-group__item">
-      <div class="card card--clickable">
-         <h2 class="govuk-heading-m card__heading">
             <a class="govuk-link card__link" href="#">View visits by date</a>
          </h2>
          <p class="govuk-body card__description">Select a date and see bookings</p>
       </div>
    </li>
+</ul>
+
+<h1 class="govuk-heading-m">Administer</h1>
+
+<ul class="govuk-grid-row card-group">
    <li class="govuk-grid-column-one-third card-group__item">
       <div class="card card--clickable">
          <h2 class="govuk-heading-m card__heading">
@@ -45,6 +68,15 @@
          <p class="govuk-body card__description">Block or unblock dates for social visits</p>
       </div>
    </li>
+   <li class="govuk-grid-column-one-third card-group__item">
+      <div class="card card--clickable">
+         <h2 class="govuk-heading-m card__heading">
+            <a class="govuk-link card__link" href="#">Manage online bookers</a>
+         </h2>
+         <p class="govuk-body card__description">Link visitors to booker accounts</p>
+      </div>
+   </li>
 </ul>
+
 
 {% endblock %}
