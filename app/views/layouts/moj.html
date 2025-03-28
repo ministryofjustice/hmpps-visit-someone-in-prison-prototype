@@ -1,8 +1,23 @@
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
 {%- from "moj/components/header/macro.njk" import mojHeader -%}
+{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
 
-{% block pageTitle %}
-  DPS - Visits
+
+{% block pageTitle -%}
+  {%- if errors | length %}Error: {% endif %}
+  {%- if pageHeaderTitle %}{{ pageHeaderTitle }} - {% endif %}
+  {{- applicationName }} - DPS
+{%- endblock %}
+
+{% block beforeContent %}
+  <div role="navigation">
+    {% if backLinkHref %}
+      {{ govukBackLink({
+        text: "Back",
+        href: backLinkHref
+      }) }}
+    {% endif %}
+  </div>
 {% endblock %}
 
 {% block header %}
