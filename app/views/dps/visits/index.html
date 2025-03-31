@@ -1,5 +1,8 @@
 {% extends "layouts/moj.html" %}
 
+{% set pageHeaderTitle = "Search" %}
+{% set breadcrumbs = true %}
+
 {% block content %}
 
 <h1 class="govuk-heading-l">Visits</h1>
@@ -75,7 +78,7 @@
    <li class="govuk-grid-column-one-third card-group__item">
       <div class="card card--clickable">
          <h2 class="govuk-heading-m card__heading">
-            <a class="govuk-link card__link" href="#">Manage online bookers</a>
+            <a class="govuk-link card__link" href="/dps/visits/bookers/01-search.html">Manage bookers</a>
          </h2>
          <p class="govuk-body card__description">Link visitors to booker accounts</p>
       </div>
