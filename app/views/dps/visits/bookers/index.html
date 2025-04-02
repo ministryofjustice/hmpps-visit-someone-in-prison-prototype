@@ -1,0 +1,32 @@
+{% extends "layouts/moj.html" %}
+{% from "components/card.njk" import card %}
+
+{% set pageHeaderTitle = "Manage online bookers" %}
+{% set breadcrumbs2 = true %}
+
+{% block content %}
+
+<h1 class="govuk-heading-l">Manage online bookers</h1>
+
+<ul class="govuk-grid-row card-group">
+   <li class="govuk-grid-column-one-third card-group__item">
+     {{ card({
+       "href": "#",
+       "clickable": "true",
+       "heading": "Review visitor request",
+       "description": "Approve or reject visitors being added to booker accounts"
+     }) }}
+   </li>
+
+   <li class="govuk-grid-column-one-third card-group__item">
+     {{ card({
+       "href": "#",
+       "clickable": "true",
+       "heading": "Change a booker account",
+       "description": "Manually update a bookers account information"
+     }) }}
+   </li>
+ </ul>
+ 
+
+{% endblock %}
