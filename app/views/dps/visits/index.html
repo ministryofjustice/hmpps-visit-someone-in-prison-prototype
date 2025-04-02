@@ -1,18 +1,62 @@
 {% extends "layouts/moj.html" %}
+{% from "components/card.njk" import card %}
+{%- from "moj/components/ticket-panel/macro.njk" import mojTicketPanel -%}
 
-{% set pageHeaderTitle = "Search" %}
+{% set pageHeaderTitle = "Visits" %}
 {% set breadcrumbs = true %}
 
 {% block content %}
 
 <h1 class="govuk-heading-l">Visits</h1>
 
+<div class="govuk-grid-row">
+   <div class="govuk-grid-column-one-third">
+      {{ mojTicketPanel({
+      attributes: {
+      "aria-label": "Requested visits to review"
+      },
+      items: [{
+      html: ' <h2 class="govuk-heading-m govuk-!-margin-bottom-2">54</h2>
+      <p class="govuk-body">Requested visits to review</p>',
+      classes: "moj-ticket-panel__content--red"
+      }]
+      }) }}
+   </div>
+
+   <div class="govuk-grid-column-one-third">
+      {{ mojTicketPanel({
+      attributes: {
+      "aria-label": "Booked visits to review"
+      },
+      items: [{
+      html: ' <h2 class="govuk-heading-m govuk-!-margin-bottom-2">21</h2>
+      <p class="govuk-body">Booked visits to review</p>',
+      classes: "moj-ticket-panel__content--orange"
+      }]
+      }) }}
+   </div>
+
+   <div class="govuk-grid-column-one-third">
+      {{ mojTicketPanel({
+      attributes: {
+      "aria-label": "Compelted visits to review"
+      },
+      items: [{
+      html: ' <h2 class="govuk-heading-m govuk-!-margin-bottom-2">54</h2>
+      <p class="govuk-body">Completed visits to review</p>',
+      classes: "moj-ticket-panel__content--blue"
+      }]
+      }) }}
+   </div>
+</div>
+
+
 <!---
 <div class="govuk-grid-row">
    <div class="govuk-grid-column-one-third">
       <article class="moj-ticket-panel" aria-label="Requested">
          <section class="moj-ticket-panel__content moj-ticket-panel__content--red" aria-label="Section 1">
-           <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Requested bookings</h2>
+           <h2 class="govuk-heading-m govuk-!-margin-bottom-2">Requested visits</h2>
            <span id="notifications" class="moj-notification-badge">15</span>
          </section>
        </article>
@@ -39,51 +83,62 @@
 
 <ul class="govuk-grid-row card-group">
    <li class="govuk-grid-column-one-third card-group__item">
-      <div class="card card--clickable">
-         <h2 class="govuk-heading-m card__heading">
-            <a class="govuk-link card__link" href="#">Book or change a visit</a>
-         </h2>
-         <p class="govuk-body card__description">Make a booking for a visitor</p>
-      </div>
+      {{ card({
+      "href": "#",
+      "clickable": "true",
+      "heading": "Book or change a visit",
+      "description": "Make a booking for a visitor"
+      }) }}
    </li>
+
    <li class="govuk-grid-column-one-third card-group__item">
-      <div class="card card--clickable">
-         <h2 class="govuk-heading-m card__heading">
-            <a class="govuk-link card__link" href="#">View visits by date</a>
-         </h2>
-         <p class="govuk-body card__description">Select a date and see bookings</p>
-      </div>
+      {{ card({
+      "href": "#",
+      "clickable": "true",
+      "heading": "View visits by date",
+      "description": "Select a date and see bookings"
+      }) }}
    </li>
+
    <li class="govuk-grid-column-one-third card-group__item">
-      <div class="card card--clickable">
-         <h2 class="govuk-heading-m card__heading">
-            <a class="govuk-link card__link" href="#">View visits timetable</a>
-         </h2>
-         <p class="govuk-body card__description">Check and request changes to social visits timetable</p>
-      </div>
+      {{ card({
+      "href": "#",
+      "clickable": "true",
+      "heading": "View visits timetable",
+      "description": "Check and request changes to the social visits timetable"
+      }) }}
    </li>
 </ul>
 
-<h1 class="govuk-heading-m">Administer</h1>
+<h1 class="govuk-heading-m">Adminster your establishment</h1>
 
 <ul class="govuk-grid-row card-group">
    <li class="govuk-grid-column-one-third card-group__item">
-      <div class="card card--clickable">
-         <h2 class="govuk-heading-m card__heading">
-            <a class="govuk-link card__link" href="#">Block visit dates</a>
-         </h2>
-         <p class="govuk-body card__description">Block or unblock dates for social visits</p>
-      </div>
+      {{ card({
+      "href": "#s",
+      "clickable": "true",
+      "heading": "Block visit dates",
+      "description": "Block or unblock dates for social visits"
+      }) }}
    </li>
+
    <li class="govuk-grid-column-one-third card-group__item">
-      <div class="card card--clickable">
-         <h2 class="govuk-heading-m card__heading">
-            <a class="govuk-link card__link" href="/dps/visits/bookers/01-search.html">Manage bookers</a>
-         </h2>
-         <p class="govuk-body card__description">Link visitors to booker accounts</p>
-      </div>
+      {{ card({
+      "href": "/dps/visits/bookers",
+      "clickable": "true",
+      "heading": "Manage online bookers",
+      "description": "Link visitors to booker accounts"
+      }) }}
+   </li>
+
+   <li class="govuk-grid-column-one-third card-group__item">
+      {{ card({
+      "href": "#",
+      "clickable": "true",
+      "heading": "Update establishment contact details",
+      "description": "Change the contact details for your establishment"
+      }) }}
    </li>
 </ul>
-
 
 {% endblock %}
