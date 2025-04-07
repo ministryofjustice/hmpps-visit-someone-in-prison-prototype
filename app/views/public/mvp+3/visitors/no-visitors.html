@@ -1,0 +1,46 @@
+{% extends "../layouts/homepage.html" %}
+{% set activeLinkId = "visitors-link" %}
+{% from "govuk/components/warning-text/macro.njk" import govukWarningText %}
+
+{% block pageTitle %}
+Visitors – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+    <h1 class="govuk-heading-l">
+      Visitors
+    </h1>
+
+    <h2 class="govuk-heading-m">{{ data['prisoner-name'] }}'s visitors</h2>
+
+    {{ govukWarningText({
+    text: "No visitors are currently approved.",
+    iconFallbackText: "Warning"
+    }) }}
+
+    <h2 class="govuk-heading-m">Waiting for approval</h2>
+
+    <p class="govuk-body">
+      If you have already submitted a request to add visitors, we will contact you when your request has been approved
+      or rejected.
+      <br><br>
+      We will respond within 5 working days.
+    </p>
+
+    <h2 class="govuk-heading-m">Add a new visitor</h2>
+
+    <p class="govuk-body">
+      The person you want to book for must be on the prisoner’s visitor list.
+      <br><br>
+      To make a request, <a href="{{ data['add-a-visitor-url'] }}" target="_blank" class="govuk-link">complete the form
+        (opens in a new tab)</a>.
+    </p>
+
+  </div>
+</div>
+
+{% endblock %}
