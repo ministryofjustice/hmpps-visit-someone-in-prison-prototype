@@ -1,4 +1,5 @@
 {% extends "../../layouts/logged-in.html" %}
+{%- from "moj/components/alert/macro.njk" import mojAlert -%}
 
 {% set activeLinkId = "bookings-link" %}
 
@@ -11,23 +12,19 @@ Visit booking details – {{ serviceName }}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
+    {{ mojAlert({
+      variant: "information",
+      title: "This visit was cancelled by a visitor.",
+      dismissible: false,
+      showTitleAsHeading: true
+    }) }}
+
     <h1 class="govuk-heading-l">
       Visit booking details
     </h1>
 
     <p class="govuk-body">Booking reference: pq-rs-tu-vw</p>
-
-    {%- from "moj/components/banner/macro.njk" import mojBanner -%}
-
-    {% set bannerHtml %}
-      <h2 class="govuk-heading-m">This visit was cancelled by a visitor.</h2>
-    {% endset %}
     
-    {{ mojBanner({
-      type: 'information',
-      html: bannerHtml
-    }) }}
-
     <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Date and time</h2>
     <p class="govuk-body govuk-!-margin-bottom-1">Tuesday 30 January 2024</p>
     <p class="govuk-body govuk-!-margin-bottom-1">10am to 11am</p>
