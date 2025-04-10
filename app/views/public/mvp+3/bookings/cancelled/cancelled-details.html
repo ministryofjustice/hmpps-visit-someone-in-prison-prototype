@@ -13,33 +13,35 @@ Visit booking details – {{ serviceName }}
   <div class="govuk-grid-column-two-thirds">
 
     {{ mojAlert({
-      variant: "information",
-      title: "This visit was cancelled by a visitor.",
-      dismissible: false,
-      showTitleAsHeading: true
+    variant: "information",
+    title: "This visit was cancelled by a visitor.",
+    dismissible: false,
+    showTitleAsHeading: true
     }) }}
 
     <h1 class="govuk-heading-l">
       Visit booking details
     </h1>
 
-    <p class="govuk-body">Booking reference: pq-rs-tu-vw</p>
-    
-    <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Date and time</h2>
+    <h2 class="govuk-heading-m">
+      Booking reference: pq-rs-tu-vw
+    </h2>
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Date and time</h3>
     <p class="govuk-body govuk-!-margin-bottom-1">Tuesday 30 January 2024</p>
     <p class="govuk-body govuk-!-margin-bottom-1">10am to 11am</p>
 
-    <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Prisoner</h2>
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Prisoner</h3>
     <p class="govuk-body govuk-!-margin-bottom-1">{{ data['prisoner-name'] }} at {{ data['prison-name'] }}</p>
 
-    <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Visitors</h2>
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Visitors</h3>
     <p class="govuk-body govuk-!-margin-bottom-1">{{ data['visitor-2-name'] }}</p>
 
-    <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Additional support requests</h2>
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Additional support requests</h3>
     <p class="govuk-body govuk-!-margin-bottom-1">Wheelchair access required</p>
 
-    <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Main contact</h2>
-    <p class="govuk-body govuk-!-margin-bottom-1">{{ data['visitor-2-name'] }}</p>   
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Main contact</h3>
+    <p class="govuk-body govuk-!-margin-bottom-1">{{ data['visitor-2-name'] }}</p>
     <p class="govuk-body govuk-!-margin-bottom-1">07866 464587</p>
 
   </div>
