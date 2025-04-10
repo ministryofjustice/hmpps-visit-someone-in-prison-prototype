@@ -1,4 +1,4 @@
-{% extends "./layouts/homepage.html" %}
+{% extends "../layouts/homepage-no-visitors.html" %}
 {% set activeLinkId = "home-link" %}
 
 {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
@@ -24,7 +24,7 @@ Book a visit – {{ serviceName }}
 
     {{ govukButton({
     text: "Add a prisoner",
-    href: "/public/mvp+3/register/add-prisoner.html",
+    href: "/public/mvp+3/register/choose-prison.html",
     isStartButton: false
     }) }}
 
