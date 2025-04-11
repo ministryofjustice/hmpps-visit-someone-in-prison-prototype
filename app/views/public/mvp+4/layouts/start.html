@@ -1,0 +1,16 @@
+{% extends "./footer.html" %}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% block pageTitle %} {{ serviceName }} – GOV.UK {% endblock %} 
+
+{% block header %} {{ govukHeader() }} {% endblock %} 
+
+{% block beforeContent %}
+  {{ govukPhaseBanner({
+    tag: {
+      text: "Prototype"
+    },
+    html: 'This is a new service – your <a class="govuk-link" href="#">feedback</a> will help us to improve it.'
+  }) }}
+
+{% endblock %}

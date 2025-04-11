@@ -1,0 +1,13 @@
+{% extends "./footer.html" %}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% block header %} {{ govukHeader() }} {% endblock %} 
+
+{% block beforeContent %}
+
+  {{ govukBackLink({
+    href: "javascript:window.history.back()",
+    text: "Back"
+  }) }}
+
+{% endblock %}
