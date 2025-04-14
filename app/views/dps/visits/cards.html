@@ -1,6 +1,7 @@
 {% extends "layouts/moj.html" %}
 {% from "components/card.njk" import card %}
 {%- from "moj/components/ticket-panel/macro.njk" import mojTicketPanel -%}
+{%- from "moj/components/notification-badge/macro.njk" import mojNotificationBadge -%}
 
 {% set pageHeaderTitle = staffServiceName %}
 {% set breadcrumbs = true %}
@@ -9,55 +10,41 @@
 
 <h1 class="govuk-heading-l">Visits</h1>
 
-
 <h1 class="govuk-heading-m">Review</h1>
 
-<div class="govuk-grid-row">
-   <div class="govuk-grid-column-one-third">
-      {{ mojTicketPanel({
-      attributes: {
-      "aria-label": "Requested visits to review"
-      },
-      items: [{
-      html: '<h2 class="govuk-heading-m govuk-!-margin-bottom-2">54 requests</h2>
-      <p class="govuk-body"><a href="#" class="govuk-link">Requested visits to review</a></p>',
-      classes: "moj-ticket-panel__content--red"
-      }]
+<ul class="govuk-grid-row card-group">
+
+   <li class="govuk-grid-column-one-third card-group__item">
+      {{ card({
+      "href": "#",
+      "clickable": "true",
+      "heading": "Requested visits to review",
+      "description": "Accept or reject visits that have been requested"
       }) }}
-   </div>
+   </li>
 
-   <div class="govuk-grid-column-one-third">
-      {{ mojTicketPanel({
-      attributes: {
-      "aria-label": "Booked visits to review"
-      },
-      items: [{
-      html: '<h2 class="govuk-heading-m govuk-!-margin-bottom-2">21 visits</h2>
-      <p class="govuk-body"><a href="#" class="govuk-link">Booked visits to review</a></p>',
-      classes: "moj-ticket-panel__content--orange"
-      }]
+   <li class="govuk-grid-column-one-third card-group__item">
+      {{ card({
+      "href": "#",
+      "clickable": "true",
+      "heading": "Booked visits to review",
+      "description": "Review changes that have been made to existing visits"
       }) }}
-   </div>
+   </li>
 
-   <div class="govuk-grid-column-one-third">
-      {{ mojTicketPanel({
-      attributes: {
-      "aria-label": "Completed visits to review"
-      },
-      items: [{
-      html: '<h2 class="govuk-heading-m govuk-!-margin-bottom-2">2 sessions</h2>
-      <p class="govuk-body"><a href="#" class="govuk-link">Completed sessions to review</a></p>',
-      classes: "moj-ticket-panel__content--blue"
-      }]
+   <li class="govuk-grid-column-one-third card-group__item">
+      {{ card({
+      "href": "#",
+      "clickable": "true",
+      "heading": "Completed sessions to review",
+      "description": "Add attendance and security checks undertaken"
       }) }}
-   </div>
+   </li>
 
-</div>
-
+</ul>
 
 <br>
 <h1 class="govuk-heading-m">Book</h1>
-
 
 <ul class="govuk-grid-row card-group">
    <li class="govuk-grid-column-one-third card-group__item">
