@@ -1,0 +1,66 @@
+{% extends "layouts/moj.html" %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{% set pageHeaderTitle = "Manage online bookers" %}
+{% set breadcrumbs2 = "Visits" %}
+{% set breadCrumb2link = "/dps/visits/cards" %}
+
+{% block content %}
+
+<h1 class="govuk-heading-l">Link a visitor</h1>
+
+<p>Link a visitor for prisoner {{ data['prisoner-name'] }} ({{ data['prison-no'] }}) and booker {{ data['booker-email']
+  }}.</p>
+
+<p>Only the prisoner's approved social contacts are shown. If the visitors does NOT have a date of birth, the they will
+  also not show, so please add a date of birth in NOMIS.</p>
+<table class="govuk-table" data-module="moj-multi-select" data-id-prefix="mountains-">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__header" scope="col" id="mountains-select-all"></th>
+      <th class="govuk-table__header" scope="col">Name</th>
+      <th class="govuk-table__header" scope="col">NOMIS Visitor ID</th>
+      <th class="govuk-table__header" scope="col">Date of birth</th>
+      <th class="govuk-table__header" scope="col">Restrictions</th>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row govuk-table__row--selected">
+      <td class="govuk-table__cell">
+        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+          <input type="checkbox" class="govuk-checkboxes__input" id="mountain-aconcagua">
+          <label class="govuk-label govuk-checkboxes__label" for="mountain-aconcagua">
+          </label>
+        </div>
+      </td>
+      <td class="govuk-table__cell">{{ data['visitor-3-name'] }}</td>
+      <td class="govuk-table__cell">{{ data['visitor-3-id'] }}</td>
+      <td class="govuk-table__cell">{{ data['visitor-3-dob'] }} ({{ data['visitor-3-age'] }} years old)</td>
+      <td class="govuk-table__cell">
+        <p><strong class="govuk-tag govuk-tag--red">Banned</strong></p>
+      </td>
+    </tr>
+    <tr class="govuk-table__row govuk-table__row--selected">
+      <td class="govuk-table__cell">
+        <div class="govuk-checkboxes__item govuk-checkboxes--small moj-multi-select__checkbox">
+          <input type="checkbox" class="govuk-checkboxes__input" id="mountain-aconcagua">
+          <label class="govuk-label govuk-checkboxes__label" for="mountain-aconcagua">
+          </label>
+        </div>
+      </td>
+      <td class="govuk-table__cell">{{ data['visitor-4-name'] }}</td>
+      <td class="govuk-table__cell">{{ data['visitor-4-id'] }}</td>
+      <td class="govuk-table__cell">{{ data['visitor-4-dob'] }} ({{ data['visitor-4-age'] }} years old)</td>
+      <td class="govuk-table__cell">
+        <p><strong class="govuk-tag govuk-tag--red">Banned</strong></p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<form action="/dps/visits/bookers/booker-details-success" method="post">
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+    Link the visitor
+  </button>
+</form>
+
+{% endblock %}

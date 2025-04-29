@@ -1,0 +1,189 @@
+{% extends "layouts/moj.html" %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{% set pageHeaderTitle = "Manage online bookers" %}
+{% set breadcrumbs2 = "Visits" %}
+{% set breadCrumb2link = "/dps/visits/cards" %}
+
+{% block content %}
+
+<h1 class="govuk-heading-l">Booker account</h1>
+
+<p>This information relates to the booker account from GOV.UK One Login.</p>
+
+<h2 class="govuk-heading-m">Booker</h2>
+
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Booker email
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['booker-email'] }}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+    <dt class="govuk-summary-list__key">
+      Booker reference number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['booker-reference'] }}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+    <dt class="govuk-summary-list__key">
+      Date registered
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['booker-registered'] }}
+    </dd>
+  </div>
+</dl>
+
+<h2 class="govuk-heading-m">Prisoner</h2>
+
+<p>This information relates to the prisoner linked to the booker account.</p>
+<p>Visits with any prisoners with any visits impacting Alerts or Restrictions will need to be reviewed by staff.</p>
+
+<dl class="govuk-summary-list">
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Prisoner name
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['prisoner-name'] }}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Date of birth
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['prisoner-dob'] }}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+    <dt class="govuk-summary-list__key">
+      Prison number
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['prison-no'] }}
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row">
+    <dt class="govuk-summary-list__key">
+      Registered establishment
+    </dt>
+    <dd class="govuk-summary-list__value">
+      {{ data['prison-name'] }}
+    </dd>
+    <dd class="govuk-summary-list__actions">
+      <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> establishment</span></a>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+    <dt class="govuk-summary-list__key">
+      Alerts
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <p><strong class="govuk-tag govuk-tag--red">Child protection</strong></p>
+    </dd>
+  </div>
+  <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+    <dt class="govuk-summary-list__key">
+      Restrictions
+    </dt>
+    <dd class="govuk-summary-list__value">
+      <p><strong class="govuk-tag govuk-tag--red">Banned</strong></p>
+    </dd>
+  </div>
+</dl>
+
+<h2 class="govuk-heading-m">Visitors</h2>
+
+<form action="/dps/visits/bookers/link-visitor" method="post">
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+    Link a visitor
+  </button>
+</form>
+
+<p>This information relates to the visitors linked to the booker account. If you need to change any of the visitor
+  information, please do this in NOMIS.</p>
+
+<p>Visits with any visitors with any Restrictions will need to be reviewed by staff.</p>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      {{ data['visitor-1-name'] }}
+    </h2>
+    <p><strong class="govuk-tag govuk-tag--green">Approved</strong></p>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['visitor-1-dob'] }} ({{ data['visitor-1-age'] }} years old)
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          NOMIS Visitor ID
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['visitor-1-id'] }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Restrictions
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p>None</p>
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      {{ data['visitor-2-name'] }}
+    </h2>
+    <p><strong class="govuk-tag govuk-tag--green">Approved</strong></p>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['visitor-2-dob'] }} ({{ data['visitor-2-age'] }} years old)
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          NOMIS Visitor ID
+        </dt>
+        <dd class="govuk-summary-list__value">
+          {{ data['visitor-2-id'] }}
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Restrictions
+        </dt>
+        <dd class="govuk-summary-list__value">
+          <p><strong class="govuk-tag govuk-tag--red">Banned</strong></p>
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+
+{% endblock %}

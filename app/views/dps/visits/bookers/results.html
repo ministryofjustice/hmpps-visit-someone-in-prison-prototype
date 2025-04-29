@@ -1,0 +1,38 @@
+{% extends "layouts/moj.html" %}
+
+{% set pageHeaderTitle = "Manage online bookers" %}
+{% set breadcrumbs2 = "Visits" %}
+{% set breadCrumb2link = "/dps/visits/cards" %}
+
+{% block content %}
+
+<h1 class="govuk-heading-l">Search for a booker account</h1>
+
+<table class="govuk-table" data-module="moj-sortable-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header" aria-sort="ascending">Email address</th>
+      <th scope="col" class="govuk-table__header" aria-sort="none">Booker reference</th>
+      <th scope="col" class="govuk-table__header" aria-sort="none">Date registered</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><a href="/dps/visits/bookers/booker-details">{{ data['booker-email'] }}</a></td>
+      <td class="govuk-table__cell" data-sort-value="6961">{{ data['booker-reference'] }}</td>
+      <td class="govuk-table__cell" data-sort-value="20250317">{{ data['booker-registered'] }}</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><a href="#">mike@westerly.com</a></td>
+      <td class="govuk-table__cell" data-sort-value="6194">rgr-mdf-cmb</td>
+      <td class="govuk-table__cell" data-sort-value="20250401">1 April 2025</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell"><a href="#">reception@mikeworld.com</a></td>
+      <td class="govuk-table__cell" data-sort-value="5642">wqe-sde-bgn</td>
+      <td class="govuk-table__cell" data-sort-value="20250123">23 January 2025</td>
+    </tr>
+  </tbody>
+</table>
+
+{% endblock %}

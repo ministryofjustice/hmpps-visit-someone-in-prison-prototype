@@ -1,0 +1,27 @@
+{% extends "layouts/moj.html" %}
+
+{% set pageHeaderTitle = "Manage online bookers" %}
+{% set breadcrumbs2 = "Visits" %}
+{% set breadCrumb2link = "/dps/visits/cards" %}
+
+{% block content %}
+
+<h1 class="govuk-heading-l">Search for a booker account</h1>
+
+  <div class="moj-search">
+    <form action="/dps/visits/bookers/results" method="post">
+      <div class="govuk-form-group">  
+        <div id="search-hint" class="govuk-hint moj-search__hint ">
+            Search for an existing booker or add a new one.
+            <br>
+            You can search by email address or booker reference number.
+        </div>
+        <input class="govuk-input moj-search__input " id="search" name="search" type="search" aria-describedby="search-hint">
+      </div>
+      <button type="submit" class="govuk-button moj-search__button " data-module="govuk-button">
+        Search
+      </button>
+    </form>
+  </div>
+
+{% endblock %}
