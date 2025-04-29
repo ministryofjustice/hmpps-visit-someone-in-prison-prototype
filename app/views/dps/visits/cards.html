@@ -2,6 +2,7 @@
 {% from "components/card.njk" import card %}
 {%- from "moj/components/ticket-panel/macro.njk" import mojTicketPanel -%}
 {%- from "moj/components/notification-badge/macro.njk" import mojNotificationBadge -%}
+{%- from "govuk/components/tag/macro.njk" import govukTag -%}
 
 {% set pageHeaderTitle = staffServiceName %}
 {% set breadcrumbs = true %}
@@ -18,7 +19,11 @@
       {{ card({
       "href": "#",
       "clickable": "true",
-      "heading": "Requested visits to review",
+      "heading": 
+      '<span>Requests to review' +
+         '<span class="govuk-!-margin-left-2 moj-notification-badge">10' +
+        '</span>' +
+       "</span>",
       "description": "Accept or reject visits that have been requested"
       }) }}
    </li>
@@ -27,8 +32,12 @@
       {{ card({
       "href": "#",
       "clickable": "true",
-      "heading": "Booked visits to review",
-      "description": "Review changes that have been made to existing visits"
+      "heading": 
+      '<span>Visits to review' +
+         '<span class="govuk-!-margin-left-2 moj-notification-badge">25' +
+        '</span>' +
+       "</span>",
+      "description": "Review visits that have been impacted by changes"
       }) }}
    </li>
 <!-- 
