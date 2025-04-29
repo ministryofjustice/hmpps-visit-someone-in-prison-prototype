@@ -1,8 +1,10 @@
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
 
-{% block pageTitle %}
-  Visits - Prototypes
-{% endblock %}
+{% block pageTitle -%}
+  {% if pageHeaderTitle %}
+  {{ pageHeaderTitle }}
+  {% endif %}
+{%- endblock %}
 
 {% block header %}
   {{ mojHeader({
