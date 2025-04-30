@@ -1,7 +1,7 @@
 {% extends "layouts/moj.html" %}
 {% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
 
-{% set pageHeaderTitle = "Manage online bookers" %}
+{% set pageHeaderTitle = "Link a visitor" %}
 {% set breadcrumbs2 = "Visits" %}
 {% set breadCrumb2link = "/dps/visits/cards" %}
 
@@ -9,8 +9,19 @@
 
 <h1 class="govuk-heading-l">Link a visitor</h1>
 
-<p>Link a visitor for prisoner {{ data['prisoner-name'] }} ({{ data['prison-no'] }}) and booker {{ data['booker-email']
-  }}.</p>
+<p>Link a visitor to the booker account ({{ data['booker-email'] }}).</p>
+
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      Which visitors are shown
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p> dfg </p>
+    <p>sdffd</p>
+  </div>
+</details>
 
 <p>Only the prisoner's approved social contacts are shown. If the visitor does NOT have a date of birth, they will also not show, so please add a date of birth in NOMIS.</p>
 <table class="govuk-table" data-module="moj-multi-select" data-id-prefix="mountains-">
