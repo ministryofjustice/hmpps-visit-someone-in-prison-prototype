@@ -2,24 +2,28 @@
 
 {% set pageHeaderTitle = "Search for a booker account" %}
 {% set breadcrumbs2 = "Visits" %}
-{% set breadCrumb2link = "/dps/visits/cards" %}
+{% set breadCrumb2link = "/dps/visits/" %}
 
 {% block content %}
 
-<h1 class="govuk-heading-l">Search for a booker account</h1>
-
-  <div class="moj-search">
-    <form action="/dps/visits/bookers/results" method="post">
-      <div class="govuk-form-group">  
-        <div id="search-hint" class="govuk-hint moj-search__hint ">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+    <h1 class="govuk-heading-l">Search for a booker account</h1>
+    <div class="moj-search">
+      <form action="/dps/visits/bookers/results" method="post">
+        <div class="govuk-form-group">
+          <div id="search-hint" class="govuk-hint moj-search__hint ">
             Search for an existing booker. You can search by email address or booker reference number.
+          </div>
+          <input class="govuk-input moj-search__input " id="search" name="search" type="search"
+            aria-describedby="search-hint">
         </div>
-        <input class="govuk-input moj-search__input " id="search" name="search" type="search" aria-describedby="search-hint">
-      </div>
-      <button type="submit" class="govuk-button moj-search__button " data-module="govuk-button">
-        Search
-      </button>
-    </form>
+        <button type="submit" class="govuk-button moj-search__button " data-module="govuk-button">
+          Search
+        </button>
+      </form>
+    </div>
   </div>
+</div>
 
 {% endblock %}
