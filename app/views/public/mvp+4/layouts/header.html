@@ -1,0 +1,31 @@
+{% from "govuk/components/header/macro.njk" import govukHeader %}
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+{% block header %}
+
+  {{ govukHeader({
+    rebrand: true,
+    homepageUrl: "#"
+  }) }}
+
+  {{ govukServiceNavigation({
+    serviceName: "Service name",
+    serviceUrl: "#",
+    navigation: [
+      {
+        href: "#",
+        text: "Navigation item 1"
+      },
+      {
+        href: "#",
+        text: "Navigation item 2",
+        active: true
+      },
+      {
+        href: "#",
+        text: "Navigation item 3"
+      }
+    ]
+  }) }}
+
+{% endblock %}

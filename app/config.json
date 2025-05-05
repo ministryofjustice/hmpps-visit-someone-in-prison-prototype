@@ -1,3 +1,9 @@
 {
   "serviceName": "Visit someone in prison"
 }
+
+"plugins": {
+  "govuk-frontend": {
+	"rebrand": true
+  }
+}
