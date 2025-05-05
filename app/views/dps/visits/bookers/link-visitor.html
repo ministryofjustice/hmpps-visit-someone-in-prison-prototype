@@ -9,7 +9,7 @@
 
 <h1 class="govuk-heading-l">Link a visitor</h1>
 
-<p>Link a visitor to the booker account ({{ data['booker-email'] }}).</p>
+<p>Link a visitor to the booker account ({{ data['booker-email'] }}) and prisoner ({{ data['prison-no'] }}).</p>
 
 <details class="govuk-details">
   <summary class="govuk-details__summary">
@@ -23,13 +23,13 @@
   </div>
 </details>
 
-<p>Only the prisoner's approved social contacts are shown. If the visitor does NOT have a date of birth, they will also not show, so please add a date of birth in NOMIS.</p>
+<p>Only the prisoner's approved social contacts are shown. If the visitor does NOT have a date of birth, they will also not show, so please add a date of birth in DPS or NOMIS.</p>
 <table class="govuk-table" data-module="moj-multi-select" data-id-prefix="mountains-">
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
       <th class="govuk-table__header" scope="col" id="mountains-select-all"></th>
       <th class="govuk-table__header" scope="col">Name</th>
-      <th class="govuk-table__header" scope="col">NOMIS Visitor ID</th>
+      <th class="govuk-table__header" scope="col">Visitor ID</th>
       <th class="govuk-table__header" scope="col">Date of birth</th>
       <th class="govuk-table__header" scope="col">Restrictions</th>
   </thead>
