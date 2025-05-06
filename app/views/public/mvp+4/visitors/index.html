@@ -1,0 +1,87 @@
+{% extends "../layouts/header.html" %}
+{% extends "../layouts/footer.html" %}
+{% extends "../layouts/banner.html" %}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% set signedIn = true %}
+
+{% block pageTitle %}
+Visitors – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+    <h1 class="govuk-heading-l">
+      Visitors
+    </h1>
+
+    <h2 class="govuk-heading-m">{{ data['prisoner-name'] }} at {{ data['prison-name'] }}</h2>
+
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Visitor's name</th>
+          <th scope="col" class="govuk-table__header">Date of birth</th>
+          <!--
+          <th scope="col" class="govuk-table__header">Can you book a visit for them?</th>
+          -->
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">{{ data['visitor-1-name'] }}</td>
+          <td class="govuk-table__cell">{{ data['visitor-1-dob'] }}</td>
+          <!--
+          <td class="govuk-table__cell">Yes</td>
+          -->
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">{{ data['visitor-2-name'] }}</td>
+          <td class="govuk-table__cell">{{ data['visitor-2-dob'] }}</td>
+          <!--
+          <td class="govuk-table__cell">Banned until {{ data['visitor-2-ban'] }}</td>
+          -->
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">{{ data['visitor-3-name'] }}</td>
+          <td class="govuk-table__cell">{{ data['visitor-3-dob'] }}</td>
+          <!--
+          <td class="govuk-table__cell">Waiting to be checked by prison</td>
+          -->
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">{{ data['visitor-4-name'] }}</td>
+          <td class="govuk-table__cell">{{ data['visitor-4-dob'] }}</td>
+          <!--
+          <td class="govuk-table__cell">Banned until {{ data['visitor-4-ban'] }}</td>
+          -->
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 class="govuk-heading-m">Waiting for approval</h2>
+
+    <p class="govuk-body">
+      If you have already submitted a request to add visitors, we will contact you when your request has been approved
+      or rejected.
+      <br><br>
+      We will respond within 5 working days.
+    </p>
+
+    <h2 class="govuk-heading-m">Add a new visitor</h2>
+
+    <p class="govuk-body">
+      The person you want to book for must be on the prisoner’s visitor list.
+      <br><br>
+      To make a request, <a href="{{ data['add-a-visitor-url'] }}" target="_blank" class="govuk-link">complete the form
+        (opens in a new tab)</a>. We will respond within 5 working days.
+    </p>
+
+  </div>
+</div>
+
+{% endblock %}

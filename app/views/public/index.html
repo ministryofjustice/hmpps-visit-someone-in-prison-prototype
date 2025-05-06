@@ -9,7 +9,7 @@
 <div class="govuk-grid-row">
 
   <div class="govuk-grid-column-two-thirds">
-    <!--
+
     <h2 class="govuk-heading-m">
       MVP +4
     </h2>
@@ -17,58 +17,21 @@
     <p class="govuk-body">In design:</p>
     <ul class="govuk-list govuk-list--bullet">
       <li>booker requests a visit</li>
+      <li>updated GOV.UK branding</li>
     </ul>
 
     <div class="govuk-button-group">
       {{ govukButton({
         text: "Start",
-        href: "#"
+        href: "/public/mvp+4/"
       }) }}       
     </div>
 
     <hr class="govuk-section-break govuk-section-break--visible">
     <br>
 
-     -->
-
     <h2 class="govuk-heading-m">
       MVP +3
-    </h2>
-
-    <p class="govuk-body">In development:</p>
-    <ul class="govuk-list govuk-list--bullet">
-      <li>booker registers to the service</li>
-      <li>booker adds prisoner to their account</li>
-      <li>support for scenarios where there is no registered prisoner</li>
-      <li>support for scenarios where there are no registered visitors</li>
-    </ul>
-
-    {% from "govuk/components/button/macro.njk" import govukButton %}
-
-    <div class="govuk-button-group">
-      {{ govukButton({
-      text: "Start",
-      href: "/public/mvp+3/"
-      }) }}
-
-      {{ govukButton({
-      text: "Register and add prisoner",
-      classes: "govuk-button--secondary",
-      href: "/public/mvp+3/register/start.html"
-      }) }}
-
-      {{ govukButton({
-      text: "Booker with no visitors",
-      classes: "govuk-button--secondary",
-      href: "/public/mvp+3/visitors/no-visitors"
-      }) }}
-    </div>
-
-    <hr class="govuk-section-break govuk-section-break--visible">
-    <br>
-
-    <h2 class="govuk-heading-m">
-      MVP +2
     </h2>
 
     <p class="govuk-body">Includes:</p>
@@ -81,11 +44,13 @@
       <li>
         <a class="govuk-link" href="/public/mvp+2/register/start.html">start page</a>
       </li>
+      <li>booker registers to the service</li>
+      <li>booker adds prisoner to their account</li>
     </ul>
 
     {{ govukButton({
     text: "Start",
-    href: "/public/mvp+2/"
+    href: "./mvp+3/"
     }) }}
 
     <hr class="govuk-section-break govuk-section-break--visible">
@@ -98,6 +63,7 @@
         </span>
       </summary>
       <div class="govuk-details__text">
+        <p class="govuk-body"><a href="./mvp+2" class="govuk-link">MVP+2</a></p>
         <p class="govuk-body"><a href="./mvp+1" class="govuk-link">MVP+1</a></p>
         <p class="govuk-body"><a href="./archived/mvp" class="govuk-link">MVP</a></p>
         <p class="govuk-body"><a href="./archived/register-to-visit-v5" class="govuk-link">Register to visit V5</a></p>

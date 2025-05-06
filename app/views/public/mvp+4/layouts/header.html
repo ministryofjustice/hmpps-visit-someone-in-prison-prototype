@@ -1,0 +1,38 @@
+{% from "govuk/components/header/macro.njk" import govukHeader %}
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+{% set serviceName = "Visit someone in prison" %}
+
+{% block header %}
+
+  {{ govukHeader({
+    rebrand: true,
+    homepageUrl: "/"
+  }) }}
+
+  {% set activeItem = "Home" %}
+
+  {{ govukServiceNavigation({
+    serviceName: serviceName,
+    serviceUrl: "/public/mvp+4",
+    navigation: [
+      {
+        href: "/public/mvp+4",
+        text: "Home"
+      },
+      {
+        href: "/public/mvp+4/bookings",
+        text: "Bookings"
+      },
+      {
+        href: "/public/mvp+4/visitors",
+        text: "Visitors"
+      },
+      {
+        href: "/public/mvp+4/account",
+        text: "Account"
+      }
+    ] if signedIn else []
+}) }}
+
+{% endblock %}
