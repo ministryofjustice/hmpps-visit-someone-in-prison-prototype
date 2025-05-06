@@ -1,0 +1,35 @@
+{% extends "../layouts/header.html" %}
+{% extends "../layouts/footer.html" %}
+{% extends "../layouts/banner.html" %}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% set signedIn = true %}
+
+{% block pageTitle %}
+Account – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+    <h1 class="govuk-heading-l">
+      Account
+    </h1>
+
+    <p>You use your GOV.UK One Login to sign in to the {{serviceName}} service.</p>
+
+    <p>You can change these details in your GOV.UK One Login:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>email address</li>
+        <li>password</li>
+        <li>how you get security codes to sign in</li>
+      </ul>
+    
+    <p><a href="https://home.account.gov.uk/settings"</a>Change your sign in details in your GOV.UK One Login.</p>
+
+  </div>
+</div>
+
+{% endblock %}
