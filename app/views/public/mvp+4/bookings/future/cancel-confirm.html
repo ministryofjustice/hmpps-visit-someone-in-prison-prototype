@@ -1,6 +1,6 @@
-{% extends "../layouts/header.html" %}
-{% extends "../layouts/footer.html" %}
-{% extends "../layouts/banner.html" %}
+{% extends "../../layouts/header.html" %}
+{% extends "../../layouts/footer.html" %}
+{% extends "../../layouts/banner.html" %}
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
 {% from "govuk/components/panel/macro.njk" import govukPanel %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
@@ -8,7 +8,7 @@
 {% set signedIn = true %}
 
 {% block pageTitle %}
-Booking cancelled – {{ serviceName }}
+  Booking cancelled – {{ serviceName }}
 {% endblock %}
 
 {% block content %}

@@ -1,13 +1,14 @@
-{% extends "../layouts/header.html" %}
-{% extends "../layouts/footer.html" %}
-{% extends "../layouts/banner.html" %}
+{% extends "../../layouts/header.html" %}
+{% extends "../../layouts/footer.html" %}
+{% extends "../../layouts/banner.html" %}
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
 {%- from "moj/components/alert/macro.njk" import mojAlert -%}
 
 {% set signedIn = true %}
+{% set backLinkHref = true %}
 
 {% block pageTitle %}
-Visit booking details – {{ serviceName }}
+  Visit booking details – {{ serviceName }}
 {% endblock %}
 
 {% block content %}
