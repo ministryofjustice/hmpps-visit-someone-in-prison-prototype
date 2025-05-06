@@ -1,10 +1,10 @@
 {% extends "./layouts/header.html" %}
 {% extends "./layouts/footer.html" %}
 {% extends "./layouts/banner.html" %}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
 
-{% set activeLinkId = "home-link" %}
-
-{% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+{% set signedIn = true %}
 
 {% block pageTitle %}
 Book a visit – {{ serviceName }}
@@ -23,11 +23,9 @@ Book a visit – {{ serviceName }}
 
       <br>
     
-      {% from "govuk/components/button/macro.njk" import govukButton %}
-
       {{ govukButton({
       text: "Start",
-      href: "/public/mvp+4/book/1-visitors.html",
+      href: "#",
       isStartButton: true
       }) }}
 

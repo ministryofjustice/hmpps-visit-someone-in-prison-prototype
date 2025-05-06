@@ -1,0 +1,39 @@
+{% extends "../layouts/header.html" %}
+{% extends "../layouts/footer.html" %}
+{% extends "../layouts/banner.html" %}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% set signedIn = true %}
+
+{% block pageTitle %}
+Bookings – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Bookings
+    </h1>
+
+    <p class="govuk-body">Only bookings made using GOV.UK One Login are shown.</p>
+
+    <h2 class="govuk-heading-m">Future visits</h2>
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-1">{{ data['visit-0-date'] }}</h3>
+    
+    <p class="govuk-body govuk-!-margin-bottom-1">{{ data['prisoner-name'] }} at {{ data['prison-name'] }}</p>
+    <p class="govuk-body govuk-!-margin-bottom-1">{{ data['visit-0-time'] }}</p>
+    <p class="govuk-body govuk-!-margin-bottom-1">Booking reference: {{ data['visit-0-ref'] }}</p>
+    <p class="govuk-body govuk-!-margin-bottom-1"><a href="./future/details" class="govuk-link">View details</a>&nbsp;&nbsp;<a href="./future/cancel" class="govuk-link">Cancel booking</a></p>
+
+    <br>
+    <h2 class="govuk-heading-m">Past and cancelled visits</h2>
+    <p class="govuk-body"><a href="./past" class="govuk-link">View past visits</a></p>
+    <p class="govuk-body"><a href="./cancelled" class="govuk-link">View cancelled visits</a></p>
+
+  </div>
+</div>
+
+{% endblock %}

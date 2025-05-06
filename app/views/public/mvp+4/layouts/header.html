@@ -7,21 +7,22 @@
 
   {{ govukHeader({
     rebrand: true,
-    homepageUrl: "/public/mvp+4"
+    homepageUrl: "/"
   }) }}
+
+  {% set activeItem = "Home" %}
 
   {{ govukServiceNavigation({
     serviceName: serviceName,
     serviceUrl: "/public/mvp+4",
     navigation: [
       {
-        href: "#",
+        href: "/public/mvp+4",
         text: "Home"
       },
       {
-        href: "#",
-        text: "Bookings",
-        active: true
+        href: "/public/mvp+4/bookings",
+        text: "Bookings"
       },
       {
         href: "#",
@@ -31,7 +32,9 @@
         href: "#",
         text: "Account"
       }
-    ]
-  }) }}
+    ] if signedIn else []
+}) }}
+
+  
 
 {% endblock %}
