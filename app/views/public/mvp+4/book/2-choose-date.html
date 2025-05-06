@@ -1,0 +1,208 @@
+{% extends "../layouts/header.html" %}
+{% extends "../layouts/footer.html" %}
+{% extends "../layouts/banner.html" %}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% set signedIn = true %}
+
+{% block pageTitle %}
+  Choose date and time – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="3-reasonable-adjustments" method="post">
+
+      <h1 class="govuk-heading-l">
+        Choose the visit time
+      </h1>
+
+      <p>Select one visit time. It will be reserved for 10 minutes.</p>
+
+      <p>Only times that {{ data['prisoner-name'] }} can attend are shown.</p>
+<!--
+      <div class="govuk-inset-text">
+        {{ data['visitor-2-name'] }} is banned until {{ data['visitor-2-ban'] }}.
+        Only visit times on or after this date are shown.
+      </div>
+-->
+      <br>
+      
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-full">
+    
+          <div id="calendar-slot-picker">
+            <h2 class="govuk-heading-m">
+              January 2025
+            </h2>
+
+            <ul class="govuk-list calendar-slots">
+              <li>M<span class="calendar-slots__day">on</span></li>
+              <li>T<span class="calendar-slots__day">ue</span></li>
+              <li>W<span class="calendar-slots__day">ed</span></li>
+              <li>T<span class="calendar-slots__day">hu</span></li>
+              <li>F<span class="calendar-slots__day">ri</span></li>
+              <li>S<span class="calendar-slots__day">at</span></li>
+              <li>S<span class="calendar-slots__day">un</span></li>
+            </ul>
+
+            <ul class="govuk-list calendar-slots">
+              <li></li>
+              <li></li>
+              <li>22</li>
+              <li>23</li>
+              <li><a href="#date-24-january">24</a></li>
+              <li>25</li>
+              <li>26</li>
+            </ul>
+
+            <ul class="govuk-list calendar-slots">
+              <li>27</li>
+              <li>28</li>
+              <li>29</li>
+              <li>30</li>
+              <li>31</li>
+              <li></li>
+              <li></li>
+            </ul>
+
+            <h2 class="govuk-heading-m">
+              February 2025
+            </h2>
+
+            <ul class="govuk-list calendar-slots">
+              <li>M<span class="calendar-slots__day">on</span></li>
+              <li>T<span class="calendar-slots__day">ue</span></li>
+              <li>W<span class="calendar-slots__day">ed</span></li>
+              <li>T<span class="calendar-slots__day">hu</span></li>
+              <li>F<span class="calendar-slots__day">ri</span></li>
+              <li>S<span class="calendar-slots__day">at</span></li>
+              <li>S<span class="calendar-slots__day">un</span></li>
+            </ul>
+
+            <ul class="govuk-list calendar-slots">
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li>1</li>
+              <li>2</li>
+            </ul>
+
+            <ul class="govuk-list calendar-slots">
+              <li>3</li>
+              <li><a href="#date-4-february">4</a></li>
+              <li>5</li>
+              <li>6</li>
+              <li><a href="#date-7-february">7</a></li>
+              <li>8</li>
+              <li>9</li>
+            </ul>
+
+            <ul class="govuk-list calendar-slots">
+              <li>10</li>
+              <li><a href="#date-11-february">11</a></li>
+              <li>12</li>
+              <li>13</li>
+              <li><a href="#date-14-february">14</a></li>
+              <li>15</li>
+              <li>16</li>
+            </ul>
+
+            <br>
+
+            <div class="day-slots" id="date-24-january">
+              {{ govukRadios({
+              name: "slots",
+              fieldset: {
+              legend: {
+              text: "Friday 24 January 2025",
+              classes: "govuk-fieldset__legend--s"
+              }
+              },
+              items: [
+              { value: "", text: "10am to 11am (1 hour)" },
+              { value: "", text: "2pm to 3pm (1 hour)" }
+              ]
+              }) }}
+            </div>
+
+            <div class="day-slots" id="date-4-february">
+              {{ govukRadios({
+              name: "slots",
+              fieldset: {
+              legend: {
+              text: "Tuesday 4 February 2025",
+              classes: "govuk-fieldset__legend--s"
+              }
+              },
+              items: [
+              { value: "", text: "10am to 11am (1 hour)" },
+              { value: "", text: "2pm to 3pm (1 hour)" }
+              ]
+              }) }}
+            </div>
+
+            <div class="day-slots" id="date-7-february">
+              {{ govukRadios({
+              name: "slots",
+              fieldset: {
+              legend: {
+              text: "Friday 7 February 2025",
+              classes: "govuk-fieldset__legend--s"
+              }
+              },
+              items: [
+              { value: "", text: "10am to 11am (1 hour)" },
+              { value: "", text: "2pm to 3pm (1 hour)" }
+              ]
+              }) }}
+            </div>
+
+            <div class="day-slots" id="date-11-february">
+              {{ govukRadios({
+              name: "slots",
+              fieldset: {
+              legend: {
+              text: "Tuesday 11 February 2025",
+              classes: "govuk-fieldset__legend--s"
+              }
+              },
+              items: [
+              { value: "", text: "10am to 11am (1 hour)" },
+              { value: "", text: "2pm to 3pm (1 hour)" }
+              ]
+              }) }}
+            </div>
+
+            <div class="day-slots" id="date-14-february">
+              {{ govukRadios({
+              name: "slots",
+              fieldset: {
+              legend: {
+              text: "Friday 14 February 2025",
+              classes: "govuk-fieldset__legend--s"
+              }
+              },
+              items: [
+              { value: "", text: "10am to 11am (1 hour)" },
+              { value: "", text: "2pm to 3pm (1 hour)" }
+              ]
+              }) }}
+            </div>
+
+            <button class="govuk-button govuk-!-margin-top-6 calendar-slot-button" data-module="govuk-button">
+              Continue
+            </button>
+
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

@@ -1,12 +1,13 @@
-{% extends "../layouts/header.html" %}
-{% extends "../layouts/footer.html" %}
-{% extends "../layouts/banner.html" %}
+{% extends "../../layouts/header.html" %}
+{% extends "../../layouts/footer.html" %}
+{% extends "../../layouts/banner.html" %}
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
 
 {% set signedIn = true %}
+{% set backLinkHref = true %}
 
 {% block pageTitle %}
-Past visits – {{ serviceName }}
+  Past visits – {{ serviceName }}
 {% endblock %}
 
 {% block content %}
