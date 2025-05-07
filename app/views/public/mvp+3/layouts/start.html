@@ -3,7 +3,12 @@
 
 {% block pageTitle %} {{ serviceName }} – GOV.UK {% endblock %} 
 
-{% block header %} {{ govukHeader() }} {% endblock %} 
+{% block header %}
+{{ govukHeader({
+    rebrand: false,
+    homepageUrl: "/"
+  }) }}
+{% endblock %}
 
 {% block beforeContent %}
   {{ govukPhaseBanner({
