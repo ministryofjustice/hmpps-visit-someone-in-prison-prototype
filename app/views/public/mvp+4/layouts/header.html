@@ -7,7 +7,7 @@
 
   {{ govukHeader({
     rebrand: true,
-    homepageUrl: "/"
+    homepageUrl: "/public"
   }) }}
 
   {% set activeItem = "Home" %}
@@ -31,6 +31,10 @@
       {
         href: "/public/mvp+4/account",
         text: "Account"
+      },
+      {
+        href: "/",
+        text: "Sign out"
       }
     ] if signedIn else []
 }) }}
