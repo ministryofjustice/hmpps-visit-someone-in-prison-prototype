@@ -24,14 +24,11 @@ Is additional support needed for any of the visitors? – {{ serviceName }}
               </label>
             </div>
             <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
-              <div class="govuk-form-group govuk-character-count" data-module="govuk-character-count" data-maxlength="200">
-                <div id="with-hint-hint" class="govuk-hint">
-                  Provide details about the request
-                </div>
-                <textarea class="govuk-textarea govuk-js-character-count" id="with-hint" name="withHint" rows="5" aria-describedby="with-hint-info with-hint-hint"></textarea>
-                <div id="with-hint-info" class="govuk-hint govuk-character-count__message">
-                  You can enter up to 200 characters
-                </div>
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="support">
+                  Provide details
+                </label>
+                <input class="govuk-input govuk-!-width-one-half" id="support" name="supportInfo" type="text" spellcheck="true">
               </div>
             </div>
             <div class="govuk-radios__item">

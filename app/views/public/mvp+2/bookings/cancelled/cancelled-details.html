@@ -1,4 +1,6 @@
 {% extends "../../layouts/logged-in.html" %}
+{%- from "moj/components/banner/macro.njk" import mojBanner -%}
+
 
 {% set activeLinkId = "bookings-link" %}
 
@@ -16,8 +18,6 @@ Visit booking details – {{ serviceName }}
     </h1>
 
     <p class="govuk-body">Booking reference: pq-rs-tu-vw</p>
-
-    {%- from "moj/components/banner/macro.njk" import mojBanner -%}
 
     {% set bannerHtml %}
       <h2 class="govuk-heading-m">This visit was cancelled by a visitor.</h2>
