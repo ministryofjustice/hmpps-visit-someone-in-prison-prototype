@@ -16,8 +16,8 @@ Book a visit – {{ serviceName }}
         Book a visit
       </h1>
 
-      <h2 class="govuk-heading-m">{{ data['prisoner-name'] }} at {{ data['prison-name'] }}</h2>
-
+      <p>Prisoner: {{ data['prisoner-name'] }}</p>
+      
       <br>
     
       {% from "govuk/components/button/macro.njk" import govukButton %}

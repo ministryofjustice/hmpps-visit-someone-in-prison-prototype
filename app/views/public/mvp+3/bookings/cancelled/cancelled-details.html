@@ -1,5 +1,6 @@
 {% extends "../../layouts/logged-in.html" %}
-{%- from "moj/components/alert/macro.njk" import mojAlert -%}
+{%- from "moj/components/banner/macro.njk" import mojBanner -%}
+
 
 {% set activeLinkId = "bookings-link" %}
 
@@ -12,13 +13,6 @@ Visit booking details – {{ serviceName }}
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    {{ mojAlert({
-    variant: "information",
-    title: "This visit was cancelled by a visitor.",
-    dismissible: false,
-    showTitleAsHeading: true
-    }) }}
-
     <h1 class="govuk-heading-l">
       Visit booking details
     </h1>
@@ -27,12 +21,22 @@ Visit booking details – {{ serviceName }}
       Booking reference: pq-rs-tu-vw
     </h2>
 
+    {% set bannerHtml %}
+      <h2 class="govuk-heading-m">This visit was cancelled by a visitor.</h2>
+    {% endset %}
+    
+    {{ mojBanner({
+      type: 'information',
+      html: bannerHtml
+    }) }}
+
+
     <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Date and time</h3>
     <p class="govuk-body govuk-!-margin-bottom-1">Tuesday 30 January 2024</p>
     <p class="govuk-body govuk-!-margin-bottom-1">10am to 11am</p>
 
     <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Prisoner</h3>
-    <p class="govuk-body govuk-!-margin-bottom-1">{{ data['prisoner-name'] }} at {{ data['prison-name'] }}</p>
+    <p class="govuk-body govuk-!-margin-bottom-1">{{ data['prisoner-name'] }}</p>
 
     <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Visitors</h3>
     <p class="govuk-body govuk-!-margin-bottom-1">{{ data['visitor-2-name'] }}</p>
