@@ -33,7 +33,14 @@
           </ul>
 
           <p class="govuk-body">One visitor must be 18 years old or older.</p>
-
+          
+          
+          {% if (data['scenario'] == "C") %} 
+                
+          {{ govukWarningText({
+            text: "Selecting visitors marked with ‘Review’ means the visit will be reviewed by the prison before it is confirmed or rejected."
+          }) }}
+    {% endif %}
           <h2 class="govuk-heading-m">Select visitors</h2>
 
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">

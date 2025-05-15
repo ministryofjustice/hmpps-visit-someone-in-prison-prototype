@@ -15,22 +15,51 @@ Book a visit – {{ serviceName }}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="home" method="post">
 
-      <h1 class="govuk-heading-l">
-        Book a visit
-      </h1>
 
-      <h2 class="govuk-heading-m">{{ data['prisoner-name'] }} at {{ data['prison-name'] }}</h2>
+<!-- 
+  Configuring the version of the prototype:
+  A : Visit auto approved
+  B : Prisoner causes review
+  C : Visitor causes review
 
-      <br>
-    
-      {{ govukButton({
-      text: "Start",
-      href: "book/1-visitors.html",
-      isStartButton: true
+-->
+
+
+{{ govukRadios({
+        name: "scenario",
+        fieldset: {
+          legend: {
+            text: "Choose a scenario",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--l"
+          }
+        },
+        items: [
+          {
+            value: "A",
+            text: "Scenario A"
+          },
+          {
+            value: "B",
+            text: "Scenario B"
+          },
+          {
+            value: "C",
+            text: "Scenario C"
+          }
+        ]
       }) }}
 
-  </div>
-</div>
 
-{% endblock %}
+<button class="govuk-button" data-module="govuk-button">Continue</button>
+      
+          </form>
+      
+      
+        </div>
+      </div>
+      
+      {% endblock %}
+
