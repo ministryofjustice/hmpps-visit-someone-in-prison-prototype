@@ -1,0 +1,61 @@
+{% extends "../layouts/header.html" %}
+{% extends "../layouts/footer.html" %}
+{% extends "../layouts/banner.html" %}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% set backLinkHref = true %}
+
+{% block pageTitle %}
+  Who is the main contact for this booking? – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="6-contact-details" method="post">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Who is the main contact for this booking?
+            </h1>
+          </legend>
+
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="visitor1" name="visitor" type="radio" value="name">
+              <label class="govuk-label govuk-radios__label" for="visitor1">
+                {{ data['visitor-1-name'] }}
+              </label>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="someone-else" name="visitor" type="radio" value="phone"
+                data-aria-controls="someone-else-2">
+              <label class="govuk-label govuk-radios__label" for="someone-else">
+                Someone else
+              </label>
+            </div>
+            <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="someone-else-2">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="full-name">
+                  Name
+                </label>
+                <input class="govuk-input govuk-!-width-one-half" id="full-name" name="fullName" type="text" spellcheck="false"
+                  autocomplete="name">
+              </div>
+            </div>
+        </fieldset>
+      </div>
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
