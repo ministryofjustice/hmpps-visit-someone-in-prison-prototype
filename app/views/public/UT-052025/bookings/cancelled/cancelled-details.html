@@ -1,0 +1,55 @@
+{% extends "../../layouts/header.html" %}
+{% extends "../../layouts/footer.html" %}
+{% extends "../../layouts/banner.html" %}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+{%- from "moj/components/alert/macro.njk" import mojAlert -%}
+
+{% set signedIn = true %}
+{% set backLinkHref = true %}
+{% set activeLinkId = "bookings" %}
+
+{% block pageTitle %}
+  Visit booking details – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {{ mojAlert({
+    variant: "information",
+    title: "This visit was cancelled by a visitor.",
+    dismissible: false,
+    showTitleAsHeading: true
+    }) }}
+
+    <h1 class="govuk-heading-l">
+      Visit booking details
+    </h1>
+
+    <h2 class="govuk-heading-m">
+      Booking reference: pq-rs-tu-vw
+    </h2>
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Date and time</h3>
+    <p class="govuk-body govuk-!-margin-bottom-1">Tuesday 30 January 2024</p>
+    <p class="govuk-body govuk-!-margin-bottom-1">10am to 11am</p>
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Prisoner</h3>
+    <p class="govuk-body govuk-!-margin-bottom-1">{{ data['prisoner-name'] }} at {{ data['prison-name'] }}</p>
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Visitors</h3>
+    <p class="govuk-body govuk-!-margin-bottom-1">{{ data['visitor-2-name'] }}</p>
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Additional support requests</h3>
+    <p class="govuk-body govuk-!-margin-bottom-1">Wheelchair access required</p>
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Main contact</h3>
+    <p class="govuk-body govuk-!-margin-bottom-1">{{ data['visitor-2-name'] }}</p>
+    <p class="govuk-body govuk-!-margin-bottom-1">07866 464587</p>
+
+  </div>
+</div>
+
+{% endblock %}

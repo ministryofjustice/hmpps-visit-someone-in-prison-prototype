@@ -1,0 +1,387 @@
+{% extends "../layouts/header.html" %}
+{% extends "../layouts/footer.html" %}
+{% extends "../layouts/banner.html" %}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% set backLinkHref = true %}
+
+{% block pageTitle %}
+  Choose date and time – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <form class="form" action="3-reasonable-adjustments" method="post">
+
+      <h1 class="govuk-heading-l">
+        Choose the visit time
+      </h1>
+
+      <p>Select one visit time. It will be reserved for 10 minutes.</p>
+
+      <p>Only times that {{ data['prisoner-name'] }} can attend are shown.</p>
+<!--
+      <div class="govuk-inset-text">
+        {{ data['visitor-2-name'] }} is banned until {{ data['visitor-2-ban'] }}.
+        Only visit times on or after this date are shown.
+      </div>
+-->
+      <br>
+      
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+    
+          <div id="calendar-slot-picker">
+            <h2 class="govuk-heading-m">
+              May 2025
+            </h2>
+
+            <ul class="govuk-list calendar-slots">
+              <li>M<span class="calendar-slots__day">on</span></li>
+              <li>T<span class="calendar-slots__day">ue</span></li>
+              <li>W<span class="calendar-slots__day">ed</span></li>
+              <li>T<span class="calendar-slots__day">hu</span></li>
+              <li>F<span class="calendar-slots__day">ri</span></li>
+              <li>S<span class="calendar-slots__day">at</span></li>
+              <li>S<span class="calendar-slots__day">un</span></li>
+            </ul>
+
+
+            <ul class="govuk-list calendar-slots">
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li><li>30</li>
+              <li>31</li>
+              <li></li>
+            </ul>
+
+            <h2 class="govuk-heading-m">
+              June 2025
+            </h2>
+
+            <ul class="govuk-list calendar-slots">
+              <li>M<span class="calendar-slots__day">on</span></li>
+              <li>T<span class="calendar-slots__day">ue</span></li>
+              <li>W<span class="calendar-slots__day">ed</span></li>
+              <li>T<span class="calendar-slots__day">hu</span></li>
+              <li>F<span class="calendar-slots__day">ri</span></li>
+              <li>S<span class="calendar-slots__day">at</span></li>
+              <li>S<span class="calendar-slots__day">un</span></li>
+            </ul>
+
+            <ul class="govuk-list calendar-slots">
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li></li>
+              <li>1</li>
+            </ul>
+
+            <ul class="govuk-list calendar-slots">
+              <li>2</li>
+              <li><a href="#date-3-june">3</a></li>
+              <li>4</li>
+              <li>5</li>
+              <li><a href="#date-6-june">6</a></li>
+              <li>7</li>
+              <li>8</li>
+            </ul>
+
+            <ul class="govuk-list calendar-slots">
+              <li>9</li>
+              <li><a href="#date-10-june">10</a></li>
+              <li>11</li>
+              <li>12</li>
+              <li><a href="#date-13-june">13</a></li>
+              <li>14</li>
+              <li>15</li>
+            </ul>
+
+            <ul class="govuk-list calendar-slots">
+              <li>16</li>
+              <li><a href="#date-17-june">17</a></li>
+              <li>18</li>
+              <li>19</li>
+              <li><a href="#date-20-june">20</a></li>
+              <li>21</li>
+              <li>22</li>
+            </ul>
+            
+            <ul class="govuk-list calendar-slots">
+              <li>23</li>
+              <li><a href="#date-24-june">24</a></li>
+              <li>25</li>
+              <li>26</li>
+              <li><a href="#date-27-june">27</a></li>
+              <li>28</li>
+              <li>29</li>
+            </ul>
+
+            <br>
+
+
+
+<div class="govuk-form-group visits-calendar__day-group day-slots" data-date="2025-06-03" id="date-3-june"> 
+              <fieldset class="govuk-fieldset" aria-describedby="date-2025-06-03-hint" id="day-group-2025-06-03">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                Tuesday 3 June 2025
+              </legend>
+                     
+              <div id="date-2025-06-03-hint" class="govuk-hint govuk-visually-hidden">
+                You can only choose one option
+              </div>
+              <div class="govuk-radios" data-module="govuk-radios" data-govuk-radios-init="">
+                <div class="govuk-radios__item">
+                 <!--  <input class="govuk-radios__input" id="date-2025-06-03" name="visitSession" type="radio" value="2025-06-03_-afe.dcc.b2">-->
+                 <input class="govuk-radios__input" id="date-2025-06-03-am" name="visit-0-time" type="radio" value="10am to 11am">
+                <label class="govuk-label govuk-radios__label" for="date-2025-06-03-am">
+                  10am to 11am <span class="visits-calendar__session-duration">(1 hours)</span>
+                </label>
+                </div>
+                <div class="govuk-radios__item">
+                 <!--  <input class="govuk-radios__input" id="date-2025-06-03" name="visitSession" type="radio" value="2025-06-03_-afe.dcc.b2">-->
+                 <input class="govuk-radios__input" id="date-2025-06-03-pm" name="visit-0-time" type="radio" value="2pm to 3pm">
+                <label class="govuk-label govuk-radios__label" for="date-2025-06-03-pm">
+                  2pm to 3pm <span class="visits-calendar__session-duration">(1 hours)</span>
+                </label>
+                </div>
+                <p><a class="govuk-visually-hidden-focusable govuk-!-display-inline-block govuk-!-margin-top-5" href="#day-link-2025-06-03">Choose a different date above</a></p>
+              </div>
+              </fieldset>
+            </div>
+
+<div class="govuk-form-group visits-calendar__day-group day-slots" data-date="2025-06-06" id="date-6-june"> 
+              <fieldset class="govuk-fieldset" aria-describedby="date-2025-06-06-hint" id="day-group-2025-06-06">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              Friday 6 June 2025
+              </legend>
+                 
+              <div id="date-2025-06-06-hint" class="govuk-hint govuk-visually-hidden">
+              You can only choose one option
+              </div>
+              <div class="govuk-radios" data-module="govuk-radios" data-govuk-radios-init="">
+              <div class="govuk-radios__item">
+               <!--  <input class="govuk-radios__input" id="date-2025-06-06" name="visitSession" type="radio" value="2025-06-06_-afe.dcc.b2">-->
+               <input class="govuk-radios__input" id="date-2025-06-06-am" name="visit-0-time" type="radio" value="10am to 11am">
+              <label class="govuk-label govuk-radios__label" for="date-2025-06-06-am">
+                10am to 11am <span class="visits-calendar__session-duration">(1 hours)</span>
+              </label>
+              </div>
+              <div class="govuk-radios__item">
+               <!--  <input class="govuk-radios__input" id="date-2025-06-06" name="visitSession" type="radio" value="2025-06-06_-afe.dcc.b2">-->
+               <input class="govuk-radios__input" id="date-2025-06-06-pm" name="visit-0-time" type="radio" value="2pm to 3pm">
+              <label class="govuk-label govuk-radios__label" for="date-2025-06-06-pm">
+                2pm to 3pm <span class="visits-calendar__session-duration">(1 hours)</span>
+              </label>
+              </div>
+              <p><a class="govuk-visually-hidden-focusable govuk-!-display-inline-block govuk-!-margin-top-5" href="#day-link-2025-06-06">Choose a different date above</a></p>
+              </div>
+            
+              </fieldset>
+            </div>
+
+
+
+<div class="govuk-form-group visits-calendar__day-group day-slots" data-date="2025-06-10" id="date-10-june"> 
+              <fieldset class="govuk-fieldset" aria-describedby="date-2025-06-10-hint" id="day-group-2025-06-10">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                  Tuesday 10 June 2025
+                </legend>
+                           
+                <div id="date-2025-06-10-hint" class="govuk-hint govuk-visually-hidden">
+                  You can only choose one option
+                </div>
+                <div class="govuk-radios" data-module="govuk-radios" data-govuk-radios-init="">
+                  <div class="govuk-radios__item">
+                   <!--  <input class="govuk-radios__input" id="date-2025-06-10" name="visitSession" type="radio" value="2025-06-10_-afe.dcc.b2">-->
+                   <input class="govuk-radios__input" id="date-2025-06-10-am" name="visit-0-time" type="radio" value="10am to 11am">
+                    <label class="govuk-label govuk-radios__label" for="date-2025-06-10-am">
+                      10am to 11am <span class="visits-calendar__session-duration">(1 hours)</span>
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                   <!--  <input class="govuk-radios__input" id="date-2025-06-10" name="visitSession" type="radio" value="2025-06-10_-afe.dcc.b2">-->
+                   <input class="govuk-radios__input" id="date-2025-06-10-pm" name="visit-0-time" type="radio" value="2pm to 3pm">
+                    <label class="govuk-label govuk-radios__label" for="date-2025-06-10-pm">
+                      2pm to 3pm <span class="visits-calendar__session-duration">(1 hours)</span>
+                    </label>
+                  </div>
+                  <p><a class="govuk-visually-hidden-focusable govuk-!-display-inline-block govuk-!-margin-top-5" href="#day-link-2025-06-10">Choose a different date above</a></p>
+                </div>
+              </fieldset>
+            </div>
+
+<div class="govuk-form-group visits-calendar__day-group day-slots" data-date="2025-06-13" id="date-13-june"> 
+              <fieldset class="govuk-fieldset" aria-describedby="date-2025-06-13-hint" id="day-group-2025-06-13">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              Friday 13 June 2025
+              </legend>
+                 
+              <div id="date-2025-06-13-hint" class="govuk-hint govuk-visually-hidden">
+              You can only choose one option
+              </div>
+              <div class="govuk-radios" data-module="govuk-radios" data-govuk-radios-init="">
+              <div class="govuk-radios__item">
+               <!--  <input class="govuk-radios__input" id="date-2025-06-13" name="visitSession" type="radio" value="2025-06-13_-afe.dcc.b2">-->
+               <input class="govuk-radios__input" id="date-2025-06-13-am" name="visit-0-time" type="radio" value="10am to 11am">
+              <label class="govuk-label govuk-radios__label" for="date-2025-06-13-am">
+                10am to 11am <span class="visits-calendar__session-duration">(1 hours)</span>
+              </label>
+              </div>
+              <div class="govuk-radios__item">
+               <!--  <input class="govuk-radios__input" id="date-2025-06-13" name="visitSession" type="radio" value="2025-06-13_-afe.dcc.b2">-->
+               <input class="govuk-radios__input" id="date-2025-06-13-pm" name="visit-0-time" type="radio" value="2pm to 3pm">
+              <label class="govuk-label govuk-radios__label" for="date-2025-06-13-pm">
+                2pm to 3pm <span class="visits-calendar__session-duration">(1 hours)</span>
+              </label>
+              </div>
+              <p><a class="govuk-visually-hidden-focusable govuk-!-display-inline-block govuk-!-margin-top-5" href="#day-link-2025-06-13">Choose a different date above</a></p>
+              </div>
+            
+              </fieldset>
+            </div>
+
+
+<div class="govuk-form-group visits-calendar__day-group day-slots" data-date="2025-06-17" id="date-17-june"> 
+              <fieldset class="govuk-fieldset" aria-describedby="date-2025-06-17-hint" id="day-group-2025-06-17">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                Tuesday 17 June 2025
+              </legend>
+                     
+              <div id="date-2025-06-17-hint" class="govuk-hint govuk-visually-hidden">
+                You can only choose one option
+              </div>
+              <div class="govuk-radios" data-module="govuk-radios" data-govuk-radios-init="">
+                <div class="govuk-radios__item">
+                 <!--  <input class="govuk-radios__input" id="date-2025-06-17" name="visitSession" type="radio" value="2025-06-17_-afe.dcc.b2">-->
+                 <input class="govuk-radios__input" id="date-2025-06-17-am" name="visit-0-time" type="radio" value="10am to 11am">
+                <label class="govuk-label govuk-radios__label" for="date-2025-06-17-am">
+                  10am to 11am <span class="visits-calendar__session-duration">(1 hours)</span>
+                </label>
+                </div>
+                <div class="govuk-radios__item">
+                 <!--  <input class="govuk-radios__input" id="date-2025-06-17" name="visitSession" type="radio" value="2025-06-17_-afe.dcc.b2">-->
+                 <input class="govuk-radios__input" id="date-2025-06-17-pm" name="visit-0-time" type="radio" value="2pm to 3pm">
+                <label class="govuk-label govuk-radios__label" for="date-2025-06-17-pm">
+                  2pm to 3pm <span class="visits-calendar__session-duration">(1 hours)</span>
+                </label>
+                </div>
+                <p><a class="govuk-visually-hidden-focusable govuk-!-display-inline-block govuk-!-margin-top-5" href="#day-link-2025-06-17">Choose a different date above</a></p>
+              </div>
+   
+              </fieldset>
+            </div>
+            
+            
+            <div class="govuk-form-group visits-calendar__day-group day-slots" data-date="2025-06-20" id="date-20-june"> 
+              <fieldset class="govuk-fieldset" aria-describedby="date-2025-06-20-hint" id="day-group-2025-06-20">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              Friday 20 June 2025
+              </legend>
+                 
+              <div id="date-2025-06-20-hint" class="govuk-hint govuk-visually-hidden">
+              You can only choose one option
+              </div>
+              <div class="govuk-radios" data-module="govuk-radios" data-govuk-radios-init="">
+              <div class="govuk-radios__item">
+               <!--  <input class="govuk-radios__input" id="date-2025-06-20" name="visitSession" type="radio" value="2025-06-20_-afe.dcc.b2">-->
+               <input class="govuk-radios__input" id="date-2025-06-20-am" name="visit-0-time" type="radio" value="10am to 11am">
+              <label class="govuk-label govuk-radios__label" for="date-2025-06-20-am">
+                10am to 11am <span class="visits-calendar__session-duration">(1 hours)</span>
+              </label>
+              </div>
+              <div class="govuk-radios__item">
+               <!--  <input class="govuk-radios__input" id="date-2025-06-20" name="visitSession" type="radio" value="2025-06-20_-afe.dcc.b2">-->
+               <input class="govuk-radios__input" id="date-2025-06-20-pm" name="visit-0-time" type="radio" value="2pm to 3pm">
+              <label class="govuk-label govuk-radios__label" for="date-2025-06-20-pm">
+                2pm to 3pm <span class="visits-calendar__session-duration">(1 hours)</span>
+              </label>
+              </div>
+              <p><a class="govuk-visually-hidden-focusable govuk-!-display-inline-block govuk-!-margin-top-5" href="#day-link-2025-06-20">Choose a different date above</a></p>
+              </div>
+            
+              </fieldset>
+            </div>
+
+
+<div class="govuk-form-group visits-calendar__day-group day-slots" data-date="2025-06-24" id="date-24-june"> 
+              <fieldset class="govuk-fieldset" aria-describedby="date-2025-06-24-hint" id="day-group-2025-06-24">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              Tuesday 24 June 2025
+              </legend>
+                 
+              <div id="date-2025-06-24-hint" class="govuk-hint govuk-visually-hidden">
+              You can only choose one option
+              </div>
+              <div class="govuk-radios" data-module="govuk-radios" data-govuk-radios-init="">
+              <div class="govuk-radios__item">
+               <!--  <input class="govuk-radios__input" id="date-2025-06-24" name="visitSession" type="radio" value="2025-06-24_-afe.dcc.b2">-->
+               <input class="govuk-radios__input" id="date-2025-06-24-am" name="visit-0-time" type="radio" value="10am to 11am">
+              <label class="govuk-label govuk-radios__label" for="date-2025-06-24-am">
+                10am to 11am <span class="visits-calendar__session-duration">(1 hours)</span>
+              </label>
+              </div>
+              <div class="govuk-radios__item">
+               <!--  <input class="govuk-radios__input" id="date-2025-06-24" name="visitSession" type="radio" value="2025-06-24_-afe.dcc.b2">-->
+               <input class="govuk-radios__input" id="date-2025-06-24-pm" name="visit-0-time" type="radio" value="2pm to 3pm">
+              <label class="govuk-label govuk-radios__label" for="date-2025-06-24-pm">
+                2pm to 3pm <span class="visits-calendar__session-duration">(1 hours)</span>
+              </label>
+              </div>
+              <p><a class="govuk-visually-hidden-focusable govuk-!-display-inline-block govuk-!-margin-top-5" href="#day-link-2025-06-24">Choose a different date above</a></p>
+              </div>
+            
+              </fieldset>
+            </div>
+
+<div class="govuk-form-group visits-calendar__day-group day-slots" data-date="2025-06-27" id="date-27-june"> 
+              <fieldset class="govuk-fieldset" aria-describedby="date-2025-06-27-hint" id="day-group-2025-06-27">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+              Friday 27 June 2025
+              </legend>
+                 
+              <div id="date-2025-06-27-hint" class="govuk-hint govuk-visually-hidden">
+              You can only choose one option
+              </div>
+              <div class="govuk-radios" data-module="govuk-radios" data-govuk-radios-init="">
+              <div class="govuk-radios__item">
+               <!--  <input class="govuk-radios__input" id="date-2025-06-27" name="visitSession" type="radio" value="2025-06-27_-afe.dcc.b2">-->
+               <input class="govuk-radios__input" id="date-2025-06-27-am" name="visit-0-time" type="radio" value="10am to 11am">
+              <label class="govuk-label govuk-radios__label" for="date-2025-06-27-am">
+                10am to 11am <span class="visits-calendar__session-duration">(1 hours)</span>
+              </label>
+              </div>
+              <div class="govuk-radios__item">
+               <!--  <input class="govuk-radios__input" id="date-2025-06-27" name="visitSession" type="radio" value="2025-06-27_-afe.dcc.b2">-->
+               <input class="govuk-radios__input" id="date-2025-06-27-pm" name="visit-0-time" type="radio" value="2pm to 3pm">
+              <label class="govuk-label govuk-radios__label" for="date-2025-06-27-pm">
+                2pm to 3pm <span class="visits-calendar__session-duration">(1 hours)</span>
+              </label>
+              </div>
+              <p><a class="govuk-visually-hidden-focusable govuk-!-display-inline-block govuk-!-margin-top-5" href="#day-link-2025-06-27">Choose a different date above</a></p>
+              </div>
+            
+              </fieldset>
+            </div>
+
+
+
+
+
+            <button class="govuk-button calendar-slot-button">
+              Continue
+            </button>
+
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
+{% endblock %}

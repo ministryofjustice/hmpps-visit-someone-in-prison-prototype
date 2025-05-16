@@ -1,0 +1,40 @@
+{% extends "../layouts/header.html" %}
+{% extends "../layouts/footer.html" %}
+{% extends "../layouts/banner.html" %}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% set signedIn = true %}
+
+{% block pageTitle %}
+  Confirmation – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        
+        <h1 class="govuk-panel__title">Visit requested</h1>
+        <div class="govuk-panel__body">
+          It will now be reviewed by {{ data['prison-name'] }}</strong>
+        </div>
+      </div>
+                
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <p>Your visit request needs to be reviewed by {{ data['prison-name'] }}.</p>
+      <p>We have sent you a summary email.</p>
+      <p>You will receive an email/sms when this visit has been reviewed, which should be within X business days.</p>
+      <p>The visit can either be approved fully, rejected or approved with modification such as removing a visitor.</p>
+
+      <form class="form" action="../" method="post">
+        {{ govukButton({
+          text: "Back to homepage"
+        }) }}
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

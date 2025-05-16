@@ -1,0 +1,31 @@
+{% extends "../layouts/header.html" %}
+{% extends "../layouts/footer.html" %}
+{% extends "../layouts/banner.html" %}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+{%- from "moj/components/interruption-card/macro.njk" import interruptionCard -%}
+
+{% set backLinkHref = true %}
+
+{% block pageTitle %}
+  This visit needs to be reviewed by the prison– {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+{% call interruptionCard({
+  heading: "This visit needs to be reviewed by the prison",
+  primaryAction: {
+    text: "Continue with visit booking",
+    href: "1-visitors"
+  },
+  secondaryAction: {
+    text: "Cancel visit booking",
+    href: "../home.html"
+  }
+  }) -%}
+  <p>Visits to {{ data['prisoner-name'] }} currently require approval from {{ data['prison-name'] }}.</p>
+  <p> The prison will review your request and send you an update to confirm or reject the visit.</p>
+  
+{%- endcall %}
+
+{% endblock %}
