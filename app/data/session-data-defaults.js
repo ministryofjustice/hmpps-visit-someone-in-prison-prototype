@@ -30,7 +30,7 @@ module.exports = {
   'visitor-4-dob': '1 January 2000',
   'visitor-4-ban': '23 May 2025',
   'visitor-4-id': '8798745',
-  'visit-0-date': 'Thursday 30 January 2025',
+  'visit-0-date': 'Tuesday 10 June 2025',
   'visit-0-time': '10am to 11am',
   'visit-0-ref': 'xg-vw-va-fm',
   'visit-2-date': 'Monday 28 September 2024',

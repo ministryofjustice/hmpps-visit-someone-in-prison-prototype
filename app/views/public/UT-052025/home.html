@@ -1,0 +1,48 @@
+{% extends "./layouts/header.html" %}
+{% extends "./layouts/footer.html" %}
+{% extends "./layouts/banner.html" %}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% set signedIn = true %}
+{% set activeLinkId = "home" %}
+
+{% block pageTitle %}
+Book a visit – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Book a visit
+    </h1>
+
+    <h2 class="govuk-heading-m">{{ data['prisoner-name'] }} at {{ data['prison-name'] }}</h2>
+
+    <br>
+
+    {% if (data['scenario'] == "B") %}
+
+    {{ govukButton({
+    text: "Start B ",
+    href: "book/0-interuptionPrisoner.html",
+    isStartButton: true
+    }) }}
+
+    {% else %}
+
+    {{ govukButton({
+    text: "Start A or C",
+    href: "book/1-visitors.html",
+    isStartButton: true
+    }) }}
+
+    {% endif %}
+
+  </div>
+</div>
+
+{% endblock %}

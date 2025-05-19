@@ -6,33 +6,33 @@
 {% block header %}
 
   {{ govukHeader({
-    classes: "govuk-header--full-width-border",
-    homepageUrl: "/public"
+    homepageUrl: "/public",
+    classes: "govuk-header--full-width-border"
   }) }}
 
   {% set activeItem = "Home" %}
 
   {{ govukServiceNavigation({
     serviceName: serviceName,
-    serviceUrl: "/public/mvp+4",
+    serviceUrl: "/public/UT-052025",
     navigation: [
       {
-        href: "/public/mvp+4",
+        href: "/public/UT-052025",
         text: "Home",
         active: activeLinkId == "home"
       },
       {
-        href: "/public/mvp+4/bookings",
+        href: "/public/UT-052025/bookings",
         text: "Bookings",
         active: activeLinkId == "bookings"
       },
       {
-        href: "/public/mvp+4/visitors",
+        href: "/public/UT-052025/visitors",
         text: "Visitors",
         active: activeLinkId == "visitors"
       },
       {
-        href: "/public/mvp+4/account",
+        href: "/public/UT-052025/account",
         text: "Account",
         active: activeLinkId == "account"
       },
