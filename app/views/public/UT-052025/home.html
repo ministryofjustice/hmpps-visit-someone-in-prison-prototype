@@ -22,26 +22,40 @@ Book a visit – {{ serviceName }}
 
     <h2 class="govuk-heading-m">{{ data['prisoner-name'] }} at {{ data['prison-name'] }}</h2>
 
+<form class="form" action="/home-route" method="post">
+{% block pageScripts %}
+
+
+<script>
+function getQueryVariable(variable)
+{
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+               if(pair[0] == variable){return pair[1];}
+       }
+       return(false);
+  }
+  
+ // window.alert(getQueryVariable("scenario"));
+
+
+     // document.write(getQueryVariable("scenario"));
+      
+    document.write('<input type="hidden" id="scenario" name="scenario" value="'+getQueryVariable("scenario")+'" />');
+    </script>
+    {% endblock %}
+
     <br>
 
-    {% if (data['scenario'] == "B") %}
-
     {{ govukButton({
-    text: "Start B ",
-    href: "book/0-interuptionPrisoner.html",
+    text: "Start",
     isStartButton: true
     }) }}
 
-    {% else %}
 
-    {{ govukButton({
-    text: "Start A or C",
-    href: "book/1-visitors.html",
-    isStartButton: true
-    }) }}
-
-    {% endif %}
-
+</form>
   </div>
 </div>
 

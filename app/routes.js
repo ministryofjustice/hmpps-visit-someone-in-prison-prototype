@@ -40,4 +40,18 @@ router.post('/register-another-visitor-answer', function (req, res) {
   
   })
 
+ router.post('/home-route', function (req, res) {
  
+   // Make a variable and give it the value from 'how-many-balls'
+   var scenario = req.session.data['scenario']
+ 
+   // Check whether the variable matches a condition
+   if (scenario == "B"){
+     // Send user to interruption page
+     res.redirect('public/UT-052025/book/0-interuptionPrisoner')
+   } else {
+     // Send users straight to visitor selection
+     res.redirect('public/UT-052025/book/1-visitors')
+   }
+ 
+ })
