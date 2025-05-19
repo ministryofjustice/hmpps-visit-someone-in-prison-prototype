@@ -22,7 +22,7 @@ Book a visit – {{ serviceName }}
 
     <h2 class="govuk-heading-m">{{ data['prisoner-name'] }} at {{ data['prison-name'] }}</h2>
 
-
+<form class="form" action="/home-route" method="post">
 {% block pageScripts %}
 
 
@@ -49,41 +49,13 @@ function getQueryVariable(variable)
 
     <br>
 
-    {% if (data['scenario'] == "B") %}
-
     {{ govukButton({
-    text: "Start B ",
-    href: "book/0-interuptionPrisoner.html",
+    text: "Start",
     isStartButton: true
     }) }}
 
 
-    {% elif (data['scenario'] == "A") %}
-    
-    {{ govukButton({
-    text: "Start A",
-    href: "book/1-visitors.html",
-    isStartButton: true
-    }) }}
-
-    {% elif (data['scenario'] == "C") %}
-    
-    {{ govukButton({
-    text: "Start C",
-    href: "book/1-visitors.html",
-    isStartButton: true
-    }) }}
-
-    {% else %}
-
-    {{ govukButton({
-    text: "Start ?",
-    href: "book/1-visitors.html",
-    isStartButton: true
-    }) }}
-
-    {% endif %}
-
+</form>
   </div>
 </div>
 
