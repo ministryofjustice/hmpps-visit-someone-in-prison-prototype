@@ -41,5 +41,5 @@ module.exports = {
   'booker-email': 'mike@smith.com',
   'booker-reference': 'agr-fgt-dfr',
   'booker-registered': '17 March 2025',
-  'response-date': '30 May 2025',
+  'response-date': '30 May 2025'
 }
