@@ -1,0 +1,69 @@
+{% block content %}
+
+<div style="font-family:helvetica">
+
+ <strong>From:</strong> 	Book a prison visit <br>
+ <strong> To:</strong>  	{{data['visitor-1-email']}}<br>
+ <strong><b>Subject:</b></strong>  	Not booked yet: we’ve received your request to visit {{data['prison-name']}} <br><br><br>
+
+ <p>Dear {{data['visitor-1-name']}}</p>
+ 
+ <p>Your visit is not booked yet.</p>
+ 
+ <p>You can check whether your visit has been confirmed by going to the bookings page.</p>
+ 
+<p> We’ll email you by  {{data['response-date']}} to confirm or reject your visit request. Do not contact us for an update before this date as we are not able to comment on requests that are being processed.</p>
+
+
+
+<h4>Visit request details</h4>
+You have requested to visit {{data['prison-name']}} to see {{data['prisoner-name']}}.
+<br><br>
+
+Date and time: {{data['visit-0-date']}}, {{data['visit-0-time']}}
+<br><br>
+Number of visitors: 2
+
+<h4>Cancel this visit request</h4>
+You can cancel your visit from the bookings page.
+
+<h4>Change this visit</h4>
+If you want to change anything about your request, do not reply to this email. Instead, contact the prison directly.
+<br>
+<br>Phone: {{data['visitor-1-tel']}}
+<br><br>Email: {{data['visitor-1-email']}}
+<br><br>Request reference: ab-cd-ef-gh
+
+<h4>Other services you might be interested in</h4>
+<h5>Get help with the cost of prison visits</h5>
+If you’re visiting a family member, partner or someone who doesn’t get other visitors and you get certain benefits, you may be able to <a href="https://www.gov.uk/help-with-prison-visits" class="govuk-link">get help with the cost of prison visits</a>.
+
+<h5>Send money to someone in prison</h5>
+If you have a bank account, you can <a href="https://www.gov.uk/send-prisoner-money" class="govuk-link">send money to a prisoner online</a>.
+
+
+<h5>Support for families and friends of prisoners</h5>
+Get <a href="https://www.gov.uk/send-prisoner-money" class="govuk-link">support and advice</a> if you know someone in prison.
+
+
+
+
+<!--
+    
+    
+ -->
+
+<br><br><br><br><br><br><br><br><br>
+
+  {% if data['scenario'] == "B"  %}
+<a href="8-emailConfirmation" class="govuk-link">Next step</a>
+  {% endif %}
+  
+  {% if data['scenario'] == "C"  %}
+  <a href="9-emailRejected" class="govuk-link">Next step outcome 1</a> or   <a href="9-emailUpdated" class="govuk-link">Next outcome 2</a> 
+    {% endif %}
+
+
+
+
+{% endblock %}

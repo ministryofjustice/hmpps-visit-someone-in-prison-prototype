@@ -1,0 +1,75 @@
+{% block content %}
+
+<div style="font-family:helvetica">
+
+ <strong>From:</strong> 	Book a prison visit <br>
+ <strong> To:</strong>  	{{data['visitor-1-email']}}<br>
+ <strong><b>Subject:</b></strong>  Visit confirmed with a visitor removed<br>
+<br><br>
+ <p>Dear {{data['visitor-1-name']}}</p>
+  
+  <p>Your visit to {{data['prison-name']}} is now officially confirmed, but the prison has removed {{data['visitor-2-name']}} from the visit.    </p>
+
+    <p>Sign in to GOV.UK One Login to <a href="">check the details of your bookings</a>.</p> 
+</p>
+
+  <h4>Visit information</h4>
+
+ <p>Your visit to see {{data['prisoner-name']}} will take place at {{data['visit-0-time']}} on {{data['visit-0-date']}}.</p> 
+ 
+<p> Visitors should arrive 30 minutes before the visit starts.</p>
+ 
+ 
+<p> The booking reference is {{data['visit-0-ref']}}.</p>
+ 
+<h5>Who is visiting</h5>
+ <ul>
+   <li>{{data['visitor-1-name']}}</li>
+ </ul>
+ 
+<h4> What to bring when you visit</h4>
+ 
+<p> All visitors over 16 years old must show ID to enter {{data['prison-name']}}.</p>
+ 
+<p><a href="123"> Check what forms of ID are acceptable.</a></p>
+<p> 
+ All visitors to prisons must adhere to a strict dress code. Your visit may be cancelled if the dress code is not followed.</p>
+ 
+<p><a href="456"> Guidance on the dress code for visitors.</a></p>
+ 
+<p> If you have any questions about ID requirements or the dress code for visitors, contact {{data['prison-name']}}.</p>
+ 
+<h4> What to expect when visiting prison</h4>
+<p> Visitors will be searched before entering the prison visiting room.</p>
+ 
+<p> Prison staff may check visitors’ pockets, pat them down and ask them to go through a metal detector. Dogs may also be used to detect illegal substances.</p>
+ 
+<p> You can read more about <a href="prisoninfo">visits at {{data['prison-name']}}</a>. This includes information on getting to the prison and visiting facilities.</p>
+
+ 
+
+
+ <h4>Change this visit</h4>
+ If you want to change anything about your request, do not reply to this email. Instead, contact the prison directly.
+ <br>
+ <br>Phone: 02344555489
+
+ <br><br>Request reference: ab-cd-ef-gh
+ 
+ <h4>Cancel this visit request</h4>
+  You can cancel your visit from the bookings page.
+  
+ 
+ <h4>Other services you might be interested in</h4>
+ <h5>Get help with the cost of prison visits</h5>
+ If you’re visiting a family member, partner or someone who doesn’t get other visitors and you get certain benefits, you may be able to <a href="https://www.gov.uk/help-with-prison-visits" class="govuk-link">get help with the cost of prison visits</a>.
+ 
+ <h5>Send money to someone in prison</h5>
+ If you have a bank account, you can <a href="https://www.gov.uk/send-prisoner-money" class="govuk-link">send money to a prisoner online</a>.
+ 
+ 
+ <h5>Support for families and friends of prisoners</h5>
+ Get <a href="https://www.gov.uk/send-prisoner-money" class="govuk-link">support and advice</a> if you know someone in prison.
+
+
+{% endblock %}

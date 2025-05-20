@@ -53,5 +53,37 @@ router.post('/register-another-visitor-answer', function (req, res) {
      // Send users straight to visitor selection
      res.redirect('public/UT-052025/book/1-visitors')
    }
+ })
+ 
+ router.post('/visitors-route', function (req, res) {
+  
+    // Make a variable and give it the value from 'how-many-balls'
+    var scenario = req.session.data['scenario']
+  
+    // Check whether the variable matches a condition
+    if (scenario == "C"){
+      // Send user to interruption page
+      res.redirect('public/UT-052025/book/1b-interuptionVisitors')
+    } else {
+      // Send users straight to visitor selection
+      res.redirect('public/UT-052025/book/2-choose-date')
+    }
+  })
+   
+   
+   
+   router.post('/confirmation', function (req, res) {
+   
+    // Make a variable and give it the value from 'how-many-balls'
+    var scenario = req.session.data['scenario']
+   
+    // Check whether the variable matches a condition
+    if (scenario == "A"){
+      // Send user to interruption page
+      res.redirect('public/UT-052025/book/7-confirmation')
+    } else {
+      // Send users straight to visitor selection
+      res.redirect('public/UT-052025/book/7b-needsReview')
+    }
  
  })

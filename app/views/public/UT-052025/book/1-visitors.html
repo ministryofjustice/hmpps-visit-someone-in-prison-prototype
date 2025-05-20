@@ -15,7 +15,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form" action="2-choose-date" method="post">
+    <form class="form" action="/visitors-route" method="post">
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
@@ -33,7 +33,7 @@
           </ul>
 
           <p class="govuk-body">One visitor must be 18 years old or older.</p>
-          
+                   
           
           {% if (data['scenario'] == "C") %} 
                 
@@ -47,8 +47,15 @@
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
               <label class="govuk-label govuk-checkboxes__label" for="waste">
-                {{ data['visitor-1-name'] }} ({{ data['visitor-1-age'] }} years old)
+                {{ data['visitor-1-name'] }} ({{ data['visitor-1-age'] }} years old)   
+                {% if (data['scenario'] == "C") %} 
+                <strong class="govuk-tag govuk-tag--orange">Review</strong>
+                 {% endif %}
+                 
               </label>
+              
+      
+              
             </div>
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
@@ -59,7 +66,14 @@
           </div>
         </fieldset>
       </div>
-
+      
+      {% if (data['scenario'] == "C") %} 
+      <h3 class="govuk-heading-s">Unavailable visitors</h2>
+      <div>
+      <p class="govuk-body">{{ data['visitor-3-name'] }} ({{ data['visitor-3-age'] }} years old) <strong class="govuk-tag govuk-tag--red">Banned</strong></p>
+      <p class="govuk-caption-m">Banned until 30 June 2025. Visits on or after this date are not currently available to book.</p>
+      </div>
+      {% endif %}
   <!--
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
