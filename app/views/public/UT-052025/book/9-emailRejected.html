@@ -1,0 +1,33 @@
+{% block content %}
+
+<div style="font-family:helvetica">
+
+ <strong>From:</strong> 	Book a prison visit <br>
+ <strong> To:</strong>  	{{data['visitor-1-email']}}<br>
+ <strong><b>Subject:</b></strong>  Visit rejected: your visit to {{data['prison-name']}} has been rejected <br>
+
+ <p>Dear {{data['visitor-1-name']}}</p>
+ 
+ <p>We’ve not been able to book your visit to {{data['prison-name']}}. Do not go to the prison as you won’t be able to get in.</p>
+ 
+<h4>Visit request details</h4>
+You have requested to visit {{data['prison-name']}} to see {{data['prisoner-name']}}.
+<br><br>
+
+Date and time: {{data['visit-0-date']}}, {{data['visit-0-time']}}
+<br><br>
+Number of visitors: 2
+
+<h4>Contact the prison</h4>
+
+If you have any questions, do not reply to this email. Instead contact the prison directly.
+<br>
+<br>Phone: {{data['visitor-1-tel']}}
+<br><br>Email: {{data['visitor-1-email']}}
+<br><br>Request reference: ab-cd-ef-gh
+
+
+
+
+
+{% endblock %}

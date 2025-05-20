@@ -1,52 +1,61 @@
+{% extends "./layouts/header.html" %}
+{% extends "./layouts/footer.html" %}
+{% extends "./layouts/banner.html" %}
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
+{% set signedIn = true %}
+{% set activeLinkId = "home" %}
+
 {% block pageTitle %}
-Choose a scenario – {{ serviceName }}
+Book a visit – {{ serviceName }}
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="./home" method="post">
 
-<!-- 
-  Configuring the version of the prototype:
-  A : Visit auto approved
-  B : Prisoner causes review
-  C : Visitor causes review
--->
+    <h1 class="govuk-heading-l">
+      Book a visit
+    </h1>
 
-      {{ govukRadios({
-      name: "scenario",
-      fieldset: {
-      legend: {
-      text: "Choose a scenario",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--l"
-      }
-      },
-      items: [
-      {
-      value: "A",
-      text: "Scenario A"
-      },
-      {
-      value: "B",
-      text: "Scenario B"
-      },
-      {
-      value: "C",
-      text: "Scenario C"
-      }
-      ]
-      }) }}
+    <h2 class="govuk-heading-m">{{ data['prisoner-name'] }} at {{ data['prison-name'] }}</h2>
 
-      <button class="govuk-button" data-module="govuk-button">Continue</button>
+<form class="form" action="/home-route" method="post">
+{% block pageScripts %}
 
-    </form>
 
+<script>
+function getQueryVariable(variable)
+{
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+               if(pair[0] == variable){return pair[1];}
+       }
+       return(false);
+  }
+  
+ // window.alert(getQueryVariable("scenario"));
+
+
+     // document.write(getQueryVariable("scenario"));
+      
+    document.write('<input type="hidden" id="scenario" name="scenario" value="'+getQueryVariable("scenario")+'" />');
+    </script>
+    {% endblock %}
+
+    <br>
+
+    {{ govukButton({
+    text: "Start",
+    isStartButton: true
+    }) }}
+
+
+</form>
   </div>
 </div>
 
