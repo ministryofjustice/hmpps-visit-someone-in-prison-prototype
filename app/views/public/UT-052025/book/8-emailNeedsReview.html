@@ -4,7 +4,7 @@
 
  <strong>From:</strong> 	Book a prison visit <br>
  <strong> To:</strong>  	{{data['visitor-1-email']}}<br>
- <strong><b>Subject:</b></strong>  	Not booked yet: we’ve received your request to visit {{data['prison-name']}} <br>
+ <strong><b>Subject:</b></strong>  	Not booked yet: we’ve received your request to visit {{data['prison-name']}} <br><br><br>
 
  <p>Dear {{data['visitor-1-name']}}</p>
  
@@ -60,7 +60,7 @@ Get <a href="https://www.gov.uk/send-prisoner-money" class="govuk-link">support 
   {% endif %}
   
   {% if data['scenario'] == "C"  %}
-  <a href="9-emailRejected" class="govuk-link">next step outcome 1</a> or   <a href="9-emailUpdated" class="govuk-link">next outcome 2 A</a> 
+  <a href="9-emailRejected" class="govuk-link">Next step outcome 1</a> or   <a href="9-emailUpdated" class="govuk-link">Next outcome 2</a> 
     {% endif %}
 
 
