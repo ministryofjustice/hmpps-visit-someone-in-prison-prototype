@@ -40,6 +40,6 @@ module.exports = {
   'feedback-url': 'https://visit-someone-in-prison-test-feedback.form.service.justice.gov.uk/',
   'booker-email': 'mike@smith.com',
   'booker-reference': 'agr-fgt-dfr',
-  'booker-registered': '17 March 2025'
+  'booker-registered': '17 March 2025',
   'response-date': '30 May 2025'
 }
