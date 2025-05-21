@@ -40,10 +40,12 @@ function getQueryVariable(variable)
   
  // window.alert(getQueryVariable("scenario"));
 
-
-     // document.write(getQueryVariable("scenario"));
       
-    document.write('<input type="hidden" id="scenario" name="scenario" value="'+getQueryVariable("scenario")+'" />');
+      if (getQueryVariable("scenario")){
+        document.write('<input type="hidden" id="scenario" name="scenario" value="'+getQueryVariable("scenario")+'" />');
+      }
+      
+    
     </script>
     {% endblock %}
 
