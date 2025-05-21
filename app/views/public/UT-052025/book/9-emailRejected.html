@@ -8,15 +8,16 @@
 <br><br>
  <p>Dear {{data['visitor-1-name']}}</p>
  
- <p>We’ve not been able to book your visit to {{data['prison-name']}}. Do not go to the prison as you won’t be able to get in.</p>
+ <p>We’ve not been able to book your visit to {{data['prison-name']}}.</p>
+ <p>Do not go to the prison as you won’t be able to get in.</p>
  
-<h4>Visit request details</h4>
-You have requested to visit {{data['prison-name']}} to see {{data['prisoner-name']}}.
+<p>The visit request was rejected because this is the prisoner’s first visit (reception visit). You need to contact the prison directly to book.</p>
+ 
+<h4>Rejected visit request</h4>
+You requested to visit {{data['prison-name']}} to see {{data['prisoner-name']}}.
 <br><br>
-
 Date and time: {{data['visit-0-date']}}, {{data['visit-0-time']}}
 <br><br>
-Number of visitors: 2
 
 <h4>Contact the prison</h4>
 

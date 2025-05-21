@@ -13,11 +13,19 @@
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
+     {{ govukErrorSummary({
+    titleText: "There is a problem",
+    errorList: [
+      {
+        text: "Select at least one contact method",
+        href: "#no-contact-method-error"
+      }
+    ]
+  }) }}
     <form class="form" action="/contact-details-validation" method="post">
 
       <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+           <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
               Contact details for {{ data['visitor-1-name'] }}
@@ -28,8 +36,6 @@
 
           <p>The main contact can get both emails and text messages.</p>
 
-
-<!--
           <div class="govuk-warning-text">
             <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
             <strong class="govuk-warning-text__text">
@@ -37,14 +43,14 @@
               If no contact details are entered, we cannot tell visitors if the visit is cancelled or changed.
             </strong>
           </div>
-          
-        -->
 
-      <div class="govuk-form-group">
+      <div class="govuk-form-group govuk-form-group--error"> <p id="no-contact-method-error" class="govuk-error-message">
+          <span class="govuk-visually-hidden">Error:</span> Select at least one contact method
+        </p>
         <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
           <div class="govuk-checkboxes" data-module="govuk-checkboxes">
             <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="email" data-aria-controls="conditional-contact">
+              <input class="govuk-checkboxes__input govuk-input--error" id="contact" name="contact" type="checkbox" value="email" data-aria-controls="conditional-contact">
               <label class="govuk-label govuk-checkboxes__label" for="contact">
                 Get updates by email
               </label>
@@ -54,7 +60,7 @@
                 <label class="govuk-label" for="contact-by-email">
                   Email address
                 </label>
-                <input class="govuk-input govuk-!-width-two-third" id="contact-by-email" name="visitor-1-email" type="email" spellcheck="false" value="{{ data['visitor-1-email'] }}" autocomplete="email">
+                <input class="govuk-input govuk-!-width-two-third " id="contact-by-email" name="visitor-1-email" type="email" spellcheck="false" value="{{ data['visitor-1-email'] }}" autocomplete="email">
               </div>
             </div>
             <div class="govuk-checkboxes__item">
@@ -71,7 +77,7 @@
                 <label class="govuk-label" for="contact-by-phone">
                   UK phone number
                 </label>
-                <input class="govuk-input govuk-!-width-two-third" id="contact-by-phone" name="visitor-1-tel" type="phone" value="{{data['visitor-1-tel']}}" autocomplete="tel">
+                <input class="govuk-input govuk-!-width-two-third" id="contact-by-phone" name="visitor-1-tel" type="phone" value="{{ data['visitor-1-tel'] }}" autocomplete="tel">
               </div>
             </div>
           </div>

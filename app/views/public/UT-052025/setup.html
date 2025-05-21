@@ -1,0 +1,154 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% block pageTitle %}
+Choose a scenario – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">
+     Prototype setup
+    </h1><form class="form" action="./index" method="post">
+  
+
+<!--'visitor-1-name': 'Susan Smith',
+'visitor-1-age': '39',
+
+'visitor-1-tel': '0789085627',
+'visitor-1-email': 'susanA.smith@email.com',
+
+'visitor-2-name': 'Michael Smith',
+'visitor-2-age': '34',
+
+
+
+
+'visitor-2-tel': '07457896547',
+'visitor-2-email': 'mike.smith@email.com',-->
+
+{{ govukInput({
+  label: {
+    text: "Prisoner name",
+    classes: "govuk-label--s",
+    isPageHeading: false
+  },
+  id: "prisoner-name",
+  name: "prisoner-name",
+  classes: "govuk-input--width-20"
+}) }}
+
+
+{{ govukInput({
+  label: {
+    text: "Prison name",
+    classes: "govuk-label--s"
+  },
+  id: "prison-name",
+  name: "prison-name",
+  classes: "govuk-input--width-20"
+}) }}
+
+{% call govukFieldset({
+  legend: {
+    text: "Visitor 1",
+    classes: "govuk-fieldset__legend--m",
+    isPageHeading: true
+  }
+}) %}
+
+  {{ govukInput({
+    label: {
+      text: "Name"
+    },
+    id: "visitor-1-name",
+    name: "visitor-1-name",
+    classes: "govuk-input--width-20"
+
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: "Age"
+    },
+    id: "visitor-1-age",
+    name: "visitor-1-age",
+    classes: "govuk-input--width-2"
+  }) }}
+
+{% endcall %}
+{% call govukFieldset({
+  legend: {
+    text: "Visitor 2",
+    classes: "govuk-fieldset__legend--m"
+  }
+}) %}
+
+  {{ govukInput({
+    label: {
+      text: "Name"
+    },
+    id: "visitor-2-name",
+    name: "visitor-2-name",
+    classes: "govuk-input--width-20"
+
+  }) }}
+
+  {{ govukInput({
+    label: {
+      text: "Age"
+    },
+    id: "visitor-2-age",
+    name: "visitor-2-age",
+    classes: "govuk-input--width-2"
+  }) }}
+
+{% endcall %}
+
+<!-- Reset visitor contact detail to empty -->
+
+<input type="hidden" id="visitor-1-email" name="visitor-1-email" value="" />
+<input type="hidden" id="visitor-1-tel" name="visitor-1-tel" value="" />
+
+<input type="hidden" id="visitor-2-email" name="visitor-2-email" value="" />
+<input type="hidden" id="visitor-2-tel" name="visitor-2-tel" value="" />
+<!-- 
+  Configuring the version of the prototype:
+  A : Visit auto approved
+  B : Prisoner causes review
+  C : Visitor causes review
+-->
+      {{ govukRadios({
+      name: "scenario",
+      fieldset: {
+      legend: {
+      text: "Choose a scenario",
+      classes: "govuk-fieldset__legend--m"
+      }
+      },
+      items: [
+      {
+      value: "A",
+      text: "Scenario A"
+      },
+      {
+      value: "B",
+      text: "Scenario B"
+      },
+      {
+      value: "C",
+      text: "Scenario C"
+      }
+      ]
+      }) }}
+
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
