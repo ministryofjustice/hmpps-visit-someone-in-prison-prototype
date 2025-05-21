@@ -46,9 +46,23 @@
       <h2 class="govuk-heading-m">What happens next</h2>
       <p>Your visit is not booked yet. It needs to be checked.</p>
       
-      <p>{{ data['prison-name'] }} will confirm or reject your request by May 30th.</p>
+      <p>{{ data['prison-name'] }} will confirm or reject your request within 5 working days.</p>
       
-      <p>An email and a text message with the prison’s decision will be sent to the main contact.</p></p>
+      <p>
+        {% if ((data['visitor-1-email']!='') and (data['visitor-1-tel']!='')) %} 
+           An email and a text message
+        {% endif %}
+        
+        {% if ((data['visitor-1-email']!='') and (data['visitor-1-tel']=='')) %} 
+           An email
+        {% endif %}
+        
+        {% if ((data['visitor-1-email']=='') and (data['visitor-1-tel']!='')) %} 
+           A text message
+        {% endif %}
+        
+        
+       with the prison’s decision will be sent to the main contact.</p>
       
       
       <p><a href="../bookings/">Your bookings page</a> also show the status of upcoming visits.</p>
