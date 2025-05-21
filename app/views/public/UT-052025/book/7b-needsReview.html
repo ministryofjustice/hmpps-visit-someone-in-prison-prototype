@@ -22,7 +22,24 @@
    It will now be reviewed by {{ data['prison-name'] }}.
       </div>
       </div>          
-      <p>We have sent <a href="8-emailNeedsReview">an email</a> and a text message with the details of your request to the main contact.</p>
+      <p>
+      We have sent
+    
+        {% if ((data['visitor-1-email']!='') and (data['visitor-1-tel']!='')) %} 
+           <a href="8-emailNeedsReview">an email</a> and a text message
+        {% endif %}
+        
+        {% if ((data['visitor-1-email']!='') and (data['visitor-1-tel']=='')) %} 
+           <a href="8-emailConfirmation">an email</a>
+        {% endif %}
+        
+        {% if ((data['visitor-1-email']=='') and (data['visitor-1-tel']!='')) %} 
+           a text message
+        {% endif %}
+        
+        
+        
+         with the details of your request to the main contact.</p>
         
        <p> Request reference: ab-cd-ef-gh</p>
 

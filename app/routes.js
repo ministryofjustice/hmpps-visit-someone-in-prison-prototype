@@ -71,8 +71,7 @@ router.post('/register-another-visitor-answer', function (req, res) {
   })
    
   router.post('/contact-details-validation', function (req, res) {
-  
-  
+    
     // Check whether the contact detail aren't empty
     if ((req.session.data['visitor-1-email']!='')||(req.session.data['visitor-1-tel']!='')){
       // Send user to interruption page

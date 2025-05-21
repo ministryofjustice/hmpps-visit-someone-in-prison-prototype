@@ -23,7 +23,24 @@
         </div>
       </div>
           
-      <p>An <a href="8-emailConfirmation">an email</a> and a text message confirming the visit will be sent to the main contact. This will include the booking reference.</p>
+          
+          
+          
+      <p>
+        {% if (data['visitor-1-email']!='') and (data['visitor-1-tel']!='') %} 
+           An <a href="8-emailConfirmation">an email</a> and a text message
+        {% endif %}
+        
+        {% if (data['visitor-1-email']!='') and (data['visitor-1-tel']=='') %} 
+           An <a href="8-emailConfirmation">an email</a>
+        {% endif %}
+        
+        {% if (data['visitor-1-email']=='') and (data['visitor-1-tel']!='') %} 
+           A text message
+        {% endif %}
+
+       confirming the visit will be sent to the main contact. This will include the booking reference.</p>
+      
       <p>When signed in to GOV.UK One Login, you can <a href="../bookings/">check the details of your bookings.</a></p>
       <p>You can help us to improve this service by giving <a href="">feedback.</a></p>
 
