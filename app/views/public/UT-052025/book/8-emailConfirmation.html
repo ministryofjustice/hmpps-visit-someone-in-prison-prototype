@@ -30,7 +30,7 @@
  
 <h4> What to bring when you visit</h4>
  
-<p> All visitors over 16 years old must show ID to enter ((prison)).</p>
+<p> All visitors over 16 years old must show ID to enter {{data['prison-name']}}.</p>
  
 <p><a href="123"> Check what forms of ID are acceptable.</a></p>
 <p> 
@@ -45,20 +45,20 @@
  
 <p> Prison staff may check visitors’ pockets, pat them down and ask them to go through a metal detector. Dogs may also be used to detect illegal substances.</p>
  
-<p> You can read more about visits at ((prison)). This includes information on getting to the prison and visiting facilities.</p>
+<p> You can read more about visits at {{data['prison-name']}}. This includes information on getting to the prison and visiting facilities.</p>
 
  
 
 
- <h4>Change this visit</h4>
- If you want to change anything about your request, do not reply to this email. Instead, contact the prison directly.
- <br>
- <br>Phone: {{data['visitor-1-tel']}}
- <br><br>Email: {{data['visitor-1-email']}}
- <br><br>Request reference: ab-cd-ef-gh
+<h4>Change this visit</h4>
+If you want to change anything about your request, do not reply to this email. Instead, contact the prison directly.
+<br>
+<br>Phone: 02344555489
+<!-- <br><br>Email: {{data['visitor-1-email']}}-->
+<br><br>Request reference: ab-cd-ef-gh
  
  <h4>Cancel this visit request</h4>
-  You can cancel your visit from the bookings page.
+  You can cancel your visit <a href="123">from the bookings page</a>.
   
  
  <h4>Other services you might be interested in</h4>
@@ -72,5 +72,11 @@
  <h5>Support for families and friends of prisoners</h5>
  Get <a href="https://www.gov.uk/send-prisoner-money" class="govuk-link">support and advice</a> if you know someone in prison.
 
+<!--
+     For user research only
+  -->
+ 
+ <br><br><br><br><br><br><br><br><br>
+ <a href="../../index.html" class="govuk-link">Choose another scenario</a>
 
 {% endblock %}
