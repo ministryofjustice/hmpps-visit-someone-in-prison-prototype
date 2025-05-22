@@ -54,8 +54,9 @@
                  
               </label>
               
-      
               
+              
+              {% if (data['visitor-2-name'] != "") %} 
             </div>
             <div class="govuk-checkboxes__item">
               <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines">
@@ -64,6 +65,9 @@
               </label>
             </div>
           </div>
+          {% endif %}
+          
+          
         </fieldset>
       </div>
       

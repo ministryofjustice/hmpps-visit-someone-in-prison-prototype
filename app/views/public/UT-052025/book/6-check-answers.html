@@ -35,8 +35,10 @@
           </dt>
           <dd class="govuk-summary-list__value">
             {{ data['visitor-1-name'] }} ({{ data['visitor-1-age'] }} years old) 
+           {% if (data['visitor-2-name'] != "") %} 
             <br>
             {{ data['visitor-2-name'] }} ({{ data['visitor-2-age'] }} years old)
+          {% endif %}
           </dd>
           <dd class="govuk-summary-list__actions">
             <a class="govuk-link" href="./1-visitors.html">Change<span class="govuk-visually-hidden"> visitors</span></a>

@@ -25,7 +25,9 @@
 <h5>Who is visiting</h5>
  <ul>
    <li>{{data['visitor-1-name']}}</li>
+  {% if (data['visitor-2-name'] != "") %} 
    <li>{{data['visitor-2-name']}}</li>
+   {% endif %}
  </ul>
  
 <h4> What to bring when you visit</h4>

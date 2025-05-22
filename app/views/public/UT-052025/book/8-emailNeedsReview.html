@@ -22,7 +22,16 @@ You have requested to visit {{data['prison-name']}} to see {{data['prisoner-name
 
 Date and time: {{data['visit-0-date']}}, {{data['visit-0-time']}}
 <br><br>
+
+ {% if (data['visitor-2-name'] == "") %} 
+Number of visitors: 1
+  {% endif %}
+  
+  {% if (data['visitor-2-name'] != "") %} 
 Number of visitors: 2
+   {% endif %}
+
+
 
 <h4>Cancel this visit request</h4>
 You can cancel your visit from  <a href="">the bookings page</a>.
