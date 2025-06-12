@@ -1,46 +1,44 @@
-{% from "govuk/components/header/macro.njk" import govukHeader %}
-{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+{% from "di-govuk-one-login-service-header/service-header.njk" import govukOneLoginServiceHeader %}
 
 {% set serviceName = "Visit someone in prison" %}
 
 {% block header %}
 
-  {{ govukHeader({
-    homepageUrl: "/public",
-    classes: "govuk-header--full-width-border"
-  }) }}
+    {% if signedIn %}
 
-  {% set activeItem = "Home" %}
-
-  {{ govukServiceNavigation({
-    serviceName: serviceName,
-    serviceUrl: "/public/UT-052025",
-    navigation: [
+    {{ govukOneLoginServiceHeader({
+    signOutLink: "/public/UT-052025",
+    oneLoginLink: "/public/UT-052025",
+    serviceNavigationParams: { 
+      navigation: [
       {
-        href: "/public/UT-052025",
+        href: "/public/UT-052025", 
         text: "Home",
         active: activeLinkId == "home"
-      },
-      {
-        href: "/public/UT-052025/bookings",
+      },{
+        href: "/public/UT-052025/bookings", 
         text: "Bookings",
         active: activeLinkId == "bookings"
-      },
-      {
-        href: "/public/UT-052025/visitors",
+      },{
+        href: "/public/UT-052025/visitors", 
         text: "Visitors",
         active: activeLinkId == "visitors"
-      },
-      {
-        href: "/public/UT-052025/account",
-        text: "Account",
-        active: activeLinkId == "account"
-      },
-      {
-        href: "/",
-        text: "Sign out"
+      }], 
+      serviceName: serviceName
       }
-    ] if signedIn else []
-}) }}
+  }) }}
+
+  {% else %}
+
+  {{ govukOneLoginServiceHeader({
+    signOutLink: "/public/",
+    oneLoginLink: "/public/",
+    serviceNavigationParams: { 
+      navigation: [], 
+      serviceName: serviceName
+      }
+  }) }}
+
+  {% endif %}
 
 {% endblock %}
