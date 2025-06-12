@@ -7,8 +7,8 @@
     {% if signedIn %}
 
     {{ govukOneLoginServiceHeader({
-    signOutLink: "#",
-    oneLoginLink: "#",
+    signOutLink: "/public",
+    oneLoginLink: "/public",
     serviceNavigationParams: { 
       navigation: [
       {
@@ -31,8 +31,8 @@
   {% else %}
 
   {{ govukOneLoginServiceHeader({
-    signOutLink: "#",
-    oneLoginLink: "#",
+    signOutLink: "/public",
+    oneLoginLink: "/public",
     serviceNavigationParams: { 
       navigation: [], 
       serviceName: serviceName

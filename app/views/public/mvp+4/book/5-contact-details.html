@@ -14,7 +14,7 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form class="form" action="6-check-answers" method="post">
+    <form class="form" action="/contact-details-validation" method="post">
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
@@ -28,6 +28,8 @@
 
           <p>The main contact can get both emails and text messages.</p>
 
+
+<!--
           <div class="govuk-warning-text">
             <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
             <strong class="govuk-warning-text__text">
@@ -35,6 +37,8 @@
               If no contact details are entered, we cannot tell visitors if the visit is cancelled or changed.
             </strong>
           </div>
+          
+        -->
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
@@ -50,7 +54,7 @@
                 <label class="govuk-label" for="contact-by-email">
                   Email address
                 </label>
-                <input class="govuk-input govuk-!-width-two-third" id="contact-by-email" name="contactByEmail" type="email" spellcheck="false" value="susan.smith@email.com" autocomplete="email">
+                <input class="govuk-input govuk-!-width-two-third" id="contact-by-email" name="visitor-1-email" type="email" spellcheck="false" value="{{ data['visitor-1-email'] }}" autocomplete="email">
               </div>
             </div>
             <div class="govuk-checkboxes__item">
@@ -67,7 +71,7 @@
                 <label class="govuk-label" for="contact-by-phone">
                   UK phone number
                 </label>
-                <input class="govuk-input govuk-!-width-two-third" id="contact-by-phone" name="contactByPhone" type="phone" value="0789085627" autocomplete="tel">
+                <input class="govuk-input govuk-!-width-two-third" id="contact-by-phone" name="visitor-1-tel" type="phone" value="{{data['visitor-1-tel']}}" autocomplete="tel">
               </div>
             </div>
           </div>
