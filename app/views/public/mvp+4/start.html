@@ -2,10 +2,10 @@
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
 {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
+{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 
 {% block header %}
     {{ govukHeader({
-        rebrand: true,
         homepageUrl: "/public"
     }) }}
 {% endblock %}
@@ -42,16 +42,7 @@ items: [
         </h1>
 
         <div>
-            <p>This new service can be used to visit one prisoner in:</p>
-
-            <ul class="govuk-list govuk-list--bullet">
-                <li>Foston Hall (HMP & YOI)</li>
-                <li>Drake Hall (HMP & YOI)</li>
-            </ul>
-
-            <p>If you need to visit someone in another prison or visit more than one prisoner, <a href="https://www.gov.uk/government/collections/prisons-in-england-and-wales" class="govuk-link">contact the prison directly</a>.</p>
-
-            <h2 class="govuk-heading-m">Before you start</h2>
+            <p>Use this service to request a social visit to a prisoner in England or Wales. There’s a different way to book a <a href="https://www.justice-ni.gov.uk/topics/prison-visits" class="govuk-link">prison visit in Northern Ireland</a> or a <a href="https://www.sps.gov.uk/family-and-friends/visits" class="govuk-link">prison visit in Scotland</a>.</p>
 
             <p>You will need:</p>
 
@@ -60,15 +51,16 @@ items: [
                 <li>the names and dates of birth for visitors</li>
             </ul>
 
-            <p>You only need to supply this information once. Checks usually take 2 working days but can take up to 5 working days.</p>
+            <p>If you do not have the prisoner’s location or prison number, you can <a href="https://www.gov.uk/find-prisoner" class="govuk-link">apply to find a prisoner’s location</a>.</p>
 
-            <p>After this check, you can book a visit.</p>
 
-            <p>You will also need to sign in or create a GOV.UK One Login to use this service.</p>
+            {{ govukInsetText({
+              text: "The prisoner must add you to their visitor list before you can request a visit. This can take up to 2 weeks."
+            }) }}
 
             {{ govukButton({ text: 
                 "Start now", 
-                href: "/public", 
+                href: "./select-prison", 
                 isStartButton: true }) }}
 
             <h2 class="govuk-heading-m">Visits you cannot book online</h2>
