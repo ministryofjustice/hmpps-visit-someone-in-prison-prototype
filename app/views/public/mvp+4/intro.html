@@ -1,0 +1,51 @@
+{% extends "./layouts/header.html" %}
+{% extends "./layouts/footer.html" %}
+{% extends "./layouts/banner.html" %}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+{% set backLinkHref = true %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+{% block header %}
+    {{ govukHeader({
+        homepageUrl: "/public",
+        classes: "govuk-header--full-width-border"
+    }) }}
+
+    {{ govukServiceNavigation({
+      serviceName: serviceName,
+      serviceUrl: "/public"
+    }) }}
+{% endblock %}
+
+{% block pageTitle %}
+    Visiting {{ data['prison-name'] }} – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Visiting {{ data['prison-name'] }}</h1>
+
+      <p>How you book visits at this prison has changed. You can now get instant confirmation of your booking and text message updates.</p>
+
+      <p>You’ll need a GOV.UK One Login to use this service.</p>
+
+      <p>If you have a GOV.UK One Login, you can <a href="https://signin.account.gov.uk/sign-in-or-create" class="govuk-link">sign in</a>.</p>
+
+      <p>Or you can create one.</p>
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Continue",
+          href: "#"
+        }) }}
+      </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
