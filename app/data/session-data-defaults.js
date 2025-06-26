@@ -6,6 +6,7 @@ module.exports = {
   'prisoner-name': 'Jane Smith',
   'prisoner-dob': '17 December 1983',
   'prison-no': 'G2780GX',
+  'prison-no-2': 'G1877PB',
   'visitor-1-name': 'Susan Smith',
   'visitor-1-age': '39',
   'visitor-1-dob': '12 March 1987',
@@ -41,5 +42,9 @@ module.exports = {
   'booker-email': 'mike@smith.com',
   'booker-reference': 'agr-fgt-dfr',
   'booker-registered': '17 March 2025',
-  'response-date': '30 May 2025'
+  'response-date': '20 June 2025',
+  'request-date-1': '25 June 2025',
+  'visit-request-date-1': '30 June 2025',
+  'request-date-2': '21 June 2025',
+  'visit-request-date-2': '6 July 2025'
 }
