@@ -4,24 +4,22 @@
 {%- from "moj/components/notification-badge/macro.njk" import mojNotificationBadge -%}
 {%- from "govuk/components/tag/macro.njk" import govukTag -%}
 
-{% set pageHeaderTitle = "Visits" %}
+{% set pageHeaderTitle = "Manage prison visits" %}
 {% set breadcrumbs = true %}
 
 {% block content %}
 
-<h1 class="govuk-heading-l">Visits</h1>
-
-<h1 class="govuk-heading-m">Review</h1>
+<h1 class="govuk-heading-l">Manage prison visits</h1>
 
 <ul class="govuk-grid-row card-group">
 
    <li class="govuk-grid-column-one-third card-group__item">
       {{ card({
-      "href": "#",
+      "href": "./requests/requests-to-review",
       "clickable": "true",
       "heading": 
       '<span>Requests to review' +
-         '<span class="govuk-!-margin-left-2 moj-notification-badge">10' +
+         '<span class="govuk-!-margin-left-2 moj-notification-badge">2' +
         '</span>' +
        "</span>",
       "description": "Accept or reject visits that have been requested"
@@ -30,11 +28,11 @@
 
    <li class="govuk-grid-column-one-third card-group__item">
       {{ card({
-      "href": "#",
+      "href": "./review/visits-to-review",
       "clickable": "true",
       "heading": 
       '<span>Visits to review' +
-         '<span class="govuk-!-margin-left-2 moj-notification-badge">25' +
+         '<span class="govuk-!-margin-left-2 moj-notification-badge">2' +
         '</span>' +
        "</span>",
       "description": "Review visits that have been impacted by changes"
@@ -50,12 +48,7 @@
       }) }}
    </li>
 -->
-</ul>
 
-<br>
-<h1 class="govuk-heading-m">Manage</h1>
-
-<ul class="govuk-grid-row card-group">
    <li class="govuk-grid-column-one-third card-group__item">
       {{ card({
       "href": "#",
@@ -90,11 +83,7 @@
       "description": "Block or unblock dates for social visits"
       }) }}
    </li>
-</ul>
-
-<h1 class="govuk-heading-m">Administer</h1>
-
-<ul class="govuk-grid-row card-group">
+<!-- 
    <li class="govuk-grid-column-one-third card-group__item">
       {{ card({
       "href": "/dps/visits/bookers/search",
@@ -103,7 +92,7 @@
       "description": "Link visitors to online booker accounts"
       }) }}
    </li>
-<!-- 
+
    <li class="govuk-grid-column-one-third card-group__item">
       {{ card({
       "href": "#",

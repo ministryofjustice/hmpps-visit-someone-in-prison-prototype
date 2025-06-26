@@ -1,0 +1,43 @@
+{% extends "layouts/moj.html" %}
+
+{% set pageHeaderTitle = "Requested visits that need review" %}
+{% set breadcrumbs2 = "Manage prison visits" %}
+{% set breadCrumb2link = "/dps/visits/" %}
+
+{% block content %}
+
+<h1 class="govuk-heading-l">Requested visits that need review</h1>
+
+<p class="govuk-body">These visits need to be reviewed and either approved or rejected. Staff should check that the prisoner and visitor Alerts and restrictions.</p>
+
+  <table class="govuk-table" data-module="moj-sortable-table">
+
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header" aria-sort="ascending">Prison number</th>
+        <th scope="col" class="govuk-table__header" aria-sort="none">Visit date</th>
+        <th scope="col" class="govuk-table__header" aria-sort="none">Requested date</th>
+        <th scope="col" class="govuk-table__header">Action</th>
+      </tr>
+    </thead>
+
+    <tbody class="govuk-table__body">
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">{{ data['prison-no'] }}</td>
+        <td class="govuk-table__cell" data-sort-value="1">{{ data['visit-request-date-1'] }}</td>
+        <td class="govuk-table__cell" data-sort-value="1">{{ data['request-date-1'] }}</td>
+        <td class="govuk-table__cell"><a href="#" class="govuk-link">Review</a></td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">{{ data['prison-no-2'] }}</td>
+        <td class="govuk-table__cell" data-sort-value="2">{{ data['visit-request-date-2'] }}</td>
+        <td class="govuk-table__cell" data-sort-value="2">{{ data['request-date-2'] }}</td>
+        <td class="govuk-table__cell"><a href="#" class="govuk-link">Review</a></td>
+      </tr>
+
+    </tbody>
+  </table>
+
+{% endblock %}

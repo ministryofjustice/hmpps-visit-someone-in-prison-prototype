@@ -1,0 +1,63 @@
+{% extends "layouts/moj.html" %}
+
+{% set pageHeaderTitle = "Booked visits that need review" %}
+{% set breadcrumbs2 = "Manage prison visits" %}
+{% set breadCrumb2link = "/dps/visits/" %}
+
+{% block content %}
+
+<h1 class="govuk-heading-l">Booked visits that need review</h1>
+
+<details class="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+      What checks are done to create this list?
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    <p>Bookings are added to this list when:</p>
+    <ul>
+      <li>the prisoner is released</li>
+      <li>the date is no longer available for social visits</li>
+      <li>the prisoner has been transferred</li>
+      <li>a visitor has a new or updated restriction</li>
+    </ul>
+    <p>All other checks need to be done manually.
+    </p>
+  </div>
+</details>
+
+  <table class="govuk-table" data-module="moj-sortable-table">
+
+    <thead class="govuk-table__head">
+      <tr class="govuk-table__row">
+        <th scope="col" class="govuk-table__header" aria-sort="ascending">Prison number</th>
+        <th scope="col" class="govuk-table__header" aria-sort="none">Visit date</th>
+        <th scope="col" class="govuk-table__header" aria-sort="none">Booked by</th>
+        <th scope="col" class="govuk-table__header" aria-sort="none">Reason</th>
+        <th scope="col" class="govuk-table__header">Action</th>
+      </tr>
+    </thead>
+
+    <tbody class="govuk-table__body">
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">{{ data['prison-no'] }}</td>
+        <td class="govuk-table__cell" data-sort-value="1">{{ data['visit-request-date-1'] }}</td>
+        <td class="govuk-table__cell" data-sort-value="1">David Jones</td>
+        <td class="govuk-table__cell" data-sort-value="1"><strong class="govuk-tag govuk-tag--red">Prisoner released</strong></td>
+        <td class="govuk-table__cell"><a href="#" class="govuk-link">Review</a></td>
+      </tr>
+
+      <tr class="govuk-table__row">
+        <td class="govuk-table__cell">{{ data['prison-no-2'] }}</td>
+        <td class="govuk-table__cell" data-sort-value="2">{{ data['visit-request-date-2'] }}</td>
+        <td class="govuk-table__cell" data-sort-value="2">David Jones</td>
+        <td class="govuk-table__cell" data-sort-value="1"><strong class="govuk-tag govuk-tag--red">Prisoner released</strong></td>
+        <td class="govuk-table__cell"><a href="#" class="govuk-link">Review</a></td>
+      </tr>
+
+    </tbody>
+  </table>
+
+{% endblock %}
