@@ -36,7 +36,7 @@ module.exports = {
   'visit-0-ref': 'xg-vw-va-fm',
   'visit-1-date': 'Sunday 29 June 2025',
   'visit-1-time': '10am to 11am',
-  'visit-1-ref': 'xg-vw-va-fm',
+  'visit-1-ref': 'ab-cf-re-po',
   'visit-2-date': 'Thursday 17 July 2024',
   'visit-2-time': '10am to 11am',
   'visit-2-ref': 're-gy-wa-qk',
