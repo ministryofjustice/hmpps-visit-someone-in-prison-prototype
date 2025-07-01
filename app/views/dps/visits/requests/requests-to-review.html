@@ -8,7 +8,22 @@
 
 <h1 class="govuk-heading-l">Requested visits that need review</h1>
 
-<p class="govuk-body">These visits need to be reviewed and either approved or rejected. Staff should check that the prisoner and visitor Alerts and restrictions.</p>
+<p class="govuk-body">These requests by online bookers need to be manually checked due to alerts and restrictions.</p>
+
+<p class="govuk-body">They have been automatically checked to make sure:
+
+  <ul class="govuk-list govuk-list--bullet">
+    <li>visitors are on the prisoner’s approved visitor list</li>
+    <li>the date and time is suitable for the prisoner</li>
+    <li>there are no non-associations for the prisoner</li>
+  </ul>
+</p>
+
+<p class="govuk-body">The visit time has been reserved for these requests. It will be released if the request is rejected.</p>
+
+<p>Requests need to be checked at least 2 days before the visit date. If not, they will be automatically rejected.</p>
+
+<br><br>
 
   <table class="govuk-table" data-module="moj-sortable-table">
 
@@ -27,14 +42,14 @@
         <td class="govuk-table__cell">{{ data['prison-no'] }}</td>
         <td class="govuk-table__cell" data-sort-value="1">{{ data['visit-request-date-1'] }}</td>
         <td class="govuk-table__cell" data-sort-value="1">{{ data['request-date-1'] }}</td>
-        <td class="govuk-table__cell"><a href="#" class="govuk-link">Review</a></td>
+        <td class="govuk-table__cell"><a href="#" class="govuk-link">View</a></td>
       </tr>
 
       <tr class="govuk-table__row">
         <td class="govuk-table__cell">{{ data['prison-no-2'] }}</td>
         <td class="govuk-table__cell" data-sort-value="2">{{ data['visit-request-date-2'] }}</td>
         <td class="govuk-table__cell" data-sort-value="2">{{ data['request-date-2'] }}</td>
-        <td class="govuk-table__cell"><a href="#" class="govuk-link">Review</a></td>
+        <td class="govuk-table__cell"><a href="#" class="govuk-link">View</a></td>
       </tr>
 
     </tbody>
