@@ -5,11 +5,13 @@
 {% set backLinkHref = true %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
 {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+{% set govukRebrand = true %}
+
 
 {% block header %}
     {{ govukHeader({
         homepageUrl: "/public",
-        classes: "govuk-header--full-width-border"
+        rebrand: true
     }) }}
 
     {{ govukServiceNavigation({
@@ -29,13 +31,13 @@
 
       <h1 class="govuk-heading-l">Visiting {{ data['prison-name'] }}</h1>
 
-      <p>How you book visits at this prison has changed. You can now get instant confirmation of your booking and text message updates.</p>
+      <p>How you book visits at this prison has changed.</p>
 
-      <p>You’ll need a GOV.UK One Login to use this service.</p>
+      <p>You need to sign in or create a GOV.UK One Login to book a visit online.</p>
 
-      <p>If you have a GOV.UK One Login, you can <a href="https://signin.account.gov.uk/sign-in-or-create" class="govuk-link">sign in</a>.</p>
-
-      <p>Or you can create one.</p>
+      <div class="govuk-inset-text">
+        You can only book visits for one prisoner at {{ data['prison-name'] }} using this service. If you need to visit another prisoner, <a href="#" class="govuk-link">contact the prison directly</a>.
+      </div>
 
       <div class="govuk-button-group">
         {{ govukButton({
@@ -47,5 +49,34 @@
     </div>
 
 </div>
+
+{% endblock %}
+
+
+{% block footer %}
+
+  {{ govukFooter({
+    rebrand: true,
+    meta: {
+      items: [
+        {
+          href: "/public/mvp+4/support/accessibility-statement",
+          text: "Accessibility"
+        },
+        {
+          href: "/public/mvp+4/support/cookies",
+          text: "Cookies"
+        },
+        {
+          href: "/public/mvp+4/support/privacy-notice",
+          text: "Privacy"
+        },
+        {
+          href: "/public/mvp+4/support/terms-conditions",
+          text: "Terms and conditions"
+        }
+      ]
+    }
+  }) }}
 
 {% endblock %}

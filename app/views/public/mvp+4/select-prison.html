@@ -1,17 +1,15 @@
 {% extends "./layouts/header.html" %}
-{% extends "./layouts/footer.html" %}
-{% extends "./layouts/banner.html" %}
+{% extends "./layouts/footer.html" %}{% extends "./layouts/banner.html" %}
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
 {% set backLinkHref = true %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
 {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
-
-
+{% set govukRebrand = true %}
 
 {% block header %}
     {{ govukHeader({
         homepageUrl: "/public",
-        classes: "govuk-header--full-width-border"
+        rebrand: true
     }) }}
 
     {{ govukServiceNavigation({
@@ -33,6 +31,9 @@
         id: "prison",
         name: "prison",
         allowEmpty: false,
+        hint: {
+            text: "For example, Cardiff (HMP)" 
+        },
         label: {
           classes: "govuk-label--l",
           isPageHeading: true,
@@ -432,10 +433,39 @@
 
       <h2 class="govuk-heading-m">What if I don’t know the prisoner’s location?</h2>
 
-      <p>You can <a href="https://www.gov.uk/find-prisoner" class="govuk-link">apply to find the prisoner’s location</a>.</p></p>
+      <p>You can <a href="https://www.gov.uk/find-prisoner" class="govuk-link">apply to find the prisoner’s location</a>.</p>
 
     </div>
 
 </div>
+
+{% endblock %}
+
+
+{% block footer %}
+
+  {{ govukFooter({
+    rebrand: true,
+    meta: {
+      items: [
+        {
+          href: "/public/mvp+4/support/accessibility-statement",
+          text: "Accessibility"
+        },
+        {
+          href: "/public/mvp+4/support/cookies",
+          text: "Cookies"
+        },
+        {
+          href: "/public/mvp+4/support/privacy-notice",
+          text: "Privacy"
+        },
+        {
+          href: "/public/mvp+4/support/terms-conditions",
+          text: "Terms and conditions"
+        }
+      ]
+    }
+  }) }}
 
 {% endblock %}
