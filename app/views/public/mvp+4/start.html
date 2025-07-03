@@ -1,12 +1,14 @@
-{% extends "./layouts/footer.html" %}
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
 {% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
 {% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+{% set govukRebrand = true %}
 
 {% block header %}
     {{ govukHeader({
-        homepageUrl: "/public"
+        homepageUrl: "/public",
+        rebrand: true
     }) }}
 {% endblock %}
 
@@ -42,7 +44,9 @@ items: [
         </h1>
 
         <div>
-            <p>Use this service to request a social visit to a prisoner in England or Wales. There’s a different way to book a <a href="https://www.justice-ni.gov.uk/topics/prison-visits" class="govuk-link">prison visit in Northern Ireland</a> or a <a href="https://www.sps.gov.uk/family-and-friends/visits" class="govuk-link">prison visit in Scotland</a>.</p>
+            <p>Use this service to book a social visit to a prisoner in England or Wales.</p>
+
+            <p> There’s a different way to book a <a href="https://www.justice-ni.gov.uk/topics/prison-visits" class="govuk-link">prison visit in Northern Ireland</a> or a <a href="https://www.sps.gov.uk/family-and-friends/visits" class="govuk-link">prison visit in Scotland</a>.</p>
 
             <p>You will need:</p>
 
@@ -55,7 +59,7 @@ items: [
 
 
             {{ govukInsetText({
-              text: "The prisoner must add you to their visitor list before you can request a visit. This can take up to 2 weeks."
+              text: "The prisoner must add people to their visitor list before they can booked on a visit. This can take up to 2 weeks."
             }) }}
 
             {{ govukButton({ text: 
@@ -92,16 +96,6 @@ items: [
             <ul class="govuk-list govuk-!-font-size-16">
               <li>
                 <a href="#">
-                    Staying in touch with someone in prison
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                    Send money to someone in prison
-                </a>
-              </li>
-              <li>
-                <a href="#">
                     Get help with the cost of prison visits
                 </a>
               </li>
@@ -110,11 +104,44 @@ items: [
                     Apply to find a prisoner’s location
                 </a>
               </li>
+              <li>
+                <a href="#">
+                    Staying in touch with someone in prison
+                </a>
+              </li>
             </ul>
           </nav>
         </aside>
   
       </div>
 </div>
+
+{% endblock %}
+
+{% block footer %}
+
+  {{ govukFooter({
+    rebrand: true,
+    meta: {
+      items: [
+        {
+          href: "/public/mvp+4/support/accessibility-statement",
+          text: "Accessibility"
+        },
+        {
+          href: "/public/mvp+4/support/cookies",
+          text: "Cookies"
+        },
+        {
+          href: "/public/mvp+4/support/privacy-notice",
+          text: "Privacy"
+        },
+        {
+          href: "/public/mvp+4/support/terms-conditions",
+          text: "Terms and conditions"
+        }
+      ]
+    }
+  }) }}
 
 {% endblock %}
