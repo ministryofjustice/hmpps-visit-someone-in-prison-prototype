@@ -12,17 +12,26 @@
 <h1 class="govuk-heading-l">Manage prison visits</h1>
 
 <ul class="govuk-grid-row card-group">
+   
+   <li class="govuk-grid-column-one-third card-group__item">
+      {{ card({
+      "href": "#",
+      "clickable": "true",
+      "heading": "Book or change a visit",
+      "description": "Create, update or cancel a booking"
+      }) }}
+   </li>
 
    <li class="govuk-grid-column-one-third card-group__item">
       {{ card({
       "href": "./requests/requests-to-review",
       "clickable": "true",
       "heading": 
-      '<span>Requests to review' +
+      '<span>Requested visits' +
          '<span class="govuk-!-margin-left-2 moj-notification-badge">2' +
         '</span>' +
        "</span>",
-      "description": "Accept or reject visits that have been requested"
+      "description": "Check requests from online bookers"
       }) }}
    </li>
 
@@ -31,11 +40,11 @@
       "href": "./review/visits-to-review",
       "clickable": "true",
       "heading": 
-      '<span>Visits to review' +
+      '<span>Visits that need review' +
          '<span class="govuk-!-margin-left-2 moj-notification-badge">2' +
         '</span>' +
        "</span>",
-      "description": "Review visits that have been impacted by changes"
+      "description": "Review visits where details have changed since approval"
       }) }}
    </li>
 <!-- 
@@ -48,15 +57,6 @@
       }) }}
    </li>
 -->
-
-   <li class="govuk-grid-column-one-third card-group__item">
-      {{ card({
-      "href": "#",
-      "clickable": "true",
-      "heading": "Book or change a visit",
-      "description": "Make a booking for a visitor"
-      }) }}
-   </li>
 
    <li class="govuk-grid-column-one-third card-group__item">
       {{ card({
