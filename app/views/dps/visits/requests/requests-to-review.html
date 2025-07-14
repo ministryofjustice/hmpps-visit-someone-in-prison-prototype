@@ -1,12 +1,12 @@
 {% extends "layouts/moj.html" %}
 
-{% set pageHeaderTitle = "Requested visits that need review" %}
+{% set pageHeaderTitle = "Requested visits" %}
 {% set breadcrumbs2 = "Manage prison visits" %}
 {% set breadCrumb2link = "/dps/visits/" %}
 
 {% block content %}
 
-<h1 class="govuk-heading-l">Requested visits that need review</h1>
+<h1 class="govuk-heading-l">Requested visits</h1>
 
 <p class="govuk-body">These requests by online bookers need to be manually checked due to alerts and restrictions.</p>
 
@@ -29,9 +29,11 @@
 
     <thead class="govuk-table__head">
       <tr class="govuk-table__row">
-        <th scope="col" class="govuk-table__header" aria-sort="ascending">Prison number</th>
         <th scope="col" class="govuk-table__header" aria-sort="none">Visit date</th>
-        <th scope="col" class="govuk-table__header" aria-sort="none">Requested date</th>
+        <th scope="col" class="govuk-table__header" aria-sort="ascending">Requested date</th>
+        <th scope="col" class="govuk-table__header" aria-sort="none">Prisoner name</th>
+        <th scope="col" class="govuk-table__header" aria-sort="none">Prison number</th>
+        <th scope="col" class="govuk-table__header" aria-sort="none">Main contact</th>
         <th scope="col" class="govuk-table__header">Action</th>
       </tr>
     </thead>
@@ -39,16 +41,20 @@
     <tbody class="govuk-table__body">
 
       <tr class="govuk-table__row">
+        <td class="govuk-table__cell" data-sort-value="1">{{ data['visit-date'] }}</td>
+        <td class="govuk-table__cell" data-sort-value="1">{{ data['request-date'] }}</td>
+        <td class="govuk-table__cell">{{ data['prisoner-name'] }}</td>
         <td class="govuk-table__cell">{{ data['prison-no'] }}</td>
-        <td class="govuk-table__cell" data-sort-value="1">{{ data['visit-request-date-1'] }}</td>
-        <td class="govuk-table__cell" data-sort-value="1">{{ data['request-date-1'] }}</td>
+        <td class="govuk-table__cell">{{ data['visitor-1-name'] }}</td>
         <td class="govuk-table__cell"><a href="#" class="govuk-link">View</a></td>
       </tr>
 
       <tr class="govuk-table__row">
+        <td class="govuk-table__cell" data-sort-value="1">{{ data['visit-date-1'] }}</td>
+        <td class="govuk-table__cell" data-sort-value="1">{{ data['request-date-1'] }}</td>
+        <td class="govuk-table__cell">{{ data['prisoner-name-2'] }}</td>
         <td class="govuk-table__cell">{{ data['prison-no-2'] }}</td>
-        <td class="govuk-table__cell" data-sort-value="2">{{ data['visit-request-date-2'] }}</td>
-        <td class="govuk-table__cell" data-sort-value="2">{{ data['request-date-2'] }}</td>
+        <td class="govuk-table__cell">{{ data['visitor-4-name'] }}</td>
         <td class="govuk-table__cell"><a href="#" class="govuk-link">View</a></td>
       </tr>
 
