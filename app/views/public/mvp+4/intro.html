@@ -2,11 +2,11 @@
 {% extends "./layouts/footer.html" %}
 {% extends "./layouts/banner.html" %}
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
-{% set backLinkHref = true %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
 {% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
-{% set govukRebrand = true %}
 
+{% set govukRebrand = true %}
+{% set backLinkHref = true %}
 
 {% block header %}
     {{ govukHeader({
