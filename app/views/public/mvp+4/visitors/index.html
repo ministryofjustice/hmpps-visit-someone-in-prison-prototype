@@ -19,47 +19,37 @@ Visitors – {{ serviceName }}
       Visitors
     </h1>
 
-    <h2 class="govuk-heading-m">{{ data['prisoner-name'] }} at {{ data['prison-name'] }}</h2>
+    <h2 class="govuk-heading-m">{{ data['prisoner-name'] }}'s visitors</h2>
 
     <table class="govuk-table">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">Visitor's name</th>
+          <th scope="col" class="govuk-table__header">Name</th>
           <th scope="col" class="govuk-table__header">Date of birth</th>
-          <!--
           <th scope="col" class="govuk-table__header">Can you book a visit for them?</th>
-          -->
         </tr>
       </thead>
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">{{ data['visitor-1-name'] }}</td>
           <td class="govuk-table__cell">{{ data['visitor-1-dob'] }}</td>
-          <!--
           <td class="govuk-table__cell">Yes</td>
-          -->
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">{{ data['visitor-2-name'] }}</td>
           <td class="govuk-table__cell">{{ data['visitor-2-dob'] }}</td>
-          <!--
           <td class="govuk-table__cell">Banned until {{ data['visitor-2-ban'] }}</td>
-          -->
         </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">{{ data['visitor-3-name'] }}</td>
           <td class="govuk-table__cell">{{ data['visitor-3-dob'] }}</td>
-          <!--
-          <td class="govuk-table__cell">Waiting to be checked by prison</td>
-          -->
+          <td class="govuk-table__cell">Yes</td>
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">{{ data['visitor-4-name'] }}</td>
           <td class="govuk-table__cell">{{ data['visitor-4-dob'] }}</td>
-          <!--
-          <td class="govuk-table__cell">Banned until {{ data['visitor-4-ban'] }}</td>
-          -->
+          <td class="govuk-table__cell">Banned</td>
         </tr>
       </tbody>
     </table>
@@ -78,8 +68,7 @@ Visitors – {{ serviceName }}
     <p class="govuk-body">
       The person you want to book for must be on the prisoner’s visitor list.
       <br><br>
-      To make a request, <a href="{{ data['add-a-visitor-url'] }}" target="_blank" class="govuk-link">complete the form
-        (opens in a new tab)</a>. We will respond within 5 working days.
+      To make a request, <a href="{{ data['add-a-visitor-url'] }}" class="govuk-link">complete the form</a>. We will respond within 5 working days.
     </p>
 
   </div>
