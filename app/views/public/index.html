@@ -14,24 +14,19 @@
     Research May 2025
   </h2>
   
-<p class="govuk-body">Prototype for the round of usability research touching on adding "visit need review" scenarios.</p>
- 
-</p>
-  
+  <p class="govuk-body">Scenarios for usability research on visit requests.</p>
+  </p>
   
   <ul class="govuk-list govuk-list--bullet">
     <li>
-      <a class="govuk-link" href="/public/UT-052025/setup">Setup (to customise prison/prisoner/visitor info)</a>
+      <a class="govuk-link" href="/public/UT-052025/index?scenario=A">A - automatic booking</a>
     </li>
-  <li>
-    <a class="govuk-link" href="/public/UT-052025/index?scenario=A">Scenario A</a>
-  </li>
-  <li>
-      <a class="govuk-link" href="/public/UT-052025/index?scenario=B">Scenario B</a>
-  </li>
-  <li>
-      <a class="govuk-link" href="/public/UT-052025/index?scenario=C">Scenario C</a>
-  </li>
+    <li>
+        <a class="govuk-link" href="/public/UT-052025/index?scenario=B">B - prisoner review</a>
+    </li>
+    <li>
+        <a class="govuk-link" href="/public/UT-052025/index?scenario=C">C - visitor review</a>
+    </li>
   </ul>
     
   <hr class="govuk-section-break govuk-section-break--visible">
@@ -54,7 +49,7 @@
         <a class="govuk-link" href="/public/mvp+4/intro.html">prison intro page</a>
       </li>
       <li>
-        <p> new One Login header</p>
+        <p> new One Login header and GDS branding</p>
      </li>
     </ul>
 
@@ -122,6 +117,19 @@
             visit V1</a></p>
     </details>
   </div>
+
+  <div class="govuk-grid-column-one-third">
+    <h2 class="govuk-heading-m">Data set-up</h2>
+    <p class="govuk-body">Provide specific  prison, prisoner and visitor information for use in the prototype.</p>
+
+    {{ govukButton({
+      text: "Customise",
+      href: "./setup"
+      }) 
+    }}
+
+  </div>
+
 </div>
 
 {% endblock %}
