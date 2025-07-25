@@ -1,18 +1,19 @@
-{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+{% extends "layouts/prototype.html" %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
 
-{% block pageTitle %}
-Choose a scenario – {{ serviceName }}
-{% endblock %}
+{% set titleText = "Data setup" %}
+{% set titleDesc = "TBC" %}
+{% set pageHeaderTitle = "Visit someone in prison - Visits - Data setup" %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <h1 class="govuk-heading-l">
-     Prototype setup
-    </h1><form class="form" action="./index" method="post">
-  
+    <h1 class="govuk-heading-m">
+     Prisoner data
+    </h1>
+    
+    <form class="form" action="./index" method="post">
 
 <!--'visitor-1-name': 'Susan Smith',
 'visitor-1-age': '39',
@@ -22,9 +23,6 @@ Choose a scenario – {{ serviceName }}
 
 'visitor-2-name': 'Michael Smith',
 'visitor-2-age': '34',
-
-
-
 
 'visitor-2-tel': '07457896547',
 'visitor-2-email': 'mike.smith@email.com',-->
@@ -40,7 +38,6 @@ Choose a scenario – {{ serviceName }}
   classes: "govuk-input--width-20"
 }) }}
 
-
 {{ govukInput({
   label: {
     text: "Prison name",
@@ -51,10 +48,14 @@ Choose a scenario – {{ serviceName }}
   classes: "govuk-input--width-20"
 }) }}
 
+<h1 class="govuk-heading-m">
+  Visitor data
+ </h1>
+
 {% call govukFieldset({
   legend: {
     text: "Visitor 1",
-    classes: "govuk-fieldset__legend--m",
+    classes: "govuk-fieldset__legend--s",
     isPageHeading: true
   }
 }) %}
@@ -82,7 +83,7 @@ Choose a scenario – {{ serviceName }}
 {% call govukFieldset({
   legend: {
     text: "Visitor 2",
-    classes: "govuk-fieldset__legend--m"
+    classes: "govuk-fieldset__legend--s"
   }
 }) %}
 
@@ -125,26 +126,26 @@ Choose a scenario – {{ serviceName }}
       fieldset: {
       legend: {
       text: "Choose a scenario",
-      classes: "govuk-fieldset__legend--m"
+      classes: "govuk-fieldset__legend--s"
       }
       },
       items: [
       {
       value: "A",
-      text: "Scenario A"
+      text: "A - automatic booking"
       },
       {
       value: "B",
-      text: "Scenario B"
+      text: "B - prisoner review"
       },
       {
       value: "C",
-      text: "Scenario C"
+      text: "C - visitor review"
       }
       ]
       }) }}
 
-      <button class="govuk-button" data-module="govuk-button">Continue</button>
+      <button class="govuk-button" data-module="govuk-button">Save</button>
 
     </form>
 
