@@ -10,7 +10,7 @@
 {% set govukRebrand = true %}
 
 {% block pageTitle %}
-  Visit booking details – {{ serviceName }}
+  Visit request details – {{ serviceName }}
 {% endblock %}
 
 {% block content %}
@@ -21,16 +21,16 @@
     {{ mojAlert({
     variant: "information",
     title: "Visit rejected",
-    html: "This visit was rejected by Foston Hall (HMP & YOI)",
+    html: "This visit was rejected by Foston Hall (HMP & YOI).",
     dismissible: false
     }) }}
 
     <h1 class="govuk-heading-l">
-      Visit booking details
+      Visit request details
     </h1>
 
     <h2 class="govuk-heading-m">
-      Booking reference: pq-rs-tu-vw
+      Request reference: pq-rs-tu-vw
     </h2>
 
     <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Date and time</h3>

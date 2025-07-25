@@ -7,7 +7,7 @@
 {% set govukRebrand = true %}
 
 {% block pageTitle %} 
-  Cancel your booking – {{ serviceName }} 
+  Cancel your visit – {{ serviceName }} 
 {% endblock %} 
 
 {% block content %} 
@@ -17,7 +17,7 @@
 
     <form class="form" action="cancel-confirm" method="post">
 
-      <h1 class="govuk-heading-l"> Are you sure you want to cancel your booking? </h1>
+      <h1 class="govuk-heading-l"> Are you sure you want to cancel your visit? </h1>
       <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Date and time</h2>
       <p class="govuk-body govuk-!-margin-bottom-1">{{ data['visit-0-date'] }}</p>
       <p class="govuk-body govuk-!-margin-bottom-1">{{ data['visit-0-time'] }}</p>
@@ -32,11 +32,11 @@
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="cancel-1" name="cancel" type="radio" value="yes">
-              <label class="govuk-label govuk-radios__label" for="cancel"> Yes, cancel this booking </label>
+              <label class="govuk-label govuk-radios__label" for="cancel"> Yes, cancel this visit </label>
             </div>
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="cancel-2" name="cancel" type="radio" value="no">
-              <label class="govuk-label govuk-radios__label" for="cancel-2"> No, keep this booking </label>
+              <label class="govuk-label govuk-radios__label" for="cancel-2"> No, keep this visit </label>
             </div>
           </div>
         </fieldset>

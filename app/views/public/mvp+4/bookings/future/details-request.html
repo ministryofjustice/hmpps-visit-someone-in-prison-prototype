@@ -20,7 +20,7 @@
   title: "Your visit needs to be reviewed",
   showTitleAsHeading: true,
   dismissible: false,
-  html: 'Your visit is not booked yet. It needs to be checked.'
+  html: 'Your visit is not booked yet. It needs to be checked by Foston Hall (HMP & YOI).'
 }) }}
 
 <div class="govuk-grid-row">
@@ -53,15 +53,15 @@
 
     <br>
 
-    <form action="cancel-request" method="post">
+    <form action="cancel-confirm.html" method="post">
       <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
          Cancel booking
       </button>
      </form>
 
-    <h2 class="govuk-heading-m">How to update your booking</h2>
-    <p class="govuk-body">To update your booking, call {{ data['prison-name'] }} on {{ data['prison-tel'] }} between 9am and 5pm, Monday to Friday.</p>  
-    <p class="govuk-body">You will need the reference to make changes. Your request reference is {{ data['visit-0-ref'] }}.</p>  
+    <h2 class="govuk-heading-m">How to update your request</h2>
+    <p class="govuk-body">To update your request, call {{ data['prison-name'] }} on {{ data['prison-tel'] }} between 9am and 5pm, Monday to Friday.</p>  
+    <p class="govuk-body">You will need the reference to make changes. Your request reference is {{ data['visit-1-ref'] }}.</p>  
     
   </div>
 </div>
