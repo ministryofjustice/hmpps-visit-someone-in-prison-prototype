@@ -1,0 +1,69 @@
+{% extends "layouts/moj.html" %}
+
+{% set pageHeaderTitle = "Visit booking details - Manage prison visits" %}
+{% set backLinkHref = true %}
+
+{% block content %}
+
+<h1 class="govuk-heading-xl">Visit booking details</h1>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+        <h2 class="govuk-heading-m">{{ data['visit-1-date'] }}</h2>
+        <h2 class="govuk-heading-m">{{ data['visit-1-time'] }} - Visits Hall</h2>
+        <h2 class="govuk-heading-m">Open visit</h2>
+    </div>
+    <div class="govuk-grid-column-one-half">
+        <div class="govuk-grid-column-one-half">
+            <p><b>Main contact</b></p>
+            <p><b>Contact details</b></p>
+            <p><b>Booking reference</b></p>
+            <p><b>Additional support</b></p>
+        </div>
+        <div class="govuk-grid-column-one-half">
+            <p>{{ data['visitor-2-name'] }}</p>
+            <p>{{ data['visitor-2-tel'] }}</p>
+            <p>{{ data['visit-1-ref'] }}</p>
+            <p>Walks with a stick</p>
+        </div>
+    </div>
+  </div>
+
+  <br><br>
+  <hr>
+  <br><br>
+  
+<div class="govuk-grid-row">
+    <h1 class="govuk-heading-l">Prisoner</h1>
+    <h2 class="govuk-heading-m">{{ data['prisoner-name'] }}</h2>
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter">
+            <p>Location</p>
+            <p>Date of birth</p>
+        </div>
+        <div class="govuk-grid-column-three-quarters">
+          <p>C-4-009, Stafford (HMP)</p>
+          <p>{{ data['prisoner-dob'] }}</p>
+        </div>
+    </div>
+
+    <br><br>
+
+    <div class="govuk-grid-row">
+        <h3 class="govuk-heading-s">Restrictions</h3>
+        <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-quarter">
+                <strong class="govuk-tag">
+                    Completed
+                </strong>
+            </div>
+            <div class="govuk-grid-column-three-quarters">
+            <p>Under full restrictions - no child contact</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock %}
