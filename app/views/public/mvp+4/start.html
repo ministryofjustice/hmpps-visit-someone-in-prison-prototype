@@ -47,21 +47,24 @@ items: [
         <div>
             <p>Use this service to book a social visit to a prisoner in England or Wales.</p>
 
-            <p> There’s a different way to book a <a href="https://www.justice-ni.gov.uk/topics/prison-visits" class="govuk-link">prison visit in Northern Ireland</a> or a <a href="https://www.sps.gov.uk/family-and-friends/visits" class="govuk-link">prison visit in Scotland</a>.</p>
+            <p>You can make a booking for yourself or for someone else.</p>
 
-            <p>You will need:</p>
+            <p>There’s a different way to book a <a href="https://www.justice-ni.gov.uk/topics/prison-visits" class="govuk-link">prison visit in Northern Ireland</a> or a <a href="https://www.sps.gov.uk/family-and-friends/visits" class="govuk-link">prison visit in Scotland</a>.</p>
+
+            <p>To use this service you need the:</p>
 
             <ul class="govuk-list govuk-list--bullet">
-                <li>the name, prison number and date of birth for the prisoner</li>
-                <li>the names and dates of birth for visitors</li>
+                <li>name, location, prison number and date of birth for the prisoner</li>
+                <li>names and dates of birth for visitors</li>
             </ul>
 
             <p>If you do not have the prisoner’s details, <a href="https://www.gov.uk/find-prisoner" class="govuk-link">apply to find a prisoner’s location</a>.</p>
 
-
             {{ govukInsetText({
               text: "The prisoner must add someone to their visitor list before they can booked on a visit. This can take up to 2 weeks."
             }) }}
+
+            <h2 class="govuk-heading-m">Book a prison visit</h2>
 
             {{ govukButton({ text: 
                 "Start now", 
@@ -69,7 +72,7 @@ items: [
                 isStartButton: true }) 
             }}
 
-            <h2 class="govuk-heading-m">Visits you cannot book online</h2>
+            <h2 class="govuk-heading-m">Visits you cannot book through this service</h2>
 
             <p><a href="https://www.gov.uk/government/collections/prisons-in-england-and-wales" class="govuk-link">Contact the prison directly</a> if you need to arrange any of the following:</p>
 
@@ -97,17 +100,22 @@ items: [
             <ul class="govuk-list govuk-!-font-size-16">
               <li>
                 <a href="#">
+                    Staying in touch with someone in prison
+                </a>
+              </li>
+              <li>
+                <a href="#">
+                    Send money to someone in prison
+                </a>
+              </li>
+              <li>
+                <a href="#">
                     Get help with the cost of prison visits
                 </a>
               </li>
               <li>
                 <a href="#">
                     Apply to find a prisoner’s location
-                </a>
-              </li>
-              <li>
-                <a href="#">
-                    Staying in touch with someone in prison
                 </a>
               </li>
             </ul>
