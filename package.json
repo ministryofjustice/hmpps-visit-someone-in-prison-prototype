@@ -12,7 +12,7 @@
     "govuk-frontend": "5.11.1",
     "govuk-one-login-service-header": "github:alphagov/di-govuk-one-login-service-header",
     "govuk-prototype-kit": "^13.18.0",
-    "hmrc-frontend": "6.81.0",
+    "hmrc-frontend": "6.89.0",
     "jquery": "3.7.1"
   }
 }
