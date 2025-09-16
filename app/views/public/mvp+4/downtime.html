@@ -1,0 +1,71 @@
+{% extends "./layouts/header.html" %}
+{% extends "./layouts/footer.html" %}
+{% extends "./layouts/banner.html" %}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+{% set govukRebrand = true %}
+{% set backLinkHref = true %}
+
+{% block header %}
+    {{ govukHeader({
+        homepageUrl: "/public",
+        rebrand: true
+    }) }}
+
+    {{ govukServiceNavigation({
+      serviceName: serviceName,
+      serviceUrl: "/public"
+    }) }}
+{% endblock %}
+
+{% block pageTitle %}
+    Visiting {{ data['prison-name'] }} – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Sorry, the service is unavailable</h1>
+
+      <p>You will be able to use the service later.</p>
+
+      <p>We have not saved your answers. When the service is available you will need to <a href="https://www.gov.uk/prison-visits" class="govuk-link">start again</a>.</p>
+
+      <p><a href="https://www.gov.uk/government/collections/prisons-in-england-and-wales" class="govuk-link">Or you can contact the prison directly</a>.</p>
+    </div>
+</div>
+
+{% endblock %}
+
+
+{% block footer %}
+
+  {{ govukFooter({
+    rebrand: true,
+    meta: {
+      items: [
+        {
+          href: "/public/mvp+4/support/accessibility-statement",
+          text: "Accessibility"
+        },
+        {
+          href: "/public/mvp+4/support/cookies",
+          text: "Cookies"
+        },
+        {
+          href: "/public/mvp+4/support/privacy-notice",
+          text: "Privacy"
+        },
+        {
+          href: "/public/mvp+4/support/terms-conditions",
+          text: "Terms and conditions"
+        }
+      ]
+    }
+  }) }}
+
+{% endblock %}
