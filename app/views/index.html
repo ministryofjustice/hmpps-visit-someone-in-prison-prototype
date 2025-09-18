@@ -1,52 +1,73 @@
 {% extends "layouts/prototype.html" %}
 
-{% set titleText = "Visits Prototypes" %}
-{% set titleDesc = "Staff, friends and family will be able to book and manage prison visits - through safer, simpler, smarter services." %}
-{% set pageHeaderTitle = "Visits Prototypes" %}
+{% set titleText = "Visit and Contacts Prototypes" %}
+
+{% set pageHeaderTitle = "Visits and Contacts Prototypes" %}
 
 {% block content %}
 
+<h1 class="govuk-heading-m">Digital Prison Services</h1>
+
 <ul class="govuk-grid-row card-group">
-  <li class="govuk-grid-column-one-half card-group__item">
-     <div class="card card--clickable">
-        <h2 class="govuk-heading-m card__heading">
-           <a class="govuk-link card__link" href="/public">Visit someone in prison</a>
-        </h2>
-        <strong class="govuk-tag govuk-tag--yellow">
-          Private Beta
-        </strong>
-        <br><br>
-        <p class="govuk-body card__description">A new public service that will replace the existing booking request service.</p>
-     </div>
-  </li>
-  <li class="govuk-grid-column-one-half card-group__item">
-     <div class="card card--clickable">
-        <h2 class="govuk-heading-m card__heading">
-           <a class="govuk-link card__link" href="/dps">Digital Prison Services</a>
-        </h2>
-        <strong class="govuk-tag govuk-tag--green">
-          Public Beta
-        </strong>
-        <br><br>
-        <p class="govuk-body card__description">The staff service currently being rolled out across the prison estate.</p>
-     </div>
-  </li>
+   <li class="govuk-grid-column-one-half card-group__item">
+      <div class="card card--clickable">
+         <h2 class="govuk-heading-s card__heading">
+            <a class="govuk-link card__link" href="/dps/visits">Manage prison visits</a>
+         </h2>
+         <strong class="govuk-tag govuk-tag--green">
+            Public Beta
+         </strong>
+         <br><br>
+         <p class="govuk-body card__description">A staff service for manging social prison visits</p>
+      </div>
+   </li>
 
-  <!---
-  <li class="govuk-grid-column-one-half card-group__item">
-     <div class="card card--clickable">
-        <h2 class="govuk-heading-m card__heading">
-           <a class="govuk-link card__link" href="/hwpv">Help with prison visits</a>
-        </h2>
-        <strong class="govuk-tag govuk-tag--blue">
-          Exploration
-        </strong>
-        <br><br>
-        <p class="govuk-body card__description">A public service for visitors to claim the costs of visiting someone in prison.</p>
-     </div>
-  </li>
--->
-
+   <li class="govuk-grid-column-one-half card-group__item">
+      <div class="card card--clickable">
+         <h2 class="govuk-heading-s card__heading">
+            <a class="govuk-link card__link" href="/dps/contacts">Contacts</a>
+         </h2>
+         <strong class="govuk-tag govuk-tag--yellow">
+           Private Beta
+         </strong>
+         <br><br>
+         <p class="govuk-body card__description">A staff service for managing prisoner contacts.</p>
+      </div>
+   </li>
 </ul>
+
+   <!---
+   <li class="govuk-grid-column-one-half card-group__item">
+      <div class="card card--clickable">
+         <h2 class="govuk-heading-s card__heading">
+            <a class="govuk-link card__link" href="/hwpv">Help with prison visits</a>
+         </h2>
+         <strong class="govuk-tag govuk-tag--blue">
+           Exploration
+         </strong>
+         <br><br>
+         <p class="govuk-body card__description">A public service for visitors to claim the costs of visiting someone in prison.</p>
+      </div>
+   </li>
+ -->
+
+<h1 class="govuk-heading-m">GOV.UK services</h1>
+
+<ul class="govuk-grid-row card-group">
+   <li class="govuk-grid-column-one-half card-group__item">
+      <div class="card card--clickable">
+         <h2 class="govuk-heading-s card__heading">
+            <a class="govuk-link card__link" href="/public">Visit someone in prison - GOV.UK</a>
+         </h2>
+         <strong class="govuk-tag govuk-tag--yellow">
+            Private Beta
+         </strong>
+         <br><br>
+         <p class="govuk-body card__description">A public service that will replace the existing booking request service.</p>
+      </div>
+   </li>
+</ul>
+
+
 
 {% endblock %}
