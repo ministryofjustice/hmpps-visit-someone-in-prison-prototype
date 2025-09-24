@@ -11,7 +11,7 @@
     "@x-govuk/govuk-prototype-components": "5.0.2",
     "govuk-frontend": "5.12.0",
     "govuk-one-login-service-header": "github:alphagov/di-govuk-one-login-service-header",
-    "govuk-prototype-kit": "^13.18.0",
+    "govuk-prototype-kit": "^13.18.1",
     "hmrc-frontend": "6.93.0",
     "jquery": "3.7.1"
   }
