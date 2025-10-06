@@ -64,13 +64,21 @@ Visitors – {{ serviceName }}
       We will respond within 5 working days.
     </p>
 
-    <h2 class="govuk-heading-m">Add a new visitor</h2>
+    <h2 class="govuk-heading-m">Adding new visitors</h2>
 
     <p class="govuk-body">
       The person you want to book for must be on the prisoner’s visitor list.
       <br><br>
-      To make a request, <a href="{{ data['add-a-visitor-url'] }}" class="govuk-link">complete the form</a>. We will respond within 5 working days.
+      We will respond within 5 working days.
     </p>
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      text: "Add new visitors",
+      href: "visitors/providing-info.html",
+      isStartButton: false
+    }) }}
 
   </div>
 </div>
