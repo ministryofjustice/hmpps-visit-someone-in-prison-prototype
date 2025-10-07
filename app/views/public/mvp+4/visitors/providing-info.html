@@ -1,0 +1,46 @@
+{% extends "../layouts/header.html" %}
+{% extends "../layouts/footer.html" %}
+{% extends "../layouts/banner.html" %}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% set signedIn = true %}
+{% set activeLinkId = "visitors" %}
+{% set govukRebrand = true %}
+
+{% block pageTitle %}
+Providing visitor information – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+    <h1 class="govuk-heading-l">
+      Providing visitor information
+    </h1>
+
+    <p class="govuk-body-l">
+      All visitors to prisons in England and Wales, other than accompanied children under the age of 16, are required to prove their identity before entry. 
+    </p>
+
+    <p class="govuk-body">
+      The visitor information you provide must match the acceptable forms of ID the visitor will show when they visit someone in prison.
+      <br><br>
+      The visitor must also be on the prisoner's approved visitor list.
+      <br><br>
+      Providing incorrect visitor information or making requests for unapproved visitors will result in your request being rejected. 
+    </p>
+
+    {% from "govuk/components/button/macro.njk" import govukButton %}
+
+    {{ govukButton({
+      text: "Continue",
+      href: "visitor-info.html",
+      isStartButton: false
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}
