@@ -1,0 +1,247 @@
+{% extends "layouts/moj.html" %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/tabs/macro.njk" import govukTabs %}
+{% from "govuk/components/table/macro.njk" import govukTable %}
+
+{% set pageHeaderTitle = "Smith, John - Manage prison visits" %}
+{% set backLinkHref = true %}
+{% block content %}
+
+<h1 class="govuk-heading-l">Smith, John</h1>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <p class="govuk-body-s govuk-body govuk-!-font-weight-bold">Prison number</p>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <p class="govuk-body-s govuk-body govuk-!-font-weight-bold">Date of birth</p>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <p class="govuk-body-s govuk-body govuk-!-font-weight-bold">Location</p>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <p class="govuk-body-s govuk-body govuk-!-font-weight-bold">Category</p>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <p class="govuk-body-s govuk-body govuk-!-font-weight-bold">Conviction status</p>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <p class="govuk-body-s govuk-body govuk-!-font-weight-bold">Incentive level</p>
+  </div>
+</div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    <p class="govuk-body-s govuk-body govuk-!-font-weight-bold">Alerts</p>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <p class="govuk-body-s govuk-body govuk-!-font-weight-bold">VO balance</p>
+  </div>
+  <div class="govuk-grid-column-one-third">
+    <p class="govuk-body-s govuk-body govuk-!-font-weight-bold">PVO balance</p>
+  </div>
+</div>
+
+{{ govukButton({
+  text: "Book a prison visit",
+  href: "#",
+  isStartButton: false
+}) }}
+
+<div class="govuk-grid-row">
+  {% set visitsHtml %}
+  <h2 class="govuk-heading-s">Past day</h2>
+  {{ govukTable({
+    head: [
+      {
+        text: "Case manager"
+      },
+      {
+        text: "Cases opened"
+      },
+      {
+        text: "Cases closed"
+      }
+    ],
+    rows: [
+      [
+        {
+          text: "David Francis"
+        },
+        {
+          text: "3"
+        },
+        {
+          text: "0"
+        }
+      ],
+      [
+        {
+          text: "Paul Farmer"
+        },
+        {
+          text: "1"
+        },
+        {
+          text: "0"
+        }
+      ],
+      [
+        {
+          text: "Rita Patel"
+        },
+        {
+          text: "2"
+        },
+        {
+          text: "0"
+        }
+      ]
+    ]
+  }) }}
+  {% endset -%}
+
+  {% set voHtml %}
+  <h2 class="govuk-heading-s">Visiting orders</h2>
+  {{ govukTable({
+    head: [
+      {
+        text: "Type"
+      },
+      {
+        text: "Balance"
+      },
+      {
+        text: "Last allocation date"
+      },
+      {
+        text: "Next allocation date"
+      },
+      {
+        text: "Allocation"
+      }
+    ],
+    rows: [
+      [
+        {
+          text: "VO"
+        },
+        {
+          text: "2"
+        },
+        {
+          text: "6 October 2025"
+        },
+        {
+          text: "20 October 2025"
+        },
+        {
+          text: "2 every 14 days"
+        }
+      ],
+      [
+        {
+          text: "PVO"
+        },
+        {
+          text: "1"
+        },
+        {
+          text: "6 October 2025"
+        },
+        {
+          text: "3 November 2026"
+        },
+        {
+          text: "1 every 28 days"
+        }
+      ]
+    ]
+  }) }}
+  {% endset -%}
+
+  {% set alertHtml %}
+  <h2 class="govuk-heading-s">Active alerts</h2>
+  {{ govukTable({
+    head: [
+      {
+        text: "Case manager"
+      },
+      {
+        text: "Cases opened"
+      },
+      {
+        text: "Cases closed"
+      }
+    ],
+    rows: [
+      [
+        {
+          text: "David Francis"
+        },
+        {
+          text: "24"
+        },
+        {
+          text: "18"
+        }
+      ],
+      [
+        {
+          text: "Paul Farmer"
+        },
+        {
+          text: "16"
+        },
+        {
+          text: "20"
+        }
+      ],
+      [
+        {
+          text: "Rita Patel"
+        },
+        {
+          text: "24"
+        },
+        {
+          text: "27"
+        }
+      ]
+    ]
+  }) }}
+  {% endset -%}
+
+
+  {{ govukTabs({
+    items: [
+      {
+        label: "Visits",
+        id: "visits",
+        panel: {
+          html: visitsHtml
+        }
+      },
+      {
+        label: "Visiting orders",
+        id: "vo",
+        panel: {
+          html: voHtml
+        }
+      },
+      {
+        label: "Alerts",
+        id: "alerts",
+        panel: {
+          html: alertHtml
+        }
+      }
+    ]
+  }) 
+  }}
+</div>
+
+{% endblock %}
