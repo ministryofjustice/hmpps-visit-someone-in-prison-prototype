@@ -51,197 +51,65 @@
   isStartButton: false
 }) }}
 
-<div class="govuk-grid-row">
-  {% set visitsHtml %}
-  <h2 class="govuk-heading-s">Past day</h2>
-  {{ govukTable({
-    head: [
-      {
-        text: "Case manager"
-      },
-      {
-        text: "Cases opened"
-      },
-      {
-        text: "Cases closed"
-      }
-    ],
-    rows: [
-      [
-        {
-          text: "David Francis"
-        },
-        {
-          text: "3"
-        },
-        {
-          text: "0"
-        }
-      ],
-      [
-        {
-          text: "Paul Farmer"
-        },
-        {
-          text: "1"
-        },
-        {
-          text: "0"
-        }
-      ],
-      [
-        {
-          text: "Rita Patel"
-        },
-        {
-          text: "2"
-        },
-        {
-          text: "0"
-        }
-      ]
-    ]
-  }) }}
-  {% endset -%}
-
-  {% set voHtml %}
-  <h2 class="govuk-heading-s">Visiting orders</h2>
-  {{ govukTable({
-    head: [
-      {
-        text: "Type"
-      },
-      {
-        text: "Balance"
-      },
-      {
-        text: "Last allocation date"
-      },
-      {
-        text: "Next allocation date"
-      },
-      {
-        text: "Allocation"
-      }
-    ],
-    rows: [
-      [
-        {
-          text: "VO"
-        },
-        {
-          text: "2"
-        },
-        {
-          text: "6 October 2025"
-        },
-        {
-          text: "20 October 2025"
-        },
-        {
-          text: "2 every 14 days"
-        }
-      ],
-      [
-        {
-          text: "PVO"
-        },
-        {
-          text: "1"
-        },
-        {
-          text: "6 October 2025"
-        },
-        {
-          text: "3 November 2026"
-        },
-        {
-          text: "1 every 28 days"
-        }
-      ]
-    ]
-  }) }}
-  {% endset -%}
-
-  {% set alertHtml %}
-  <h2 class="govuk-heading-s">Active alerts</h2>
-  {{ govukTable({
-    head: [
-      {
-        text: "Case manager"
-      },
-      {
-        text: "Cases opened"
-      },
-      {
-        text: "Cases closed"
-      }
-    ],
-    rows: [
-      [
-        {
-          text: "David Francis"
-        },
-        {
-          text: "24"
-        },
-        {
-          text: "18"
-        }
-      ],
-      [
-        {
-          text: "Paul Farmer"
-        },
-        {
-          text: "16"
-        },
-        {
-          text: "20"
-        }
-      ],
-      [
-        {
-          text: "Rita Patel"
-        },
-        {
-          text: "24"
-        },
-        {
-          text: "27"
-        }
-      ]
-    ]
-  }) }}
-  {% endset -%}
-
-
-  {{ govukTabs({
-    items: [
-      {
-        label: "Visits",
-        id: "visits",
-        panel: {
-          html: visitsHtml
-        }
-      },
-      {
-        label: "Visiting orders",
-        id: "vo",
-        panel: {
-          html: voHtml
-        }
-      },
-      {
-        label: "Alerts",
-        id: "alerts",
-        panel: {
-          html: alertHtml
-        }
-      }
-    ]
-  }) 
-  }}
+<div class="govuk-tabs" data-module="govuk-tabs">
+  <h2 class="govuk-tabs__title">
+    Contents
+  </h2>
+  <ul class="govuk-tabs__list">
+    <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+      <a class="govuk-tabs__tab" href="#past-day">
+        Visits
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#past-week">
+        Visiting order
+      </a>
+    </li>
+    <li class="govuk-tabs__list-item">
+      <a class="govuk-tabs__tab" href="#past-month">
+        Alerts
+      </a>
+    </li>
+  </ul>
+  <div class="govuk-tabs__panel govuk-tabs__panel--hidden" id="past-week">
+    <h2 class="govuk-heading-s">Visiting order</h2>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Type</th>
+          <th scope="col" class="govuk-table__header">Balance</th>
+          <th scope="col" class="govuk-table__header">Last allocation date</th>
+          <th scope="col" class="govuk-table__header">Next allocation date</th>
+          <th scope="col" class="govuk-table__header">Allocation</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">VO</td>
+          <td class="govuk-table__cell">2</td>
+          <td class="govuk-table__cell">6 October 2025</td>
+          <td class="govuk-table__cell">20 October 2025</td>
+          <td class="govuk-table__cell">1 every 28 days</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">PVO</td>
+          <td class="govuk-table__cell">1</td>
+          <td class="govuk-table__cell">6 October 2025</td>
+          <td class="govuk-table__cell">3 November 2026</td>
+          <td class="govuk-table__cell">2 every 14 days</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="govuk-button-group">
+      <button type="submit" class="govuk-button" data-module="govuk-button">
+        Save and continue
+      </button>
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        Save as draft
+      </button>
+    </div>
+  </div>
 </div>
 
 {% endblock %}
