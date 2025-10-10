@@ -119,8 +119,49 @@
       ]
     }) }}
 
+    <h2 class="govuk-heading-m">What is the reason for this change?</h2>
+    
+    {% set otherreasonHtml %}
+    {{ govukInput({
+      id: "other-reason",
+      name: "add-other-reason",
+      classes: "govuk-!-width-one-third"
+    }) }}
+    {% endset -%}
 
-<h2 class="govuk-heading-m">What is the reason for this change?</h2>
+    {{ govukRadios({
+      name: "reason",
+      items: [
+        {
+          value: "gov-adjust",
+          text: "Governor’s adjustment"
+        },
+        {
+          value: "disip-adjust",
+          text: "Disciplinary adjustment"
+        },
+        {
+          value: "inaccurate-adjust",
+          text: "Correcting an inaccurate balance"
+        },
+        {
+          value: "transfer-adjust",
+          text: "Transferring balances from previous establishment"
+        },
+        {
+          value: "other-reason",
+          text: "Something else",
+          conditional: {
+            html: otherreasonHtml
+          }
+        }
+      ]
+    }) }}
+
+    {{ govukButton({
+      text: "Edit balance",
+      href: "../prisoner#past-week"
+    }) }}
 
 
 {% endblock %}
