@@ -3,10 +3,8 @@
 {% extends "../layouts/banner.html" %}
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
-{%- from "govuk/components/date-input/macro.njk" import govukDateInput -%}
-{%- from "govuk/components/fieldset/macro.njk" import govukFieldset -%}
-{%- from "govuk/components/input/macro.njk" import govukInput -%}
-{%- from "govuk/components/textarea/macro.njk" import govukTextarea -%}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
 
 {% set signedIn = true %}
 {% set activeLinkId = "visitors" %}
@@ -27,107 +25,50 @@ Visitor information – {{ serviceName }}
     </h1>
 
     <p class="govuk-body">
-      All visitors to prisons in England and Wales, other than accompanied children under the age of 16, are required to prove their identity before.
+      All visitors to prisons in England and Wales, other than accompanied children under the age of 16, are required to prove their identity.
     </p>
 
-    <div data-module="moj-add-another">
+    {{ govukInput({
+      label: {
+        text: "First name",
+        classes: "govuk-fieldset__legend--s"
+      },
+      id: "first-name",
+      name: "fullName",
+      autocomplete: "name",
+      spellcheck: false
+    }) }}
 
-      <form method="post">
+    {{ govukInput({
+      label: {
+        text: "Last name",
+        classes: "govuk-fieldset__legend--s"
+      },
+      id: "last-name",
+      name: "lastName",
+      autocomplete: "name",
+      spellcheck: false
+    }) }}
+    
+    {{ govukDateInput({
+      id: "passport-issued",
+      namePrefix: "passport-issued",
+      fieldset: {
+        legend: {
+          text: "Date of birth",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      hint: {
+        text: "For example, 27 3 2024"
+      }
+    }) }}
 
-        {% call govukFieldset({
-          classes: "moj-add-another__item"
-        }) %}
-
-        {{ govukInput({
-          id: "person[0][first_name]",
-          name: "person[0][first_name]",
-          label: {
-            html: "First name",
-            classes: "govuk-!-font-weight-bold"
-          },
-          attributes: {
-            "data-name": "person[%index%][first_name]",
-            "data-id": "person[%index%][first_name]"
-          }
-        }) }}
-
-        {{ govukInput({
-          id: "person[0][last_name]",
-          name: "person[0][last_name]",
-          label: {
-            html: "Last name",
-            classes: "govuk-!-font-weight-bold"
-          },
-          attributes: {
-            "data-name": "person[%index%][last_name]",
-            "data-id": "person[%index%][last_name]"
-          }
-        }) }}
-
-        {{ govukDateInput({
-          id: "date-of-birth",
-          fieldset: {
-            legend: {
-              text: "Date of birth",
-              classes: "govuk-fieldset__legend--s"
-            }
-          },
-          hint: {
-            text: "For example, 31 3 1980"
-          },
-          items: [
-            {
-              id: "person[0][dob][day]",
-              name: "person[0][dob][day]",
-              label: "Day",
-              classes: "govuk-input--width-2",
-              attributes: {
-                "data-name": "person[%index%][dob][day]",
-                "data-id": "person[%index%][dob][day]"
-              }
-            },
-            {
-              id: "person[0][dob][month]",
-              name: "person[0][dob][month]",
-              label: "Month",
-              classes: "govuk-input--width-2",
-              attributes: {
-                "data-name": "person[%index%][dob][month]",
-                "data-id": "person[%index%][dob][month]"
-              }
-            },
-            {
-              id: "person[0][dob][year]",
-              name: "person[0][dob][year]",
-              label: "Year",
-              classes: "govuk-input--width-2",
-              attributes: {
-                "data-name": "person[%index%][dob][year]",
-                "data-id": "person[%index%][dob][year]"
-              }
-            }
-          ]
-        }) }}
-
-        {% endcall %}
-
-        <div class="moj-button-action">
-          {{ govukButton({
-            text: "Add another person",
-            classes: "govuk-button--secondary moj-add-another__add-button govuk-!-margin-bottom-4"
-          }) }}
-        </div>
-
-        <div class="moj-button-action">
-          {{ govukButton({
-            text: "Continue",
-            href: "check-visitor-info.html"
-          }) }}
-        </div>
-
-      </form>
-
-    </div>
+    {{ govukButton({
+      text: "Continue",
+      href: "check-visitor-info"
+    }) }}
 
   </div>
 </div>

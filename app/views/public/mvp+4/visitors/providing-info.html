@@ -2,12 +2,12 @@
 {% extends "../layouts/footer.html" %}
 {% extends "../layouts/banner.html" %}
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
 
 {% set signedIn = true %}
 {% set activeLinkId = "visitors" %}
 {% set govukRebrand = true %}
 {% set backLinkHref = true %}
-
 
 {% block pageTitle %}
 Providing visitor information – {{ serviceName }}
@@ -29,12 +29,10 @@ Providing visitor information – {{ serviceName }}
     <p class="govuk-body">
       The visitor information you provide must match the acceptable forms of ID the visitor will show when they visit someone in prison.
       <br><br>
-      The visitor must also be on the prisoner's approved visitor list.
+      The visitor must also be on the prisoner's visitor list.
       <br><br>
-      Providing incorrect visitor information or making requests for unapproved visitors will result in your request being rejected. 
+      Providing incorrect visitor information or making requests for visitors not on the prisoner's visitor list will result in your request being rejected. 
     </p>
-
-    {% from "govuk/components/button/macro.njk" import govukButton %}
 
     {{ govukButton({
       text: "Continue",
