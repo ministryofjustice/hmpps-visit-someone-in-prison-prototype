@@ -1,0 +1,41 @@
+{% extends "../layouts/header.html" %}
+{% extends "../layouts/footer.html" %}
+{% extends "../layouts/banner.html" %}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% set signedIn = true %}
+{% set govukRebrand = true %}
+{% set activeLinkId = "visitors" %}
+
+{% block pageTitle %}
+  Request submitted – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation">
+        
+        <h1 class="govuk-panel__title">Request submitted</h1>
+        <div class="govuk-panel__body">
+          We will review your request and reply within 5 working days.
+        </div>
+      </div>
+          
+      <p>You will get an email to say if your request has been approved or rejected.</p>
+
+      <p>You can also view the status of your requests on <a href="../../mvp+4/visitors/index.html" class="govuk-link">the visitors page</a>.</p>
+
+      <form class="form" action="../" method="post">
+        {{ govukButton({
+          text: "Link another visitor",
+          href: "2-visitor-info"
+        }) }}
+      </form>
+    </div>
+  </div>
+
+{% endblock %}

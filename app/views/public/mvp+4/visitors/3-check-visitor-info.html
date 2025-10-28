@@ -23,9 +23,10 @@ Check your request – {{ serviceName }}
       Check your request
     </h1>
 
-    <p class="govuk-body">
-      Before you submit your request, please check the information you have provided.
+    <p class="govuk-body-l">
+      Your answers need to match the information on the prisoner’s visitor list.
     </p>
+
 
     {{ govukSummaryList({
       rows: [
@@ -83,11 +84,21 @@ Check your request – {{ serviceName }}
       ]
     }) }}
 
+    <p class="govuk-body">
+      By submitting this request you confirm that, to the best of your knowledge, the details you are providing are correct. Visitors must be on the prisoner’s visitor list. 
+    </p>
+
+    <p class="govuk-body">
+      Make sure the visitor information you provide matches the <a href="https://www.gov.uk/government/publications/management-of-security-at-visits-policy-framework-open-estate/acceptable-forms-of-identification-id-when-visiting-a-prison-in-england-and-wales-annex-a" class="govuk-link">acceptable forms of ID</a> that the visitor will use when they visit someone in prison.
+    </p>
+
     {{ govukButton({
       text: "Submit",
-      href: "check-visitor-info",
+      href: "4a-confirmation",
       preventDoubleClick: true
     }) }}
+
+
 
   </div>
 </div>

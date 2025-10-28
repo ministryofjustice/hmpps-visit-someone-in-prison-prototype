@@ -34,7 +34,7 @@
             <li>4 people under 17 years old</li>
           </ul>
 
-          <p class="govuk-body">One visitor must be 18 years old or older.</p>
+          <p class="govuk-body">At least one visitor must be 18 years old or older.</p>
 
           <h2 class="govuk-heading-m">Select visitors</h2>
 
@@ -54,81 +54,37 @@
           </div>
         </fieldset>
       </div>
+  
 
-  <!--
-      <div class="govuk-form-group">
-        <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-            <h1 class="govuk-fieldset__heading">
-              Who is going on the visit?
-            </h1>
-          </legend>
-          <p class="govuk-body">
-            Up to 7 people can visit someone at {{ data['prison-name'] }}. This includes:
-          </p>
-          <ul class="govuk-list govuk-list--bullet">
-            <li>3 people 17 years old or older</li>
-            <li>4 people under 17 years old</li>
-          </ul>
+      <h2 class="govuk-heading-s">Unavailable visitors</h2>
 
-          <p class="govuk-body">One visitor must be 18 years old or older.</p>
+      <p>{{ data['visitor-4-name'] }} ({{ data['visitor-4-age'] }} years old) <strong class="govuk-tag govuk-tag--red">Banned</strong></p>
+        
+      <p class="govuk-body-s">{{ data['visitor-4-name'] }} is banned until {{ data['visitor-4-ban'] }}. Visits on or after this date are not currently available to book.</p>
 
-          <h2 class="govuk-heading-m">Select visitors</h2>
+      <p>{{ data['visitor-3-name'] }} ({{ data['visitor-3-age'] }} years old) <strong class="govuk-tag govuk-tag--red">Not approved</strong></p>
+        
+      <p class="govuk-body-s">You cannot currently book for this visitor.</p>
 
-          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="visitor-1" name="waste" type="checkbox" value="carcasses">
-              <label class="govuk-label govuk-checkboxes__label" for="visitor-1">
-                {{ data['visitor-1-name'] }} ({{ data['visitor-1-age'] }} years old)
-              </label>
-            </div>
-            <div class="govuk-checkboxes__item">
-              <input class="govuk-checkboxes__input" id="visitor-2" name="waste" type="checkbox" value="mines">
-              <label class="govuk-label govuk-checkboxes__label" for="visitor-2">
-                {{ data['visitor-2-name'] }} ({{ data['visitor-2-age'] }} years old) <strong class="govuk-tag govuk-tag--red">Banned</strong>
-              </label>
-                <div id="nationality-item-hint" class="govuk-hint govuk-checkboxes__hint">
-                  {{ data['visitor-2-name'] }} is banned until {{ data['visitor-2-ban'] }}. 
-                  If they are selected as a visitor, the visit must be on or after this date.
-                </div>
-            </div>
-          </div>
+      </fieldset>
+   
+      <h2 class="govuk-heading-s">Visitors awaiting review</h2>
 
-          <br>
+      <p class="govuk-body">
+        If you have submitted a request to link visitors to your account, we will contact you when your request has been approved or rejected.
+        <br><br>
+        We will respond within 5 working days.
+      </p>
 
-          <h2 class="govuk-heading-m">Unavailable visitors</h2>
-
-          <p>{{ data['visitor-4-name'] }} ({{ data['visitor-4-age'] }} years old) <strong class="govuk-tag govuk-tag--red">Banned</strong></p>
-          
-          <p class="govuk-body-s">
-            {{ data['visitor-4-name'] }} is banned until {{ data['visitor-4-ban'] }}.
-            Visits on or after this date are not currently available to book.
-          </p>
-
-        </fieldset>
-      </div>
-  -->
-      <button class="govuk-button" data-module="govuk-button">Continue</button>
-    </form>
-
-    <h2 class="govuk-heading-m">Waiting for approval</h2>
+    <h2 class="govuk-heading-s">Linking new visitors to your account</h2>
 
     <p class="govuk-body">
-      If you have already submitted a request to add visitors, we will contact you when your request has been approved
-      or rejected.
+      You can only book visits for people linked to your account.
       <br><br>
-      We will respond within 5 working days.
-    </p>
-
-    <h2 class="govuk-heading-m">Add a new visitor</h2>
-
-    <p class="govuk-body">
-      The person you want to book for must be on the prisoner’s visitor list.
+      Visitors must be on the prisoner's visitor list.
       <br><br>
-      To make a request, <a href="{{ data['add-a-visitor-url'] }}" target="_blank" class="govuk-link">complete the form
-        (opens in a new tab)</a>.
+      To make a request, <a href="../visitors/1-providing-info.html" target="_blank" class="govuk-link">complete the form</a>.
     </p>
-
   </div>
 </div>
 

@@ -22,6 +22,8 @@ Visitors – {{ serviceName }}
 
     <h2 class="govuk-heading-m">{{ data['prisoner-name'] }}'s visitors</h2>
 
+    <h3 class="govuk-heading-s">Visitors linked to your account</h3>
+
     <table class="govuk-table">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
@@ -39,44 +41,58 @@ Visitors – {{ serviceName }}
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">{{ data['visitor-2-name'] }}</td>
           <td class="govuk-table__cell">{{ data['visitor-2-dob'] }}</td>
-          <td class="govuk-table__cell">No - banned until {{ data['visitor-2-ban'] }}</td>
+          <td class="govuk-table__cell">No, banned until {{ data['visitor-2-ban'] }}</td>
         </tr>
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">{{ data['visitor-3-name'] }}</td>
           <td class="govuk-table__cell">{{ data['visitor-3-dob'] }}</td>
-          <td class="govuk-table__cell">No - not approved for visits</td>
+          <td class="govuk-table__cell">No, visitor not approved</td>
         </tr>
         <tr class="govuk-table__row">
           <td class="govuk-table__cell">{{ data['visitor-4-name'] }}</td>
           <td class="govuk-table__cell">{{ data['visitor-4-dob'] }}</td>
-          <td class="govuk-table__cell">No - banned</td>
+          <td class="govuk-table__cell">Yes</td>
         </tr>
       </tbody>
     </table>
 
-    <h2 class="govuk-heading-m">Waiting for approval</h2>
+    <h3 class="govuk-heading-s">Visitors awaiting review</h3>
 
     <p class="govuk-body">
-      If you have already submitted a request to add visitors, we will contact you when your request has been approved
-      or rejected.
-      <br><br>
-      We will respond within 5 working days.
+      Requests to link visitors are reviewed by the prison. 
     </p>
 
-    <h2 class="govuk-heading-m">Adding new visitors</h2>
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Name</th>
+          <th scope="col" class="govuk-table__header">Date of birth</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Toby Smith</td>
+          <td class="govuk-table__cell">15 July 1988</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 class="govuk-heading-m">Linking new visitors to your account</h2>
 
     <p class="govuk-body">
-      The person you want to book for must be on the prisoner’s visitor list.
+      You can only book visits for people linked to your account.
       <br><br>
-      We will respond within 5 working days.
+      Visitors must be on the prisoner's visitor list. 
+      <br><br>
+      We will respond to your request within 5 working days.
     </p>
 
     {% from "govuk/components/button/macro.njk" import govukButton %}
 
     {{ govukButton({
-      text: "Add new visitors",
-      href: "visitors/providing-info.html",
+      text: "Link new visitors",
+      href: "visitors/1-providing-info.html",
       isStartButton: false
     }) }}
 

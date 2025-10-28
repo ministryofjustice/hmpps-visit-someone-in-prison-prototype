@@ -1,0 +1,37 @@
+{% extends "../layouts/header.html" %}
+{% extends "../layouts/footer.html" %}
+{% extends "../layouts/banner.html" %}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% set signedIn = true %}
+{% set govukRebrand = true %}
+{% set activeLinkId = "visitors" %}
+
+{% block pageTitle %}
+  Visitor already linked – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Visitor already linked
+      </h1>
+          
+      <p>You have previously linked [First name] [Last name] to your account.</p>
+
+      <p>You do not need to submit a new request for this visitor.</p>
+
+      <form class="form" action="../" method="post">
+        {{ govukButton({
+          text: "Continue",
+          href: "/"
+        }) }}
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
