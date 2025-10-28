@@ -1,0 +1,72 @@
+{% extends "../layouts/header.html" %}
+{% extends "../layouts/footer.html" %}
+{% extends "../layouts/banner.html" %}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/input/macro.njk" import govukInput %}
+{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+
+{% set signedIn = true %}
+{% set activeLinkId = "visitors" %}
+{% set govukRebrand = true %}
+{% set backLinkHref = true %}
+
+{% block pageTitle %}
+Visitor information – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+    <h1 class="govuk-heading-l">
+      Visitor information
+    </h1>
+
+    {{ govukInput({
+      label: {
+        text: "First name",
+        classes: "govuk-fieldset__legend--s"
+      },
+      id: "first-name",
+      name: "fullName",
+      autocomplete: "name",
+      spellcheck: false
+    }) }}
+
+    {{ govukInput({
+      label: {
+        text: "Last name",
+        classes: "govuk-fieldset__legend--s"
+      },
+      id: "last-name",
+      name: "lastName",
+      autocomplete: "name",
+      spellcheck: false
+    }) }}
+    
+    {{ govukDateInput({
+      id: "passport-issued",
+      namePrefix: "passport-issued",
+      fieldset: {
+        legend: {
+          text: "Date of birth",
+          isPageHeading: false,
+          classes: "govuk-fieldset__legend--s"
+        }
+      },
+      hint: {
+        text: "For example, 27 3 2024"
+      }
+    }) }}
+
+    {{ govukButton({
+      text: "Continue",
+      href: "3-check-visitor-info"
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}

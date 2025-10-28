@@ -23,30 +23,26 @@ Check your request – {{ serviceName }}
       Check your request
     </h1>
 
-    <p class="govuk-body">
-      Before you submit your request, please check the information you have provided.
+    <p class="govuk-body-l">
+      Your answers need to match the information on the prisoner’s visitor list.
     </p>
 
+
     {{ govukSummaryList({
-      card: {
-        title: {
-          text: "Visitor 1"
-        }
-      },
       rows: [
         {
           key: {
             text: "First name"
           },
           value: {
-            html: "Barry"
+            text: "Sarah"
           },
           actions: {
             items: [
               {
                 href: "#",
                 text: "Change",
-                visuallyHiddenText: "visitor-1-name"
+                visuallyHiddenText: "name"
               }
             ]
           }
@@ -56,14 +52,14 @@ Check your request – {{ serviceName }}
             text: "Last name"
           },
           value: {
-            html: "White"
+            text: "Philips"
           },
           actions: {
             items: [
               {
                 href: "#",
                 text: "Change",
-                visuallyHiddenText: "visitor-1-name"
+                visuallyHiddenText: "name"
               }
             ]
           }
@@ -73,14 +69,14 @@ Check your request – {{ serviceName }}
             text: "Date of birth"
           },
           value: {
-            html: "14 June 1987"
+            text: "5 January 1978"
           },
           actions: {
             items: [
               {
                 href: "#",
                 text: "Change",
-                visuallyHiddenText: "visitor-1-dob"
+                visuallyHiddenText: "date of birth"
               }
             ]
           }
@@ -88,66 +84,21 @@ Check your request – {{ serviceName }}
       ]
     }) }}
 
-    {{ govukSummaryList({
-      card: {
-        title: {
-          text: "Visitor 2"
-        }
-      },
-      rows: [
-        {
-          key: {
-            text: "First name"
-          },
-          value: {
-            html: "Sam"
-          },
-          actions: {
-            items: [
-              {
-                href: "#",
-                text: "Change",
-                visuallyHiddenText: "visitor-2-name"
-              }
-            ]
-          }
-        },
-        {
-          key: {
-            text: "Last name"
-          },
-          value: {
-            html: "Smith"
-          },
-          actions: {
-            items: [
-              {
-                href: "#",
-                text: "Change",
-                visuallyHiddenText: "visitor-2-name"
-              }
-            ]
-          }
-        },
-        {
-          key: {
-            text: "Date of birth"
-          },
-          value: {
-            html: "16 March 1975"
-          },
-          actions: {
-            items: [
-              {
-                href: "#",
-                text: "Change",
-                visuallyHiddenText: "visitor-2"
-              }
-            ]
-          }
-        }
-      ]
+    <p class="govuk-body">
+      By submitting this request you confirm that, to the best of your knowledge, the details you are providing are correct. Visitors must be on the prisoner’s visitor list. 
+    </p>
+
+    <p class="govuk-body">
+      Make sure the visitor information you provide matches the <a href="https://www.gov.uk/government/publications/management-of-security-at-visits-policy-framework-open-estate/acceptable-forms-of-identification-id-when-visiting-a-prison-in-england-and-wales-annex-a" class="govuk-link">acceptable forms of ID</a> that the visitor will use when they visit someone in prison.
+    </p>
+
+    {{ govukButton({
+      text: "Submit",
+      href: "4a-confirmation",
+      preventDoubleClick: true
     }) }}
+
+
 
   </div>
 </div>
