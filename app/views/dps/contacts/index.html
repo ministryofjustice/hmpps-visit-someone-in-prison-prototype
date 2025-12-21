@@ -1,0 +1,79 @@
+{% extends "layouts/moj.html" %}
+{% from "components/card.njk" import card %}
+{%- from "moj/components/ticket-panel/macro.njk" import mojTicketPanel -%}
+{%- from "moj/components/notification-badge/macro.njk" import mojNotificationBadge -%}
+{%- from "govuk/components/tag/macro.njk" import govukTag -%}
+
+{% set pageHeaderTitle = "Contacts" %}
+{% set breadcrumbs = true %}
+
+{% block content %}
+
+<h1 class="govuk-heading-l">Contacts</h1>
+
+<!-- <h2 class="govuk-heading-m">Bookings</h2> -->
+
+<ul class="govuk-grid-row card-group">
+
+   <li class="govuk-grid-column-one-third card-group__item">
+      {{ card({
+      "href": "#",
+      "clickable": "true",
+      "heading": "Search for a contact",
+      "description": "TBC"
+      }) }}
+   </li>
+
+</ul>
+
+<h2 class="govuk-heading-m">Contact admin</h2>
+
+<ul class="govuk-grid-row card-group">
+
+   <li class="govuk-grid-column-one-third card-group__item">
+      {{ card({
+      "href": "#",
+      "clickable": "true",
+      "heading":
+      '<span>Duplicate contacts' +
+         '<span class="govuk-!-margin-left-2 moj-notification-badge">12' +
+            '</span>' +
+         "</span>",
+      "description": "TBC"
+      }) }}
+   </li>
+   <li class="govuk-grid-column-one-third card-group__item">
+      {{ card({
+      "href": "#",
+      "clickable": "true",
+      "heading": "Social contacts without dates of birth",
+      "description": "TBC"
+      }) }}
+   </li>
+
+</ul>
+
+<h2 class="govuk-heading-m">Prisoner admin</h2>
+
+<ul class="govuk-grid-row card-group">
+
+   <li class="govuk-grid-column-one-third card-group__item">
+      {{ card({
+      "href": "#s",
+      "clickable": "true",
+      "heading": "Prisoners without any contacts",
+      "description": "TBC"
+      }) }}
+   </li>
+
+   <li class="govuk-grid-column-one-third card-group__item">
+      {{ card({
+      "href": "#",
+      "clickable": "true",
+      "heading": "Prisoners without a next of kin or emergency contact",
+      "description": "TBC"
+      }) }}
+   </li>
+</ul>
+
+{% endblock %}
