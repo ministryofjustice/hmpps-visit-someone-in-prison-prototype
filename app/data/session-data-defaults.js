@@ -1,5 +1,6 @@
 module.exports = {
 
+  'app-name': 'Manage prison visits',
   'prison-tel': '0121 661 2101',
   'prison-name': 'Foston Hall (HMP & YOI)',
   'prison-url': 'https://www.gov.uk/guidance/foston-hall-prison',
