@@ -52,7 +52,7 @@
          '<span class="govuk-!-margin-left-2 moj-notification-badge">12' +
             '</span>' +
          "</span>",
-      "description": "TBC"
+      "description": "Review and resolve duplicate contacts"
       }) }}
    </li>
 
@@ -69,8 +69,17 @@
       {{ card({
       "href": "#",
       "clickable": "true",
-      "heading": "Contacts with missing information",
-      "description": "Includes date of birth, address and telephone number"
+      "heading": "Contacts with missing key information",
+      "description": "Includes date of birth, address, telephone and email"
+      }) }}
+   </li>
+
+   <li class="govuk-grid-column-one-third card-group__item">
+      {{ card({
+      "href": "#",
+      "clickable": "true",
+      "heading": "Contacts with multiple relationships",
+      "description": "TBC"
       }) }}
    </li>
 
@@ -83,14 +92,6 @@
       }) }}
    </li>
 
-   <li class="govuk-grid-column-one-third card-group__item">
-      {{ card({
-      "href": "#",
-      "clickable": "true",
-      "heading": "Prisoners with no next of kin or emergency contact",
-      "description": "TBC"
-      }) }}
-   </li>
 </ul>
 
 {% endblock %}
