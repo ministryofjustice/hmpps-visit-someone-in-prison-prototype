@@ -30,7 +30,7 @@
       "clickable": "true",
       "heading": 
       '<span>Requested visits' +
-         '<span class="govuk-!-margin-left-2 moj-notification-badge">2' +
+         '<span class="govuk-!-margin-left-2 moj-notification-badge">8' +
         '</span>' +
        "</span>",
       "description": "Check requests from online bookers"
@@ -75,8 +75,18 @@
 
 <ul class="govuk-grid-row card-group">
 
-
-
+   <li class="govuk-grid-column-one-third card-group__item">
+      {{ card({
+      "href": "./bookers/search",
+      "clickable": "true",
+      "heading": 
+      '<span>Manage online bookers' +
+         '<span class="govuk-!-margin-left-2 moj-notification-badge">12' +
+        '</span>' +
+       "</span>",      
+       "description": "TBC"
+      }) }}
+   </li>
    <li class="govuk-grid-column-one-third card-group__item">
       {{ card({
       "href": "#",
