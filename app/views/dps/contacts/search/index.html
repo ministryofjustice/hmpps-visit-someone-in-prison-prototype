@@ -1,0 +1,92 @@
+{% extends "layouts/moj.html" %}
+{%- from "moj/components/pagination/macro.njk" import mojPagination -%}
+{%- from "govuk/components/table/macro.njk" import govukTable -%}
+{%- from "moj/components/search/macro.njk" import mojSearch -%}
+
+{% set pageHeaderTitle = "Search for a contact" %}
+{% set backLinkHref = true %}
+
+{% block content %}
+
+<h1 class="govuk-heading-l">Search for a contact</h1>
+
+<div class="govuk-grid-row">
+   <div class="govuk-grid-column-full">
+     <div class="block-background govuk-!-padding-6 govuk-!-margin-bottom-7">
+       <div class="moj-search govuk-!-width-three-quarters">
+         <h2 class="govuk-heading-m">Search by contact name</h2>
+         <form class="contact-search" method='POST'>
+           <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+           {{ govukInput({
+             classes: "moj-search__input",
+             id: "firstName",
+             name: "firstName",
+             value: firstName,
+             label: {
+               text: 'First name (optional)'
+             }
+           }) }}
+
+           {{ govukInput({
+             id: "middleNames",
+             name: "middleNames",
+             label: { text: "Middle names (optional)" },
+             value: middleNames
+           }) }}
+
+           {{ govukInput({
+             id: "lastName",
+             name: "lastName",
+             label: { text: "Last name" },
+             value: lastName
+           }) }}
+       </div>
+
+       <div class="govuk-!-width-three-quarters govuk-!-margin-top-4">
+         {{ govukCheckboxes({
+           idPrefix: "soundsLike",
+           name: "soundsLike",
+           classes: "govuk-checkboxes--small",
+           items: [
+             {
+               value: "true",
+               text: "Sounds like search"
+             }
+           ]
+         }) }}
+       </div>
+         <div class="govuk-!-width-three-quarters">
+
+             <details class="govuk-details govuk-!-margin-top-6 govuk-!-margin-bottom-0">
+               <summary class="govuk-details__summary">
+                 <span class="govuk-details__summary-text">
+                   Search by Person ID
+                 </span>
+               </summary>
+               <div class="govuk-details__text no-left-border">
+                 {{ govukInput({
+                   id: "contactId",
+                   name: "contactId",
+                   label: { text: "Person ID (optional)" },
+                   classes: 'govuk-!-width-one-third',
+                   value: contactId
+                 }) }}
+               </div>
+             </details>
+
+           <div class="govuk-details govuk-!-margin-top-6 govuk-!-margin-bottom-0">
+             {{ govukButton({
+               classes: "moj-search__button",
+               text: "Search",
+               attributes: {"data-qa": "search-button"},
+               preventDoubleClick: true
+             }) }}
+           </div>
+         </form>
+
+       </div>
+     </div>
+   </div> 
+</div>   
+
+{% endblock %}
