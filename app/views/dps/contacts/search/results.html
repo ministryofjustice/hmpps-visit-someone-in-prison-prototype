@@ -16,62 +16,63 @@
        <div class="moj-search govuk-!-width-three-quarters">
          <h2 class="govuk-heading-m">Search by contact name</h2>
          <form class="contact-search" method='POST'>
-           <input type="hidden" name="_csrf" value="{{ csrfToken }}">
-           {{ govukInput({
-             classes: "moj-search__input",
-             id: "firstName",
-             name: "firstName",
-             value: firstName,
-             label: {
-               text: 'First name (optional)'
-             }
-           }) }}
+          <input type="hidden" name="_csrf" value="{{ csrfToken }}">
+          {{ govukInput({
+            classes: "moj-search__input",
+            id: "firstName",
+            name: "firstName",
+            value: firstName,
+            label: {
+              text: 'First name (optional)'
+            }
+          }) }}
 
-           {{ govukInput({
-             id: "middleNames",
-             name: "middleNames",
-             label: { text: "Middle names (optional)" },
-             value: middleNames
-           }) }}
+          {{ govukInput({
+            id: "middleNames",
+            name: "middleNames",
+            label: { text: "Middle names (optional)" },
+            value: middleNames
+          }) }}
 
-           {{ govukInput({
-             id: "lastName",
-             name: "lastName",
-             label: { text: "Last name" },
-             value: lastName
-           }) }}
-       </div>
-         <div class="govuk-!-width-three-quarters">
+          {{ govukInput({
+            id: "lastName",
+            name: "lastName",
+            label: { text: "Last name" },
+            value: lastName
+          }) }}
+      </div>
 
-             <details class="govuk-details govuk-!-margin-top-6 govuk-!-margin-bottom-0">
-               <summary class="govuk-details__summary">
-                 <span class="govuk-details__summary-text">
-                   Show advanced filters
-                 </span>
-               </summary>
-               <div class="govuk-details__text no-left-border">
-               <div class="govuk-!-width-three-quarters govuk-!-margin-top-4">
-                 {{ govukCheckboxes({
-                   idPrefix: "soundsLike",
-                   name: "soundsLike",
-                   classes: "govuk-checkboxes--small",
-                   items: [
-                     {
-                       value: "true",
-                       text: "Sounds like search"
-                     }
-                   ]
-                 }) }}
-               </div>
-                 {{ govukInput({
-                   id: "contactId",
-                   name: "contactId",
-                   label: { text: "Contact ID (optional)" },
-                   classes: 'govuk-!-width-one-third',
-                   value: contactId
-                 }) }}
-               </div>
-             </details>
+      <div class="govuk-!-width-three-quarters govuk-!-margin-top-4">
+        {{ govukCheckboxes({
+          idPrefix: "soundsLike",
+          name: "soundsLike",
+          classes: "govuk-checkboxes--small",
+          items: [
+            {
+              value: "true",
+              text: "Sounds like search"
+            }
+          ]
+        }) }}
+      </div>
+        <div class="govuk-!-width-three-quarters">
+
+            <details class="govuk-details govuk-!-margin-top-6 govuk-!-margin-bottom-0">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Search by Person ID
+                </span>
+              </summary>
+              <div class="govuk-details__text no-left-border">
+                {{ govukInput({
+                  id: "contactId",
+                  name: "contactId",
+                  label: { text: "Person ID (optional)" },
+                  classes: 'govuk-!-width-one-third',
+                  value: contactId
+                }) }}
+              </div>
+            </details>
 
            <div class="govuk-details govuk-!-margin-top-6 govuk-!-margin-bottom-0">
              {{ govukButton({
@@ -192,39 +193,7 @@
       }
     ]
   ]
-}) }}
-
-    
-    
-    {{ mojPagination({
-      items: [{
-        text: "1",
-        href: "#",
-        selected: true
-      }, {
-        text: "2",
-        href: "#"
-      }, {
-        text: "3",
-        href: "#"
-      }, {
-        type: "dots"
-      }, {
-        text: "5",
-        href: "#"
-      }],
-      results: {
-        count: 51,
-        from: 1,
-        to: 10,
-        text: "results"
-      },
-      next: {
-        text: "Next",
-        href: "#"
-      }
-    }) }}
-    
+}) }}   
 
 
 {% endblock %}
