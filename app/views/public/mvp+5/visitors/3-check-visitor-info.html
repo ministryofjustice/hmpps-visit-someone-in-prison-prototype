@@ -1,0 +1,106 @@
+{% extends "../layouts/header.html" %}
+{% extends "../layouts/footer.html" %}
+{% extends "../layouts/banner.html" %}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{% set signedIn = true %}
+{% set activeLinkId = "visitors" %}
+{% set govukRebrand = true %}
+{% set backLinkHref = true %}
+
+{% block pageTitle %}
+Check your request – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+    <h1 class="govuk-heading-l">
+      Check your request
+    </h1>
+
+    <p class="govuk-body-l">
+      Your answers need to match the information on the prisoner’s visitor list.
+    </p>
+
+
+    {{ govukSummaryList({
+      rows: [
+        {
+          key: {
+            text: "First name"
+          },
+          value: {
+            text: "Sarah"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "name"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Last name"
+          },
+          value: {
+            text: "Philips"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "name"
+              }
+            ]
+          }
+        },
+        {
+          key: {
+            text: "Date of birth"
+          },
+          value: {
+            text: "5 January 1978"
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "date of birth"
+              }
+            ]
+          }
+        }
+      ]
+    }) }}
+
+    <p class="govuk-body">
+      By submitting this request you confirm that, to the best of your knowledge, the details you are providing are correct. Visitors must be on the prisoner’s visitor list. 
+    </p>
+
+    <p class="govuk-body">
+      Make sure the visitor information you provide matches the <a href="https://www.gov.uk/government/publications/management-of-security-at-visits-policy-framework-open-estate/acceptable-forms-of-identification-id-when-visiting-a-prison-in-england-and-wales-annex-a" class="govuk-link">acceptable forms of ID</a> that the visitor will use when they visit someone in prison.
+    </p>
+
+    {{ govukButton({
+      text: "Submit",
+      href: "4a-confirmation",
+      preventDoubleClick: true
+    }) }}
+
+
+
+  </div>
+</div>
+
+{% endblock %}

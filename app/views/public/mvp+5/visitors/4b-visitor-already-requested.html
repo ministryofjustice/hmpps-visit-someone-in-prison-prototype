@@ -1,0 +1,39 @@
+{% extends "../layouts/header.html" %}
+{% extends "../layouts/footer.html" %}
+{% extends "../layouts/banner.html" %}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% set signedIn = true %}
+{% set govukRebrand = true %}
+{% set activeLinkId = "visitors" %}
+
+{% block pageTitle %}
+  Visitor already requested – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Visitor already requested
+      </h1>
+          
+      <p>You have previously submitted a request for [First name] [Last name].</p>
+
+      <p>It is waiting to be reviewed by the prison.</p>
+
+      <p>We will respond to your request within 5 working days.</p>
+
+      <form class="form" action="../" method="post">
+        {{ govukButton({
+          text: "Continue",
+          href: "/"
+        }) }}
+      </form>
+    </div>
+  </div>
+
+{% endblock %}
