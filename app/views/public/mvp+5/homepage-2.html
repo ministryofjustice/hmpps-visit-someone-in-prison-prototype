@@ -1,4 +1,4 @@
-{% extends "./layouts/header1.html" %}
+{% extends "./layouts/header.html" %}
 {% extends "./layouts/footer.html" %}
 {% extends "./layouts/banner.html" %}
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
@@ -9,7 +9,7 @@
 {% set govukRebrand = true %}
 
 {% block pageTitle %}
-Visits – {{ serviceName }}
+Welcome – {{ serviceName }}
 {% endblock %}
 
 {% block content %}
@@ -18,8 +18,13 @@ Visits – {{ serviceName }}
   <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        Visits
+        Welcome
       </h1>
+
+      {{ govukButton({
+        text: "Book a visit",
+        href: "/public/mvp+5/book/1-visitors.html"
+        }) }}
 
       <p>Only bookings made using GOV.UK One Login are shown.</p>
       
