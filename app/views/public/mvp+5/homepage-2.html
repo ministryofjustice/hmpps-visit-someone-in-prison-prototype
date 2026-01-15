@@ -16,51 +16,33 @@ Welcome – {{ serviceName }}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-
-    <h2 class="govuk-heading-m">{{ data['prisoner-name'] }} at {{ data['prison-name'] }}</h2>
+    
+    <h1 class="govuk-heading-l">
+      Visit {{ data['prisoner-name'] }}
+    </h1>
 
     {{ govukButton({
     text: "Book a visit",
-    href: "/public/mvp+5/book/1-visitors.html",
-    isStartButton: true
+    href: "/public/mvp+5/book/1-visitors.html"
     }) }}
-
 
     <aside class="govuk-prototype-kit-common-templates-related-items" role="complementary">
       <br>
-      <h2 class="govuk-heading-m" id="subsection-title">
+      <h2 class="govuk-heading-l" id="subsection-title">
         Your next visit
       </h2>
+      <p>Only bookings made using GOV.UK One Login are shown.</p>
+
+      <strong class="govuk-tag govuk-tag--orange">Awaiting review</strong>
+      <br><br>
+      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">{{ data['prisoner-name'] }} at {{ data['prison-name'] }}</h3>
+      <p class="govuk-body govuk-!-margin-bottom-1">{{ data['visit-1-date'] }}</p>
+      <p class="govuk-body govuk-!-margin-bottom-1">{{ data['visit-1-time'] }}</p>
+      <p class="govuk-body govuk-!-margin-bottom-1">Visit reference: {{ data['visit-1-ref'] }}</p>
+      <p class="govuk-body govuk-!-margin-bottom-1"><a href="bookings/future/details-request" class="govuk-link">View
+          details</a>&nbsp;&nbsp;<a href="bookings/future/cancel.html" class="govuk-link">Cancel visit</a>
+      </p>
     </aside>
- 
-    <p>Only bookings made using GOV.UK One Login are shown.</p>
-
-
-
-
-
-    <div class="govuk-summary-card">
-      <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">
-          {{ data['visit-0-date'] }} <br>
-          {{ data['visit-0-time'] }} <br>
-          Visit reference: {{ data['visit-0-ref'] }}
-        </h2>
-      </div>
-      <div class="govuk-summary-card__content">
-        <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row">
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body govuk-!-margin-bottom-1"><a href="bookings/future/details" class="govuk-link">View details</a>&nbsp;&nbsp;<a href="bookings/future/cancel.html" class="govuk-link">Cancel visit</a></p>
-            </dd>
-          </div>
-        </dl>
-      </div>
-    </div>
-
-    <br>
-
-    <p class="govuk-body"><a href="./bookings/" class="govuk-link">View all visits</a></p>
 
   </div>
 </div>
