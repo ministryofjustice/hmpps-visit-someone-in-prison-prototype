@@ -18,25 +18,23 @@ Welcome – {{ serviceName }}
   <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        Welcome
+        Book a visit
       </h1>
 
       {{ govukButton({
-        text: "Book a visit",
-        href: "/public/mvp+5/book/1-visitors.html"
+        text: "Start",
+        href: "/public/mvp+5/book/1-visitors.html",
+        isStartButton: true
         }) }}
 
+      <h1 class="govuk-heading-l">
+        Your next visit
+      </h1>
+
       <p>Only bookings made using GOV.UK One Login are shown.</p>
+
       
       <h2 class="govuk-heading-m">{{ data['prisoner-name'] }} at {{ data['prison-name'] }}</h2>
-
-      <h3 class="govuk-heading-s govuk-!-margin-bottom-1">{{ data['visit-0-date'] }}</h3>
-      <!-- <p class="govuk-body govuk-!-margin-bottom-1">{{ data['prisoner-name'] }} at {{ data['prison-name'] }}</p> -->
-      <p class="govuk-body govuk-!-margin-bottom-1">{{ data['visit-0-time'] }}</p>
-      <p class="govuk-body govuk-!-margin-bottom-1">Visit reference: {{ data['visit-0-ref'] }}</p>
-      <p class="govuk-body govuk-!-margin-bottom-1"><a href="bookings/future/details" class="govuk-link">View details</a>&nbsp;&nbsp;<a href="bookings/future/cancel.html" class="govuk-link">Cancel visit</a></p>
-  
-      <br><br>
   
       <h3 class="govuk-heading-s govuk-!-margin-bottom-1">{{ data['visit-1-date'] }}</h3>
       <strong class="govuk-tag govuk-tag--orange">Awaiting review</strong>
@@ -50,14 +48,7 @@ Welcome – {{ serviceName }}
       <br>
       <br>
     
-      {{ govukButton({
-      text: "Book a visit",
-      href: "/public/mvp+5/book/1-visitors.html"
-      }) }}
-
-
-      <p class="govuk-body"><a href="./bookings/past" class="govuk-link">View past visits</a></p>
-      <p class="govuk-body"><a href="./bookings/cancelled" class="govuk-link">View rejected and cancelled visits</a></p>
+      <p class="govuk-body"><a href="./bookings/" class="govuk-link">View all visits</a></p>
   </div>
 </div>
 
