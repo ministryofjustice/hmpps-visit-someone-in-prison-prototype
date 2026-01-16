@@ -1,0 +1,37 @@
+{% extends "../layouts/header.html" %}
+{% extends "../layouts/footer.html" %}
+{% extends "../layouts/banner.html" %}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% set signedIn = true %}
+{% set govukRebrand = true %}
+
+{% block pageTitle %}
+  Visit requested – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <div class="govuk-panel govuk-panel--confirmation custom-blue-panel">
+        
+        <h1 class="govuk-panel__title">Visit requested</h1>
+        <div class="govuk-panel__body">
+          It will now be reviewed by {{ data['prison-name'] }}</strong>
+        </div>
+      </div>
+      
+      <p>We have sent an email with details of your request to the main contact.</p>
+      <p>Request reference: ab-cd-ef-gh</p>
+                
+      <h2 class="govuk-heading-m">What happens next</h2>
+      <p>Your visit is not booked yet. It needs to be checked.</p>
+      <p>An email with the prison’s decision will be sent to the main contact.</p>
+      <p>Your bookings page also shows the status of upcoming visits.</p>
+      <p><a href="../bookings/">Your bookings page</a> also shows the status of upcoming visits.</p>
+    </div>
+  </div>
+
+{% endblock %}

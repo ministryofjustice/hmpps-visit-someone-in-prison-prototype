@@ -1,0 +1,20 @@
+{% from "govuk/components/phase-banner/macro.njk" import govukPhaseBanner %}
+{% from "govuk/components/back-link/macro.njk" import govukBackLink %}
+
+{% block beforeContent %}
+
+    {{ govukPhaseBanner({
+      tag: {
+        text: "Prototype"
+      },
+      html: 'This is a prototype – the information is for demonstration purposes only.'
+    }) }}
+
+    {% if backLinkHref %}
+      {{ govukBackLink({
+        href: "javascript:window.history.back()",
+        text: "Back"
+      }) }}
+    {% endif %}
+
+{% endblock %}

@@ -1,0 +1,43 @@
+{% from "di-govuk-one-login-service-header/service-header.njk" import govukOneLoginServiceHeader %}
+
+{% set govukRebrand = true %}
+{% set serviceName = "Visit someone in prison" %}
+
+{% block header %}
+
+    {% if signedIn %}
+
+    {{ govukOneLoginServiceHeader({
+    signOutLink: "/public",
+    oneLoginLink: "/public",
+    rebrand: true,
+    serviceNavigationParams: { 
+      navigation: [
+      {
+        href: "#", 
+        text: "Visits",
+        active: activeLinkId == "home"
+      },{
+        href: "#", 
+        text: "Visitors",
+        active: activeLinkId == "visitors"
+      }], 
+      serviceName: serviceName
+      }
+  }) }}
+
+  {% else %}
+
+  {{ govukOneLoginServiceHeader({
+    signOutLink: "/public",
+    oneLoginLink: "/public",
+    rebrand: true,
+    serviceNavigationParams: { 
+      navigation: [], 
+      serviceName: serviceName
+      }
+  }) }}
+
+  {% endif %}
+
+{% endblock %}

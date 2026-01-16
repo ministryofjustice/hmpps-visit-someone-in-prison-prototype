@@ -1,0 +1,91 @@
+{% extends "../layouts/header.html" %}
+{% extends "../layouts/footer.html" %}
+{% extends "../layouts/banner.html" %}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% set backLinkHref = true %}
+{% set govukRebrand = true %}
+
+{% block pageTitle %}
+  Who is the main contact for this booking? – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <form class="form" action="6-check-answers" method="post">
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+            <h1 class="govuk-fieldset__heading">
+              Contact details for {{ data['visitor-1-name'] }}
+            </h1>
+          </legend>
+
+          <p>We use contact details to send updates about the booking.</p>
+
+          <p>The main contact can get both emails and text messages.</p>
+
+
+<!--
+          <div class="govuk-warning-text">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-visually-hidden">Warning</span>
+              If no contact details are entered, we cannot tell visitors if the visit is cancelled or changed.
+            </strong>
+          </div>
+          
+        -->
+
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+          <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="contact" name="contact" type="checkbox" value="email" data-aria-controls="conditional-contact">
+              <label class="govuk-label govuk-checkboxes__label" for="contact">
+                Get updates by email
+              </label>
+            </div>
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="contact-by-email">
+                  Email address
+                </label>
+                <input class="govuk-input govuk-!-width-two-third" id="contact-by-email" name="visitor-1-email" type="email" spellcheck="false" value="{{ data['visitor-1-email'] }}" autocomplete="email">
+              </div>
+            </div>
+            <div class="govuk-checkboxes__item">
+              <input class="govuk-checkboxes__input" id="contact-2" name="contact" type="checkbox" value="phone" data-aria-controls="conditional-contact-2">
+              <label class="govuk-label govuk-checkboxes__label" for="contact-2">
+                Get updates by phone
+              </label>
+            </div>
+            <div class="govuk-checkboxes__conditional govuk-checkboxes__conditional--hidden" id="conditional-contact-2">
+              <div id="nationality-hint" class="govuk-hint">
+                If this is a UK mobile number, we will send a text message to confirm the booking and any updates
+              </div>
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="contact-by-phone">
+                  UK phone number
+                </label>
+                <input class="govuk-input govuk-!-width-two-third" id="contact-by-phone" name="visitor-1-tel" type="phone" value="{{data['visitor-1-tel']}}" autocomplete="tel">
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+
+      <br>
+          
+      <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

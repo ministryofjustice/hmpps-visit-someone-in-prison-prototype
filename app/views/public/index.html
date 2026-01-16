@@ -10,28 +10,19 @@
 
   <div class="govuk-grid-column-two-thirds">
 
-  <h2 class="govuk-heading-m">
-    Research May 2025
-  </h2>
-  
-  <p class="govuk-body">Scenarios for usability research on visit requests.</p>
-  </p>
-  
-  <ul class="govuk-list govuk-list--bullet">
-    <li>
-      <a class="govuk-link" href="/public/UT-052025/index?scenario=A">A - automatic booking</a>
-    </li>
-    <li>
-        <a class="govuk-link" href="/public/UT-052025/index?scenario=B">B - prisoner review</a>
-    </li>
-    <li>
-        <a class="govuk-link" href="/public/UT-052025/index?scenario=C">C - visitor review</a>
-    </li>
-  </ul>
-    
-  <hr class="govuk-section-break govuk-section-break--visible">
-  <br>
+    <h2 class="govuk-heading-m">
+      MVP +5
+    </h2>
 
+    <p class="govuk-body">Includes:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a class="govuk-link" href="/public/mvp+5/homepage-1.html">home page - option 1</a></li>
+      <li><a class="govuk-link" href="/public/mvp+5/homepage-2.html">home page - option 2</a></li>
+      <li><a class="govuk-link" href="/public/mvp+5/homepage-3.html">home page - option 3</a></li>
+    </ul>
+
+    <hr class="govuk-section-break govuk-section-break--visible">
+    <br>
 
     <h2 class="govuk-heading-m">
       MVP +4
@@ -50,14 +41,15 @@
       <li>Visitors experience with registered visitor information</li>
       <li>email and text notification support</li>
       <li>booker registers to the service and adds a prisoner to their account</li>
-      <li>maintenance pages for <a class="govuk-link" href="/public/mvp+4/planned-downtime.html">planned</a> and <a class="govuk-link" href="/public/mvp+4/downtime.html">unplanned downtime</a></li>
+      <li>maintenance pages for <a class="govuk-link" href="/public/mvp+4/planned-downtime.html">planned</a> and <a
+          class="govuk-link" href="/public/mvp+4/downtime.html">unplanned downtime</a></li>
     </ul>
 
     <div class="govuk-button-group">
       {{ govukButton({
-        text: "Start",
-        href: "/public/mvp+4/"
-      }) }}       
+      text: "Home",
+      href: "/public/mvp+4/"
+      }) }}
     </div>
 
     <hr class="govuk-section-break govuk-section-break--visible">
@@ -96,13 +88,35 @@
 
   <div class="govuk-grid-column-one-third">
     <h2 class="govuk-heading-m">Data set-up</h2>
-    <p class="govuk-body">Provide specific  prison, prisoner and visitor information for use in the prototype.</p>
+    <p class="govuk-body">Provide specific prison, prisoner and visitor information for use in the prototype.</p>
 
     {{ govukButton({
-      text: "Customise",
-      href: "./setup"
-      }) 
+    text: "Customise",
+    href: "./setup"
+    })
     }}
+
+    <hr class="govuk-section-break govuk-section-break--visible">
+    <br>
+
+    <h2 class="govuk-heading-m">
+      Research May 2025
+    </h2>
+
+    <p class="govuk-body">Scenarios for usability research on visit requests.</p>
+    </p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a class="govuk-link" href="/public/UT-052025/index?scenario=A">A - automatic booking</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="/public/UT-052025/index?scenario=B">B - prisoner review</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="/public/UT-052025/index?scenario=C">C - visitor review</a>
+      </li>
+    </ul>
 
   </div>
 

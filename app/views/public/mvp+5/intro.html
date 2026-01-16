@@ -1,0 +1,82 @@
+{% extends "./layouts/header.html" %}
+{% extends "./layouts/footer.html" %}
+{% extends "./layouts/banner.html" %}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/service-navigation/macro.njk" import govukServiceNavigation %}
+
+{% set govukRebrand = true %}
+{% set backLinkHref = true %}
+
+{% block header %}
+    {{ govukHeader({
+        homepageUrl: "/public",
+        rebrand: true
+    }) }}
+
+    {{ govukServiceNavigation({
+      serviceName: serviceName,
+      serviceUrl: "/public"
+    }) }}
+{% endblock %}
+
+{% block pageTitle %}
+    Visiting {{ data['prison-name'] }} – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Visiting {{ data['prison-name'] }}</h1>
+
+      <p>How you book visits at this prison has changed.</p>
+
+      <p>You need to sign in or create a GOV.UK One Login to book a visit online.</p>
+
+      <div class="govuk-inset-text">
+        You can only book visits for one prisoner at {{ data['prison-name'] }} using this service. If you need to visit another prisoner, <a href="#" class="govuk-link">contact the prison directly</a>.
+      </div>
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Continue",
+          href: "#"
+        }) }}
+      </div>
+
+    </div>
+
+</div>
+
+{% endblock %}
+
+
+{% block footer %}
+
+  {{ govukFooter({
+    rebrand: true,
+    meta: {
+      items: [
+        {
+          href: "/public/mvp+4/support/accessibility-statement",
+          text: "Accessibility"
+        },
+        {
+          href: "/public/mvp+4/support/cookies",
+          text: "Cookies"
+        },
+        {
+          href: "/public/mvp+4/support/privacy-notice",
+          text: "Privacy"
+        },
+        {
+          href: "/public/mvp+4/support/terms-conditions",
+          text: "Terms and conditions"
+        }
+      ]
+    }
+  }) }}
+
+{% endblock %}
