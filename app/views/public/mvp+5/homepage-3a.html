@@ -1,4 +1,4 @@
-{% extends "./layouts/header1.html" %}
+{% extends "./layouts/header.html" %}
 {% extends "./layouts/footer.html" %}
 {% extends "./layouts/banner.html" %}
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
@@ -30,7 +30,7 @@ Your next visit – {{ serviceName }}
       <p class="govuk-body govuk-!-margin-bottom-1">{{ data['visit-1-date'] }}</p>
       <p class="govuk-body govuk-!-margin-bottom-1">{{ data['visit-1-time'] }}</p>
       <p class="govuk-body govuk-!-margin-bottom-1">Visit reference: {{ data['visit-1-ref'] }}</p>
-      <p class="govuk-body govuk-!-margin-bottom-1"><a href="bookings/future/details-request" class="govuk-link">View details</a>&nbsp;&nbsp;<a href="bookings/future/cancel.html" class="govuk-link">Cancel visit</a>
+      <p class="govuk-body govuk-!-margin-bottom-1"><a href="visits/future/details-request" class="govuk-link">View details</a>&nbsp;&nbsp;<a href="visits/future/cancel.html" class="govuk-link">Cancel visit</a>
       </p>
   
       <br>
@@ -42,7 +42,7 @@ Your next visit – {{ serviceName }}
       }) }}
 
 
-      <p class="govuk-body"><a href="./bookings" class="govuk-link">View all visits</a></p>
+      <p class="govuk-body"><a href="./visits" class="govuk-link">View all visits</a></p>
   </div>
 </div>
 

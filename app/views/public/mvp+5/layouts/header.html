@@ -8,27 +8,24 @@
     {% if signedIn %}
 
     {{ govukOneLoginServiceHeader({
-    signOutLink: "/public",
-    oneLoginLink: "/public",
-    rebrand: true,
-    serviceNavigationParams: { 
-      navigation: [
-      {
-        href: "#", 
-        text: "Home",
-        active: activeLinkId == "home"
-      },{
-        href: "#", 
-        text: "Visits",
-        active: activeLinkId == "bookings"
-      },{
-        href: "#", 
-        text: "Visitors",
-        active: activeLinkId == "visitors"
-      }], 
-      serviceName: serviceName
-      }
-  }) }}
+      signOutLink: "/public",
+      oneLoginLink: "/public",
+      rebrand: true,
+      serviceNavigationParams: { 
+        navigation: [
+        {
+          href: "/public/mvp+5", 
+          text: "Visits",
+          active: activeLinkId == "home"
+        },{
+          href: "/public/mvp+5/visitors", 
+          text: "Visitors",
+          active: activeLinkId == "visitors"
+        }], 
+        serviceName: serviceName,
+        collapseNavigationOnMobile: false
+        }
+    }) }}
 
   {% else %}
 
