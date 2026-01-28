@@ -30,7 +30,7 @@
       Visit request details
     </h1>
 
-    <h2 class="govuk-heading-m">Request reference: {{ data['visit-1-ref'] }}</h2>
+    <h2 class="govuk-heading-m">Visit reference: {{ data['visit-1-ref'] }}</h2>
 
     <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Date and time</h3>
     <p class="govuk-body govuk-!-margin-bottom-1">{{ data['visit-1-date'] }}</p>
@@ -55,13 +55,13 @@
 
     <form action="cancel-confirm.html" method="post">
       <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-         Cancel booking
+         Cancel visit
       </button>
      </form>
 
     <h2 class="govuk-heading-m">How to update your request</h2>
     <p class="govuk-body">To update your request, call {{ data['prison-name'] }} on {{ data['prison-tel'] }} between 9am and 5pm, Monday to Friday.</p>  
-    <p class="govuk-body">You will need the reference to make changes. Your request reference is {{ data['visit-1-ref'] }}.</p>  
+    <p class="govuk-body">You will need the reference to make changes. Your visit reference is {{ data['visit-1-ref'] }}.</p>  
     
   </div>
 </div>
