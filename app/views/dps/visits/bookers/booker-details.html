@@ -7,7 +7,7 @@
 
 {% block content %}
 
-<h1 class="govuk-heading-l">Booker account</h1>
+<h1 class="govuk-heading-l">Booker details</h1>
 
 <p>This information relates to the booker account from GOV.UK One Login.</p>
 
@@ -40,7 +40,7 @@
   </div>
 </dl>
 
-<h2 class="govuk-heading-m">Prisoner</h2>
+<h2 class="govuk-heading-m">Visitors linked to {{ data['prisoner-name'] }} ({{ data['prison-number'] }}) at {{ data['prison-name'] }}</h2>
 
 <p>This information relates to the prisoner linked to the booker account.</p>
 <p>Visits with any prisoners with any visits impacting Alerts or Restrictions will need to be reviewed by staff.</p>

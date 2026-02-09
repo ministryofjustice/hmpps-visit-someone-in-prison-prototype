@@ -1,19 +1,21 @@
 {% extends "layouts/moj.html" %}
+{%- from "govuk/components/table/macro.njk" import govukTable -%}
 
-{% set pageHeaderTitle = "Search for a booker account" %}
-{% set breadcrumbs2 = "Visits" %}
+{% set pageHeaderTitle = "Manage online bookers" %}
+{% set breadcrumbs2 = "Manage prison visits" %}
 {% set breadCrumb2link = "/dps/visits/" %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
-  <div class="govuk-grid-column-three-quarters">
-    <h1 class="govuk-heading-l">Search for a booker account</h1>
+  <div class="govuk-grid-column-full-width">
+    <h1 class="govuk-heading-l">Manage online bookers</h1>
+    <h2 class="govuk-heading-m">Search for a booker</h1>
     <div class="moj-search">
       <form action="/dps/visits/bookers/results" method="post">
         <div class="govuk-form-group">
           <div id="search-hint" class="govuk-hint moj-search__hint ">
-            Search for an existing booker. You can search by email address or booker reference number.
+            Enter the booker’s email address
           </div>
           <input class="govuk-input moj-search__input " id="search" name="search" type="search"
             aria-describedby="search-hint">
@@ -23,6 +25,86 @@
         </button>
       </form>
     </div>
+
+    <br>
+    <br>
+
+    <h2 class="govuk-heading-m">Requests to link visitors</h1>
+
+      {{ govukTable({
+        attributes: {
+          "data-module": "moj-sortable-table"
+        },
+        head: [
+          {
+            text: "Prisoner name",
+            attributes: {
+              "aria-sort": "ascending"
+            }
+          },
+          {
+            text: "Booker email",
+            attributes: {
+              "aria-sort": "none"
+            }
+          },
+          {
+            text: "Visitor name",
+            attributes: {
+              "aria-sort": "none"
+            }
+          },
+          {
+            text: "Requested on",
+            attributes: {
+              "aria-sort": "none"
+            }
+          },
+          {
+            text: "Action",
+            attributes: {
+              "aria-sort": "none"
+            }
+          }
+        ],
+        rows: [
+          [
+            {
+              text: "David Smith"
+            },
+            {
+              text: "barry@white.com"
+            },
+            {
+              text: "Barry White"
+            },
+            {
+              text: "27/1/2026"
+            },
+            {
+              html: "View"
+            }
+          ],
+          [
+          {
+            text: "Maurice Micklewhite"
+          },
+          {
+            text: "michael@caine.com"
+          },
+          {
+            text: "Shakira Smith"
+          },
+          {
+            text: "1/1/2026"
+          },
+          {
+            html: "View"
+                    
+          }
+         ] ]
+      }) }}
+
   </div>
 </div>
 
