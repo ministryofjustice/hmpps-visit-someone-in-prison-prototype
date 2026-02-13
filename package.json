@@ -9,7 +9,7 @@
     "@govuk-prototype-kit/step-by-step": "3.0.0",
     "@ministryofjustice/frontend": "8.0.0",
     "@x-govuk/govuk-prototype-components": "5.0.2",
-    "govuk-frontend": "5.14.0",
+    "govuk-frontend": "6.0.0",
     "govuk-one-login-service-header": "github:alphagov/di-govuk-one-login-service-header",
     "govuk-prototype-kit": "^13.19.0",
     "hmrc-frontend": "6.114.0",
