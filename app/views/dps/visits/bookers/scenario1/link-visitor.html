@@ -36,7 +36,7 @@
           </label>
         </div>
       </td>
-      <td class="govuk-table__cell">{{ data['visitor-1-name'] }}</td>
+      <th scope="row" class="govuk-table__header">{{ data['visitor-1-name'] }}</th>
       <td class="govuk-table__cell">{{ data['visitor-1-dob'] }} ({{ data['visitor-3-age'] }} years old)</td>
       <td class="govuk-table__cell">27 January 2026</td>
     </tr>
@@ -48,12 +48,27 @@
           </label>
         </div>
       </td>
-      <td class="govuk-table__cell">{{ data['visitor-2-name'] }}</td>
+      <th scope="row" class="govuk-table__header">{{ data['visitor-2-name'] }}</th>
       <td class="govuk-table__cell">{{ data['visitor-2-dob'] }} ({{ data['visitor-2-age'] }} years old)</td>
       <td class="govuk-table__cell">27 January 2026</td>
     </tr>
   </tbody>
 </table>
+
+<p>or</p>
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+        <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+          <b>None of the above</b>
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
 
 <form action="/dps/visits/bookers/booker-details-success" method="post">
   <button type="submit" class="govuk-button" data-module="govuk-button">
