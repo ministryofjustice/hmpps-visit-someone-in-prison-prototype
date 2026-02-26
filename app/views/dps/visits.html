@@ -22,8 +22,8 @@
     </ul>
 
     {{ govukButton({
-      text: "Start",
-      href: "/dps/visits/"
+    text: "Start",
+    href: "/dps/visits/"
     }) }}
 
     <hr class="govuk-section-break govuk-section-break--visible">
@@ -53,6 +53,41 @@
         <p class="govuk-body"><a href="dps/archived/AJ01_book_a_visit_1" class="govuk-link">AJ01 Book a visit V1</a>
         </p>
     </details>
+  </div>
+
+  <div class="govuk-grid-column-one-third">
+
+    <h2 class="govuk-heading-m">
+      Research March 2026
+    </h2>
+
+    <p class="govuk-body">Scenarios for usability research on booker management.</p>
+    </p>
+
+    <ul class="govuk-list govuk-list--bullet">
+      <li>
+        <a class="govuk-link" href="/dps/visits/bookers/scenario1/link-visitor">1 - match</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="/dps/visits/bookers/scenario2/link-visitor">2 - incorrect name</a>
+      </li>
+      <li>
+        <a class="govuk-link" href="/dps/visits/bookers/scenario3/link-visitor">3 - no DOB</a>
+      </li>
+    </ul>
+
+    <hr class="govuk-section-break govuk-section-break--visible">
+    <br>
+
+    <h2 class="govuk-heading-m">Data set-up</h2>
+    <p class="govuk-body">Provide specific prison, prisoner and visitor information for use in the prototype.</p>
+
+    {{ govukButton({
+    text: "Customise",
+    href: "./setup"
+    })
+    }}
+
   </div>
 </div>
 
