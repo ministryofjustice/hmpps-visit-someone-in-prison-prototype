@@ -13,8 +13,7 @@
 
 <p class="govuk-body-l"><b>{{ data['visitor-2-name'] }},</b> born on <b>{{ data['visitor-2-dob'] }}</b></p>
 
-
-<h2 class="govuk-heading-m">{{ data['prisoner-name'] }}'s visitors</h2>
+<h2 class="govuk-heading-m">Bill Wither's visitors</h2>
 
 <p class="govuk-body">Visitors already linked to this prisoner are not shown.</p>
 
@@ -25,8 +24,6 @@
       <th class="govuk-table__header" scope="col">Name</th>
       <th class="govuk-table__header" scope="col">Date of birth</th>
       <th class="govuk-table__header" scope="col">Last visit approved on</th>
-      <th class="govuk-table__header" scope="col">Action</th>
-
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row govuk-table__row--selected">
@@ -37,26 +34,27 @@
           </label>
         </div>
       </td>
-      <td class="govuk-table__cell">{{ data['visitor-2-name'] }}</td>
+      <td class="govuk-table__cell"><b>Mike Smith</b></td>
       <td class="govuk-table__cell">{{ data['visitor-2-dob'] }} ({{ data['visitor-2-age'] }} years old)</td>
-      <td class="govuk-table__cell">27 January 2026</td>
-      <td class="govuk-table__cell"><a href="#" class="govuk-link">View</a></td>
-    </tr>
-    <tr class="govuk-table__row govuk-table__row--selected">
-      <td class="govuk-table__cell">
-        <div class="govuk-radios__item govuk-radios--large">
-          <input type="radio" class="govuk-radios__input">
-          <label class="govuk-label govuk-radios__label">
-          </label>
-        </div>
-      </td>
-      <td class="govuk-table__cell">{{ data['visitor-2-name'] }}</td>
-      <td class="govuk-table__cell">{{ data['visitor-2-dob'] }} ({{ data['visitor-2-age'] }} years old)</td>
-      <td class="govuk-table__cell">27 January 2026</td>
-      <td class="govuk-table__cell"><a href="#" class="govuk-link">View</a></td>
+      <td class="govuk-table__cell">None</td>
     </tr>
   </tbody>
 </table>
+
+<p>or</p>
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset">
+    <div class="govuk-radios" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio" value="england">
+        <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+          <b>None of the above</b>
+        </label>
+      </div>
+    </div>
+  </fieldset>
+</div>
 
 <form action="/dps/visits/bookers/booker-details-success" method="post">
   <button type="submit" class="govuk-button" data-module="govuk-button">
