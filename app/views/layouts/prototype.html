@@ -6,6 +6,14 @@
   {% endif %}
 {%- endblock %}
 
+
+{% block beforeContent %}
+{% if backLinkHref %}
+<a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+{% endif %}
+{% endblock %}
+
+
 {% block header %}
   {{ mojHeader({
   organisationLabel: {
@@ -21,6 +29,7 @@
     }]
   }
   }) }}
+
 
 
 {% endblock %}
