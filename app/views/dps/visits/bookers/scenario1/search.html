@@ -13,7 +13,7 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <div class="moj-search">
-        <form action="/dps/visits/bookers/results" method="post">
+        <form action="#" method="post">
           <div class="govuk-form-group">
             <div id="search-hint" class="govuk-hint moj-search__hint ">
               Enter the booker’s email address
@@ -33,36 +33,45 @@
   <br>
 
   <h2 class="govuk-heading-m">Requests to link visitors</h1>
-
+ 
     <table class="govuk-table" data-module="moj-sortable-table">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header" aria-sort="ascending">Prisoner name</th>
+          <th scope="col" class="govuk-table__header" aria-sort="none">Prisoner name</th>
           <th scope="col" class="govuk-table__header" aria-sort="none">Booker email</th>
-          <th scope="col" class="govuk-table__header" aria-sort="none">Visitor name</th>
+          <th scope="col" class="govuk-table__header" aria-sort="ascending">Visitor name</th>
           <th scope="col" class="govuk-table__header" aria-sort="none">Requested on</th>
           <th scope="col" class="govuk-table__header">Action</th>
         </tr>
       </thead>
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">{{ data['prisoner-name'] }}</td>
-          <td class="govuk-table__cell">{{ data['visitor-1-email'] }}</td>
-          <td class="govuk-table__cell">{{ data['visitor-1-name'] }}</td>
+          <td class="govuk-table__cell">Charles Berry</td>
+          <td class="govuk-table__cell">boss@gordy.com</td>
+          <td class="govuk-table__cell">Bill Withers</td>
           <td class="govuk-table__cell">01/02/2026</td>
           <td class="govuk-table__cell">
-            <a href="./scenario1/link-visitor.html" class="govuk-link">View</a>
+            <a href="./link-visitor1.html" class="govuk-link">View</a>
           </td>
         </tr>
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell">Bill Wither</td>
-          <td class="govuk-table__cell">{{ data['visitor-2-email'] }}</td>
-          <td class="govuk-table__cell">{{ data['visitor-2-name'] }}</td>
-          <td class="govuk-table__cell">26/01/2026</td>
+          <td class="govuk-table__cell">Charles Berry</td>
+          <td class="govuk-table__cell">boss@gordy.com</td>
+          <td class="govuk-table__cell">Issac Hayes</td>
+          <td class="govuk-table__cell">01/02/2026</td>
           <td class="govuk-table__cell">
-            <a href="./scenario2/link-visitor.html" class="govuk-link">View</a>
-          </td>
+            <a href="./link-visitor2.html" class="govuk-link">View</a>
+          </td>  
         </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Charles Berry</td>
+          <td class="govuk-table__cell">boss@gordy.com</td>
+          <td class="govuk-table__cell">Marvin Gaye</td>
+          <td class="govuk-table__cell">01/02/2026</td>
+          <td class="govuk-table__cell">
+            <a href="./link-visitor3.html" class="govuk-link">View</a>
+          </td>
+
       </tbody>
     </table>
 

@@ -1,0 +1,46 @@
+{% extends "layouts/prototype.html" %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% set titleText = "Data set-up" %}
+{% set pageHeaderTitle = "Visit someone in prison - Visits - Data set-up" %}
+{% set backLinkHref = true %}
+
+{% block content %}
+
+<form class="form" action="../dps/visits/bookers/search" method="post">
+
+<!-- 
+  Configuring the version of the prototype:
+  A : Visit auto approved
+  B : Prisoner causes review
+  C : Visitor causes review
+-->
+  
+      {{ govukRadios({
+      name: "scenario",
+      fieldset: {
+      legend: {
+      text: "Choose a scenario",
+      classes: "govuk-fieldset__legend--m"
+      }
+      },
+      items: [
+      {
+      value: "A",
+      text: "A - existing approval scenarios"
+      },
+      {
+      value: "B",
+      text: "B - edit booker information"
+      }
+      ]
+      }) }}
+
+      <button class="govuk-button" data-module="govuk-button">Save</button>
+
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}
