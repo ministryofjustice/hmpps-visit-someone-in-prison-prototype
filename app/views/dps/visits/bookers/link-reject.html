@@ -7,6 +7,18 @@
 
 {% block content %}
 
+<div role="region" class="moj-alert moj-alert--success moj-alert--with-heading" aria-label="success: File uploaded successfully" data-module="moj-alert">
+  <div>
+    <svg class="moj-alert__icon" role="presentation" focusable="false" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 30 30" height="30" width="30">
+      <path d="M11.2869 24.6726L2.00415 15.3899L4.62189 12.7722L11.2869 19.4186L25.3781 5.32739L27.9958 7.96369L11.2869 24.6726Z" fill="currentColor" />
+    </svg>
+  </div>
+  <div class="moj-alert__content">
+    <h2 class="moj-alert__heading">You rejected the request to link Bill Withers
+    </h2>The booker has been notified by email. You can <a href="#">view the booker’s account.</a>
+  </div>
+</div>
+
 <h1 class="govuk-heading-l">Manage online bookers</h1>
 
 <h2 class="govuk-heading-m">Search for a booker</h1>
@@ -33,7 +45,7 @@
   <br>
 
   <h2 class="govuk-heading-m">Requests to link visitors</h1>
- 
+
     <table class="govuk-table" data-module="moj-sortable-table">
       <thead class="govuk-table__head">
         <tr class="govuk-table__row">
