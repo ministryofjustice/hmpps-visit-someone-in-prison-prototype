@@ -1,0 +1,78 @@
+{% extends "layouts/moj.html" %}
+{%- from "govuk/components/table/macro.njk" import govukTable -%}
+
+{% set pageHeaderTitle = "Manage online bookers" %}
+{% set breadcrumbs2 = "Manage prison visits" %}
+{% set breadCrumb2link = "/dps/visits/" %}
+
+{% block content %}
+
+<h1 class="govuk-heading-l">Manage online bookers</h1>
+
+<h2 class="govuk-heading-m">Search for a booker</h1>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <div class="moj-search">
+        <form action="#" method="post">
+          <div class="govuk-form-group">
+            <div id="search-hint" class="govuk-hint moj-search__hint ">
+              Enter the booker’s email address
+            </div>
+            <input class="govuk-input moj-search__input " id="search" name="search" type="search"
+              aria-describedby="search-hint">
+          </div>
+          <button type="submit" class="govuk-button moj-search__button " data-module="govuk-button">
+            Search
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <br>
+  <br>
+
+  <h2 class="govuk-heading-m">Requests to link visitors</h1>
+ 
+    <table class="govuk-table" data-module="moj-sortable-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header" aria-sort="none">Prisoner name</th>
+          <th scope="col" class="govuk-table__header" aria-sort="none">Booker email</th>
+          <th scope="col" class="govuk-table__header" aria-sort="none">Visitor name</th>
+          <th scope="col" class="govuk-table__header" aria-sort="ascending">Requested on</th>
+          <th scope="col" class="govuk-table__header">Action</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">John Hannibal</td>
+          <td class="govuk-table__cell">call@a-team.com</td>
+          <td class="govuk-table__cell">Templeton Peck</td>
+          <td class="govuk-table__cell">01/02/2026</td>
+          <td class="govuk-table__cell">
+            <a href="./link-visitor1.html" class="govuk-link">View</a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">John Hannibal</td>
+          <td class="govuk-table__cell">call@a-team.com</td>
+          <td class="govuk-table__cell">Bosco Baracus</td>
+          <td class="govuk-table__cell">02/02/2026</td>
+          <td class="govuk-table__cell">
+            <a href="./link-visitor2.html" class="govuk-link">View</a>
+          </td>  
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">John Hannibal</td>
+          <td class="govuk-table__cell">call@a-team.com</td>
+          <td class="govuk-table__cell">Amy Allen</td>
+          <td class="govuk-table__cell">03/02/2026</td>
+          <td class="govuk-table__cell">
+            <a href="./link-visitor3.html" class="govuk-link">View</a>
+          </td>
+
+      </tbody>
+    </table>
+
+    {% endblock %}
