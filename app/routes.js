@@ -10,7 +10,7 @@ const router = govukPrototypeKit.requests.setupRouter()
 // Run this code when a form is submitted to 'register-another-visitor-answer'
 router.post('/register-another-visitor-answer', function (req, res) {
 
-    // Make a variable and give it the value from 'how-many-balls'
+    // Make a variable and give it the value
     var registerAnother = req.session.data['register-another-visitor-answer']
   
     // Check whether the variable matches a condition
@@ -26,7 +26,7 @@ router.post('/register-another-visitor-answer', function (req, res) {
 
   router.post('/register-another-visitor-answer-2', function (req, res) {
 
-    // Make a variable and give it the value from 'how-many-balls'
+    // Make a variable and give it the value
     var registerAnother = req.session.data['register-another-visitor-answer']
   
     // Check whether the variable matches a condition
@@ -41,8 +41,8 @@ router.post('/register-another-visitor-answer', function (req, res) {
   })
 
  router.post('/home-route', function (req, res) {
- 
-   // Make a variable and give it the value from 'how-many-balls'
+
+   // Make a variable and give it the value
    var scenario = req.session.data['scenario']
  
    // Check whether the variable matches a condition
@@ -57,7 +57,7 @@ router.post('/register-another-visitor-answer', function (req, res) {
  
  router.post('/visitors-route', function (req, res) {
   
-    // Make a variable and give it the value from 'how-many-balls'
+    // Make a variable and give it the value
     var scenario = req.session.data['scenario']
   
     // Check whether the variable matches a condition
@@ -84,7 +84,7 @@ router.post('/register-another-visitor-answer', function (req, res) {
    
    router.post('/confirmation', function (req, res) {
    
-    // Make a variable and give it the value from 'how-many-balls'
+    // Make a variable and give it the value
     var scenario = req.session.data['scenario']
    
     // Check whether the variable matches a condition
