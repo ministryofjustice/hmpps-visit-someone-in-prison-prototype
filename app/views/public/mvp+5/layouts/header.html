@@ -11,8 +11,6 @@
     {{ govukOneLoginServiceHeader({
       signOutLink: "/public",
       oneLoginLink: "/public",
-      serviceName: serviceName,
-      collapseNavigationOnMobile: false,
       serviceNavigationParams: { 
         navigation: [
         {
@@ -23,7 +21,9 @@
           href: "/public/mvp+5/visitors", 
           text: "Visitors",
           active: activeLinkId == "visitors"
-        }]
+        }],
+        collapseNavigationOnMobile: false,
+        serviceName: serviceName
         }
     }) }}
 
