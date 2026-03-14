@@ -1,0 +1,23 @@
+{% extends "layouts/moj.html" %}
+{% from "govuk/components/summary-list/macro.njk" import govukSummaryList %}
+
+{% set pageHeaderTitle = "Link a visitor" %}
+{% set breadcrumbs2 = "Manage prison visits" %}
+{% set breadCrumb2link = "/dps/visits/" %}
+
+
+{% block content %}
+
+<h1 class="govuk-heading-l">Edit a visitor</h1>
+
+<p class="govuk-body-l">call@a-team.com has provided the details:</p>
+
+<p class="govuk-body-l"><b>Templeton Peck,</b> born on <b>5 December 1950</b></p>
+
+<form action="../link-reject" method="post">
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+    Update and link
+  </button>
+</form>
+
+{% endblock %}
