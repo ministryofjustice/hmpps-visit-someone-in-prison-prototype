@@ -9,82 +9,47 @@
 {% block content %}
 
 <div class="govuk-width-container">
-  <main class="govuk-main-wrapper">
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
 
+      <h1 class="govuk-heading-l">Edit a visitor</h1>
 
-        <h1 class="govuk-heading-l">Edit a visitor</h1>
+      <p class="govuk-body-l">call@a-team.com has provided the details:</p>
 
-        <p class="govuk-body-l">call@a-team.com has provided the details:</p>
+      <p class="govuk-body-l"><b>Templeton Peck,</b> born on <b>5 December 1950</b></p>
 
-        <p class="govuk-body-l"><b>Templeton Peck,</b> born on <b>5 December 1950</b></p>
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header">First name</th>
+            <th scope="col" class="govuk-table__header">Last name</th>
+            <th scope="col" class="govuk-table__header">Date of birth</th>
+            <th scope="col" class="govuk-table__header">Action</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">First 6 weeks</th>
+            <td class="govuk-table__cell">£109.80 per week</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Next 33 weeks</th>
+            <td class="govuk-table__cell">£109.80 per week</td>
+          </tr>
+          <tr class="govuk-table__row">
+            <th scope="row" class="govuk-table__header">Total estimated pay</th>
+            <td class="govuk-table__cell">£4,282.20</td>
+          </tr>
+        </tbody>
+      </table>
 
+      <form action="../link-reject" method="post">
+        <button type="submit" class="govuk-button" data-module="govuk-button">
+          Update and link
+        </button>
+      </form>
 
-        {{ govukSummaryList({
-        rows: [
-        {
-        key: {
-        text: "First name"
-        },
-        value: {
-        text: "Templeton"
-        },
-        actions: {
-        items: [
-        {
-        href: "#",
-        text: "Change",
-        visuallyHiddenText: "name"
-        }
-        ]
-        }
-        },
-        {
-        key: {
-        text: "Last name"
-        },
-        value: {
-        text: "Peck"
-        },
-        actions: {
-        items: [
-        {
-        href: "#",
-        text: "Change",
-        visuallyHiddenText: "address"
-        }
-        ]
-        }
-        },
-        {
-        key: {
-        text: "Date of birth"
-        },
-        value: {
-        text: "None"
-        },
-        actions: {
-        items: [
-        {
-        href: "#",
-        text: "Change",
-        visuallyHiddenText: "date of birth"
-        }
-        ]
-        }
-        }
-        ]
-        }) }}
-
-        <form action="../link-reject" method="post">
-          <button type="submit" class="govuk-button" data-module="govuk-button">
-            Update and link
-          </button>
-        </form>
-
-      </div>
     </div>
-  </main>
+  </div>
 </div>
 {% endblock %}
