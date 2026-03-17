@@ -12,7 +12,7 @@
     "accessible-autocomplete": "^3.0.1",
     "govuk-frontend": "^6.0.0",
     "govuk-prototype-kit": "^13.19.0",
-    "hmrc-frontend": "7.1.0",
+    "hmrc-frontend": "7.2.0",
     "jquery": "4.0.0"
   }
 }
