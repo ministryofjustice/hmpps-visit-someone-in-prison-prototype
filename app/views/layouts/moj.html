@@ -8,7 +8,46 @@
   {% endif %}
 {%- endblock %}
 
+
+{% block header %}
+{{ mojHeader({
+  organisationLabel: {
+    text: "Digital Prison Services",
+    href: "/dps/visits"
+  },
+  navigation: {
+    label: "Prison",
+    items: [{
+      text: "Hewell (HMP)",
+      href: "/dps/visits",
+      active: true
+    }, {
+      text: "J. Smith",
+      href: "/dps/visits"
+    }]
+  }
+}) }}
+
+{% if banner%}
+<div class="govuk-grid-row technical-updates-banner" id="technical-updates-banner" data-banner-version="30 May 2025">
+  <div class="govuk-grid-column-full">
+    <div class="govuk-width-container govuk-body technical-updates-container">
+      <div class="technical-updates-content">
+        <strong class="technical-updates-whats-new">New features</strong>
+        <span>
+            We’re updating the service all the time, <a class="govuk-link govuk-link--inverse" href="/whats-new">find out more on the What’s new page.</a>
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{% endblock %}
+
+
 {% block beforeContent %}
+
   {% if breadcrumbs%}
   {{ govukBreadcrumbs({
     collapseOnMobile: true,
@@ -61,24 +100,4 @@
   <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
   {% endif %}
   
-{% endblock %}
-
-{% block header %}
-{{ mojHeader({
-  organisationLabel: {
-    text: "Digital Prison Services",
-    href: "/dps/visits"
-  },
-  navigation: {
-    label: "Prison",
-    items: [{
-      text: "Hewell (HMP)",
-      href: "/dps/visits",
-      active: true
-    }, {
-      text: "J. Smith",
-      href: "/dps/visits"
-    }]
-  }
-}) }}
 {% endblock %}
