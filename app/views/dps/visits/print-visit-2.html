@@ -6,13 +6,13 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-half">
-        <img src="/app/assets/HMPPS.jpg" alt="HMPPS Logo">
+        <img src="/public/images/HMPPS.jpg" alt="HMPPS logo" width="220" height="100">
     </div>
     <div class="govuk-grid-column-one-half">
         <h1 class="govuk-heading-xl">Leeds (HMP)</h1>
     </div>
 </div>
-
+<br><br><br>
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
         <h2 class="govuk-heading-l">Visit details</h2>
@@ -21,8 +21,8 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-half">
-        <p class="govuk-body govuk-!-margin-bottom-2 govuk-!-font-weight-bold">Date</p>
-        <p class>Tuesday 17 March 2026</p>
+        <p class="govuk-body govuk-!-margin-bottom-2 govuk-!-font-weight-bold">Date and time</p>
+        <p class>Tuesday 17 March 2026 2pm to 4pm</p>
     </div>
     <div class="govuk-grid-column-one-half">
         <p class="govuk-body govuk-!-margin-bottom-2 govuk-!-font-weight-bold">Prisoner name</p>
@@ -32,19 +32,12 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-half">
-        <p class="govuk-body govuk-!-margin-bottom-2 govuk-!-font-weight-bold">Time</p>
-        <p>14:00 - 16:00</p>
+        <p class="govuk-body govuk-!-margin-bottom-2 govuk-!-font-weight-bold">Reference</p>
+        <p>re-hy-km-pl</p>
     </div>
     <div class="govuk-grid-column-one-half">
         <p class="govuk-body govuk-!-margin-bottom-2 govuk-!-font-weight-bold">Prison number</p>
         <p>{{ data['prison-no'] }}</p>
-    </div>
-</div>
-
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-half">
-        <p class="govuk-body govuk-!-margin-bottom-2 govuk-!-font-weight-bold">Reference</p>
-        <p>re-hy-km-pl</p>
     </div>
 </div>
 
@@ -87,7 +80,8 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-half">
-        <p class="govuk-body govuk-!-margin-bottom-2 govuk-!-font-weight-bold">{{ data['visitor-2-name'] }} - {{ data['visitor-2-dob'] }}</p>
+        <p class="govuk-body govuk-!-margin-bottom-2 govuk-!-font-weight-bold">{{ data['visitor-2-name'] }} - {{
+            data['visitor-2-dob'] }}</p>
         <p>{{ data['visitor-2-address'] }}</p>
     </div>
     <div class="govuk-grid-column-one-half">
@@ -104,7 +98,8 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <p class="govuk-body govuk-!-margin-bottom-2 govuk-!-font-weight-bold">{{ data['visitor-3-name'] }} - {{ data['visitor-3-dob'] }}</p>
+        <p class="govuk-body govuk-!-margin-bottom-2 govuk-!-font-weight-bold">{{ data['visitor-3-name'] }} - {{
+            data['visitor-3-dob'] }}</p>
     </div>
 </div>
 
