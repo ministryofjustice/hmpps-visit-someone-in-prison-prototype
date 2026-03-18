@@ -1,0 +1,15 @@
+{% extends "govuk-prototype-kit/layouts/unbranded.html" %}
+
+{% block pageTitle -%}
+  {% if pageHeaderTitle %}
+  {{ pageHeaderTitle }} - DPS
+  {% endif %}
+{%- endblock %}
+
+{% block beforeContent %}
+
+  {% if backLinkHref %}
+  <a class="govuk-back-link" href="javascript:window.history.back()">Back</a>
+  {% endif %}
+  
+{% endblock %}
