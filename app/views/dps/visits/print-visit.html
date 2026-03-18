@@ -7,7 +7,7 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-half">
-        <p>IMAGE</p>
+        <img src="/app/assets/HMPPS.jpg" alt="HMPPS Logo">
     </div>
     <div class="govuk-grid-column-one-half">
         <h1 class="govuk-heading-xl">Leeds (HMP)</h1>
@@ -23,25 +23,30 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-half">
-        <p>Date</p>
+        <p class="govuk-body govuk-!-font-weight-bold">Date</p>
+        <p>Tuesday 17 March 2026</p>
     </div>
     <div class="govuk-grid-column-one-half">
-        <p>Prisoner name</p>
-    </div>
-</div>
-
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-one-half">
-        <p>Time</p>
-    </div>
-    <div class="govuk-grid-column-one-half">
-        <p>Prison number</p>
+        <p class="govuk-body govuk-!-font-weight-bold">Prisoner name</p>
+        <p>{{ data['prisoner-name'] }}</p>
     </div>
 </div>
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-half">
-        <p>Reference</p>
+        <p class="govuk-body govuk-!-font-weight-bold">Time</p>
+        <p>14:00 - 16:00</p>
+    </div>
+    <div class="govuk-grid-column-one-half">
+        <p class="govuk-body govuk-!-font-weight-bold">Prison number</p>
+        <p>{{ data['prison-no'] }}</p>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+        <p class="govuk-body govuk-!-font-weight-bold">Reference</p>
+        <p>{{ data['visit-ref'] }}</p>
     </div>
 </div>
 
@@ -83,9 +88,10 @@
         <hr align="center" width="100%">
     </div>
 </div>
-<br><br>
-<h2 class="govuk-heading-l">Officer checks</h2>
 
+<br><br>
+
+<h2 class="govuk-heading-l">Officer checks</h2>
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-half">
         <h3 class="govuk-heading-m">Initials of officer in charge:
