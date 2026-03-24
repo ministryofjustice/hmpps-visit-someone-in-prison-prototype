@@ -1,6 +1,7 @@
-[![Continuous Deployment](https://github.com/ministryofjustice/hmpps-visit-someone-in-prison-prototype/actions/workflows/cd-main.yaml/badge.svg)](https://github.com/ministryofjustice/hmpps-visit-someone-in-prison-prototype/actions/workflows/cd-main.yaml)
-
 # Visits Prototypes
+
+[![Ministry of Justice Repository Compliance Badge](https://github-community.service.justice.gov.uk/repository-standards/api/hmpps-visit-someone-in-prison-prototype/badge?style=flat)](https://github-community.service.justice.gov.uk/repository-standards/hmpps-visit-someone-in-prison-prototype)
+[![Continuous Deployment](https://github.com/ministryofjustice/hmpps-visit-someone-in-prison-prototype/actions/workflows/cd-main.yaml/badge.svg)](https://github.com/ministryofjustice/hmpps-visit-someone-in-prison-prototype/actions/workflows/cd-main.yaml)
 
 Based on the [GOV.UK Prototype Kit](https://prototype-kit.service.gov.uk/docs/) and hosted on the [MoJ Cloud Platform](https://user-guide.cloud-platform.service.justice.gov.uk/documentation/getting-started/prototype-kit.html).
 
