@@ -1,0 +1,129 @@
+{% extends "layouts/print.html" %}
+
+{% set pageHeaderTitle = "Print visit - Manage prison visits" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+        <img src="/public/images/HMPPS.jpg" alt="HMPPS logo" width="220" height="100">
+    </div>
+    <div class="govuk-grid-column-one-half">
+        <h1 class="govuk-heading-xl">Leeds (HMP)</h1>
+    </div>
+</div>
+
+<br><br>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-l">Visit information</h2>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+        <p class="govuk-body govuk-!-margin-bottom-2 govuk-!-font-weight-bold">Date</p>
+        <p class>Tuesday 17 March 2026</p>
+    </div>
+    <div class="govuk-grid-column-one-half">
+        <p class="govuk-body govuk-!-margin-bottom-2 govuk-!-font-weight-bold">Time</p>
+        <p class>2pm to 4pm</p>
+    </div>
+
+    <div class="govuk-grid-column-one-half">
+        <p class="govuk-body govuk-!-margin-bottom-2 govuk-!-font-weight-bold">Prisoner name</p>
+        <p>{{ data['prisoner-name'] }}</p>
+    </div>
+    <div class="govuk-grid-column-one-half">
+        <p class="govuk-body govuk-!-margin-bottom-2 govuk-!-font-weight-bold">Prison number</p>
+        <p>{{ data['prison-no'] }}</p>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+        <p class="govuk-body govuk-!-margin-bottom-2 govuk-!-font-weight-bold">Visit reference</p>
+        <p>re-hy-km-pl</p>
+    </div>
+    <div class="govuk-grid-column-one-half">
+        <p class="govuk-body govuk-!-margin-bottom-2 govuk-!-font-weight-bold">Visit type</p>
+        <p>Open</p>
+    </div>
+</div>
+
+<br>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+        <h2 class="govuk-heading-l">Visitors</h2>
+        <p class="govuk-body govuk-!-margin-bottom-2 govuk-!-font-weight-bold">{{ data['visitor-1-name'] }}</p>
+        <p>{{ data['visitor-1-address'] }}</p>
+        <p class="govuk-body govuk-!-margin-bottom-2 govuk-!-font-weight-bold">{{ data['visitor-2-name'] }}</p>
+        <p>{{ data['visitor-2-address'] }}</p>
+    </div>
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-half">
+            <h2 class="govuk-heading-l">Under 16s</h2>
+            <p class="govuk-body govuk-!-margin-bottom-2 govuk-!-font-weight-bold">{{ data['visitor-3-name']}}</p>
+            <p>Date of birth: {{data['visitor-3-dob'] }} (1 year old)</p>
+        </div>
+    </div>
+</div>
+
+<br>
+
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h3 class="govuk-heading-m">Visitor declaration</h3>
+        <p class="govuk-body-s">No unauthorised article may be taken into or from prison or supplied to a prisoner from
+            a visitor. Unauthorised articles may be confiscated; the visitor may be prosecuted, and may on conviction by
+            imprisoned or fined. The prisoner may face a disciplinary charge. Any article brought, with permission, for
+            a prisoner should be handed to the officer supervising visits. Any person entering or leaving a prison may
+            be stopped, searched and photographed. They may also be required to provide a personal biometric (i.e.
+            electronic fingerprint) or submit to another physical measurement.</p>
+        <p class="govuk-body-s">The Governor may refuse entry to or direct the removal from a prison of any person who
+            does not leave on being required to do so.</p>
+    </div>
+</div>
+
+<br>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <p class="govuk-body govuk-!-margin-bottom-2 govuk-!-font-weight-bold">Visitor signiture:
+        </p>
+        <hr align="center" width="100%">
+    </div>
+</div>
+
+<br><br>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-l">Staff checks</h2>
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+        <p class="govuk-body govuk-!-margin-bottom-2 govuk-!-font-weight-bold">Initials of staff member:
+        </p>
+        <hr align="center" width="100%">
+    </div>
+    <div class="govuk-grid-column-one-third">
+        <p class="govuk-body govuk-!-margin-bottom-2 govuk-!-font-weight-bold">Time of checks:
+        </p>
+        <hr align="center" width="100%">
+    </div>
+</div>
+
+<br><br>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <p class="govuk-body-s">Printed: Monday 16 March 2026 at 14:34</p>
+    </div>
+</div>
+
+
+{% endblock %}
