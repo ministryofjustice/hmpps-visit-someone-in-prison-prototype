@@ -3,6 +3,7 @@
     "dev": "govuk-prototype-kit dev",
     "serve": "govuk-prototype-kit serve",
     "start": "govuk-prototype-kit start",
+    "security_audit": "npx audit-ci --config audit-ci.json",
     "setup": "npm ci && hmpps-npm-script-run-allowlist"
   },
   "engines": {
@@ -21,6 +22,7 @@
     "jquery": "4.0.0"
   },
   "devDependencies": {
-    "@ministryofjustice/hmpps-npm-script-allowlist": "0.0.4"
+    "@ministryofjustice/hmpps-npm-script-allowlist": "0.0.4",
+    "audit-ci": "7.1.0"
   }
 }
