@@ -9,9 +9,12 @@ RUN addgroup -g 1017 -S appgroup \
 
 WORKDIR /app
 
+COPY package*.json .allowed-scripts.mjs .npmrc ./
+RUN NPM_CONFIG_AUDIT=false NPM_CONFIG_FUND=false npm run setup
+
 COPY . .
 
-RUN npm run setup
+RUN npm prune --no-audit --omit=dev
 
 RUN chown -R appuser:appgroup /app
 
