@@ -11,7 +11,7 @@ WORKDIR /app
 
 COPY . .
 
-RUN npm install
+RUN npm run setup
 
 RUN chown -R appuser:appgroup /app
 
