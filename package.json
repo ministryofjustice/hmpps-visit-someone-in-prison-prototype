@@ -2,7 +2,12 @@
   "scripts": {
     "dev": "govuk-prototype-kit dev",
     "serve": "govuk-prototype-kit serve",
-    "start": "govuk-prototype-kit start"
+    "start": "govuk-prototype-kit start",
+    "setup": "npm ci && hmpps-npm-script-run-allowlist"
+  },
+  "engines": {
+    "node": "^24",
+    "npm": "^11"
   },
   "dependencies": {
     "@govuk-one-login/service-header": "^5.0.0",
@@ -14,5 +19,8 @@
     "govuk-prototype-kit": "^13.20.0",
     "hmrc-frontend": "7.9.0",
     "jquery": "4.0.0"
+  },
+  "devDependencies": {
+    "@ministryofjustice/hmpps-npm-script-allowlist": "0.0.4"
   }
 }
