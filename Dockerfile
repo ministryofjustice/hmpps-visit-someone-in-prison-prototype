@@ -1,7 +1,5 @@
 FROM node:24-alpine
 
-ENV NODE_ENV=production
-
 RUN addgroup -g 1017 -S appgroup \
   && adduser -u 1017 -S appuser -G appgroup \
   && apk update \
