@@ -4,12 +4,12 @@
 {%- from "moj/components/notification-badge/macro.njk" import mojNotificationBadge -%}
 {%- from "govuk/components/tag/macro.njk" import govukTag -%}
 
-{% set pageHeaderTitle = "Manage prison visits" %}
+{% set pageHeaderTitle = "{{ data['app-name'] }}" %}
 {% set breadcrumbs = true %}
 
 {% block content %}
 
-<h1 class="govuk-heading-l">Manage prison visits</h1>
+<h1 class="govuk-heading-l">{{ data['app-name'] }}</h1>
 
 <h2 class="govuk-heading-m">Bookings</h2>
 

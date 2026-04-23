@@ -1,14 +1,11 @@
 {% extends "layouts/prototype.html" %}
 
-{% set titleText = "Visit and Contacts Prototypes" %}
-
-{% set pageHeaderTitle = "Visits and Contacts Prototypes" %}
-
+{% set titleText = "Social visits and Contacts Prototypes" %}
+{% set pageHeaderTitle = "Social visits and Contacts Prototypes" %}
 
 {% block content %}
 
-<h1 class="govuk-heading-l">Visit and Contact Prototypes</h1>
-
+<h1 class="govuk-heading-l">Social visits and Contact Prototypes</h1>
 
 <h1 class="govuk-heading-m">Digital Prison Services</h1>
 
@@ -16,7 +13,7 @@
    <li class="govuk-grid-column-one-half card-group__item">
       <div class="card card--clickable">
          <h2 class="govuk-heading-s card__heading">
-            <a class="govuk-link card__link" href="/dps/visits">Manage prison visits</a>
+            <a class="govuk-link card__link" href="/dps/visits">{{ data['app-name'] }}</a>
          </h2>
          <strong class="govuk-tag govuk-tag--green">
             Public Beta
