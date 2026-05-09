@@ -11,7 +11,7 @@
     "npm": "^11"
   },
   "dependencies": {
-    "@govuk-one-login/service-header": "^5.0.0",
+    "@govuk-one-login/service-header": "^6.0.0",
     "@govuk-prototype-kit/common-templates": "^3.0.0",
     "@govuk-prototype-kit/step-by-step": "^3.0.0",
     "@ministryofjustice/frontend": "^9.0.0",
