@@ -5,6 +5,7 @@
 {% set serviceName = "Visit someone in prison" %}
 
 {% block header %}
+{% block govukHeader %}
 
     {% if signedIn %}
 
@@ -44,5 +45,5 @@
   }) }}
 
   {% endif %}
-
+  {% endblock %}
 {% endblock %}
