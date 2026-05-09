@@ -1,11 +1,10 @@
 {% from "service-header/service-header.njk" import govukOneLoginServiceHeader %}
 
-
 {% set govukRebrand = true %}
 {% set serviceName = "Visit someone in prison" %}
 
 {% block header %}
-
+{% block govukHeader %}
     {% if signedIn %}
 
     {{ govukOneLoginServiceHeader({
@@ -39,5 +38,6 @@
   }) }}
 
   {% endif %}
+  {% endblock %}
 
 {% endblock %}
