@@ -22,7 +22,7 @@
     "jquery": "4.0.0"
   },
   "devDependencies": {
-    "@ministryofjustice/hmpps-npm-script-allowlist": "0.0.4",
+    "@ministryofjustice/hmpps-npm-script-allowlist": "0.0.6",
     "audit-ci": "7.1.0"
   }
 }
