@@ -1,0 +1,62 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+{%- from "moj/components/header/macro.njk" import mojHeader -%}
+{%- from "moj/components/primary-navigation/macro.njk" import mojPrimaryNavigation -%}
+
+{% block header %}
+
+   {{ mojHeader({
+      organisationLabel: {
+         text: "HMPPS",
+         href: "#"
+      },
+      serviceLabel: {
+         text: "Prisoner Communication Monitoring Service",
+         href: "#"
+      },
+      navigation: {
+         label: "Account navigation",
+         items: [{
+            text: "Account name",
+            href: "#",
+            active: true
+         }, {
+            text: "Sign out",
+            href: "#"
+         }]
+      }
+   }) }}
+
+   {{ mojPrimaryNavigation({
+      label: "Primary navigation",
+      items: [
+         {
+            text: "Home",
+            href: "#",
+            active: true
+         },
+         {
+            text: "Access requests",
+            href: "#"
+         },
+         {
+            text: "Prisoner search",
+            href: "#"
+         },
+         {
+            text: "Authorise requests",
+            href: "#"
+         },
+         {
+            text: "Audit access requests",
+            href: "#"
+         },
+         {
+            text: "Admin",
+            href: "#"
+         }
+      ]
+   }) }}
+
+{% endblock %}
+{% block content %}
+{% endblock %}
