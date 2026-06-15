@@ -1,6 +1,7 @@
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
 {%- from "moj/components/header/macro.njk" import mojHeader -%}
 {%- from "moj/components/primary-navigation/macro.njk" import mojPrimaryNavigation -%}
+{%- from "moj/components/alert/macro.njk" import mojAlert -%}
 
 {% block header %}
 
@@ -59,4 +60,13 @@
 
 {% endblock %}
 {% block content %}
+
+   {{ mojAlert({
+      variant: "information",
+      title: "This request has already been reviewed.",
+      showTitleAsHeading: true,
+      dismissible: false,
+      html: 'You can <a href="/manage-bookers/${bookerReference}/booker-details">view the booker’s account</a>.'
+   }) }}
+
 {% endblock %}
