@@ -1,0 +1,46 @@
+{% extends "layouts/moj.html" %}
+
+{% set pageHeaderTitle = "Link a visitor" %}
+{% set breadcrumbs2 = data['app-name'] %}
+{% set breadCrumb2link = "/dps/visits/" %}
+
+
+{% block content %}
+
+<h1 class="govuk-heading-l">Link a visitor</h1>
+
+<p class="govuk-body-l">vicky87@hotmail.co.uk has requested to link:</p>
+
+<p class="govuk-body-l"><b>David Marley,</b> born on <b> 2 June 1990</b></p>
+
+<h2 class="govuk-heading-m">Carl Barnes's visitors</h2>
+
+<table class="govuk-table">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th class="govuk-table__header" scope="col">Select</th>
+      <th class="govuk-table__header" scope="col">Name</th>
+      <th class="govuk-table__header" scope="col">Date of birth</th>
+      <th class="govuk-table__header" scope="col">Last visit approved on</th>
+      <th class="govuk-table__header" scope="col">Action</th>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row govuk-table__row--selected">
+      <td class="govuk-table__cell"></td>
+      <th scope="row" class="govuk-table__header">Victoria Brady</th>
+      <td class="govuk-table__cell">Not entered</td>
+      <td class="govuk-table__cell">None</td>
+      <td class="govuk-table__cell">
+        <a href="#" class="govuk-link">Edit</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<form action="#" method="post">
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+    Reject the request
+  </button>
+</form>
+
+{% endblock %}

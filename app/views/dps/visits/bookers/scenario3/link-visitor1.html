@@ -1,0 +1,33 @@
+{% extends "layouts/moj.html" %}
+
+{% set pageHeaderTitle = "Link a visitor" %}
+{% set breadcrumbs2 = data['app-name'] %}
+{% set breadCrumb2link = "/dps/visits/" %}
+
+
+{% block content %}
+
+<h1 class="govuk-heading-l">Link a visitor</h1>
+
+
+<p class="govuk-body-l">vicky87@hotmail.co.uk has requested to link:</p>
+
+<p class="govuk-body-l"><b>Victoria Brady,</b> born on <b>5 December 1950</b></p>
+
+<h2 class="govuk-heading-m">Carl Barnes's visitors</h2>
+
+<div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-visually-hidden">Warning</span>
+    The prisoner does not have any visitors. Any new visitors will need to be added as social contacts before the can be linked.
+  </strong>
+</div>
+
+<form action="#" method="post">
+  <button type="submit" class="govuk-button" data-module="govuk-button">
+    Reject the request
+  </button>
+</form>
+
+{% endblock %}
