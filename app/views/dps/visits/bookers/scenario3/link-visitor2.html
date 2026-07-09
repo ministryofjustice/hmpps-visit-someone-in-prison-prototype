@@ -15,6 +15,14 @@
 
 <h2 class="govuk-heading-m">Carl Barnes's visitors</h2>
 
+<div class="govuk-warning-text">
+  <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+  <strong class="govuk-warning-text__text">
+    <span class="govuk-visually-hidden">Warning</span>
+      Visitors need a date of birth before they can be linked.
+  </strong>
+</div>
+
 <table class="govuk-table">
   <thead class="govuk-table__head">
     <tr class="govuk-table__row">
@@ -27,12 +35,19 @@
   </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row govuk-table__row--selected">
-      <td class="govuk-table__cell"></td>
-      <th scope="row" class="govuk-table__header">Victoria Brady</th>
-      <td class="govuk-table__cell">Not entered</td>
-      <td class="govuk-table__cell">None</td>
       <td class="govuk-table__cell">
-        <a href="#" class="govuk-link">Edit</a>
+        <div class="govuk-radios__item govuk-radios--large">
+          <input type="radio" class="govuk-radios__input">
+          <label class="govuk-label govuk-radios__label">
+          </label>
+        </div>
+      </td>
+      <td class="govuk-table__cell"></td>
+        <th scope="row" class="govuk-table__header">Victoria Brady</th>
+        <td class="govuk-table__cell">Not entered</td>
+        <td class="govuk-table__cell">None</td>
+        <td class="govuk-table__cell">
+          <a href="#" class="govuk-link">Edit</a>
       </td>
     </tr>
   </tbody>
