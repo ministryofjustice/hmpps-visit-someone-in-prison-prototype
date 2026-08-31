@@ -1,19 +1,19 @@
 {% from "service-header/service-header.njk" import govukOneLoginServiceHeader %}
 
-
-{% set govukRebrand = true %}
 {% set serviceName = "Visit someone in prison" %}
 
 {% block header %}
-{% block govukHeader %}
 
     {% if signedIn %}
 
     {{ govukOneLoginServiceHeader({
-    signOutLink: "/public",
-    oneLoginLink: "/public",
-    rebrand: true,
-    serviceNavigationParams: { 
+      signOutLink: "/public"}) 
+    }}
+
+    {{ govukServiceNavigation({
+      serviceName: serviceName,
+      oneLoginLink: "/public",
+      serviceUrl: "/",
       navigation: [
       {
         href: "/public/mvp+4", 
@@ -27,17 +27,15 @@
         href: "/public/mvp+4/visitors", 
         text: "Visitors",
         active: activeLinkId == "visitors"
-      }], 
-      serviceName: serviceName
-      }
-  }) }}
+      }]
+    }) 
+    }} 
 
   {% else %}
 
   {{ govukOneLoginServiceHeader({
     signOutLink: "/public",
     oneLoginLink: "/public",
-    rebrand: true,
     serviceNavigationParams: { 
       navigation: [], 
       serviceName: serviceName
@@ -45,5 +43,4 @@
   }) }}
 
   {% endif %}
-  {% endblock %}
 {% endblock %}
