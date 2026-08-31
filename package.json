@@ -14,11 +14,11 @@
     "@govuk-one-login/service-header": "^6.0.0",
     "@govuk-prototype-kit/common-templates": "^3.0.0",
     "@govuk-prototype-kit/step-by-step": "^3.0.0",
-    "@ministryofjustice/frontend": "10.0.1",
+    "@ministryofjustice/frontend": "11.0.0",
     "accessible-autocomplete": "^3.0.1",
     "govuk-frontend": "^6.4.0",
     "govuk-prototype-kit": "^13.20.3",
-    "hmrc-frontend": "7.29.0",
+    "hmrc-frontend": "7.31.0",
     "jquery": "4.0.0"
   },
   "devDependencies": {
