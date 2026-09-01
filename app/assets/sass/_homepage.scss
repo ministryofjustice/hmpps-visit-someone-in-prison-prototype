@@ -13,7 +13,7 @@
         width: 270px;
         padding: 15px 15px 20px 15px;
         border: 1px solid govuk-colour('black');
-        box-shadow: 0 4px govuk-colour('mid-grey');
+        box-shadow: 0 4px govuk-colour('black', $variant: 'tint-80');
 
         h3 {
             font-size: 19px;
@@ -27,7 +27,7 @@
 
         &__link {
             padding-top: 15px;
-            border-top: 1px solid govuk-colour('mid-grey');
+            border-top: 1px solid govuk-colour('black', $variant: 'tint-80');
             margin-top: auto;
         }
     }
