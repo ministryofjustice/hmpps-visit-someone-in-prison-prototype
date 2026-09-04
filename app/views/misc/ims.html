@@ -1,0 +1,55 @@
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+{%- from "moj/components/header/macro.njk" import mojHeader -%}
+{%- from "moj/components/alert/macro.njk" import mojAlert -%}
+
+{% block header %}
+   {{ mojHeader({
+      organisationLabel: {
+         text: "HMPPS",
+         href: "/"
+      },
+      serviceLabel: {
+         text: "Intelligence Management Service",
+         href: "#"
+      },
+      navigation: {
+         label: "Account navigation",
+         items: [{
+            text: "Account name",
+            href: "#",
+            active: true
+         }, {
+            text: "Sign out",
+            href: "#"
+         }]
+      }
+   }) }}
+{% endblock %}
+
+{% block content %}
+
+<h1 class="govuk-heading-l">
+   Intelligence reporting
+</h1>
+
+<ul class="govuk-grid-row card-group">
+   <li class="govuk-grid-column-one-half card-group__item">
+      <div class="card card--clickable">
+         <h2 class="govuk-heading-s card__heading">
+            <a class="govuk-link card__link" href="#">Submit a intelligence report</a>
+         </h2>
+         <p class="govuk-body card__description">Information that could help prevent crime inside and outside prisons.</p>
+      </div>
+   </li>
+
+   <li class="govuk-grid-column-one-half card-group__item">
+      <div class="card card--clickable">
+         <h2 class="govuk-heading-s card__heading">
+            <a class="govuk-link card__link" href="#">Submit a counter corruption report</a>
+         </h2>
+         <p class="govuk-body card__description">Information relating to counter corruption, staff wrongdoing and staff related resilience.</p>
+      </div>
+   </li>
+</ul>
+
+{% endblock %}

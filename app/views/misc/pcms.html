@@ -4,11 +4,10 @@
 {%- from "moj/components/alert/macro.njk" import mojAlert -%}
 
 {% block header %}
-
    {{ mojHeader({
       organisationLabel: {
          text: "HMPPS",
-         href: "#"
+         href: "/"
       },
       serviceLabel: {
          text: "Prisoner Communication Monitoring Service",
@@ -57,16 +56,8 @@
          }
       ]
    }) }}
-
 {% endblock %}
-{% block content %}
 
-   {{ mojAlert({
-      variant: "information",
-      title: "This request has already been reviewed.",
-      showTitleAsHeading: true,
-      dismissible: false,
-      html: 'You can <a href="/manage-bookers/${bookerReference}/booker-details">view the booker’s account</a>.'
-   }) }}
+{% block content %}
 
 {% endblock %}
