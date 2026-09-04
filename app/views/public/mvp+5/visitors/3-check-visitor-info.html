@@ -79,6 +79,23 @@ Check your request – {{ serviceName }}
               }
             ]
           }
+        },
+                {
+          key: {
+            text: "Prisoner name"
+          },
+          value: {
+            text: data['prisoner-name']
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "prisoner name"
+              }
+            ]
+          }
         }
       ]
     }) }}
