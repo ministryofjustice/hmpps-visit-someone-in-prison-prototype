@@ -1,0 +1,44 @@
+{% extends "../layouts/header.html" %}
+{% extends "../layouts/footer.html" %}
+{% extends "../layouts/banner.html" %}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+{% set backLinkHref = true %}
+{% set hidenav = true %}
+
+{% block pageTitle %}
+  Who are you visiting? – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Who are you visiting?
+    </h1>
+
+    {{ govukRadios({
+      name: "who",
+      items: [
+        {
+          value: "prisoner-1",
+          text: data['prisoner-name']
+        },
+        {
+          value: "prisoner-2",
+          text: "Scotland"
+        },
+        {
+          value: "prisoner-3",
+          text: "Wales"
+        }
+      ]
+    }) }}
+      
+  </div>
+</div>
+
+{% endblock %}
