@@ -3,15 +3,14 @@
 {% extends "../layouts/banner.html" %}
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
-{% from "govuk/components/input/macro.njk" import govukInput %}
-{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+    {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {% set signedIn = true %}
 {% set activeLinkId = "visitors" %}
 {% set backLinkHref = true %}
 
 {% block pageTitle %}
-Visitor information – {{ serviceName }}
+  Where is the prisoner you want to visit? – {{ serviceName }}
 {% endblock %}
 
 {% block content %}
@@ -20,51 +19,39 @@ Visitor information – {{ serviceName }}
   <div class="govuk-grid-column-three-quarters">
 
     <h1 class="govuk-heading-l">
-      Link a new visitor for {{ data['prisoner-name'] }}
+      Where is the prisoner you want to visit?
     </h1>
 
-    {{ govukInput({
-      label: {
-        text: "First name",
-        classes: "govuk-fieldset__legend--s"
-      },
-      id: "first-name",
-      name: "fullName",
-      autocomplete: "name",
-      spellcheck: false
-    }) }}
-
-    {{ govukInput({
-      label: {
-        text: "Last name",
-        classes: "govuk-fieldset__legend--s"
-      },
-      id: "last-name",
-      name: "lastName",
-      autocomplete: "name",
-      spellcheck: false
-    }) }}
-    
-    {{ govukDateInput({
-      id: "passport-issued",
-      namePrefix: "passport-issued",
-      fieldset: {
-        legend: {
-          text: "Date of birth",
-          isPageHeading: false,
-          classes: "govuk-fieldset__legend--s"
+    {{ govukRadios({
+      name: "whereDoYouLive",
+      items: [
+        {
+          value: "england",
+          text: "England"
+        },
+        {
+          value: "scotland",
+          text: "Scotland"
+        },
+        {
+          value: "wales",
+          text: "Wales"
+        },
+        {
+          value: "northern-ireland",
+          text: "Northern Ireland"
         }
-      },
-      hint: {
-        text: "For example, 27 3 2024"
-      }
+      ]
     }) }}
 
-    {{ govukButton({
-      text: "Continue",
-      href: "3-check-visitor-info"
-    }) }}
+    <div class="govuk-button-group">
+        {{ govukButton({
+        text: "Continue",
+        href: "/public/mvp+5/prisoners/2-prisoner-details"
+        }) }}
+    </div>
 
+    <p>If you do not know, you can <a href="https://www.gov.uk/find-prisoner" class="govuk-link">apply to find the prisoner’s location</a>.</p>
   </div>
 </div>
 
