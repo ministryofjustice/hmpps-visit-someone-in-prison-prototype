@@ -17,7 +17,6 @@
     <div class="govuk-grid-column-two-thirds">
 
       <div class="govuk-panel govuk-panel--confirmation">
-        
         <h1 class="govuk-panel__title">Request submitted</h1>
         <div class="govuk-panel__body">
           We will review your request and reply within 5 working days.
@@ -26,14 +25,21 @@
           
       <p>You will get an email to say if your request has been approved or rejected.</p>
 
-      <p>You can also view the status of your requests on <a href="../../mvp+4/visitors/index.html" class="govuk-link">the visitors page</a>.</p>
+      <p>You can also view the status of your requests on <a href="../../mvp+5/visitors/index.html" class="govuk-link">the visitors page</a>.</p>
 
-      <form class="form" action="../" method="post">
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Book a visit",
+          href: "#"
+        }) }}
+
         {{ govukButton({
           text: "Link another visitor",
+          classes: "govuk-button--secondary",
           href: "2-visitor-info"
         }) }}
-      </form>
+      </div>
+      
     </div>
   </div>
 

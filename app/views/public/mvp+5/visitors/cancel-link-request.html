@@ -1,0 +1,62 @@
+{% extends "../layouts/header.html" %}
+{% extends "../layouts/footer.html" %}
+{% extends "../layouts/banner.html" %}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% set signedIn = true %}
+{% set activeLinkId = "visitors" %}
+{% set backLinkHref = true %}
+
+{% block pageTitle %}
+  Are you sure you want to cancel your request? – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+    <h1 class="govuk-heading-l">
+      Are you sure you want to cancel your request?
+    </h1>
+
+    <h2 class="govuk-heading-m">
+      Visitor
+    </h2>
+
+    <p>Toby Smith</p>
+
+    <h2 class="govuk-heading-m">
+      Date of birth
+    </h1>
+
+    <p>15 July 1988</p>
+
+    <br>
+
+    <form class="form" action="cancel-link-confirmation" method="post">
+      {{ govukRadios({
+        name: "cancelVisitorLinkRequest",
+        items: [
+          {
+            value: "yes",
+            text: "Yes, cancel this visitor link request"
+          },
+          {
+            value: "no",
+            text: "No, keep this visitor link request"
+          }
+        ]
+      }) }}
+
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
+
+  </div>
+</div>
+
+{% endblock %}

@@ -23,7 +23,7 @@ Check your request – {{ serviceName }}
     </h1>
 
     <p class="govuk-body-l">
-      Your answers need to match the information on the prisoner’s visitor list.
+      Your answers need to match the information on {{ data['prisoner-name'] }}'s visitor list.
     </p>
 
 
@@ -79,6 +79,23 @@ Check your request – {{ serviceName }}
               }
             ]
           }
+        },
+                {
+          key: {
+            text: "Prisoner name"
+          },
+          value: {
+            text: data['prisoner-name']
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "prisoner name"
+              }
+            ]
+          }
         }
       ]
     }) }}
@@ -96,8 +113,6 @@ Check your request – {{ serviceName }}
       href: "4a-confirmation",
       preventDoubleClick: true
     }) }}
-
-
 
   </div>
 </div>

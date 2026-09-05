@@ -1,0 +1,90 @@
+{% extends "../layouts/header.html" %}
+{% extends "../layouts/footer.html" %}
+{% extends "../layouts/banner.html" %}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% set signedIn = true %}
+{% set activeLinkId = "visitors" %}
+
+{% block pageTitle %}
+Prisoners and visitors – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h2 class="govuk-heading-l">{{ data['prisoner-name'] }}'s visitors</h2>
+
+    <h3 class="govuk-heading-s">Visitors linked to your account</h3>
+
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Name</th>
+          <th scope="col" class="govuk-table__header">Date of birth</th>
+          <th scope="col" class="govuk-table__header">Can you book a visit for them?</th>
+          <th scope="col" class="govuk-table__header">Action</th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">{{ data['visitor-1-name'] }}</td>
+          <td class="govuk-table__cell">{{ data['visitor-1-dob'] }}</td>
+          <td class="govuk-table__cell">Yes</td>
+          <td class="govuk-table__cell">Unlink from account</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">{{ data['visitor-2-name'] }}</td>
+          <td class="govuk-table__cell">{{ data['visitor-2-dob'] }}</td>
+          <td class="govuk-table__cell">No, banned until {{ data['visitor-2-ban'] }}</td>
+          <td class="govuk-table__cell">Unlink from account</td>
+        </tr>
+
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">{{ data['visitor-3-name'] }}</td>
+          <td class="govuk-table__cell">{{ data['visitor-3-dob'] }}</td>
+          <td class="govuk-table__cell">No, visitor not approved</td>
+          <td class="govuk-table__cell">Unlink from account</td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">Toby Smith</td>
+          <td class="govuk-table__cell">15 July 1988</td>
+          <td class="govuk-table__cell">No, awaiting review</td>
+          <td class="govuk-table__cell"><a href="/public/mvp+5/visitors/cancel-link-request" class="govuk-link">Cancel request</a></td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">{{ data['visitor-4-name'] }}</td>
+          <td class="govuk-table__cell">{{ data['visitor-4-dob'] }}</td>
+          <td class="govuk-table__cell">Yes</td>
+          <td class="govuk-table__cell">Unlink from account</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 class="govuk-heading-m">Awaiting review</h2>
+
+    <p class="govuk-body">
+      If you have already submitted a request to add visitors, we will contact you when your request has been approved or rejected. 
+      <br><br>
+      We will respond within 5 working days.
+    </p>
+
+    <h2 class="govuk-heading-m">Link a new visitor to your account</h2>
+
+    <p class="govuk-body">
+      The person you want to book for must be on the prisoner's visitor list.
+    </p>
+
+    {{ govukButton({
+      text: "Link a new visitor",
+      href: "/public/mvp+5/visitors/1-providing-info",
+      isStartButton: false
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}

@@ -3,15 +3,15 @@
 {% extends "../layouts/banner.html" %}
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
-{% from "govuk/components/input/macro.njk" import govukInput %}
-{% from "govuk/components/date-input/macro.njk" import govukDateInput %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/details/macro.njk" import govukDetails %}
 
 {% set signedIn = true %}
 {% set activeLinkId = "visitors" %}
 {% set backLinkHref = true %}
 
 {% block pageTitle %}
-Visitor information – {{ serviceName }}
+  Prisoner details – {{ serviceName }}
 {% endblock %}
 
 {% block content %}
@@ -20,7 +20,7 @@ Visitor information – {{ serviceName }}
   <div class="govuk-grid-column-three-quarters">
 
     <h1 class="govuk-heading-l">
-      Link a new visitor for {{ data['prisoner-name'] }}
+      Prisoner details
     </h1>
 
     {{ govukInput({
@@ -29,7 +29,8 @@ Visitor information – {{ serviceName }}
         classes: "govuk-fieldset__legend--s"
       },
       id: "first-name",
-      name: "fullName",
+      name: "firstName",
+      classes: "govuk-input--width-20",
       autocomplete: "name",
       spellcheck: false
     }) }}
@@ -40,6 +41,7 @@ Visitor information – {{ serviceName }}
         classes: "govuk-fieldset__legend--s"
       },
       id: "last-name",
+      classes: "govuk-input--width-20",
       name: "lastName",
       autocomplete: "name",
       spellcheck: false
@@ -60,10 +62,36 @@ Visitor information – {{ serviceName }}
       }
     }) }}
 
-    {{ govukButton({
-      text: "Continue",
-      href: "3-check-visitor-info"
+    {{ govukInput({
+      label: {
+        text: "Prison number",
+        classes: "govuk-fieldset__legend--s"
+      },
+      hint: {
+        text: "For example, A1234BC"
+      },
+      id: "prison-no",
+      classes: "govuk-input--width-20",
+      name: "prisonNumber",
+      spellcheck: false
     }) }}
+
+    <div class="govuk-button-group">
+        {{ govukButton({
+        text: "Confirm and send",
+        href: "/public/mvp+5/prisoners/3-prisoner-linked"
+        }) }}
+    </div>
+
+    {% call govukDetails({
+      summaryText: "Help with the prison number"
+    }) %}
+      This is the number given to people when they enter prison.
+      <br><br>
+      Their prison number stays the same if they move to another prison.
+      <br><br>
+      You need to ask the prisoner for this information before you can book. 
+    {% endcall %}
 
   </div>
 </div>

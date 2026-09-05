@@ -1,0 +1,37 @@
+{% extends "../layouts/header.html" %}
+{% extends "../layouts/footer.html" %}
+{% extends "../layouts/banner.html" %}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+
+{% set signedIn = true %}
+{% set activeLinkId = "visitors" %}
+{% set backLinkHref = true %}
+
+{% block pageTitle %}
+  Prisoner details – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+      <h1 class="govuk-panel__title">Prisoner linked</h1>
+    </div>
+
+    <p>The prisoner details you submitted were successfully matched.</p>
+    <p>To book a visit for the prisoner, you need to link a visitor.</p>
+
+    <div class="govuk-button-group">
+        {{ govukButton({
+        text: "Link a visitor",
+        href: "/public/mvp+5/visitors/1-providing-info"
+        }) }}
+    </div>
+
+  </div>
+</div>
+
+{% endblock %}

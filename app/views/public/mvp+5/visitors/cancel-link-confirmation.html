@@ -1,0 +1,44 @@
+{% extends "../layouts/header.html" %}
+{% extends "../layouts/footer.html" %}
+{% extends "../layouts/banner.html" %}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% set signedIn = true %}
+{% set activeLinkId = "visitors" %}
+{% set backLinkHref = true %}
+
+{% block pageTitle %}
+  Visitor link request cancelled – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+  <div class="govuk-panel govuk-panel--confirmation">
+    <h1 class="govuk-panel__title">Visitor link request cancelled</h1>
+  </div>
+
+  <br>
+
+  <h2 class="govuk-heading-m">
+    What happens next?
+  </h2>
+
+  <p>You can link another visitor for the prison to review.</p>
+  
+  <p>You can help us to improve this service by giving feedback.</p>
+
+  {{ govukButton({
+    text: "Link new visitors",
+    href: "1-providing-info.html",
+    isStartButton: false
+  }) }}
+
+  </div>
+</div>
+
+{% endblock %}
