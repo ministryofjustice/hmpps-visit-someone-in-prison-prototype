@@ -36,24 +36,25 @@
 
     <br>
 
-    {{ govukRadios({
-      name: "whereDoYouLive",
-      items: [
-        {
-          value: "yes",
-          text: "Yes, cancel this visitor link request"
-        },
-        {
-          value: "no",
-          text: "No, keep this visitor link request"
-        }
-      ]
-    }) }}
+    <form class="form" action="cancel-link-confirmation" method="post">
+      {{ govukRadios({
+        name: "cancelVisitorLinkRequest",
+        items: [
+          {
+            value: "yes",
+            text: "Yes, cancel this visitor link request"
+          },
+          {
+            value: "no",
+            text: "No, keep this visitor link request"
+          }
+        ]
+      }) }}
 
-    {{ govukButton({
-      text: "Continue",
-      href: "cancel-link-confirmation"
-    }) }}
+      {{ govukButton({
+        text: "Continue"
+      }) }}
+    </form>
 
   </div>
 </div>
