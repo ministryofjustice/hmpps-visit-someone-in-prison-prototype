@@ -44,4 +44,13 @@
   </div>
 </div>
 
+{% if future %}
+  {% if request %}
+    {% include "layouts/partials/howToUpdateRequest.njk" %}
+  {% else %}
+    {% include "layouts/partials/howToChangeVisit.njk" %}
+    {% include "layouts/partials/visitingInfo.njk" %}
+  {% endif %}
+{% endif %}
+
 {% endblock %}
