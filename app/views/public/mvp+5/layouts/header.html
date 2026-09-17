@@ -5,12 +5,6 @@
 
 {% block header %}
 
-    {% if signedIn %}
-
-    {{ govukOneLoginServiceHeader({
-      signOutLink: "/public"})
-    }}
-
     {% set languageNavigationHtml %}
 
     {{ govukLanguageNavigation({
@@ -31,6 +25,12 @@
 
     {% endset %}
 
+    {% if signedIn %}
+
+    {{ govukOneLoginServiceHeader({
+      signOutLink: "/public"})
+    }}
+
     {{ govukServiceNavigation({
       serviceName: serviceName,
       serviceUrl: "/public",
@@ -46,10 +46,11 @@
         active: activeLinkId == "visitors"
       }],
         slots: {
-      end: {
-        html: languageNavigationHtml,
-        align: 'inline'
-      }
+          end: 
+          {
+            html: languageNavigationHtml,
+            align: 'inline'
+          }
     }
     }) 
     }} 
@@ -64,9 +65,16 @@
       serviceName: serviceName,
       serviceUrl: "/public",
       collapseNavigationOnMobile: false,
-      navigation: []
-    }
-      ) 
+      navigation: [],
+        slots: 
+        {
+          end: 
+          {
+            html: languageNavigationHtml,
+            align: 'inline'
+          }
+        }
+      }) 
     }}
 
   {% endif %}
