@@ -26,24 +26,16 @@ serviceUrl: "/public"
 {% block content %}
 
 <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+  <div class="govuk-grid-column-three-quarters">
 
-        <p>Needs new autocomplete</p>
+    <h1 class="govuk-heading-l">
+      Which prison are you visiting?
+    </h1>
 
-        <div class="govuk-button-group">
-            {{ govukButton({
-            text: "Continue",
-            href: "./intro"
-            }) }}
-        </div>
+    {% include "../mvp+5/layouts/partials/prisonSelector.njk" %}
 
-        <h2 class="govuk-heading-m">What if I don’t know the prisoner’s location?</h2>
-
-        <p>You can <a href="https://www.gov.uk/find-prisoner" class="govuk-link">apply to find the prisoner’s
-                location</a>.</p>
-
-    </div>
-
+    <p>If you do not know, you can <a href="https://www.gov.uk/find-prisoner" class="govuk-link">apply to find the prisoner’s location</a>.</p>
+  </div>
 </div>
 
 {% endblock %}

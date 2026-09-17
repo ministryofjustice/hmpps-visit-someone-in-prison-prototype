@@ -1,0 +1,53 @@
+{% from "govuk/components/select/macro.njk" import govukSelect %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{{ govukSelect({
+  id: "prison",
+  name: "prison",
+  hint: {
+    text: "For example, Cardiff (HMP)"
+  },
+  items: [
+    {
+      value: "eastmidlands",
+      text: "East Midlands"
+    },
+    {
+      value: "eastofengland",
+      text: "East of England"
+    },
+    {
+      value: "london",
+      text: "London"
+    },
+    {
+      value: "northeast",
+      text: "North East"
+    },
+    {
+      value: "northwest",
+      text: "North West"
+    },
+    {
+      value: "southeast",
+      text: "South East"
+    },
+    {
+      value: "southwest",
+      text: "South West"
+    },
+    {
+      value: "westmidlands",
+      text: "West Midlands"
+    },
+    {
+      value: "yorkshire",
+      text: "Yorkshire and the Humber"
+    }
+  ]
+}) }}
+
+      {{ govukButton({
+        text: "Continue",
+        href: "#"
+      }) }}
