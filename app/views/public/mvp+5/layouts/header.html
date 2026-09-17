@@ -56,14 +56,18 @@
 
   {% else %}
 
-  {{ govukOneLoginServiceHeader({
-    signOutLink: "/public",
-    oneLoginLink: "/public",
-    serviceNavigationParams: { 
-      navigation: [], 
-      serviceName: serviceName
-      }
-  }) }}
+    {{ govukOneLoginServiceHeader({
+      signOutLink: "/public"})
+    }}
+
+    {{ govukServiceNavigation({
+      serviceName: serviceName,
+      serviceUrl: "/public",
+      collapseNavigationOnMobile: false,
+      navigation: []
+    }
+      ) 
+    }}
 
   {% endif %}
 {% endblock %}
