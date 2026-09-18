@@ -1,4 +1,4 @@
-# Visits Prototypes
+# Social visits and Contacts Prototypes
 
 [![Ministry of Justice Repository Compliance Badge](https://github-community.service.justice.gov.uk/repository-standards/api/hmpps-visit-someone-in-prison-prototype/badge?style=flat)](https://github-community.service.justice.gov.uk/repository-standards/hmpps-visit-someone-in-prison-prototype)
 [![Continuous Deployment](https://github.com/ministryofjustice/hmpps-visit-someone-in-prison-prototype/actions/workflows/cd-main.yaml/badge.svg)](https://github.com/ministryofjustice/hmpps-visit-someone-in-prison-prototype/actions/workflows/cd-main.yaml)
