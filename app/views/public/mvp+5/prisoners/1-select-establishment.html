@@ -2,8 +2,6 @@
 {% extends "../layouts/footer.html" %}
 {% extends "../layouts/banner.html" %}
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
-{% from "govuk/components/button/macro.njk" import govukButton %}
-    {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
 {% set signedIn = true %}
 {% set activeLinkId = "visitors" %}
@@ -22,34 +20,7 @@
       Where is the prisoner you want to visit?
     </h1>
 
-    {{ govukRadios({
-      name: "whereDoYouLive",
-      items: [
-        {
-          value: "england",
-          text: "England"
-        },
-        {
-          value: "scotland",
-          text: "Scotland"
-        },
-        {
-          value: "wales",
-          text: "Wales"
-        },
-        {
-          value: "northern-ireland",
-          text: "Northern Ireland"
-        }
-      ]
-    }) }}
-
-    <div class="govuk-button-group">
-        {{ govukButton({
-        text: "Continue",
-        href: "/public/mvp+5/prisoners/2-prisoner-details"
-        }) }}
-    </div>
+    {% include "../layouts/partials/prisonSelector.njk" %}
 
     <p>If you do not know, you can <a href="https://www.gov.uk/find-prisoner" class="govuk-link">apply to find the prisoner’s location</a>.</p>
   </div>

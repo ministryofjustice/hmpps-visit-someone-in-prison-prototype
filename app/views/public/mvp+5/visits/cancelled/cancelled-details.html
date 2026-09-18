@@ -50,6 +50,16 @@
     <p class="govuk-body govuk-!-margin-bottom-1">{{ data['visitor-2-name'] }}</p>
     <p class="govuk-body govuk-!-margin-bottom-1">07866 464587</p>
 
+    {% if future %}
+      {% if request %}
+        {% include "layouts/partials/howToUpdateRequest.njk" %}
+      {% else %}
+        {% include "layouts/partials/howToChangeVisit.njk" %}
+        {% include "layouts/partials/visitingInfo.njk" %}
+      {% endif %}
+    {% endif %}
+
+
   </div>
 </div>
 
