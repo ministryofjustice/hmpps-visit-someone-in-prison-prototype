@@ -10,57 +10,51 @@ Visits – {{ serviceName }}
 
 {% block content %}
 
-<div class="govuk-width-container">
-  <main class="govuk-main-wrapper">
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-        <h1 class="govuk-heading-l">
-          Visits
-        </h1>
+    <h1 class="govuk-heading-l">
+      Visits
+    </h1>
 
-        <p>Only requests and visits booked made using GOV.UK One Login are shown.</p>
-        
-        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">{{ data['visit-0-date'] }}</h3>
-        <p class="govuk-body govuk-!-margin-bottom-1">{{ data['prisoner-name'] }} at {{ data['prison-name'] }}</p>
-        <p class="govuk-body govuk-!-margin-bottom-1">{{ data['visit-0-time'] }}</p>
-        <p class="govuk-body govuk-!-margin-bottom-1">Visit reference: {{ data['visit-0-ref'] }}</p>
-        <p class="govuk-body govuk-!-margin-bottom-1"><a href="/public/mvp+5/visits/future/details-request" class="govuk-link">View details</a>&nbsp;&nbsp;<a href="/public/mvp+5/visits/future/cancel.html" class="govuk-link">Cancel visit</a>
+    <p>Only requests and visits booked made using GOV.UK One Login are shown.</p>
     
-        <br><br>
-    
-        <h3 class="govuk-heading-s govuk-!-margin-bottom-1">{{ data['visit-1-date'] }}</h3>
-        <strong class="govuk-tag govuk-tag--orange">Awaiting review</strong>
-        <br><br>
-        <p class="govuk-body govuk-!-margin-bottom-1">{{ data['prisoner-name'] }} at {{ data['prison-name'] }}</p>
-        <p class="govuk-body govuk-!-margin-bottom-1">{{ data['visit-1-time'] }}</p>
-        <p class="govuk-body govuk-!-margin-bottom-1">Visit reference: {{ data['visit-1-ref'] }}</p>
-        <p class="govuk-body govuk-!-margin-bottom-1"><a href="/public/mvp+5/visits/future/details-request" class="govuk-link">View details</a>&nbsp;&nbsp;<a href="/public/mvp+5/visits/future/cancel.html" class="govuk-link">Cancel visit</a>
-        </p>
-    
-        <br>
-        <br>
-      
-        {{ govukButton({
-        text: "Book a visit",
-        href: "/public/mvp+5/book/0-prisoner.html"
-        }) }}
-        
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-1">{{ data['visit-0-date'] }}</h3>
+    <p class="govuk-body govuk-!-margin-bottom-1">{{ data['prisoner-name'] }} at {{ data['prison-name'] }}</p>
+    <p class="govuk-body govuk-!-margin-bottom-1">{{ data['visit-0-time'] }}</p>
+    <p class="govuk-body govuk-!-margin-bottom-1">Visit reference: {{ data['visit-0-ref'] }}</p>
+    <p class="govuk-body govuk-!-margin-bottom-1"><a href="/public/mvp+5/visits/future/details-request" class="govuk-link">View details</a>&nbsp;&nbsp;<a href="/public/mvp+5/visits/future/cancel.html" class="govuk-link">Cancel visit</a>
 
-      </div>
+    <br><br>
 
-      <div class="govuk-grid-column-one-third">
-        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
-        <h2 class="govuk-heading-m">Other actions</h2>
-        <p class="govuk-body"><a href="#" class="govuk-link">View past visits</a></p>
-        <p class="govuk-body"><a href="#" class="govuk-link">View rejected and cancelled visits</a></p>
-        <p class="govuk-body"><a href="#" class="govuk-link">Add a prisoner to your account</a></p>
-        <p class="govuk-body"><a href="#" class="govuk-link">Add a visitor to your account</a></p>
-      </div>
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-1">{{ data['visit-1-date'] }}</h3>
+    <strong class="govuk-tag govuk-tag--orange">Awaiting review</strong>
+    <br><br>
+    <p class="govuk-body govuk-!-margin-bottom-1">{{ data['prisoner-name'] }} at {{ data['prison-name'] }}</p>
+    <p class="govuk-body govuk-!-margin-bottom-1">{{ data['visit-1-time'] }}</p>
+    <p class="govuk-body govuk-!-margin-bottom-1">Visit reference: {{ data['visit-1-ref'] }}</p>
+    <p class="govuk-body govuk-!-margin-bottom-1"><a href="/public/mvp+5/visits/future/details-request" class="govuk-link">View details</a>&nbsp;&nbsp;<a href="/public/mvp+5/visits/future/cancel.html" class="govuk-link">Cancel visit</a>
+    </p>
 
-    </div>
-  </main>
+    <br>
+    <br>
+  
+    {{ govukButton({
+    text: "Book a visit",
+    href: "/public/mvp+5/book/0-prisoner.html"
+    }) }}
+
+  </div>
+  
+  <div class="govuk-grid-column-one-third">
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+    <h2 class="govuk-heading-m">Other actions</h2>
+    <p class="govuk-body"><a href="#" class="govuk-link">View past visits</a></p>
+    <p class="govuk-body"><a href="#" class="govuk-link">View rejected and cancelled visits</a></p>
+    <p class="govuk-body"><a href="#" class="govuk-link">Add a prisoner to your account</a></p>
+    <p class="govuk-body"><a href="#" class="govuk-link">Add a visitor to your account</a></p>
+  </div>
+  
 </div>
-
 
 {% endblock %}
