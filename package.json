@@ -18,7 +18,7 @@
     "accessible-autocomplete": "^3.0.1",
     "govuk-frontend": "6.5.1",
     "govuk-prototype-kit": "13.20.5",
-    "hmrc-frontend": "7.35.0",
+    "hmrc-frontend": "7.36.0",
     "jquery": "4.0.0"
   },
   "devDependencies": {
