@@ -20,7 +20,7 @@ Visits – {{ serviceName }}
         Visits
       </h1>
 
-      <p>Only requests and visits booked made using GOV.UK One Login are shown.</p>
+      <p>Only requests and visits booked using GOV.UK One Login are shown.</p>
       
       <h3 class="govuk-heading-s govuk-!-margin-bottom-1">{{ data['visit-0-date'] }}</h3>
       <p class="govuk-body govuk-!-margin-bottom-1">{{ data['prisoner-name'] }} at {{ data['prison-name'] }}</p>
@@ -36,8 +36,7 @@ Visits – {{ serviceName }}
       <p class="govuk-body govuk-!-margin-bottom-1">{{ data['prisoner-name'] }} at {{ data['prison-name'] }}</p>
       <p class="govuk-body govuk-!-margin-bottom-1">{{ data['visit-1-time'] }}</p>
       <p class="govuk-body govuk-!-margin-bottom-1">Visit reference: {{ data['visit-1-ref'] }}</p>
-      <p class="govuk-body govuk-!-margin-bottom-1"><a href="/public/mvp+5/visits/future/details-request" class="govuk-link">View details</a>&nbsp;&nbsp;<a href="/public/mvp+5/visits/future/cancel.html" class="govuk-link">Cancel visit</a>
-      </p>
+      <p class="govuk-body govuk-!-margin-bottom-1"><a href="/public/mvp+5/visits/future/details-request" class="govuk-link">View details</a>&nbsp;&nbsp;<a href="/public/mvp+5/visits/future/cancel.html" class="govuk-link">Cancel visit</a></p>
   
       <br>
       <br>
@@ -46,7 +45,6 @@ Visits – {{ serviceName }}
         text: "Book a visit",
         href: "/public/mvp+5/book/0-prisoner.html"
       }) }}
-
 
       <p class="govuk-body"><a href="/public/mvp+5/visits/past" class="govuk-link">View past visits</a></p>
       <p class="govuk-body"><a href="/public/mvp+5/visits/cancelled" class="govuk-link">View rejected and cancelled visits</a></p>
