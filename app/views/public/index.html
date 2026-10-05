@@ -12,74 +12,42 @@
   <div class="govuk-grid-column-two-thirds">
 
     <h2 class="govuk-heading-m">
-      +5
+      2026
     </h2>
 
-    <p class="govuk-body">Includes:</p>
+    
+
+    <h3 class="govuk-heading-s">
+      In development
+    </h3>
     <ul class="govuk-list govuk-list--bullet">
-      <li><a class="govuk-link" href="/public/mvp+5">home page  with future visits</a></li>
-      <li>language switcher in service navigation - experimental</li>
-      <li><a class="govuk-link" href="/public/mvp+5/homepage.html">redesigned start page and removing service navigation</a></li>
-      <li>support for multiple prisoners</li>
+      <li><a class="govuk-link" href="/public/mvp+5">support for multiple prisoners</a></li>
         <ul class="govuk-list govuk-list--bullet">
+          <li>select a prisoner during booking journey</li>
           <li>prison and prisoner names added to UI for each visit</li>
           <li>add a prisoner journey</li>
           <li>updated visitor management journeys</li>
         </ul>
     </ul>
 
-    <div class="govuk-button-group">
-      {{ govukButton({
-      text: "Home",
-      href: "/public/mvp+5/"
-      }) }}
-    </div>
-
-    <hr class="govuk-section-break govuk-section-break--visible">
-    <br>
-
-    <h2 class="govuk-heading-m">
-      +4
-    </h2>
-
-    <p class="govuk-body">Includes:</p>
+    <h3 class="govuk-heading-s">
+      Exploration
+    </h3>
     <ul class="govuk-list govuk-list--bullet">
-      <li><a class="govuk-link" href="/public/mvp+4/start.html">start page</a></li>
-      <li><a class="govuk-link" href="/public/mvp+4/select-prison.html">prison select page</a></li>
-      <li><a class="govuk-link" href="/public/mvp+4/intro.html">prison intro page</a></li>
-      <li>new One Login header and GDS branding</li>
-      <li>GOV.UK One Login integration</li>
-      <li>automated booking of visits</li>
-      <li>booker can cancel visits</li>
-      <li>Bookings experience with future, past and cancelled bookings</li>
-      <li>Visitors experience with registered visitor information</li>
-      <li>email and text notification support</li>
-      <li>booker registers to the service and adds a prisoner to their account</li>
-      <li>maintenance pages for <a class="govuk-link" href="/public/mvp+4/planned-downtime.html">planned</a> and <a
-          class="govuk-link" href="/public/mvp+4/downtime.html">unplanned downtime</a></li>
+      <li><a class="govuk-link" href="/public/mvp+5/homepage.html">redesigned start page including:</a>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>language switcher in service navigation</li>
+          <li>removed service navigation options</li>
+          <li>"Other actions" navigation</li>
+        </ul>
+      </li>
     </ul>
 
-    <div class="govuk-button-group">
-      {{ govukButton({
-      text: "Start",
-      href: "/public/mvp+4/"
-      }) }}
-    </div>
-
-    <hr class="govuk-section-break govuk-section-break--visible">
-    <br>
-
-    <details class="govuk-details" data-module="govuk-details">
-      <summary class="govuk-details__summary">
-        <span class="govuk-details__summary-text">
-          Old prototypes
-        </span>
-      </summary>
-    </details>
   </div>
 
   <div class="govuk-grid-column-one-third">
 
   </div>
+</div>
 
 {% endblock %}
