@@ -18,7 +18,7 @@ RUN NPM_CONFIG_AUDIT=false NPM_CONFIG_FUND=false npm ci
 
 COPY . .
 
-RUN hmpps-npm-script-run-allowlist
+RUN ./node_modules/.bin/hmpps-npm-script-run-allowlist
 ENV NODE_ENV='production'
 RUN npm prune --no-audit --omit=dev
 
