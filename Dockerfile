@@ -29,19 +29,3 @@ USER 1017
 RUN chmod +x start.sh
 
 CMD ["./start.sh"]
-WORKDIR /app
-
-COPY package*.json .allowed-scripts.mjs .npmrc ./
-RUN NPM_CONFIG_AUDIT=false NPM_CONFIG_FUND=false npm run setup
-ENV NODE_ENV='production'
-RUN npm prune --no-audit --omit=dev
-
-COPY . .
-
-RUN chown -R appuser:appgroup /app
-
-USER 1017
-
-RUN chmod +x start.sh
-
-CMD ["./start.sh"]
