@@ -13,7 +13,7 @@
   "dependencies": {
     "@govuk-one-login/service-header": "^7.0.1",
     "@govuk-prototype-kit/common-templates": "^3.0.1",
-    "@ministryofjustice/frontend": "11.1.0",
+    "@ministryofjustice/frontend": "12.0.0",
     "accessible-autocomplete": "^3.0.2",
     "govuk-frontend": "6.6.0",
     "govuk-prototype-kit": "14.0.2",
