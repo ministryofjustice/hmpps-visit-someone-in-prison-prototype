@@ -16,9 +16,9 @@
     "@ministryofjustice/frontend": "12.0.1",
     "accessible-autocomplete": "^3.0.2",
     "govuk-frontend": "6.6.0",
-    "govuk-prototype-kit": "14.0.2",
-    "hmrc-frontend": "7.46.0",
-    "jquery": "4.0.0"
+    "govuk-prototype-kit": "14.0.3",
+    "hmrc-frontend": "7.48.0",
+    "jquery": "4.1.0"
   },
   "devDependencies": {
     "@ministryofjustice/hmpps-npm-script-allowlist": "0.0.6",
