@@ -11,18 +11,17 @@
     "npm": "^11"
   },
   "dependencies": {
-    "@govuk-one-login/service-header": "^6.0.0",
+    "@govuk-one-login/service-header": "^7.0.1",
     "@govuk-prototype-kit/common-templates": "^3.0.1",
-    "@govuk-prototype-kit/step-by-step": "^3.0.0",
-    "@ministryofjustice/frontend": "11.1.0",
+    "@ministryofjustice/frontend": "12.0.1",
     "accessible-autocomplete": "^3.0.2",
-    "govuk-frontend": "6.5.1",
-    "govuk-prototype-kit": "13.20.5",
-    "hmrc-frontend": "7.38.0",
-    "jquery": "4.0.0"
+    "govuk-frontend": "6.6.0",
+    "govuk-prototype-kit": "14.0.3",
+    "hmrc-frontend": "7.48.0",
+    "jquery": "4.1.0"
   },
   "devDependencies": {
-    "@ministryofjustice/hmpps-npm-script-allowlist": "0.0.6",
+    "@ministryofjustice/hmpps-npm-script-allowlist": "0.1.0",
     "audit-ci": "7.1.0"
   }
 }
