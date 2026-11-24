@@ -1,0 +1,64 @@
+{% extends "../layouts/header.html" %}
+{% extends "../layouts/footer.html" %}
+{% extends "../layouts/banner.html" %}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+
+{% set signedIn = true %}
+{% set activeLinkId = "visitors" %}
+
+{% block pageTitle %}
+Prisoners and visitors – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <h2 class="govuk-heading-l">Prisoners and visitors</h2>
+
+    <h3 class="govuk-heading-s">Prisoners linked to your account</h3>
+
+    <table class="govuk-table">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header">Name</th>
+          <th scope="col" class="govuk-table__header">Date of birth</th>
+          <th scope="col" class="govuk-table__header"></th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">{{ data['prisoner-name'] }}</td>
+          <td class="govuk-table__cell">{{ data['prisoner-dob'] }}</td>
+          <td class="govuk-table__cell">
+            <a href="1-linked-visitors?personselected=davidjones&" class="govuk-link">View visitors</a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell">{{ data['prisoner-name-2'] }}</td>
+          <td class="govuk-table__cell">{{ data['prisoner-dob-2'] }}</td>
+          <td class="govuk-table__cell">
+            <a href="1-linked-visitors?personselected=johnsmith&" class="govuk-link">View visitors</a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2 class="govuk-heading-m">Link a new prisoner</h2>
+
+    <p class="govuk-body">
+      Begin booking visits for a new prisoner.
+    </p>
+
+    {{ govukButton({
+      text: "Link a new prisoner",
+      href: "/public/mvp+5-development/prisoners/1-select-establishment",
+      isStartButton: false
+    }) }}
+
+  </div>
+</div>
+
+{% endblock %}

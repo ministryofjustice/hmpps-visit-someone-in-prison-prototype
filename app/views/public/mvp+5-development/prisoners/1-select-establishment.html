@@ -1,0 +1,29 @@
+{% extends "../layouts/header.html" %}
+{% extends "../layouts/footer.html" %}
+{% extends "../layouts/banner.html" %}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% set signedIn = true %}
+{% set activeLinkId = "visitors" %}
+{% set backLinkHref = true %}
+
+{% block pageTitle %}
+  Where is the prisoner you want to visit? – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+    <h1 class="govuk-heading-l">
+      Where is the prisoner you want to visit?
+    </h1>
+
+    {% include "../layouts/partials/prisonSelector2.njk" %}
+
+    <p>If you do not know, you can <a href="https://www.gov.uk/find-prisoner" class="govuk-link">apply to find the prisoner’s location</a>.</p>
+  </div>
+</div>
+
+{% endblock %}

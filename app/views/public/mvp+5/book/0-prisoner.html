@@ -16,11 +16,36 @@
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-l">
-      Who are you visiting?
-    </h1>
+    {% from "govuk/components/radios/macro.njk" import govukRadios %}
 
-    
+{{ govukRadios({
+  name: "selectPrisoner",
+  fieldset: {
+    legend: {
+      text: "Who are you visiting?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: " prisonerName ",
+      text: data['prisoner-name']
+    },
+    {
+     value: " prisonerName2 ",
+      text: data['prisoner-name-2']
+    },
+    {
+      value: " prisonerName3",
+      text: " John Smith"
+    },
+    {
+      value: "northern-ireland",
+      text: "Northern Ireland"
+    }
+  ]
+}) }}
       
   </div>
 </div>

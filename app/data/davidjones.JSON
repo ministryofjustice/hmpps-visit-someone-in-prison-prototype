@@ -1,0 +1,17 @@
+{
+    "name": "David Jones",
+    "dateOfBirth": "7 June 2000",
+    
+    "visitor1": "Karen Jones",
+    "visitordob1": "11 November 1982",
+    "visitorpermissions": "Yes",
+    
+    "visitor2": "Delia Partridge",
+    "visitordob2": "12 March 1990",
+    "visitorpermissions2": "No, banned until 15 November 2027",
+ 
+    "visitor3": "Chris Partridge",
+    "visitordob3": "12 March 1990",
+    "visitorpermissions3": "No, awaiting review"
+ 
+  }
