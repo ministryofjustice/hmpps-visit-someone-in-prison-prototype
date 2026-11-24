@@ -1,14 +1,21 @@
-module.exports = {
+let davidjones  = require('./davidjones.json')
+let johnsmith  = require('./johnsmith.json')
+
+module.exports = {  
+
+davidjones,
+johnsmith,
+
 
   'app-name': 'Social visits',
   'prison-tel': '0121 661 2101',
   'prison-name': 'Foston Hall (HMP & YOI)',
   'prison-url': 'https://www.gov.uk/guidance/foston-hall-prison',
-  'prisoner-name': 'Jane Smith',
-  'prisoner-dob': '17 December 1983',
+  'prisoner-name': 'David Jones',
+  'prisoner-dob': '7 June 2000',
   'prison-no': 'G2780GX',
-  'prisoner-name-2': 'Barry White',
-  'prisoner-dob-2': '2 March 1970',
+  'prisoner-name-2': 'John Smith',
+  'prisoner-dob-2': '15 May 1989',
   'prison-no-2': 'G1877PB',
   'visitor-1-name': 'Susan Smith',
   'visitor-1-age': '39',

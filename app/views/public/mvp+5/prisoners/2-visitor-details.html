@@ -1,0 +1,53 @@
+{% extends "../layouts/header.html" %}
+{% extends "../layouts/footer.html" %}
+{% extends "../layouts/banner.html" %}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+{% from "govuk/components/button/macro.njk" import govukButton %}
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+
+{% set signedIn = true %}
+{% set activeLinkId = "visitors" %}
+{% set backLinkHref = true %}
+
+{% block pageTitle %}
+  Visitor details – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-three-quarters">
+
+    <h1 class="govuk-heading-l">
+      Who is going on the visit
+    </h1>
+
+    <p>Up to 5 people can visit John Smith at Hewell (HMP). This includes:</p>
+
+3 people 10 years or older
+4 people under 10 years old
+
+At least one visitor must be 18 years or older
+
+    <div class="govuk-button-group">
+        {{ govukButton({
+        text: "Confirm and send",
+        href: "/public/mvp+5/prisoners/3-prisoner-linked"
+        }) }}
+    </div>
+
+    {% call govukDetails({
+      summaryText: "Help with the prison number"
+    }) %}
+      This is the number given to people when they enter prison.
+      <br><br>
+      Their prison number stays the same if they move to another prison.
+      <br><br>
+      You need to ask the prisoner for this information before you can book. 
+    {% endcall %}
+
+  </div>
+</div>
+
+{% endblock %}

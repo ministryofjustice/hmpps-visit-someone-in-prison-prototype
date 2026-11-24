@@ -1,0 +1,29 @@
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{% block footer %}
+
+  {{ govukFooter({
+    rebrand: true,
+    meta: {
+      items: [
+        {
+          href: "/public/mvp+4/support/accessibility-statement",
+          text: "Accessibility"
+        },
+        {
+          href: "/public/mvp+4/support/cookies",
+          text: "Cookies"
+        },
+        {
+          href: "/public/mvp+4/support/privacy-notice",
+          text: "Privacy"
+        },
+        {
+          href: "/public/mvp+4/support/terms-conditions",
+          text: "Terms and conditions"
+        }
+      ]
+    }
+  }) }}
+
+{% endblock %}

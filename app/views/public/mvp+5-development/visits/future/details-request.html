@@ -1,0 +1,76 @@
+{% extends "../../layouts/header.html" %}
+{% extends "../../layouts/footer.html" %}
+{% extends "../../layouts/banner.html" %}
+{%- from "moj/components/alert/macro.njk" import mojAlert -%}
+{% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
+
+{% set signedIn = true %}
+{% set future = true %}
+{% set request = true %}
+{% set backLinkHref = true %}
+{% set activeLinkId = "bookings" %}
+
+{% block pageTitle %}
+  Visit request details – {{ serviceName }}
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    {{ mojAlert({
+      variant: "information",
+      title: "Your visit needs to be reviewed",
+      showTitleAsHeading: true,
+      dismissible: false,
+      html: 'Your visit is not booked yet. It needs to be checked by Foston Hall (HMP & YOI).'
+    }) }}
+
+    <h1 class="govuk-heading-l">
+      Visit request details
+    </h1>
+
+    <h2 class="govuk-heading-m">Visit reference: {{ data['visit-1-ref'] }}</h2>
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Date and time</h3>
+    <p class="govuk-body govuk-!-margin-bottom-1">{{ data['visit-1-date'] }}</p>
+    <p class="govuk-body govuk-!-margin-bottom-1">{{ data['visit-1-time'] }}</p>
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Prisoner</h3>
+    <p class="govuk-body govuk-!-margin-bottom-1">{{ data['prisoner-name'] }} at {{ data['prison-name'] }} </p>
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Visitors</h3>
+    <p class="govuk-body govuk-!-margin-bottom-1">{{ data['visitor-1-name'] }}</p>
+    <p class="govuk-body govuk-!-margin-bottom-1">{{ data['visitor-2-name'] }}</p>
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Additional support requests</h3>
+    <p class="govuk-body govuk-!-margin-bottom-1">None</p>
+
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-1">Main contact</h3>
+    <p class="govuk-body govuk-!-margin-bottom-1">{{ data['visitor-1-name'] }}</p>   
+    <p class="govuk-body govuk-!-margin-bottom-1">{{ data['visitor-1-tel'] }}</p>
+    <p class="govuk-body govuk-!-margin-bottom-1">{{ data['visitor-1-email'] }}</p>
+
+    <br>
+
+    <form action="cancel-confirm.html" method="post">
+      <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+         Cancel visit
+      </button>
+     </form>
+
+    {% if future %}
+      {% if request %}
+        {% include "../../layouts/partials/howToUpdateRequest.njk" %}
+      {% else %}
+        {% include "../../layouts/partials/howToChangeVisit.njk" %}
+        {% include "../../layouts/partials/visitingInfo.njk" %}
+      {% endif %}
+    {% endif %}
+
+  </div>
+</div>
+{% endblock %}
+
+
